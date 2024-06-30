@@ -1,6 +1,6 @@
 # Stage 1 - session 4
 
-Contents of this fileder include:
+Contents of this folder include:
 
 - codes & slides from session 4
 - homework info
