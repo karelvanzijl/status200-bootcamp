@@ -12,16 +12,14 @@ body {
 }
 
 .box-one {
-  position: relative;
   background-color: gold;
-  z-index: 1;
 }
 
 .box-two {
   background-color: tomato;
 
   /* 
-    The box will be positioned relative to the box-one.
+    The box will be positioned relative to itself.
    */
   position: relative;
 
