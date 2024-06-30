@@ -59,7 +59,7 @@ body {
 /* 
   If the screen size is greater than or equal to 900px:
 
-  - the background color of the box elements is set to white. 
+  - the background colors of the box elements are changed. 
  */
 @media screen and (min-width: 900px) {
   .box-one {
