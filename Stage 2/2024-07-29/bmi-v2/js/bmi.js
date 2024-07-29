@@ -1,9 +1,7 @@
 function calculateBMI() {
-    // Empty error messages
-    emptyError("errorName");
-    emptyError("errorHeight");
-    emptyError("errorWeight");
-    emptyError("errorDecimals");
+    // Reset button
+    document.getElementById("outputBmiResult").innerHTML = "Calulate BMI";
+    document.getElementById("outputBmiResult").classList = "";
 
     // Get name of the user
     var name = document.getElementById("inputName").value;
@@ -27,47 +25,50 @@ function calculateBMI() {
     // Get the number of decimals the user wants to use for the BMI score output
     var decimals = document.getElementById("inputDecimals").value;
 
-    // Keep track of if there were any errors
-    var errors = false;
+    name = name.trim();
+    height = parseInt(height);
+    weight = parseInt(weight);
+    decimals = parseInt(decimals);
 
-    // Validate the name
-    var error = validateName(name, "name");
-    if (error !== false) {
-        document.getElementById("errorName").innerHTML = error;
-        errors = true;
-    }
-
-    // Validate the height
+    var errorsName = nameValidator(name, "name");
     if (heightUnitSystem == "inches") {
-        error = validateInteger(height, 20, 100, "height in inches");
+        var errorsHeight = numberValidator(height, 20, 100, "height inches");
     } else {
-        error = validateInteger(height, 50, 250, "height in centimeters");
+        var errorsHeight = numberValidator(
+            height,
+            50,
+            250,
+            "height centimeters"
+        );
     }
-    if (error !== false) {
-        document.getElementById("errorHeight").innerHTML = error;
-        errors = true;
-    }
-
-    // Validate the weight
     if (weightUnitSystem == "pounds") {
-        error = validateInteger(weight, 40, 400, "weight in pounds");
+        var errorsWeight = numberValidator(weight, 60, 300, "weight pounds");
     } else {
-        error = validateInteger(weight, 20, 200, "weight in kilograms");
-    }
-    if (error !== false) {
-        document.getElementById("errorWeight").innerHTML = error;
-        errors = true;
+        var errorsWeight = numberValidator(weight, 30, 150, "weight kgs");
     }
 
-    // Validate the number of decimals
-    error = validateInteger(decimals, 0, 10, "decimals");
-    if (error !== false) {
-        document.getElementById("errorDecimals").innerHTML = error;
-        errors = true;
+    var errorsDecimals = numberValidator(decimals, 1, 10, "decimals");
+
+    var areThereErrors = false;
+
+    if (errorsName != "") {
+        document.getElementById("errorName").innerHTML = errorsName;
+        areThereErrors = true;
+    }
+    if (errorsHeight != "") {
+        document.getElementById("errorHeight").innerHTML = errorsHeight;
+        areThereErrors = true;
+    }
+    if (errorsWeight != "") {
+        document.getElementById("errorWeight").innerHTML = errorsWeight;
+        areThereErrors = true;
+    }
+    if (errorsDecimals != "") {
+        document.getElementById("errorDecimals").innerHTML = errorsDecimals;
+        areThereErrors = true;
     }
 
-    // If there were any errors, stop the function
-    if (errors) {
+    if (areThereErrors == true) {
         return;
     }
 
@@ -77,10 +78,10 @@ function calculateBMI() {
         height = height * 2.54;
     }
 
-    // Convert pounds to kilograms
+    // Convert weight to kilograms
     if (weightUnitSystem == "pounds") {
-        // Convert pounds to kilograms
-        weight = weight * 0.453592;
+        // Convert inches to centimeters
+        weight = weight / 2.2;
     }
 
     // Convert height centimeters to meters
@@ -94,33 +95,35 @@ function calculateBMI() {
 
     // Initialize classification as an empty string
     var classification = "";
-    var cssClassificationClass = "";
+    var classificationClass = "";
 
     // Determine the correct classification
     // If the BMI is less than 18.5, the classification is "Underweight"
     if (bmi_rounded < 18.5) {
         classification = "Underweight";
-        cssClassificationClass = "danger";
+        classificationClass = "danger";
     }
     // If the BMI is greater than or equal to 18.5 and less than 25, the classification is "Normal"
     else if (bmi_rounded >= 18.5 && bmi_rounded < 25) {
         classification = "Normal";
-        cssClassificationClass = "okay";
+        classificationClass = "okay";
     }
     // If the BMI is greater than or equal to 25 and less than 30, the classification is "Overweight"
     else if (bmi_rounded >= 25 && bmi_rounded < 30) {
         classification = "Overweight";
-        cssClassificationClass = "warning";
+        classificationClass = "warning";
     }
     // Otherwise the classification is "Obese"
     else {
         classification = "Obese";
-        cssClassificationClass = "danger";
+        classificationClass = "danger";
     }
 
     // Put together the output sentence
     var sentence =
-        "<b>Your BMI score is <i>" +
+        "<b>" +
+        name +
+        ", your BMI score is <i>" +
         bmi_rounded +
         "</i><br><br>This classifies you as being <i>" +
         classification +
@@ -129,12 +132,34 @@ function calculateBMI() {
     // Output the sentence as HTML on my page
     document.getElementById("outputBmiResult").innerHTML = sentence;
 
-    // Add a class to the output to color the classification
-    document
-        .getElementById("outputBmiResult")
-        .classList.add(cssClassificationClass);
+    // Change class of element
+    document.getElementById("outputBmiResult").classList = classificationClass;
 }
 
-function emptyError(targetId) {
-    document.getElementById(targetId).innerHTML = "";
+function switchHeightHelpText() {
+    var heightUnitSystem = document.getElementById(
+        "inputHeightUnitSystem"
+    ).value;
+
+    if (heightUnitSystem == "inches") {
+        var message = "inches: min 20, max 100";
+    } else {
+        var message = "centimeters: min 50, max 250";
+    }
+
+    document.getElementById("heightUnitSystemHelper").innerHTML = message;
+}
+
+function switchWeightHelpText() {
+    var heightUnitSystem = document.getElementById(
+        "inputWeightUnitSystem"
+    ).value;
+
+    if (heightUnitSystem == "pounds") {
+        var message = "pounds: min 60, max 300";
+    } else {
+        var message = "kg: min 30, max 150";
+    }
+
+    document.getElementById("weightUnitSystemHelper").innerHTML = message;
 }

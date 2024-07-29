@@ -5,50 +5,40 @@
  *
  */
 
-function validateName(string, fieldDescription) {
-    // Trim any trailing or leading spaces in the string
-    string = string.trim();
-
-    // Check if the string is empty
-    if (string === "") {
-        return fieldDescription + " must contain at least one character.";
+function nameValidator(name, fieldName) {
+    if (name == "") {
+        return "Please enter your " + fieldName + "<br>";
     }
-
-    // ADVANCED - Don't loose time on trying to understand this.
-    // It checks if the string contains any special characters
-    // that are not letters or spaces.
-    if (string.match(/[^a-zA-Z ]/)) {
-        return fieldDescription + " can only contain letters and spaces.";
+    if (name.match(/[^a-zA-Z ]/)) {
+        return fieldName + " can only contain letters and spaces.<br>";
     }
-
-    // A name must be at least 2 characters long (spaces not included)
-    if (string.replace(/ /g, "").length < 2) {
-        return fieldDescription + " must contain at least 2 letters.";
+    if (name.replace(/ /g, "").length < 2) {
+        return fieldName + " must contain at least 2 letters.<br>";
     }
-
-    // All seems fine
-    return false;
+    return "";
 }
 
-function validateInteger(numberToVerify, minValue, maxValue, fieldDescription) {
-    // Convert the value to a number
-    numberToVerify = parseInt(numberToVerify);
-
-    // Check if the value is a number
-    if (isNaN(numberToVerify)) {
-        return fieldDescription + " must be a number.";
+function numberValidator(value, min, max, string) {
+    if (value == 0) {
+        return "Please enter your " + string + ".<br>";
+    }
+    if (isNaN(value)) {
+        return string + " must be a number.<br>";
     }
 
-    // Check if the value is smaller than the minimum value
-    if (numberToVerify < minValue) {
-        return fieldDescription + "  must be greater than " + minValue + ".";
+    // min
+    if (value < min) {
+        return string + " must be greater than " + min + ".<br>";
     }
 
-    // Check if the value is greater than the maximum value
-    if (numberToVerify > maxValue) {
-        return fieldDescription + " must be smaller than " + maxValue + ".";
+    // max
+    if (value > max) {
+        return string + " must be smaller than " + max + ".<br>";
     }
 
-    // All seems fine
-    return false;
+    return "";
+}
+
+function emptyError(fieldName) {
+    document.getElementById(fieldName).innerText = "";
 }
