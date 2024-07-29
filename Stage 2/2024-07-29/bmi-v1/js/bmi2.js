@@ -14,9 +14,9 @@ function calculateBMI() {
     var weight = document.getElementById("inputWeight").value;
 
     // Get the used system for weight
-    // var weightUnitSystem = document.getElementById(
-    //     "inputWeightUnitSystem"
-    // ).value;
+    var weightUnitSystem = document.getElementById(
+        "inputWeightUnitSystem"
+    ).value;
 
     // Get the number of decimals the user wants to use for the BMI score output
     var decimals = document.getElementById("inputDecimals").value;
@@ -25,6 +25,30 @@ function calculateBMI() {
     if (heightUnitSystem == "inches") {
         // Convert inches to centimeters
         height = height * 2.54;
+    }
+
+    // Convert weight to kilograms
+    if (weightUnitSystem == "pounds") {
+        // Convert inches to centimeters
+        weight = weight / 2.2;
+    }
+
+    name = name.trim();
+    height = parseInt(height);
+    weight = parseInt(weight);
+    decimals = parseInt(decimals);
+
+    var errorMessages = "";
+
+    errorMessages = errorMessages + nameValidator(name);
+    errorMessages = errorMessages + numberValidator(height, 50, 250, "height");
+    errorMessages = errorMessages + numberValidator(weight, 30, 150, "weight");
+    errorMessages =
+        errorMessages + numberValidator(decimals, 1, 10, "decimals");
+
+    if (errorMessages != "") {
+        document.getElementById("errors").innerHTML = errorMessages;
+        return;
     }
 
     // Convert height centimeters to meters
