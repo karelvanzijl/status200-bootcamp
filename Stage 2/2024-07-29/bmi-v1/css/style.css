@@ -56,25 +56,3 @@ button {
     font-size: 0.8rem;
     color: #666;
 }
-
-.error {
-    margin: 0;
-    color: red;
-    font-size: 0.8rem;
-}
-
-.w-50 {
-    width: 50%;
-}
-
-.danger {
-    background-color: rgb(255, 174, 174);
-}
-
-.warning {
-    background-color: rgb(246, 200, 114);
-}
-
-.okay {
-    background-color: rgb(101, 254, 101);
-}

@@ -33,24 +33,6 @@ function calculateBMI() {
         weight = weight / 2.2;
     }
 
-    name = name.trim();
-    height = parseInt(height);
-    weight = parseInt(weight);
-    decimals = parseInt(decimals);
-
-    var errorMessages = "";
-
-    errorMessages = errorMessages + nameValidator(name);
-    errorMessages = errorMessages + numberValidator(height, 50, 250, "height");
-    errorMessages = errorMessages + numberValidator(weight, 30, 150, "weight");
-    errorMessages =
-        errorMessages + numberValidator(decimals, 1, 10, "decimals");
-
-    if (errorMessages != "") {
-        document.getElementById("errors").innerHTML = errorMessages;
-        return;
-    }
-
     // Convert height centimeters to meters
     var meterHeight = height / 100;
 
