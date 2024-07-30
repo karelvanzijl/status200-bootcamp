@@ -92,6 +92,7 @@
                     var toAmount = parseFloat(ge("toAmount").value);
                     var fromCurrency = ge("fromCurrency").value;
                     var toCurrency = ge("toCurrency").value;
+                    // Set the output element
                     var outputElement = ge("toAmount");
                 }
                 // If input parameter direction is to, we convert from the second input to the first
@@ -101,19 +102,14 @@
                     var toAmount = parseFloat(ge("fromAmount").value);
                     var fromCurrency = ge("toCurrency").value;
                     var toCurrency = ge("fromCurrency").value;
+                    // Set the output element
                     var outputElement = ge("fromAmount");
                 }
 
-                // If the input < 0, overwrite and set to 0
-                if (fromAmount < 0 || isNaN(fromAmount)) {
+                // If the input <= 0 or not a number, overwrite and set to 0
+                if (fromAmount <= 0 || isNaN(fromAmount)) {
                     ge("fromAmount").value = 0;
                     ge("toAmount").value = 0;
-                    return;
-                }
-
-                // If the input is 0, return 0
-                if (fromAmount == 0) {
-                    outputElement.value = 0;
                     return;
                 }
 
