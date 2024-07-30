@@ -15,23 +15,29 @@
         </style>
     </head>
     <body>
-        <select id="fromCurrency" onchange="convertCurrency('to')"></select>
+        <select
+            id="leftCurrency"
+            onchange="convertCurrency('right2left')"
+        ></select>
         <input
             type="number"
-            id="fromAmount"
-            oninput="convertCurrency('from')"
-            onfocus="selectAll('fromAmount')"
+            id="leftAmount"
+            oninput="convertCurrency('left2right')"
+            onfocus="selectAll('leftAmount')"
             value="0"
         />
         <span>&harr;</span>
         <input
             type="number"
-            id="toAmount"
-            oninput="convertCurrency('to')"
-            onfocus="selectAll('toAmount')"
+            id="rightAmount"
+            oninput="convertCurrency('right2left')"
+            onfocus="selectAll('rightAmount')"
             value="0"
         />
-        <select id="toCurrency" onchange="convertCurrency('from')"></select>
+        <select
+            id="rightCurrency"
+            onchange="convertCurrency('left2right')"
+        ></select>
 
         <script>
             // Currencies to choose from
@@ -67,9 +73,9 @@
 
             // Fill the select elements with options
             for (var i = 0; i < currencies.length; i++) {
-                ge("fromCurrency").innerHTML +=
+                ge("leftCurrency").innerHTML +=
                     "<option value='" + i + "'>" + currencies[i] + "</option>";
-                ge("toCurrency").innerHTML +=
+                ge("rightCurrency").innerHTML +=
                     "<option value='" + i + "'>" + currencies[i] + "</option>";
             }
 
@@ -85,31 +91,31 @@
 
             // Convert the currency
             function convertCurrency(direction) {
-                // If input parameter direction is from, we convert from the first input to the second
-                if (direction == "from") {
+                // If input parameter direction is left2right, we convert from the first input to the second
+                if (direction == "left2right") {
                     // Get the input values
-                    var fromAmount = parseFloat(ge("fromAmount").value);
-                    var toAmount = parseFloat(ge("toAmount").value);
-                    var fromCurrency = ge("fromCurrency").value;
-                    var toCurrency = ge("toCurrency").value;
+                    var fromAmount = parseFloat(ge("leftAmount").value);
+                    var toAmount = parseFloat(ge("rightAmount").value);
+                    var fromCurrency = ge("leftCurrency").value;
+                    var toCurrency = ge("rightCurrency").value;
                     // Set the output element
-                    var outputElement = ge("toAmount");
+                    var outputElement = ge("rightAmount");
                 }
-                // If input parameter direction is to, we convert from the second input to the first
+                // If input parameter direction is right2left, we convert from the second input to the first
                 else {
                     // Get the input values
-                    var fromAmount = parseFloat(ge("toAmount").value);
-                    var toAmount = parseFloat(ge("fromAmount").value);
-                    var fromCurrency = ge("toCurrency").value;
-                    var toCurrency = ge("fromCurrency").value;
+                    var fromAmount = parseFloat(ge("rightAmount").value);
+                    var toAmount = parseFloat(ge("leftAmount").value);
+                    var fromCurrency = ge("rightCurrency").value;
+                    var toCurrency = ge("leftCurrency").value;
                     // Set the output element
-                    var outputElement = ge("fromAmount");
+                    var outputElement = ge("leftAmount");
                 }
 
-                // If the input <= 0 or not a number, overwrite and set to 0
+                // If the input <= 0 or not a number, set inout amounts to 0 and stop the function from running further
                 if (fromAmount <= 0 || isNaN(fromAmount)) {
-                    ge("fromAmount").value = 0;
-                    ge("toAmount").value = 0;
+                    ge("leftAmount").value = 0;
+                    ge("rightAmount").value = 0;
                     return;
                 }
 
