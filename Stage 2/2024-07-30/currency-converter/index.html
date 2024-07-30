@@ -17,12 +17,12 @@
     <body>
         <select
             id="leftCurrency"
-            onchange="convertCurrency('right2left')"
+            onchange="convertCurrency('right', 'left')"
         ></select>
         <input
             type="number"
             id="leftAmount"
-            oninput="convertCurrency('left2right')"
+            oninput="convertCurrency('left', 'right')"
             onfocus="selectAll('leftAmount')"
             value="0"
             step="0.01"
@@ -31,14 +31,14 @@
         <input
             type="number"
             id="rightAmount"
-            oninput="convertCurrency('right2left')"
+            oninput="convertCurrency('right', 'left')"
             onfocus="selectAll('rightAmount')"
             value="0"
             step="0.01"
         />
         <select
             id="rightCurrency"
-            onchange="convertCurrency('left2right')"
+            onchange="convertCurrency('left', 'right')"
         ></select>
 
         <script>
@@ -91,28 +91,23 @@
                 ge(id).select();
             }
 
-            // Convert the currency
-            function convertCurrency(direction) {
-                // If input parameter direction is left2right, we convert from the first input to the second
-                if (direction == "left2right") {
-                    // Get the input values
-                    var fromAmount = parseFloat(ge("leftAmount").value);
-                    var fromCurrency = ge("leftCurrency").value;
-                    var toCurrency = ge("rightCurrency").value;
-                    // Set the output element
-                    var outputElement = ge("rightAmount");
-                }
-                // If input parameter direction is right2left, we convert from the second input to the first
-                else {
-                    // Get the input values
-                    var fromAmount = parseFloat(ge("rightAmount").value);
-                    var fromCurrency = ge("rightCurrency").value;
-                    var toCurrency = ge("leftCurrency").value;
-                    // Set the output element
-                    var outputElement = ge("leftAmount");
-                }
+            /**
+             * Convert the currency
+             *
+             * @param {string} from - The side to convert from
+             * @param {string} to - The side to convert to
+             */
+            function convertCurrency(from, to) {
+                // Get the input values
+                var fromAmount = parseFloat(ge(from + "Amount").value);
+                var fromCurrency = ge(from + "Currency").value;
+                var toCurrency = ge(to + "Currency").value;
 
-                // If the input <= 0 or not a number, set inout amounts to 0 and stop the function from running further
+                // Set the output element
+                var outputElement = ge(to + "Amount");
+
+                // If the input <= 0 or not a number, set input amounts
+                // to 0 and stop the function from running further
                 if (fromAmount <= 0 || isNaN(fromAmount)) {
                     ge("leftAmount").value = 0;
                     ge("rightAmount").value = 0;
