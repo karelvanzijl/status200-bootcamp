@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Status Zoo</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                background-color: saddlebrown;
+                color: white;
+                min-height: 100vh;
+            }
+            h1,
+            h2,
+            h3 {
+                margin: 0;
+            }
+            h2 {
+                font-weight: 500;
+                font-size: 1.1rem;
+            }
+            h3 {
+                font-size: 1.5rem;
+            }
+            header {
+                display: flex;
+                border-bottom: 1px solid black;
+                flex-grow: 0;
+                gap: 3px;
+                width: 100%;
+                cursor: pointer;
+            }
+            header img {
+                width: 100px;
+                height: 100px;
+            }
+            header div {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .page {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex-grow: 1;
+                gap: 3rem;
+                width: 100%;
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+                background-color: burlywood;
+                color: saddlebrown;
+            }
+            .content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+            button {
+                padding: 1rem;
+                width: 200px;
+                cursor: pointer;
+                font-size: 1.1rem;
+                background-color: saddlebrown;
+                color: white;
+                border: none;
+            }
+            .gallery {
+                text-align: center;
+            }
+            .gallery p {
+                font-weight: 700;
+            }
+            .gallery-image {
+                width: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <header onclick="loadPage('home')">
+            <img src="images/header-monkey.png" />
+            <div>
+                <h1>Status Zoo</h1>
+                <h2 id="title-page">&nbsp;</h2>
+            </div>
+            <img src="images/header-dinosaur.png" />
+        </header>
+        <main id="home" class="page">
+            <h3>Choose your favorite!</h3>
+            <div class="content">
+                <button onclick="loadPage('birds')">Birds</button>
+                <button onclick="loadPage('nocturnals')">Nocturnals</button>
+                <button onclick="loadPage('safari')">Safari</button>
+                <button onclick="loadPage('reptiles')">Reptiles</button>
+            </div>
+        </main>
+        <main id="birds" class="page">
+            <div id="birdsGallery" class="content"></div>
+            <button id="birdsToggleButton" onclick="toggleMore('birds')">
+                Load More
+            </button>
+        </main>
+        <main id="nocturnals" class="page">
+            <div id="nocturnalsGallery" class="content"></div>
+            <button
+                id="nocturnalsToggleButton"
+                onclick="toggleMore('nocturnals')"
+            >
+                Load More
+            </button>
+        </main>
+        <main id="safari" class="page">
+            <div id="safariGallery" class="content"></div>
+            <button id="safariToggleButton" onclick="toggleMore('safari')">
+                Load More
+            </button>
+        </main>
+        <main id="reptiles" class="page">
+            <div id="reptilesGallery" class="content"></div>
+            <button id="reptilesToggleButton" onclick="toggleMore('reptiles')">
+                Load More
+            </button>
+        </main>
+        <script>
+            const birdNames = [
+                "Birdie",
+                "Tweety",
+                "Polly",
+                "Chirpy",
+                "Sparrow",
+                "Robin",
+            ];
+            const birdImages = [
+                "images/bird-1.png",
+                "images/bird-2.png",
+                "images/bird-3.png",
+                "images/bird-4.png",
+                "images/bird-5.png",
+                "images/bird-6.png",
+            ];
+            const nocturnalNames = [
+                "Owl",
+                "Bat",
+                "Raccoon",
+                "Firefly",
+                "Moth",
+                "Possum",
+            ];
+            const nocturnalImages = [
+                "images/nocturnal-owl.png",
+                "images/nocturnal-bat.png",
+                "images/nocturnal-raccoon.png",
+                "images/nocturnal-firefly.png",
+                "images/nocturnal-moth.png",
+                "images/nocturnal-possum.png",
+            ];
+            const safariNames = [
+                "Lion",
+                "Elephant",
+                "Giraffe",
+                "Zebra",
+                "Rhino",
+                "Hippo",
+            ];
+            const safariImages = [
+                "images/safari-lion.png",
+                "images/safari-elephant.png",
+                "images/safari-giraffe.png",
+                "images/safari-zebra.png",
+                "images/safari-rhino.png",
+                "images/safari-hippo.png",
+            ];
+            const reptileNames = [
+                "Snake",
+                "Lizard",
+                "Turtle",
+                "Crocodile",
+                "Iguana",
+                "Chameleon",
+            ];
+            const reptileImages = [
+                "images/reptile-snake.png",
+                "images/reptile-lizard.png",
+                "images/reptile-turtle.png",
+                "images/reptile-crocodile.png",
+                "images/reptile-iguana.png",
+                "images/reptile-chameleon.png",
+            ];
+
+            // Generate galleries for each category
+            generateGallery("birds", birdNames, birdImages);
+            generateGallery("nocturnals", nocturnalNames, nocturnalImages);
+            generateGallery("safari", safariNames, safariImages);
+            generateGallery("reptiles", reptileNames, reptileImages);
+
+            // Load home page
+            getById("home").style.display = "flex";
+
+            function toggleMore(id) {
+                console.log(this);
+
+                const gallery = getById(id);
+                const galleryImages = gallery.getElementsByClassName(
+                    id + "-gallery-item"
+                );
+                for (let i = 4; i < galleryImages.length; i++) {
+                    if (galleryImages[i].style.display === "none") {
+                        galleryImages[i].style.display = "block";
+                        getById(id + "ToggleButton").innerText = "Load Less";
+                    } else {
+                        galleryImages[i].style.display = "none";
+                        getById(id + "ToggleButton").innerText = "Load More";
+                    }
+                }
+            }
+
+            function loadPage(page) {
+                const pages = document.getElementsByClassName("page");
+                for (let i = 0; i < pages.length; i++) {
+                    pages[i].style.display = "none";
+                }
+                getById(page).style.display = "flex";
+                if (page === "home") {
+                    getById("title-page").innerHTML = "&nbsp;";
+                } else {
+                    getById("title-page").innerHTML = page.toUpperCase();
+                }
+            }
+
+            function generateGallery(id, names, images) {
+                const gallery = getById(id + "Gallery");
+                let galleryHTML = "";
+                for (let i = 0; i < images.length; i++) {
+                    style = i > 3 ? "display: none;" : "";
+                    galleryHTML +=
+                        "<div class='gallery " +
+                        id +
+                        "-gallery-item' style='" +
+                        style +
+                        "'><p>" +
+                        names[i] +
+                        "</p><img src='" +
+                        images[i] +
+                        "' alt='" +
+                        names[i] +
+                        "' class='gallery-image' /></div>";
+                }
+                gallery.innerHTML = galleryHTML;
+            }
+
+            function getById(id) {
+                return document.getElementById(id);
+            }
+        </script>
+    </body>
+</html>
