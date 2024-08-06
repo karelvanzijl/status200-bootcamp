@@ -122,7 +122,7 @@
         </main>
         <main id="safaris" class="page">
             <div id="safarisGallery" class="content"></div>
-            <button id="safariToggleButton" onclick="toggleMore('safaris')">
+            <button id="safarisToggleButton" onclick="toggleMore('safaris')">
                 Load More
             </button>
         </main>
@@ -191,15 +191,17 @@
                 const galleryImages = gallery.getElementsByClassName(
                     id + "-gallery-item"
                 );
+                let buttonText = "";
                 for (let i = 4; i < galleryImages.length; i++) {
                     if (galleryImages[i].style.display === "none") {
                         galleryImages[i].style.display = "block";
-                        getById(id + "ToggleButton").innerText = "Load Less";
+                        buttonText = "Load Less";
                     } else {
                         galleryImages[i].style.display = "none";
-                        getById(id + "ToggleButton").innerText = "Load More";
+                        buttonText = "Load More";
                     }
                 }
+                getById(id + "ToggleButton").innerText = buttonText;
             }
 
             // Logic to make a page visible and hide others
