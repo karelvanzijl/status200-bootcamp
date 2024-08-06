@@ -80,6 +80,7 @@
             }
             .gallery p {
                 font-weight: 700;
+                text-transform: capitalize;
             }
             .gallery-image {
                 width: 150px;
@@ -100,7 +101,7 @@
             <div class="content">
                 <button onclick="loadPage('birds')">Birds</button>
                 <button onclick="loadPage('nocturnals')">Nocturnals</button>
-                <button onclick="loadPage('safari')">Safari</button>
+                <button onclick="loadPage('safaris')">Safari</button>
                 <button onclick="loadPage('reptiles')">Reptiles</button>
             </div>
         </main>
@@ -119,9 +120,9 @@
                 Load More
             </button>
         </main>
-        <main id="safari" class="page">
-            <div id="safariGallery" class="content"></div>
-            <button id="safariToggleButton" onclick="toggleMore('safari')">
+        <main id="safaris" class="page">
+            <div id="safarisGallery" class="content"></div>
+            <button id="safariToggleButton" onclick="toggleMore('safaris')">
                 Load More
             </button>
         </main>
@@ -132,83 +133,60 @@
             </button>
         </main>
         <script>
-            const birdNames = [
-                "Birdie",
-                "Tweety",
-                "Polly",
-                "Chirpy",
-                "Sparrow",
-                "Robin",
-            ];
-            const birdImages = [
-                "images/bird-1.png",
-                "images/bird-2.png",
-                "images/bird-3.png",
-                "images/bird-4.png",
-                "images/bird-5.png",
-                "images/bird-6.png",
-            ];
-            const nocturnalNames = [
-                "Owl",
-                "Bat",
-                "Raccoon",
-                "Firefly",
-                "Moth",
-                "Possum",
-            ];
-            const nocturnalImages = [
-                "images/nocturnal-owl.png",
-                "images/nocturnal-bat.png",
-                "images/nocturnal-raccoon.png",
-                "images/nocturnal-firefly.png",
-                "images/nocturnal-moth.png",
-                "images/nocturnal-possum.png",
-            ];
-            const safariNames = [
-                "Lion",
-                "Elephant",
-                "Giraffe",
-                "Zebra",
-                "Rhino",
-                "Hippo",
-            ];
-            const safariImages = [
-                "images/safari-lion.png",
-                "images/safari-elephant.png",
-                "images/safari-giraffe.png",
-                "images/safari-zebra.png",
-                "images/safari-rhino.png",
-                "images/safari-hippo.png",
-            ];
-            const reptileNames = [
-                "Snake",
-                "Lizard",
-                "Turtle",
-                "Crocodile",
-                "Iguana",
-                "Chameleon",
-            ];
-            const reptileImages = [
-                "images/reptile-snake.png",
-                "images/reptile-lizard.png",
-                "images/reptile-turtle.png",
-                "images/reptile-crocodile.png",
-                "images/reptile-iguana.png",
-                "images/reptile-chameleon.png",
+            // Birds category
+            const birds = [
+                "birdie",
+                "tweety",
+                "polly",
+                "chirpy",
+                "sparrow",
+                "robin",
             ];
 
+            // Nocturnals category
+            const nocturnals = [
+                "owl",
+                "bat",
+                "raccoon",
+                "firefly",
+                "moth",
+                "possum",
+            ];
+
+            // Safari category
+            const safaris = [
+                "lion",
+                "elephant",
+                "giraffe",
+                "zebra",
+                "rhino",
+                "hippo",
+            ];
+
+            // Reptiles category
+            const reptiles = [
+                "snake",
+                "lizard",
+                "turtle",
+                "crocodile",
+                "iguana",
+                "chameleon",
+            ];
+
+            // Get all pages
+            const pages = document.getElementsByClassName("page");
+
             // Generate galleries for each category
-            generateGallery("birds", birdNames, birdImages);
-            generateGallery("nocturnals", nocturnalNames, nocturnalImages);
-            generateGallery("safari", safariNames, safariImages);
-            generateGallery("reptiles", reptileNames, reptileImages);
+            generateGallery("birds", birds);
+            generateGallery("nocturnals", nocturnals);
+            generateGallery("safaris", safaris);
+            generateGallery("reptiles", reptiles);
 
             // Load home page
             getById("home").style.display = "flex";
 
+            // Logic to show or hide gallery items
             function toggleMore(id) {
-                console.log(this);
-
                 const gallery = getById(id);
                 const galleryImages = gallery.getElementsByClassName(
                     id + "-gallery-item"
@@ -224,8 +202,8 @@
                 }
             }
 
+            // Logic to make a page visible and hide others
             function loadPage(page) {
-                const pages = document.getElementsByClassName("page");
                 for (let i = 0; i < pages.length; i++) {
                     pages[i].style.display = "none";
                 }
@@ -237,27 +215,33 @@
                 }
             }
 
-            function generateGallery(id, names, images) {
-                const gallery = getById(id + "Gallery");
+            // Logic to generate the different image galleries
+            function generateGallery(id, gallery) {
+                const galleryContainer = getById(id + "Gallery");
                 let galleryHTML = "";
-                for (let i = 0; i < images.length; i++) {
+                for (let i = 0; i < gallery.length; i++) {
                     style = i > 3 ? "display: none;" : "";
+                    const name = gallery[i];
+                    const img = id + "-" + name + ".png";
+                    const alt = id + name;
                     galleryHTML +=
                         "<div class='gallery " +
                         id +
                         "-gallery-item' style='" +
                         style +
                         "'><p>" +
-                        names[i] +
-                        "</p><img src='" +
-                        images[i] +
+                        name +
+                        "</p><img src='images/" +
+                        img +
                         "' alt='" +
-                        names[i] +
+                        alt +
                         "' class='gallery-image' /></div>";
+                    console.log(galleryHTML);
                 }
-                gallery.innerHTML = galleryHTML;
+                galleryContainer.innerHTML = galleryHTML;
             }
 
+            // Helper function to get elements by id
             function getById(id) {
                 return document.getElementById(id);
             }
