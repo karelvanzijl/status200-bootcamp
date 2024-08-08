@@ -26,4 +26,4 @@ const client_credits = [500, 100];
 const client_withdraw_total_today = [0, 0];
 
 // Flag to indicate if a client is logged in or not
-let clientIndex = 0;
+let clientIndex = -1;
