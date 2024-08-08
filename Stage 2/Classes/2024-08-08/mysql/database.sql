@@ -51,7 +51,7 @@ SELECT surname, city, gender WHERE city IN ('New York', 'San Diego', 'San Jose')
 SELECT COUNT(*) AS total_customers FROM customers;
 
 -- Count number of females born after 1986
-SELECT COUNT(*) FROM customers WHERE gender='F' AND YEAR(date_of_birth) > '1987';
+SELECT COUNT(*) FROM customers WHERE gender='F' AND YEAR(date_of_birth) > '1986';
 
 -- Retrieve the average age of all customers
 SELECT AVG(YEAR(CURDATE()) - YEAR(date_of_birth)) AS avg_age FROM customers;
