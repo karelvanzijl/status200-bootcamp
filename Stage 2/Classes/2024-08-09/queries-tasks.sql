@@ -63,7 +63,9 @@ VALUES
     ('Hiking Boots', 'Waterproof, high ankle', 100, 149.99, 'Outdoor', '2024-08-04', '2024-07-30'),
     ('Flashlight', 'LED, rechargeable', 150, 29.99, 'Outdoor', '2024-08-07', '2024-07-31');
 
--- Task 1
+------------ 
+-- Task 1 --
+------------ 
 SELECT 
     Prod_name AS name, 
     Unitprice AS price, 
@@ -74,13 +76,17 @@ WHERE
     Last_Sold > '2024-07-15' 
     AND Stock >= 50;
 
--- Task 2
+------------ 
+-- Task 2 --
+------------
 SELECT 
     SUM(Stock * Unitprice) AS 'Total Value'
 FROM 
     Products;
 
--- Task 3
+------------ 
+-- Task 3 --
+------------ 
 SELECT 
     Prod_category AS Category, 
     SUM(Stock) AS 'Total_Stock'
@@ -91,7 +97,9 @@ GROUP BY
 HAVING 
     Total_Stock > 600;
 
--- Task 4
+------------ 
+-- Task 4 --
+------------ 
 SELECT 
     Prod_name AS name 
 FROM 
@@ -100,7 +108,9 @@ WHERE
     Prod_name LIKE '%camera%' 
     AND DATE(Last_Sold) BETWEEN DATE_SUB(CURDATE(), INTERVAL 1 MONTH) AND CURDATE();
 
--- Task 5
+------------ 
+-- Task 5 --
+------------ 
 SELECT 
     Prod_name AS name
 FROM 
