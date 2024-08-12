@@ -54,6 +54,10 @@ In this example:
 
 This setup allows you to track which customers made which orders, and which products are included in each order.
 
+### Database Diagram
+
+<img src="db-diagram.png" width="600" />
+
 # Example Queries
 
 Here are a couple of example queries based on the tables you provided, with the addition of the `product_price` field in the **products** table:
