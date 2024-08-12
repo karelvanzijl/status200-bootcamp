@@ -19,6 +19,7 @@ Each folder in the `Classes` directory corresponds to a specific day of instruct
 -   **[2024-08-07](./Classes/2024-08-07/)**: GetElementsByClass and dictionaries. Cats & dogs task
 -   **[2024-08-08](./Classes/2024-08-08/)**: Install XAMPP. Query examples
 -   **[2024-08-09](./Classes/2024-08-09/)**: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY. Dates, LIKE and wildcards
+-   **[2024-08-12](./Classes/2024-08-12/)**: Node introduction. Database relationships introduction.
 
 ## Projects
 
