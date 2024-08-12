@@ -52,15 +52,11 @@ In this example:
 -   The **orders** table has a Foreign Key `customer_id` linking to the **customers** table.
 -   The **order_details** table has two Foreign Keys: `order_id` linking to the **orders** table and `product_id` linking to the **products** table.
 
-This setup allows you to track which customers made which orders, and which products are included in each order.
-
 ### Database Diagram
 
 <img src="db-diagram.png" width="600" />
 
 # Example Queries
-
-Here are a couple of example queries based on the tables you provided, with the addition of the `product_price` field in the **products** table:
 
 ### 1. List All Orders with Customer Names
 
