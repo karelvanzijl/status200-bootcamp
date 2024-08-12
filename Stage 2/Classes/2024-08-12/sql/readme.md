@@ -1,6 +1,6 @@
 # Database relationships
 
-Let's start with a simple explanation of Primary Keys (PK) and Foreign Keys (FK) using the tables you've mentioned: **customers**, **orders**, **order_details**, and **products**.
+**customers**, **orders**, **order_details**, and **products**.
 
 ### Primary Key (PK):
 

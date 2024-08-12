@@ -38,15 +38,13 @@ Node by default is non-blocking.
 
 -   It’s easy to get started
 -   You don’t have to learn a new programming language
--   The asynchronous setup of Node makes it highly scalable
+-   The asynchronous nature of Node makes it highly scalable
 
 ## Node Architecture
 
-As mentioned: a runtime environment for executing Javascript code outside the browser
+_A runtime environment for executing Javascript code outside the browser_
 
-So far we’ve been using Javascript to build applications in side our browser. A browser supplies a runtime environment for Javascript code
-
-Every browser has a JS engine which converts Javascript code to code the computer can understand. For example
+So far we’ve been using Javascript to build applications inside our browser. A browser supplies a runtime environment for Javascript code. Every browser has a JS engine which converts Javascript code to code the computer can understand. For example
 
 <img src="js-engine.png" width="300"/>
 
@@ -66,26 +64,30 @@ Ryan used Google’ v8 JS engine (the fastest engine) and embedded it inside a C
 
 #### Browser versus Node
 
-Node provides certain object that are different from the browser
+Node provides certain object that are don't exist in the browser in the browser and visa versa.
 
 For example, the document object (document.getElementById()) doesn’t exist in Node. There's no DOM (document object model) in available in Node, because it's not a browser.
 
-Instead it provides other objects, some of which don't exist in teh browser:
+Instead it provides other objects, some of which don't exist in the browser:
 
 -   fs.readFile() - we can work with the file system
 -   http.createServer() - we can listen for requests
--   os.
 
 ## Install Node
 
-Let’s check if node is installed already:
+First check if node is installed already:
 
 -   Open command prompt (CMD on Windows, Terminal on Mac)
 -   Run command: _node –version_
+    -   If Node is already installed on your computer it should say something like `v20.03.00`
 
-Go to https://nodejs.org
+Install the latest version of Node:
 
--   Download Latest Stable version (LTS) of Node
--   Install (don't install helper tools)
+-   Go to https://nodejs.org
+-   Download Latest Stable version (LTS) of Node. On the homepage the latest stable version will be presented to you to download.
+-   Execute the installer
+    -   Agree with the terms
+    -   Click "Next", "Next", etc, untill the install is finished
+    -   Do not install any extra features that might be offered during the installation
 -   Verify latest version is installed
-    -   Run command: node –version
+    -   Run command: _node –version_
