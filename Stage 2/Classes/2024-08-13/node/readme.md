@@ -25,24 +25,26 @@
 
     - The program should keep track of the number of attempts the user makes to guess the correct number.
 
-6. **Remember Attempts:**
+6. **End Game:**
+
+    - When the user guesses the correct number, the program should congratulate them and display the number of attempts it took.
+    - The program should then ask if the user wants to play again or exit. By typing `yes`, the game restarts.
+      Remember: No welcome message is shown.
+
+7. **Replay or Exit:**
+
+    - If the user chooses to play again, the game should start over, but the program should continue to remember the number of attempts from previous games.
+    - If the user chooses to exit, the program should display a final message and terminate.
+
+8. **Remember Attempts:**
 
     - The program should store the number of attempts made in each game session.
     - These attempts should be remembered across multiple games within the same session.
 
-7. **Calculate and Display Average Attempts:**
+9. **Calculate and Display Average Attempts:**
 
     - After each game session (i.e., after the user guesses the correct number), the program should calculate the average number of attempts it took to guess the correct number across all games in the session.
     - This average should be displayed to the user as part of the end game message.
-
-8. **End Game:**
-
-    - When the user guesses the correct number, the program should congratulate them and display the number of attempts it took.
-    - The program should then ask if the user wants to play again or exit.
-
-9. **Replay or Exit:**
-    - If the user chooses to play again, the game should start over, but the program should continue to remember the number of attempts from previous games.
-    - If the user chooses to exit, the program should display a final message and terminate.
 
 ### Key Concepts Reinforced
 
