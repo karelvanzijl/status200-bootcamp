@@ -91,3 +91,19 @@ Install the latest version of Node:
     -   Do not install any extra features that might be offered during the installation
 -   Verify latest version is installed
     -   Run command: _node –version_
+
+# Recap
+
+-   Node is a runtime environment for executing JS code.
+-   Up to 2009 Javascript could only be run in browsers
+-   Node is a C++ program that embeds Chrome’s v8 engine.
+-   Node is often used for back-end services
+    -   database
+    -   mail
+    -   files
+    -   push notifications
+-   Node applications are asynchronous or non-blocking by default.
+-   In Node, we don’t have browser environment objects such as window or the document object. Instead, we have other objects that are not available in browsers, such as objects for working with the:
+    -   file system
+    -   network
+    -   operating system
