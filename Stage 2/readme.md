@@ -20,6 +20,7 @@ Each folder in the `Classes` directory corresponds to a specific day of instruct
 -   **[2024-08-08](./Classes/2024-08-08/)**: Install XAMPP. Query examples
 -   **[2024-08-09](./Classes/2024-08-09/)**: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY. Dates, LIKE and wildcards
 -   **[2024-08-12](./Classes/2024-08-12/)**: Node introduction. Database relationships introduction.
+-   **[2024-08-13](./Classes/2024-08-13/)**: JOIN queries. Node Guess Random Number Game
 
 ## Projects
 
