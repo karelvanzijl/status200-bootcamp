@@ -1,5 +1,9 @@
 # Task
 
+### Code from class
+
+See [game.js](game.js)
+
 ### Number Guessing Game
 
 1. **Welcome message**
