@@ -19,7 +19,7 @@
 -   For example:
     -   We can call `window.console.log('message');` or simply `console.log('message');`
         -   The JavaScript engine will automatically prefix it with `window.`
-    -   Similar. The function mentioned above belong to the window object:
+    -   Similar. The functions mentioned above belong to the window object:
         -   window.setTimeout()
         -   window.setInterVal()
     -   When we declare a variable like `var message = 'Hello';` this variable is added to the global object.
@@ -52,7 +52,7 @@
     // Output will be: undefined
     ```
 
--   This is because of Node' modulair setup
+-   This is because of Node' modular setup
 
 ## Mode Module System
 
@@ -71,21 +71,21 @@
     -   There is a problem with this: it is possible that we have two different JS files that declare a variable or function with the exact same name, for example the above sayHello() function.
     -   Because this function is added to the global scope, the first sayHello() function in the global scope will be overwritten when we declare it for the second time in another file.
 
--   When we build applications we often use multiple files need to try prevent defining object in the global scope. We need _MODULAIRITY_.
+-   When we build applications we often use multiple files need to try prevent defining object in the global scope. We need _MODULARITY_.
 
 ### Modules
 
--   We want small building block or **modules** in which we can declare variable and functions in such a way that two variables or functions with the same name don't overwrite eachother.
+-   We want small building block or **modules** in which we can declare variables and functions in such a way that two variables or functions with the same name in different files don't overwrite eachother.
 -   The variables and functions declared inside each module should be encapsulated inside that module.
 
 At the core of Node we have this concept called _Module_
 
 -   Every file in a Node application is considered a module
--   Variables and function defined inside a module (file) are scoped to that file. We say these objects are _private_.
+-   Variables and function defined inside a module (file) are scoped to that module (file). We say these objects are _private_.
 -   These variables and function are not available outside that module
 -   If you want to use a variable or a function defined in a module outside that module, you need to export it and make it _public_
 
-Each node application has at least 1 file, or at least 1 module which we call the _main module_
+Each node application has at least 1 file, or at least 1 module which we call the _main module_. Often called app.js.
 
 **Recap:** in Node every file is a module and all variables and functions declared inside that file are scoped within that module. They're not available outside that module.
 
@@ -101,17 +101,15 @@ Each node application has at least 1 file, or at least 1 module which we call th
     var url = "http://someloggingservice.io";
 
     function log(message) {
-        // Some commumication with teh URL
-
+        // Some commumication with the URL
         console.log(message);
     }
     ```
 
     -   The variable `url` and the function `log()` are both scoped to this module. They're private and not visible outside this module
 
--   We want to use this log function inside our main module (app.js), but as mentions this function is by default not available outside the logger.js module.
--   To be able to use it, we need to make the function log() public
--   Update the logger module:
+-   We want to use this log function inside our main module (app.js), but as mentioned earlier, this function is by default not available outside the logger.js module.
+-   To be able to use it, we need to make the function log() public. This is how you do that in Node:
 
     ```JS
     var url = "http://someloggingservice.io";
@@ -125,12 +123,13 @@ Each node application has at least 1 file, or at least 1 module which we call th
     module.export.url = url;
     ```
 
-    -   You can give it any name, for example `module.export.endPoint = url;`
-    -   In this case we wouldn't want to export `url`, because it's implementation detail. Other modules don't need to know about it.
-    -   We only want to export some of the module properties to the "outside" world.
-        -   DVD Player metaphor
-            <img src="dvd-public.png"  width="600" />
-            <img src="dvd-private.png" width="600" />
+    -   We've now made the url variable and the log() function are publically available when another module import this logger mdoule.
+
+-   In this case we wouldn't want to export `url`, because it's implementation detail. Other modules don't need to know about it. We only want to export some of the module properties to the "outside" world.
+
+    -   DVD Player metaphor
+        <img src="dvd-public.png"  width="600" />
+        <img src="dvd-private.png" width="600" />
     -   Adjusted
 
         ```JS
@@ -156,15 +155,33 @@ Each node application has at least 1 file, or at least 1 module which we call th
             console.log(message);
         }
 
-        module.export = log;
+        module.exports = log;
 
         // We keep url private
         ```
 
 ### Load a module
 
--   require();
--   var vs const
+-   const ... = require("file.js");
+
+    ```JS
+    const logger = require("./logger.js");
+
+    logger.info('message');
+    ```
+
+-   Best practice to use const instead of var or let. That way you won't be able to accidently overwrite an imported module:
+
+    ```JS
+    var logger = require("./logger.js");
+
+    logger = 1;
+
+    logger.info('message');
+
+    // Will produce an error, because logger is now just the number 1
+    // and doesn't have this log() function anymore.
+    ```
 
 ### Module wrapper function
 
@@ -183,7 +200,7 @@ Each node application has at least 1 file, or at least 1 module which we call th
         '\n});'
     ]
     ```
--   This is basically the function that Node uses to wrap the code inside a file / module
+-   This is basically the function that Node uses to wrap the code inside a file / module. This also kinda explains why everything inside a module (file) is scoped to that module and won't be available in other files. Unless explicitly exported by the module itself and the module is imported by another module.
 
 ### Node build in modules examples:
 
