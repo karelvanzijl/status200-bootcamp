@@ -1,0 +1,235 @@
+# Theory
+
+## Global scope
+
+### Intro
+
+-   `console` from _console.log()_ is what we call a global object, which is part of the global scope and is availble in the browser and in Node.
+-   This means that we can access it anywhere, in any file or function.
+-   There are other object and functions that are also globally available in Node. We can use these inside a browser or inside Node. For example:
+    -   setTimeout()
+    -   clearTimeout()
+    -   setInterval()
+    -   clearInterval()
+
+### Browser
+
+-   The `window` object, which represents our global scope
+-   All functions and variables declared globally are accessible via the `window` object.
+-   For example:
+    -   We can call `window.console.log('message');` or simply `console.log('message');`
+        -   The JavaScript engine will automatically prefix it with `window.`
+    -   Similar. The function mentioned above belong to the window object:
+        -   window.setTimeout()
+        -   window.setInterVal()
+    -   When we declare a variable like `var message = 'Hello';` this variable is added to the global object.
+        -   This variable is now also available as `window.message` and `console.log(window.message);` works
+        -   This doesn't work for objects declared inside a function. These will be part of the scope within that function.
+
+### Node
+
+-   In Node we don't have this window object!
+-   In Node we have another object called `global`
+-   Just like with the windows object we can access the above mentioned objects and function like:
+    -   global.setTimeout()
+    -   global.clearTimeout()
+    -   global.setInterval()
+    -   global.clearInterval()
+    -   global.console.log()
+-   Normally we don't use the global. prefix, just like we normally don't use the window. prefix in the browser
+
+### Important difference between the browser and Node
+
+**In Node functions and variables declared in the code are not added to the global object**
+
+-   That means that if I declare a variable like `var name = 'Karel';`, this new variable name is **NOT** accessible via `global.name`
+-   Test it yourself:
+
+    ```JS
+    var message = 'Hello';
+    console.log(global.message);
+
+    // Output will be: undefined
+    ```
+
+-   This is because of Node' modulair setup
+
+## Mode Module System
+
+### Intro
+
+-   As mentioned if we declare a variable or a function in the browser, it is added to the global scope. Example:
+
+    ```JS
+    var sayHello = function() {
+
+    }
+    // this function is added to the global scope and we could use
+    window.sayHello();
+    ```
+
+    -   There is a problem with this: it is possible that we have two different JS files that declare a variable or function with the exact same name, for example the above sayHello() function.
+    -   Because this function is added to the global scope, the first sayHello() function in the global scope will be overwritten when we declare it for the second time in another file.
+
+-   When we build applications we often use multiple files need to try prevent defining object in the global scope. We need _MODULAIRITY_.
+
+### Modules
+
+-   We want small building block or **modules** in which we can declare variable and functions in such a way that two variables or functions with the same name don't overwrite eachother.
+-   The variables and functions declared inside each module should be encapsulated inside that module.
+
+At the core of Node we have this concept called _Module_
+
+-   Every file in a Node application is considered a module
+-   Variables and function defined inside a module (file) are scoped to that file. We say these objects are _private_.
+-   These variables and function are not available outside that module
+-   If you want to use a variable or a function defined in a module outside that module, you need to export it and make it _public_
+
+Each node application has at least 1 file, or at least 1 module which we call the _main module_
+
+**Recap:** in Node every file is a module and all variables and functions declared inside that file are scoped within that module. They're not available outside that module.
+
+### Create a module
+
+-   Create a main module called app.js
+    ```JS
+    console.log(module)
+    ```
+-   Create a file called logger.js with the following content:
+
+    ```JS
+    var url = "http://someloggingservice.io";
+
+    function log(message) {
+        // Some commumication with teh URL
+
+        console.log(message);
+    }
+    ```
+
+    -   The variable `url` and the function `log()` are both scoped to this module. They're private and not visible outside this module
+
+-   We want to use this log function inside our main module (app.js), but as mentions this function is by default not available outside the logger.js module.
+-   To be able to use it, we need to make the function log() public
+-   Update the logger module:
+
+    ```JS
+    var url = "http://someloggingservice.io";
+
+    function log(message) {
+        // Some commumication with teh URL
+        console.log(message);
+    }
+
+    module.export.log = log;
+    module.export.url = url;
+    ```
+
+    -   You can give it any name, for example `module.export.endPoint = url;`
+    -   In this case we wouldn't want to export `url`, because it's implementation detail. Other modules don't need to know about it.
+    -   We only want to export some of the module properties to the "outside" world.
+        -   DVD Player metaphor
+            <img src="dvd-public.png"  width="600" />
+            <img src="dvd-private.png" width="600" />
+    -   Adjusted
+
+        ```JS
+        var url = "http://someloggingservice.io";
+
+        function log(message) {
+            // Some commumication with the URL
+            console.log(message);
+        }
+
+        module.export.log = log;
+
+        // We keep url private
+        ```
+
+    -   Export one object
+
+        ```JS
+        var url = "http://someloggingservice.io";
+
+        function log(message) {
+            // Some commumication with the URL
+            console.log(message);
+        }
+
+        module.export = log;
+
+        // We keep url private
+        ```
+
+### Load a module
+
+-   require();
+-   var vs const
+
+### Module wrapper function
+
+-   Every module gets wrapped in a function by Node:
+
+    ```JS
+    const moduleWrapper = require('module').wrapper;
+
+    console.log(moduleWrapper);
+    ```
+
+-   Outputs:
+    ```JS
+    [
+        '(function (exports, require, module, __filename, __dirname) { ',
+        '\n});'
+    ]
+    ```
+-   This is basically the function that Node uses to wrap the code inside a file / module
+
+### Node build in modules examples:
+
+-   path
+
+    ```JS
+    const path = require('path');
+    console.log(path.parse(__filename));
+    ```
+
+-   os
+    ```JS
+    const os = require('os');
+    console.log(os.totalmem());
+    console.log(os.freemem());
+    ```
+-   fs
+
+    ```JS
+    const fs = require('fs');
+
+    fs.readdir("./", function (err, files) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(files);
+        }
+    });
+    ```
+
+    -   Notice: most methods offered in this module have two variants: with Sync (synchronous) or without Sync (asynchronous, node default behavious). For example `readdirSync()` and `readdir()`
+    -   Try to always use the asynchronous method when possible
+
+# Recap
+
+-   We don’t have the window object in Node.
+-   The global object in Node is “global”.
+-   Unlike browser applications, variables we define are not added to the “global”
+    object.
+-   Every file in a Node application is a module. Node automatically wraps the code
+    in each file with an IIFE (Immediately-invoked Function Expression) to create scope. So, variables and functions defined in one file are only scoped to that file and not visible to other files unless explicitly exported.
+-   To export a variable or function from a module, you need to add them to module.exports:
+    module.exports.sayHello = sayHello;
+-   To load a module, use the require function. This function returns the module.exports object exported from the target module:
+    const logger = require(‘./logger’);
+-   Node has a few built-in modules that enable us to work with the file system, path objects, network, operating system, etc.
+-   EventEmitter is one of the core classes in Node that allows us to raise (emit) and handle events. Several built-in classes in Node derive from EventEmitter.
+-   To create a class with the ability to raise events, we should extend EventEmitter:
+    class Logger extends EventEmitter { }
