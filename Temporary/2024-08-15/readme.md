@@ -243,39 +243,41 @@ Lets start using the installed mysql2 package.
     ```
 
 -   This will output (based on dataset used in [tasks.sql](../2024-08-14/sql/tasks.sql) from yesterday)
-    ```JSON
+    ```js
     [
         {
             cust_id: 1,
-            cust_name: 'Alice Johnson',
-            cust_city: 'New York',
-            cust_country: 'USA'
+            cust_name: "Alice Johnson",
+            cust_city: "New York",
+            cust_country: "USA",
         },
         {
             cust_id: 2,
-            cust_name: 'Bob Smith',
-            cust_city: 'Los Angeles',
-            cust_country: 'USA'
+            cust_name: "Bob Smith",
+            cust_city: "Los Angeles",
+            cust_country: "USA",
         },
         {
             cust_id: 3,
-            cust_name: 'Carlos Gonzalez',
-            cust_city: 'Mexico City',
-            cust_country: 'Mexico'
+            cust_name: "Carlos Gonzalez",
+            cust_city: "Mexico City",
+            cust_country: "Mexico",
         },
         {
             cust_id: 4,
-            cust_name: 'Diana Prince',
-            cust_city: 'London',
-            cust_country: 'UK'
+            cust_name: "Diana Prince",
+            cust_city: "London",
+            cust_country: "UK",
         },
         {
             cust_id: 5,
-            cust_name: 'Eva Green',
-            cust_city: 'Paris',
-            cust_country: 'France'
-        }
-    ]
+            cust_name: "Eva Green",
+            cust_city: "Paris",
+            cust_country: "France",
+        },
+    ];
+    ```
+    ```js
     [
         `cust_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
         `cust_name` VARCHAR(100),
