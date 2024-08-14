@@ -85,13 +85,13 @@ At the core of Node we have this concept called _Module_
 -   These variables and function are not available outside that module
 -   If you want to use a variable or a function defined in a module outside that module, you need to export it and make it _public_
 
-Each node application has at least 1 file, or at least 1 module which we call the _main module_. Often called app.js.
+Each node application has at least 1 file, or at least 1 module which we call the _main module_. Often called index.js.
 
 **Recap:** in Node every file is a module and all variables and functions declared inside that file are scoped within that module. They're not available outside that module.
 
 ### Create a module
 
--   Create a main module called app.js
+-   Create a main module called index.js
     ```JS
     console.log(module)
     ```
@@ -108,7 +108,7 @@ Each node application has at least 1 file, or at least 1 module which we call th
 
     -   The variable `url` and the function `log()` are both scoped to this module. They're private and not visible outside this module
 
--   We want to use this log function inside our main module (app.js), but as mentioned earlier, this function is by default not available outside the logger.js module.
+-   We want to use this log function inside our main module (index.js), but as mentioned earlier, this function is by default not available outside the logger.js module.
 -   To be able to use it, we need to make the function log() public. This is how you do that in Node:
 
     ```JS

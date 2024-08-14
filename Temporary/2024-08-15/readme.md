@@ -159,7 +159,6 @@ _So why were all these other packages installed, didn't we just ask to install m
 
     ```json
     {
-        ...
         "dependencies": {
             "aws-ssl-profiles": "^1.1.1",
             "denque": "^2.1.0",
@@ -171,7 +170,6 @@ _So why were all these other packages installed, didn't we just ask to install m
             "seq-queue": "^0.0.5",
             "sqlstring": "^2.3.2"
         }
-        ...
     }
     ```
 
@@ -180,6 +178,25 @@ _So why were all these other packages installed, didn't we just ask to install m
     NPM will install these packages too during the installation of mysql2, because without these other packages, the mysql2 package won't work... _it is dependent on those packages_
 
 ## Using a package
+
+### From yesterday
+
+`const some_module = require("somemodule");`
+
+Order in which Node searches for the module:
+
+1. Looks if it is a core module (like path, os and fs)
+2. File or folder in this application
+3. Looks inside the node_modules folder
+
+_REMARK_: when you use a reference to a file or folder like `./` or `../` with or without a filename, Node assumes you're looking for a file relative to the folder. For example:
+
+`require("./somemodule");`
+
+1. First: Node will assume there's a file called _something.js_ in the same folder
+2. Second: if no file is found, Node assumes the require refers to a folder and will look for a file ./somemodule/_index.js_
+
+### Use package
 
 Lets start using the installed mysql2 package.
 
@@ -257,19 +274,6 @@ Lets start using the installed mysql2 package.
             cust_name: 'Eva Green',
             cust_city: 'Paris',
             cust_country: 'France'
-        },
-        ...
-        {
-            cust_id: 19,
-            cust_name: 'Sandra Bullock',
-            cust_city: 'Singapore',
-            cust_country: 'Singapore'
-        },
-        {
-            cust_id: 20,
-            cust_name: 'Tom Hardy',
-            cust_city: 'Hong Kong',
-            cust_country: 'China'
         }
     ]
     [
