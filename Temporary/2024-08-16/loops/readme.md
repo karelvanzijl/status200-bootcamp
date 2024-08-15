@@ -1,5 +1,3 @@
-# Functions
-
 # Overview of JavaScript Loops
 
 JavaScript offers several types of loops, each with its unique use cases. Below is an overview of the most commonly used loops, along with distinctions on whether they can be used for arrays, objects, or both.
