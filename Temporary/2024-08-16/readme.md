@@ -1,7 +1,3 @@
-Certainly! Here's how you can introduce the concepts of JSON strings and JSON objects in JavaScript before the practice section:
-
----
-
 # JSON
 
 JSON (JavaScript Object Notation) is a lightweight data format used for storing and exchanging data between a server and a client. It is easy for humans to read and write, and it's simple for machines to parse and generate.
