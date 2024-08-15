@@ -12,6 +12,10 @@ const connection = mysql.createConnection({
 connection.query("SELECT * FROM `customer`", function (err, results, fields) {
     // results contains rows returned by server
     console.log(results);
-    // fields contains extra meta data about results, if available
-    console.log(fields);
+
+    // Close the connection
+    connection.end();
+
+    // Exit the process
+    process.exit();
 });

@@ -65,48 +65,7 @@ Package.json is basically a json file that includes some basic information about
 
 NOTICE: All Node application should have this package.json file.
 
-#### Create package.json
-
-Using your command prompt:
-
--   run `npm init`. This will start the package.json creation process.
--   Press enter for each question. By doing so you accept the default value NPM suggests:
-
-    ```bash
-    package name: (npm-demo)
-    version: (1.0.0)
-    description:
-    entry point: (index.js)
-    test command:
-    git repository:
-    keywords:
-    author:
-    license: (ISC)
-    About to write to /Users/karelvanzijl/Projects/github/bootcamp/Stage 2/Classes/2024-08-15/npm-demo/package.json:
-
-    {
-        "name": "npm-demo",
-        "version": "1.0.0",
-        "main": "index.js",
-        "scripts": {
-            "test": "echo \"Error: no test specified\" && exit 1"
-        },
-        "author": "",
-        "license": "ISC",
-        "description": ""
-    }
-
-
-    Is this OK? (yes)
-    ```
-
--   run `dir` in the command prompt. You'll see a file called package.json was created inside your `npm-demo` project folder.
-
-NOTICE: before adding any node packages to your application, you need to create a `package.json` file.
-
-BEST PRACTICE: whenever you start a Node project, run `npm init` to create the package.json file.
-
-TIP: there's a faster way to create this package.json file. You do this by using `npm init --yes`. This will tell npm you accept the default settings and you don't to answer all the questions one by one.
+EXTRA: [more information about JSON](#json).
 
 ## Install a Node package
 
@@ -200,88 +159,133 @@ _REMARK_: when you use a reference to a file or folder like `./` or `../` with o
 
 Lets start using the installed mysql2 package.
 
+#### Create your _main module_ file
+
+-   In our package.json the "main" property is set to _index.js_. This means that index.js in our Node application will be the main module.
 -   Create a file called `index.js`
--   Import the mysql2 package
-    ```JS
-    // Import the mysql2 package
-    const mysql = require("mysql2");
-    ```
--   Create a database connection (connection details might differ from the example below)
 
-    ```JS
-    // Import the mysql2 package
-    const mysql = require("mysql2");
+#### Import mysql2 package in your Node app
 
-    // Create the connection to database
-    const connection = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        database: "bootcamp",
-    });
-    ```
+```JS
+// Import the mysql2 package
+const mysql = require("mysql2");
+```
 
--   Run your first query
+#### Start using mysql2 package in your app
 
-    ```JS
-    // Implement the mysql2 package
-    const mysql = require("mysql2");
+DOCUMENTATION: since we're new to this package we need some help. Well maintained Node packages usually provide documentation detailing on how to use the package.
+In this case you can find it on the [mysql2 NPM page](https://www.npmjs.com/package/mysql2#documentation).
 
-    // Create the connection to database
-    const connection = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        database: "bootcamp",
-    });
+Asssuming you have loaded the documentation, you'll see that there's a "Quickstart" section. Go there and copy the code from the "First Query" section.
 
-    // A simple SELECT query
-    connection.query("SELECT * FROM `customer`", function (err, results, fields) {
-        // results contains rows returned by server
-        console.log(results);
-        // fields contains extra meta data about results, if available
-        console.log(fields);
-    });
-    ```
+_REMARK: make sure you use the code mentioned in the **Callback** tab._
 
--   This will output (based on dataset used in [tasks.sql](../2024-08-14/sql/tasks.sql) from yesterday)
-    ```js
-    [
-        {
-            cust_id: 1,
-            cust_name: "Alice Johnson",
-            cust_city: "New York",
-            cust_country: "USA",
-        },
-        {
-            cust_id: 2,
-            cust_name: "Bob Smith",
-            cust_city: "Los Angeles",
-            cust_country: "USA",
-        },
-        {
-            cust_id: 3,
-            cust_name: "Carlos Gonzalez",
-            cust_city: "Mexico City",
-            cust_country: "Mexico",
-        },
-        {
-            cust_id: 4,
-            cust_name: "Diana Prince",
-            cust_city: "London",
-            cust_country: "UK",
-        },
-        {
-            cust_id: 5,
-            cust_name: "Eva Green",
-            cust_city: "Paris",
-            cust_country: "France",
-        },
-    ];
-    ```
-    ```js
-    [
-        `cust_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-        `cust_name` VARCHAR(100),
-        `cust_city` VARCHAR(100),
-        `cust_country` VARCHAR(100)
-    ]
-    ```
+**Create a database connection** (connection details might differ from the example below)
+
+```JS
+// Import the mysql2 package
+const mysql = require("mysql2");
+
+// Create the connection to database
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    database: "bootcamp",
+});
+```
+
+**Run your first query**
+
+```JS
+// Implement the mysql2 package
+const mysql = require("mysql2");
+
+// Create the connection to database
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    database: "bootcamp",
+});
+
+// A simple SELECT query
+connection.query("SELECT * FROM `customer`", function (err, results, fields) {
+    // results contains rows returned by server
+    console.log(results);
+
+    // close connection
+    connection.end();
+});
+```
+
+This will output something like (based on dataset used in class yesterday):
+
+```json
+[
+    {
+        "cust_id": 1,
+        "cust_name": "Alice Johnson",
+        "cust_city": "New York",
+        "cust_country": "USA",
+    },
+    {
+        "cust_id": 2,
+        "cust_name": "Bob Smith",
+        "cust_city": "Los Angeles",
+        "cust_country": "USA",
+    },
+    {
+        "cust_id": 3,
+        "cust_name": "Carlos Gonzalez",
+        "cust_city": "Mexico City",
+        "cust_country": "Mexico",
+    },
+    {
+        "cust_id": 4,
+        "cust_name": "Diana Prince",
+        "cust_city": "London",
+        "cust_country": "UK",
+    },
+    {
+        "cust_id": 5,
+        "cust_name": "Eva Green",
+        "cust_city": "Paris",
+        "cust_country": "France",
+    },
+];
+```
+
+# JSON
+
+JSON (JavaScript Object Notation) is a lightweight data format used for storing and exchanging data between a server and a client. It is easy for humans to read and write, and it's simple for machines to parse and generate.
+
+### Key Points:
+
+-   **Structure:** JSON represents data as key-value pairs, similar to how objects are structured in JavaScript. It uses curly braces `{}` for objects and square brackets `[]` for arrays.
+-   **Data Types:** JSON supports several data types, including strings, numbers, booleans, arrays, objects, and null.
+
+-   **Language-Independent:** Although it is based on JavaScript syntax, JSON is language-independent and can be used with most programming languages.
+
+### Example:
+
+```json
+{
+    "name": "Alice",
+    "age": 25,
+    "isStudent": false,
+    "skills": ["HTML", "CSS", "JavaScript"],
+    "address": {
+        "city": "New York",
+        "zip": "10001"
+    }
+}
+```
+
+In this example:
+
+-   `"name"` is a string.
+-   `"age"` is a number.
+-   `"isStudent"` is a boolean.
+-   `"skills"` is an array.
+-   `"address"` is an object containing more key-value pairs.
+
+JSON is commonly used for APIs and configurations due to its simplicity and compatibility with various systems.
