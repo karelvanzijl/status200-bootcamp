@@ -2,6 +2,7 @@
 
 -   [examples.sql](examples.sql) example queries made during class
 -   [tasks.sql](tasks.sql) answers of tasks given during class
+-   [assignment.sql](assignment.sql) answers for the _Unit 15: Query writing!_ assignment
 
 # Tasks
 
@@ -14,6 +15,15 @@
 ```SQL
 INSERT INTO product (prod_name, unit_price) VALUES ('WebTablet', 499.99);
 ```
+
+# Assigment
+
+1. A list of teachers that don't teacher any courses.
+2. A list of students enrolled in any computer science course
+3. A list of courses with a minimal of 2 enrollments
+4. The number of students that didn't sign up for a course.
+5. All courses scheduled for last year up till now.
+6. A list of all students per teacher! Who is in their class?
 
 # Theory
 
