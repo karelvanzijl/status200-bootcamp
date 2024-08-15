@@ -10,12 +10,11 @@ const connection = mysql.createConnection({
 
 // A simple SELECT query
 connection.query("SELECT * FROM `customer`", function (err, results, fields) {
-    // results contains rows returned by server
-    console.log(results);
-
-    // Close the connection
-    connection.end();
-
-    // Exit the process
-    process.exit();
+    if (err) {
+        // Handle the error
+        throw err;
+    } else {
+        // results contains rows returned by server
+        console.log(results);
+    }
 });

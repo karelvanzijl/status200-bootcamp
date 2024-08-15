@@ -26,7 +26,6 @@ NPM is comes with Node. When you install Node, you also get NPM.
 
     # This should output something like:
     # 10.8.1
-    #
     ```
 
 -   Run the following command:
@@ -38,7 +37,7 @@ NPM is comes with Node. When you install Node, you also get NPM.
     # v20.16.0
     ```
 
-NOTICE: The version of Node is different from the verison of NPM. This is because these two programs are developed independently.
+NOTICE: The version of Node is different from the version of NPM. This is because these two programs are developed independently.
 
 ## Package.json
 
@@ -49,6 +48,7 @@ All these tasks should be done using the command prompt.
 -   Navigate to you `Users` folder
 -   Create a new folder called `Projects` inside your "_Users_" folder
 -   Create a new folder `npm-demo` inside the newly created "_Projects_" folder.
+-   Navigate to the new folder `npm-demo`
 
 We're going to use this `npm-demo` folder throughout this session.
 
@@ -83,6 +83,8 @@ We're going to install a third party library, or third party Node package called
     ```bash
     npm i --save mysql2
     ```
+
+REMARK: in the latests versions of Node, you don't have to use `--save`. You can also shorten `install` and use **npm i mysql2**
 
 #### What is happening
 
@@ -225,33 +227,33 @@ This will output something like (based on dataset used in class yesterday):
         "cust_id": 1,
         "cust_name": "Alice Johnson",
         "cust_city": "New York",
-        "cust_country": "USA",
+        "cust_country": "USA"
     },
     {
         "cust_id": 2,
         "cust_name": "Bob Smith",
         "cust_city": "Los Angeles",
-        "cust_country": "USA",
+        "cust_country": "USA"
     },
     {
         "cust_id": 3,
         "cust_name": "Carlos Gonzalez",
         "cust_city": "Mexico City",
-        "cust_country": "Mexico",
+        "cust_country": "Mexico"
     },
     {
         "cust_id": 4,
         "cust_name": "Diana Prince",
         "cust_city": "London",
-        "cust_country": "UK",
+        "cust_country": "UK"
     },
     {
         "cust_id": 5,
         "cust_name": "Eva Green",
         "cust_city": "Paris",
-        "cust_country": "France",
-    },
-];
+        "cust_country": "France"
+    }
+]
 ```
 
 # JSON
