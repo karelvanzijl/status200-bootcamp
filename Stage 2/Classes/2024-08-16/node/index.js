@@ -25,3 +25,30 @@ connection.query("SELECT * FROM Students", (err, results) => {
 
     connection.end();
 });
+
+const test = {
+    name: "John",
+    age: 25,
+    city: "New York",
+    greet: function () {
+        console.log("Hello 1");
+    },
+};
+
+test.greet();
+
+const test2 = [
+    () => {
+        console.log("Hello 2");
+    },
+];
+
+test2[0]();
+
+let person = {
+    name: "John",
+    age: 30,
+    isStudent: true,
+};
+console.log(person.name); // Outputs "John"
+console.log(person["name"]); // Outputs "John"
