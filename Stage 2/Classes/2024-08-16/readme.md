@@ -2,7 +2,7 @@
 
 In JavaScript, arrays and objects are both used to store collections of data, but they serve different purposes and have distinct characteristics:
 
-### Array:
+### Array (Array Object):
 
 -   **Purpose:** Arrays are used to store an ordered collection of items. Each item in an array is called an element, and elements are accessed by their numeric index.
 -   **Syntax:** Arrays are created using square brackets `[]`.
@@ -14,7 +14,7 @@ In JavaScript, arrays and objects are both used to store collections of data, bu
     ```
 -   **Best For:** When you need to store a list of items in a specific order and access them by their index.
 
-### Object:
+### Object (Key-Value Object):
 
 -   **Purpose:** Objects are used to store a collection of key-value pairs. Each key (also called a property) is associated with a value.
 -   **Syntax:** Objects are created using curly braces `{}`.
