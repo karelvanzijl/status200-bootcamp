@@ -39,6 +39,18 @@ In JavaScript, arrays and objects are both used to store collections of data, bu
 
 In summary, use an array when you need an ordered list, and use an object when you need to map keys to values.
 
+## Trick: determine what type of object you're working with
+
+In case you don't know if the object is an array object or a key-value object.
+
+```js
+if (Array.isArray(value)) {
+    console.log("It is an array");
+} else {
+    console.log("It is an object");
+}
+```
+
 # JSON
 
 JSON (JavaScript Object Notation) is a lightweight data format used for storing and exchanging data between a server and a client. It is easy for humans to read and write, and it's simple for machines to parse and generate.
