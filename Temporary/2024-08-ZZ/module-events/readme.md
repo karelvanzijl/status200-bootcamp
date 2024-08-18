@@ -53,13 +53,13 @@ The emitter object has a bunch of methods. All these methods are mentioned in th
 
 **In most cases we use 2 of these methods:**
 
--   emit<br><br>
+-   emit
 
     ```js
     emitter.emit();
     ```
 
--   addListener<br><br>
+-   addListener
     ```js
     emitter.addListener();
     ```
@@ -75,7 +75,7 @@ The emitter object has a bunch of methods. All these methods are mentioned in th
     ```
 
 -   Later on we're going to extend our logger module. Everytime we log a message we're going to raise and event called `messageLogged`
--   Update our code:<br><br>
+-   Update our code:
 
     ```js
     const EventEmitter = require("events");
@@ -85,13 +85,13 @@ The emitter object has a bunch of methods. All these methods are mentioned in th
     emitter.emit("messageLogged");
     ```
 
--   Run the script we have so far and notice that nothing is happened:
+-   Run the script we have so far and notice that nothing has happened:
     -   We raised an event, but no where in our application we have a registered listener interested in that event (loggedMessage)
 
 **`addListener` listens to a raised event**
 
 -   A listener is a function that will be called when an event is raised.
--   Register a listener that will be called van the `loggedMessage` event is raised
+-   Register a listener that will be called when the `loggedMessage` event is raised
 -   Update our code:<br><br>
 
     ```js
@@ -182,7 +182,7 @@ emitter.emit("messageLogged", { id: 1, message: "db error message" });
 
 ### Exercise
 
--   Exercise: In our logger module, just before calling our database, raise an event called "logging". While raising this event also send some data, message, the message that is going to be logged.<Br><br>
+-   Exercise: In our logger module, just before calling our database, raise an event called "logging". While raising this event also send some data, the message that is going to be logged.<Br><br>
 
     ```js
     const EventEmitter = require("events");
@@ -339,8 +339,8 @@ logger("message");
 
     -   Because the EventEmitter object in index.js is a different object than the EventEmitter object in logger.js
 
--   _Remember?_
-    A class is like a bleuprint (human) and an object (Karel, Ferry, Sebastian) is an actual instance of that class.
+    -   _Remember?_ A class is like a bleuprint (human) and an object (Karel, Ferry, Sebastian) is an actual instance of that class.
+
 -   In this case we have 2 different objects, which are completely different (one is Karel, the other is Ferry)
     -   One emitter object in logger.js that raises an event
     -   The other emitter object in index.js handles an event
@@ -401,7 +401,7 @@ module.exports = Logger;
 
 -   _IMPORTANT:_ With this smalll change, the Logger class now has inherited all the properties (functionality) of the EventEmitter class.
 
-**Step 3** use emit directly using _this_
+**Step 3** use emit directly using `this`
 
 ```js
 const EventEmitter = require("events");
@@ -423,6 +423,7 @@ module.exports = Logger;
 ```
 
 -   We no longer need this `const emitter = new EventEmitter();`. It can be removed, since we're not using it anywhere in our code.
+-   `this` references to the class itself (out of the scope of this course so far)
 
 **Step 4** index module
 
