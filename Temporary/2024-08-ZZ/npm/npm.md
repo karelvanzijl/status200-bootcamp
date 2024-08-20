@@ -17,11 +17,3 @@
 -   **Publish a package**
 
 -   **Update a published package**
-
-# Git / NPM
-
--   **Packages and source control**
-
-    -   .gitignore
-
-# RESTful API
