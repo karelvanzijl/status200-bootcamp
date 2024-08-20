@@ -1,47 +1,10 @@
-const rl = require("readline").createInterface({
+import Cat from "./Cat.js";
+import readline from "readline";
+
+const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
-
-class Cat {
-    constructor(name, gender, breed, colors) {
-        this.name = name;
-        this.gender = gender;
-        this.breed = breed;
-        this.color = colors;
-        this.age = new Date();
-        this.bald = false;
-        this.isAlive = true;
-        this.isAsleep = false;
-    }
-
-    meow() {
-        console.log(`\n>>> ${this.name} says MEOW!`);
-    }
-
-    sleep() {
-        this.isAsleep = true;
-        console.log(`\n>>> ${this.name} went to sleep ... zzzzzz!`);
-    }
-
-    eat() {
-        console.log(`\n>>> ${this.name} is eating a delicious meal ... mmmmm!`);
-    }
-
-    wakeup() {
-        this.isAsleep = false;
-        console.log(`\n>>> ${this.name} woke up ... ahhhhhhh!`);
-    }
-
-    scratch() {
-        console.log(`\n>>> ${this.name} is scratcing the couch ... no stop!`);
-    }
-
-    die() {
-        this.isAlive = false;
-        console.log(`\n>>> ${this.name} passed away ... SAD!`);
-    }
-}
 
 const catBreeds = [
     "Ragdoll",
@@ -59,6 +22,7 @@ const catBreeds = [
 const catColors = ["Gray", "White", "Black", "Brown"];
 
 let activeCat = {};
+
 let newCat = {
     name: "",
     gender: "",
@@ -100,7 +64,7 @@ const cats = [
 function chooseCatMenu() {
     console.log(`\nAvailable cats:\n`);
     cats.forEach((cat, index) => {
-        if (cat.isAlive) {
+        if (cat.getIsAlive()) {
             console.log(`(${index + 1}) - ${cat.name} (${cat.breed})`);
         }
     });
@@ -120,7 +84,7 @@ function chooseCatMenu() {
             console.error(`Invalid option. Try again`);
             return chooseCatMenu();
         }
-        if (!cats[input - 1].isAlive) {
+        if (!cats[input - 1].getIsAlive()) {
             console.error(`Invalid option. Try again`);
             return chooseCatMenu();
         }
@@ -133,9 +97,10 @@ function chooseCatMenu() {
         console.log(`Gender: ${activeCat.gender}`);
         console.log(`Breed: ${activeCat.breed}`);
         console.log(`Color: ${activeCat.color}`);
-        console.log(`Bald: ${activeCat.bald}`);
-        console.log(`Alive: ${activeCat.isAlive}`);
-        console.log(`Sleeping: ${activeCat.isAsleep}`);
+        console.log(`Age: ${activeCat.getAge()}`);
+        console.log(`Bald: ${activeCat.getBald()}`);
+        console.log(`Alive: ${activeCat.getIsAlive()}`);
+        console.log(`Sleeping: ${activeCat.getIsAsleep()}`);
 
         chooseactivityMenu();
     });
@@ -143,11 +108,11 @@ function chooseCatMenu() {
 
 function chooseactivityMenu() {
     console.log(`\nAvailable activities for ${activeCat.name}:\n`);
-    if (!activeCat.isAlive) {
+    if (!activeCat.getIsAlive()) {
         console.log(`\n${activeCat.name} is dead, please choose another cat`);
         activeCat = {};
         return chooseCatMenu();
-    } else if (activeCat.isAsleep) {
+    } else if (activeCat.getIsAsleep()) {
         console.log(`(1) wakeup`);
         console.log(`(6) die`);
     } else {
@@ -165,23 +130,23 @@ function chooseactivityMenu() {
             activeCat = {};
             return chooseCatMenu();
         }
-        if (activeCat.isAsleep && [1, 7].indexOf(input) == -1) {
+        if (activeCat.getIsAsleep() && [1, 6].indexOf(input) == -1) {
             console.error(
                 `\nOption ${input} is not available for cat ${activeCat.name}`
             );
             return chooseactivityMenu();
         }
-        if (!activeCat.isAsleep && [2, 3, 4, 5, 6].indexOf(input) == -1) {
+        if (!activeCat.getIsAsleep && [2, 3, 4, 5, 6].indexOf(input) == -1) {
             console.error(
                 `\nOption ${input} is not available for cat ${activeCat.name} is sleeping`
             );
             return chooseactivityMenu();
         }
         if (input == 1) {
-            activeCat.wakeup();
+            activeCat.setIsAsleep(false);
         }
         if (input == 2) {
-            activeCat.sleep();
+            activeCat.setIsAsleep(true);
         }
         if (input == 3) {
             activeCat.meow();
@@ -193,7 +158,7 @@ function chooseactivityMenu() {
             activeCat.scratch();
         }
         if (input == 6) {
-            activeCat.die();
+            activeCat.setIsAlive(false);
         }
         return chooseactivityMenu();
     });

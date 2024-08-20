@@ -216,7 +216,77 @@ console.log(myAccount.#balance); // Error: Private field '#balance' must be decl
 
 In this example, `#balance` is a private field, meaning it cannot be accessed directly from outside the `BankAccount` class. Instead, you interact with this field through public methods like `deposit()`, `withdraw()`, and `getBalance()`.
 
-### 2. Inheritance
+### 2. Static Properties and Methods
+
+**Static properties and methods** are tied to the class itself rather than to any particular instance of the class. They are used for data and behaviors that are shared among all instances of a class or for utility functions that do not require access to instance-specific data.
+
+**Example:**
+
+#### Defining a Class: `Person`
+
+```javascript
+class Person {
+    static instanceCount = 0; // Static property to count instances
+    static species = "Homo sapiens"; // Static property for species
+
+    constructor(name, age, height) {
+        this.name = name;
+        this.age = age;
+        this.height = height;
+        Person.instanceCount++; // Increment the static instance count each time a new instance is created
+    }
+
+    static getInstanceCount() {
+        return `There are ${this.instanceCount} instances of the Person class.`;
+    }
+
+    static describeSpecies() {
+        return `All persons belong to the species ${this.species}.`;
+    }
+
+    speak() {
+        return `Hello, my name is ${this.name}.`;
+    }
+
+    walk() {
+        return `${this.name} is walking.`;
+    }
+
+    sleep() {
+        return `${this.name} is sleeping.`;
+    }
+}
+```
+
+#### Creating Objects from the Class
+
+```javascript
+// Creating instances of the Person class
+const person1 = new Person("Alice", 30, 165);
+const person2 = new Person("Bob", 25, 175);
+const person3 = new Person("Charlie", 28, 180);
+
+// Accessing properties and calling methods
+console.log(person1.speak()); // Output: Hello, my name is Alice.
+console.log(person2.walk()); // Output: Bob is walking.
+
+// Accessing static properties and methods
+console.log(Person.species); // Output: Homo sapiens
+console.log(Person.describeSpecies()); // Output: All persons belong to the species Homo sapiens.
+console.log(Person.getInstanceCount()); // Output: There are 3 instances of the Person class.
+```
+
+#### Understanding the Example
+
+In this example, `Person` is a class that defines both static properties and methods, as well as instance-specific properties and methods:
+
+-   **Static Properties**: `instanceCount` tracks how many instances of the class have been created, while `species` is a shared property across all instances.
+-   **Static Methods**: `getInstanceCount()` returns the total number of `Person` instances, and `describeSpecies()` provides information about the species. These methods can be called directly on the class itself without creating an instance.
+-   **Instance Properties and Methods**: `name`, `age`, and `height` are properties specific to each `Person` instance, while `speak()`, `walk()`, and `sleep()` are behaviors that each instance can perform.
+
+Using static properties and methods allows you to manage and share data or behaviors across all instances of a class without needing to create multiple copies. This helps in situations like counting instances or sharing information common to all instances, such as species in this case.
+
+### 3. Inheritance
 
 **Inheritance** allows a new class to inherit attributes and methods from an existing class. The class that is inherited from is called the **parent class** (or **superclass**), and the class that inherits is called the **child class** (or **subclass**). Inheritance promotes code reusability and establishes a natural hierarchy between classes.
 
@@ -253,6 +323,10 @@ cat.speak(); // Output: Whiskers meows.
 ```
 
 In this example, `Dog` and `Cat` are subclasses of the `Animal` class. They inherit the `name` property and the `speak()` method from `Animal`, but each subclass provides its own implementation of `speak()`.
+
+---
+
+# Out of course scope
 
 ### 3. Polymorphism
 
