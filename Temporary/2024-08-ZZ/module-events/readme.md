@@ -119,7 +119,7 @@ The emitter object has a bunch of methods. All these methods are mentioned in th
 **Notice**
 The order in the code is important. If we register the listener after the event is raised, nothing would happen. Because when we call the emit methode, this emitter is not listening yet.
 
-# Event Argurments
+# Event Arguments
 
 When you raise an event you often want to send some data about that event that just happened.
 
