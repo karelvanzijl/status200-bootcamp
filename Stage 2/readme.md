@@ -25,7 +25,8 @@ Each folder in the `Classes` directory corresponds to a specific day of instruct
 -   **[2024-08-15](./Classes/2024-08-15/)**: Node Package Manager (NPM). Install and use MySQL2
 -   **[2024-08-16](./Classes/2024-08-16/)**: Loops, JSON, Node & MySQL
 -   **[2024-08-19](./Classes/2024-08-19/)**: Introduction into OOP. Assigment Number Game solution example
--   **[2024-08-20](./Classes/2024-08-20/)**: More OOP. Extra example & task
+-   **[2024-08-20](./Classes/2024-08-20/)**: More OOP. Assigments cat & bank
+-   **[2024-08-21](./Classes/2024-08-21/)**: Event module. HTTP module. Example code.
 
 ## Projects
 
