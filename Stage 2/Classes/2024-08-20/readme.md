@@ -326,7 +326,9 @@ In this example, `Dog` and `Cat` are subclasses of the `Animal` class. They inhe
 
 Certainly! We can add an example of composition involving the `Book` and `Author` classes in the "Moving Forward with OOP" section right after the discussion on inheritance. Here's how you can integrate it:
 
-### 4. Composition: Building Complex Objects from Simpler Ones
+### 4. Composition
+
+#### Building Complex Objects from Simpler Ones
 
 **Composition** is a design principle in Object-Oriented Programming where objects are composed of other objects, creating a "has-a" relationship. This allows for creating complex objects by combining simpler, smaller objects. Composition is often used when an object is made up of multiple parts, each with its own properties and behaviors.
 
@@ -339,17 +341,27 @@ class Author {
     constructor(name, nationality) {
         this.name = name;
         this.nationality = nationality;
+        this.books = []; // A list to store books connected to the author
+    }
+
+    addBook(book) {
+        this.books.push(book);
     }
 
     getDetails() {
         return `${this.name}, ${this.nationality}`;
+    }
+
+    getBooks() {
+        return this.books.map((book) => book.title).join(", ");
     }
 }
 
 class Book {
     constructor(title, author) {
         this.title = title;
-        this.author = author; // Composition: Book "has an" Author
+        this.author = author;
+        author.addBook(this); // Add this book to the author's list of books
     }
 
     getBookInfo() {
@@ -376,7 +388,10 @@ const book5 = new Book("Harry Potter and the Prisoner of Azkaban", jkRowling);
 
 // Accessing book information
 console.log(book1.getBookInfo()); // Output: The Shining by Stephen King, American
-console.log(book3.getBookInfo()); // Output: Harry Potter and the Philosopher's Stone by J.K. Rowling, British
+
+// Finding all books by an author
+console.log(stephenKing.getBooks()); // Output: The Shining, It
+console.log(jkRowling.getBooks()); // Output: Harry Potter and the Philosopher's Stone, Harry Potter and the Chamber of Secrets, Harry Potter and the Prisoner of Azkaban
 ```
 
 #### Understanding the Example
@@ -384,6 +399,18 @@ console.log(book3.getBookInfo()); // Output: Harry Potter and the Philosopher's 
 In this example, the `Book` class is composed of an `Author` object. This means that each book has an associated author, and you can easily access the author's details through the book. Composition allows you to model real-world relationships between objects, making your code more modular and easier to maintain.
 
 By using composition, you can create more complex objects by combining simpler ones, rather than inheriting from a single parent class. This flexibility allows for more accurate modeling of relationships in your code.
+
+#### Extra info about this example
+
+This example has some added functionality which wasn't used in class: we extend the Author class to include a list of books authored by them. This allows us to easily track and retrieve all books connected to a specific author.
+
+**Key Components:**
+
+-   `books` **Array**: This array is added to the `Author` class to store all the books associated with that author. Every time a new book is created, it's added to this array, enabling easy retrieval of all books by that author.
+-   `addBook()` **Method**: This method is responsible for adding a 1 object to the 1 array in the 1 class. It's automatically called in the `Book` constructor, ensuring that every new book is connected to its author.
+-   `getBooks()` **Method**: This method returns a string listing the titles of all books associated with the author. By using the 1 function, it extracts the title of each book from the `books` array and then joins them into a single string.
+
+These components together allow you to quickly and efficiently find all books related to a specific author, making the code more modular and easier to manage.
 
 ---
 
@@ -479,10 +506,3 @@ console.log(circle.perimeter()); // Output: 62.831...
 ```
 
 In this example, `Shape` is an abstract class that cannot be instantiated directly. The methods `area()` and `perimeter()` are abstract and must be implemented by any concrete subclass, like `Rectangle` and `Circle`. The details of how `area()` and `perimeter()` are calculated are hidden from any code that uses the `Shape` interface, allowing it to interact with shapes at a higher level of abstraction.
-
-### Summary of OOP Principles
-
-1. **Encapsulation**: Protects an object's data by bundling it with the methods that operate on the data and restricting direct access to it.
-2. **Inheritance**: Allows a new class to inherit properties and methods from an existing class, promoting code reuse.
-3. **Polymorphism**: Enables objects of different classes to be treated as instances of the same class through a common interface.
-4. **Abstraction**: Simplifies complex systems by exposing only essential features and hiding the implementation details.
