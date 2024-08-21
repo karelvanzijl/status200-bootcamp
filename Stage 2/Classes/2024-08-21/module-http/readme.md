@@ -11,7 +11,7 @@
 ### Load the HTTP module
 
 ```js
-const EventEmitter = require("events");
+const http = require("http");
 ```
 
 or
