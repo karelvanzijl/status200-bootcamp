@@ -324,6 +324,67 @@ cat.speak(); // Output: Whiskers meows.
 
 In this example, `Dog` and `Cat` are subclasses of the `Animal` class. They inherit the `name` property and the `speak()` method from `Animal`, but each subclass provides its own implementation of `speak()`.
 
+Certainly! We can add an example of composition involving the `Book` and `Author` classes in the "Moving Forward with OOP" section right after the discussion on inheritance. Here's how you can integrate it:
+
+### 4. Composition: Building Complex Objects from Simpler Ones
+
+**Composition** is a design principle in Object-Oriented Programming where objects are composed of other objects, creating a "has-a" relationship. This allows for creating complex objects by combining simpler, smaller objects. Composition is often used when an object is made up of multiple parts, each with its own properties and behaviors.
+
+#### Example: `Book` and `Author` Classes
+
+Let’s consider a `Book` class and an `Author` class. A book is composed of an author, meaning each book object will have an author object as one of its properties.
+
+```javascript
+class Author {
+    constructor(name, nationality) {
+        this.name = name;
+        this.nationality = nationality;
+    }
+
+    getDetails() {
+        return `${this.name}, ${this.nationality}`;
+    }
+}
+
+class Book {
+    constructor(title, author) {
+        this.title = title;
+        this.author = author; // Composition: Book "has an" Author
+    }
+
+    getBookInfo() {
+        return `${this.title} by ${this.author.getDetails()}`;
+    }
+}
+```
+
+#### Creating Book and Author Objects
+
+Now, let's create a few books and their respective authors:
+
+```javascript
+// Creating author objects
+const stephenKing = new Author("Stephen King", "American");
+const jkRowling = new Author("J.K. Rowling", "British");
+
+// Creating book objects with the respective authors
+const book1 = new Book("The Shining", stephenKing);
+const book2 = new Book("It", stephenKing);
+const book3 = new Book("Harry Potter and the Philosopher's Stone", jkRowling);
+const book4 = new Book("Harry Potter and the Chamber of Secrets", jkRowling);
+const book5 = new Book("Harry Potter and the Prisoner of Azkaban", jkRowling);
+
+// Accessing book information
+console.log(book1.getBookInfo()); // Output: The Shining by Stephen King, American
+console.log(book3.getBookInfo()); // Output: Harry Potter and the Philosopher's Stone by J.K. Rowling, British
+```
+
+#### Understanding the Example
+
+In this example, the `Book` class is composed of an `Author` object. This means that each book has an associated author, and you can easily access the author's details through the book. Composition allows you to model real-world relationships between objects, making your code more modular and easier to maintain.
+
+By using composition, you can create more complex objects by combining simpler ones, rather than inheriting from a single parent class. This flexibility allows for more accurate modeling of relationships in your code.
+
 ---
 
 # Out of course scope
