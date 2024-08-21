@@ -7,10 +7,13 @@ const server = http.createServer((request, response) => {
     }
 
     if (request.url === "/api/products") {
-        // Database query that gets all the products
-        // SELECT * FROM products;
-        // Lets assume our mysql2 package return the following object as teh result:
+        /*
+            Database query that gets all the products
 
+            SELECT * FROM products;
+            
+            Lets assume our mysql2 package return the following object as the query result
+        */
         const result = [
             {
                 id: 1,
@@ -26,11 +29,11 @@ const server = http.createServer((request, response) => {
             },
         ];
 
-        // Now we're going to send back this result using a JSON string:
-        // Memember:
-        //
-        // JSON.stringify()
-
+        /*
+            Now we're going to send back this result using a JSON string
+            
+            Remember: JSON.stringify()
+        */
         const response = JSON.stringify(result);
 
         response.write(response);
