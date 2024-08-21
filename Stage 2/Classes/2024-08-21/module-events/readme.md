@@ -78,6 +78,7 @@ The emitter object has a bunch of methods. All these methods are mentioned in th
 -   Update our code:
 
     ```js
+    // index.js
     const EventEmitter = require("events");
     const emitter = new EventEmitter();
 
@@ -95,6 +96,7 @@ The emitter object has a bunch of methods. All these methods are mentioned in th
 -   Update our code:<br><br>
 
     ```js
+    // index.js
     const EventEmitter = require("events");
     const emitter = new EventEmitter();
 
@@ -140,6 +142,7 @@ emitter.emit("messageLogged", { id: 1, message: "db error message" });
 **Update our code:**
 
 ```js
+// index.js
 const EventEmitter = require("events");
 const emitter = new EventEmitter();
 
@@ -167,6 +170,7 @@ I called it `arg`, but you can call it whatever you want. By covention we often 
 **Update our code:**
 
 ```js
+// index.js
 const EventEmitter = require("events");
 const emitter = new EventEmitter();
 
@@ -184,6 +188,7 @@ emitter.emit("messageLogged", { id: 1, message: "db error message" });
 -   Exercise: In our logger module, just before calling our database, raise an event called "logging". While raising this event also send some data, the message that is going to be logged.<Br><br>
 
     ```js
+    // index.js
     const EventEmitter = require("events");
     const emitter = new EventEmitter();
 
@@ -201,6 +206,7 @@ emitter.emit("messageLogged", { id: 1, message: "db error message" });
 -   Solution:<br><br>
 
     ```js
+    // index.js
     const EventEmitter = require("events");
     const emitter = new EventEmitter();
 
@@ -226,6 +232,7 @@ emitter.emit("messageLogged", { id: 1, message: "db error message" });
 Our [index.js](index.js)
 
 ```js
+// index.js
 const EventEmitter = require("events");
 const emitter = new EventEmitter();
 
@@ -247,6 +254,7 @@ You want to create a class that has all the capabilities of the EventEmitter, an
 Open [logger.js](logger.js)
 
 ```js
+// logger.js
 var url = "https://someloggerservice.io";
 
 function log(message) {
@@ -319,6 +327,7 @@ module.exports = log;
 Load the logger module in the index.js and call the log() method.
 
 ```js
+// index.js
 const EventEmitter = require("events");
 const emitter = new EventEmitter();
 
@@ -355,6 +364,7 @@ Instead you want to create a class that has all the capabilities of the Event Em
 **Step 1** create the class
 
 ```js
+// logger.js
 const EventEmitter = require("events");
 const emitter = new EventEmitter();
 
@@ -380,6 +390,7 @@ module.exports = Logger;
 **Step 2** add the EventEmitter properties to the class
 
 ```js
+// logger.js
 const EventEmitter = require("events");
 const emitter = new EventEmitter();
 
@@ -403,6 +414,7 @@ module.exports = Logger;
 **Step 3** use emit directly using `this`
 
 ```js
+// logger.js
 const EventEmitter = require("events");
 // const emitter = new EventEmitter();
 
@@ -427,6 +439,7 @@ module.exports = Logger;
 **Step 4** index module
 
 ```js
+// index.js
 const EventEmitter = require("events");
 const emitter = new EventEmitter();
 
@@ -448,6 +461,7 @@ logger.log("message");
 Get rid of the emitter object in the index module and use the Logger instance instead
 
 ```js
+// index.js
 const Logger = require("./logger.js");
 const logger = new Logger();
 
