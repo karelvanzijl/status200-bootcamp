@@ -251,10 +251,10 @@ You want to create a class that has all the capabilities of the EventEmitter, an
 
 ### What does this mean and why?
 
-Open [logger.js](logger.js)
+Open [logger-orginal.js](logger-orginal.js)
 
 ```js
-// logger.js
+// logger-orginal.js
 var url = "https://someloggerservice.io";
 
 function log(message) {
@@ -267,6 +267,19 @@ module.exports.log = log;
 
 -   this module exports a simple function called log
 -   the log function logs the message in the console.
+-   remove demo code:
+    -   `var url = "https://someloggerservice.io";`
+    -   `// Send HTTP request`
+-   copy remaining code to logger.js
+
+```js
+// logger.js
+function log(message) {
+    console.log(message);
+}
+
+module.exports.log = log;
+```
 
 After we log the message in the console, we want to raise an event and do something.
 
@@ -297,10 +310,8 @@ emitter.addListener("messageLogged", function (arg) {
 const EventEmitter = require("events");
 const emitter = new EventEmitter();
 
-var url = "https://someloggerservice.io";
-
 function log(message) {
-    // Send HTTP request
+    // Log message in terminal
     console.log(message);
 
     // Raise an event
