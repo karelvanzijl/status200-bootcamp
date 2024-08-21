@@ -1,6 +1,6 @@
 var url = "https://someloggerservice.io";
 
-log(message) {
+function log(message) {
     // Send HTTP request
     console.log(message);
 }
