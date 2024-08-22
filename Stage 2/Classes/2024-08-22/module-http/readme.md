@@ -188,9 +188,13 @@ console.log("Listening on port 3000...");
 Example: http://localhost:3000/api/products?category_id=2
 
 ```js
+// const { URL } = require("url");
+import { URL } from "url";
+
 const url = new URL(request.url, `http://${request.headers.host}`);
 const parsedUrl = url.parse(req.url, true);
 const queryParams = parsedUrl.query;
+
 console.log(queryParams);
 ```
 
@@ -208,6 +212,7 @@ const catgegory_id = parseInt(pathname.split("/")[3]);
 
 ```js
 import http from "http";
+import { URL } from "url";
 
 const products = [
     {
