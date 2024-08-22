@@ -277,7 +277,7 @@ console.log("Listening on port 3000...");
 
 ---
 
-# HTTP Methods
+# HTTP Methods (Out of course scope for now)
 
 When creating a server that handles different routes, it's also important to understand the different types of HTTP methods that can be used to interact with those routes. The most common ones are GET and POST, but there are others like PUT, DELETE, PATCH, and OPTIONS.
 
