@@ -185,7 +185,7 @@ console.log("Listening on port 3000...");
 
 **URL Query Parameters**
 
-Example: http://localhost:3000/api/categories?category_id=2
+Example: http://localhost:3000/api/products?category_id=2
 
 ```js
 const url = new URL(request.url, `http://${request.headers.host}`);
