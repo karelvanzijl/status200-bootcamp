@@ -35,7 +35,7 @@ const server = http.createServer((request, response) => {
         response.write("Welcome to my API");
     }
     // Route - GET all categories
-    else if (pathname.startsWith("/api/categories/")) {
+    else if (pathname.startsWith("/api/categories")) {
         // Tell client response is JSON string
         response.writeHead(200, { "Content-Type": "application/json" });
 
