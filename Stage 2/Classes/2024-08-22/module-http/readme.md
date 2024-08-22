@@ -185,79 +185,80 @@ console.log("Listening on port 3000...");
 
 **URL Query Parameters**
 
-Example: http://localhost:3000/api/products?category_id=2
+`http://localhost:3000/api/products?product_id=2`
 
-```js
-// const { URL } = require("url");
-import { URL } from "url";
+Give me the details of a product with ID 2. The id the client is looking for is passed in the URL using `?product_id=2`. Checkout:
 
-const url = new URL(request.url, `http://${request.headers.host}`);
-const parsedUrl = url.parse(req.url, true);
-const queryParams = parsedUrl.query;
-
-console.log(queryParams);
-```
+-   [example-query-parameters.js](example-query-parameters.js) an example on how to work with `URL query parameters`
 
 **Route parameters**
 
-Example: http://localhost:3000/api/categories/2/products
+`http://localhost:3000/api/products/2`
 
-```js
-// const { URL } = require("url");
-import { URL } from "url";
+Give me the details of a product with ID 2. The id the client is looking for is passed in the URL using /api/products/`2`. Checkout:
 
-const url = new URL(request.url, `http://${request.headers.host}`);
-const pathname = url.pathname;
-const catgegory_id = parseInt(pathname.split("/")[3]);
-```
+-   [example-route-parameters.js](example-route-parameters.js) an example on how to work with `route parameters`
 
-**Example**
+## Node server template
+
+-   [server-template.js](server-template.js) a template you can use for setting up a node http server
 
 ```js
 import http from "http";
 import { URL } from "url";
 
-const products = [
+// Categories - dummy data
+// For demonstration purposes, in real-world applications,
+// this data would be fetched from a database.
+const categories = [
     {
         id: 1,
-        name: "Product 1",
+        name: "Category 1",
     },
     {
         id: 2,
-        name: "Product 2",
+        name: "Category 2",
     },
     {
         id: 3,
-        name: "Product 3",
+        name: "Category 3",
     },
 ];
 
 const server = http.createServer((request, response) => {
+    // Set CORS headers
+    response.setHeader("Access-Control-Allow-Origin", "*");
+    response.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    response.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
     // Get path
     const url = new URL(request.url, `http://${request.headers.host}`);
     const pathname = url.pathname;
 
-    if (pathname === "/api/products") {
-        const output = JSON.stringify(products);
-        response.write(output);
-        response.end();
-    } else if (pathname.startsWith("/api/products")) {
-        const productId = parseInt(pathname.split("/")[3]);
-        const product = products.find((product) => product.id === productId);
-
-        if (product) {
-            // response.writeHead(200, { "Content-Type": "application/json" });
-            response.write(JSON.stringify(product));
-            response.end();
-        } else {
-            response.statusCode = 404;
-            response.write("Product not found");
-            response.end();
-        }
-    } else {
-        response.write("Hello World");
-        response.end();
+    // Route - GET welcome
+    if (request.url === "/") {
+        // Response
+        response.write("Welcome to my API");
     }
+    // Route - GET all categories
+    else if (pathname.startsWith("/api/categories/")) {
+        // Tell client response is JSON string
+        response.writeHead(200, { "Content-Type": "application/json" });
+
+        // Response
+        response.write(JSON.stringify(categories));
+    }
+    // Route - invalid
+    else {
+        // Set response status code
+        response.statusCode = 404;
+
+        // Response
+        response.write("Not Found");
+    }
+
+    // Close response
+    response.end();
 });
 
 server.listen(3000);
