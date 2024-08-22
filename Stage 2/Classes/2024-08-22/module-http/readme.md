@@ -143,6 +143,21 @@ Imagine a house with different rooms. Each room has a different purpose—one fo
 ```js
 import http from "http";
 
+const products = [
+    {
+        id: 1,
+        name: "Product 1",
+    },
+    {
+        id: 2,
+        name: "Product 2",
+    },
+    {
+        id: 3,
+        name: "Product 3",
+    },
+];
+
 const server = http.createServer((request, response) => {
     if (request.url === "/") {
         response.write("Hello World");
@@ -150,35 +165,8 @@ const server = http.createServer((request, response) => {
     }
 
     if (request.url === "/api/products") {
-        /*
-            Database query that gets all the products
-
-            SELECT * FROM products;
-            
-            Lets assume our mysql2 package return the following object as the query result
-        */
-        const result = [
-            {
-                id: 1,
-                name: "Product 1",
-            },
-            {
-                id: 2,
-                name: "Product 2",
-            },
-            {
-                id: 3,
-                name: "Product 3",
-            },
-        ];
-
-        /*
-            Now we're going to send back this result using a JSON string
-            
-            Remember: JSON.stringify()
-        */
-        const response = JSON.stringify(result);
-
+        // response.writeHead(200, { "Content-Type": "application/json" });
+        const response = JSON.stringify(products);
         response.write(response);
         response.end();
     }
@@ -192,6 +180,82 @@ console.log("Listening on port 3000...");
 -   This new route `/api/products/` tells the back-end service the website want a list of products from teh database.
 -   The back-end service queries the database and sends back the results to the client. In this case a JSON string.
 -   The client receives this JSON string and can convert it to an obect, manipulate the HTML and show the products.
+
+#### Parameters
+
+**URL Query Parameters**
+
+Example: http://localhost:3000/api/categories?category_id=2
+
+```js
+const url = new URL(request.url, `http://${request.headers.host}`);
+const parsedUrl = url.parse(req.url, true);
+const queryParams = parsedUrl.query;
+console.log(queryParams);
+```
+
+**Route parameters**
+
+Example: http://localhost:3000/api/categories/2/products
+
+```js
+const url = new URL(request.url, `http://${request.headers.host}`);
+const pathname = url.pathname;
+const catgegory_id = parseInt(pathname.split("/")[3]);
+```
+
+**Example**
+
+```js
+import http from "http";
+
+const products = [
+    {
+        id: 1,
+        name: "Product 1",
+    },
+    {
+        id: 2,
+        name: "Product 2",
+    },
+    {
+        id: 3,
+        name: "Product 3",
+    },
+];
+
+const server = http.createServer((request, response) => {
+    // Get path
+    const url = new URL(request.url, `http://${request.headers.host}`);
+    const pathname = url.pathname;
+
+    if (pathname === "/api/products") {
+        const output = JSON.stringify(products);
+        response.write(output);
+        response.end();
+    } else if (pathname.startsWith("/api/products")) {
+        const productId = parseInt(pathname.split("/")[3]);
+        const product = products.find((product) => product.id === productId);
+
+        if (product) {
+            // response.writeHead(200, { "Content-Type": "application/json" });
+            response.write(JSON.stringify(product));
+            response.end();
+        } else {
+            response.statusCode = 404;
+            response.write("Product not found");
+            response.end();
+        }
+    } else {
+        response.write("Hello World");
+        response.end();
+    }
+});
+
+server.listen(3000);
+
+console.log("Listening on port 3000...");
+```
 
 ## Final thoughts on node http module
 
