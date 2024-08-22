@@ -203,6 +203,9 @@ console.log(queryParams);
 Example: http://localhost:3000/api/categories/2/products
 
 ```js
+// const { URL } = require("url");
+import { URL } from "url";
+
 const url = new URL(request.url, `http://${request.headers.host}`);
 const pathname = url.pathname;
 const catgegory_id = parseInt(pathname.split("/")[3]);
