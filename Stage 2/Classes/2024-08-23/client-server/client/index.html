@@ -44,6 +44,20 @@
 						console.log(error);
 					});
 			}
+
+			function fetchProducts(categoryId) {
+				// http://localhost/api/catagories/{category_id}/products
+				axios
+					.get("http://localhost:3000/api/categories/" + categoryId + "/products")
+					.then(function (response) {
+						// handle success
+						console.log(response);
+					})
+					.catch(function (error) {
+						// handle error
+						console.log(error);
+					});
+			}
 		</script>
 	</body>
 </html>

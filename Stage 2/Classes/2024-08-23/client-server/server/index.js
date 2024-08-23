@@ -37,8 +37,28 @@ const server = http.createServer((request, response) => {
 	}
 	// Route - GET all categories
 	else if (pathname.startsWith("/api/categories")) {
-		// Response
-		response.write(JSON.stringify(categoriesArray));
+		// Get category ID from path
+		const pathElements = pathname.split("/");
+		let categoryID = pathElements[3];
+		categoryID = parseInt(categoryID);
+
+		// Client requesting categories
+		if (isNaN(categoryID)) {
+			// Response
+			response.write(JSON.stringify(categoriesArray));
+		}
+		// Client requesting products in category with ID `categoryID`
+		else {
+			let products = [];
+			for (let i = 0; i < productsArray.length; i++) {
+				if (productsArray[i].category_id === categoryID) {
+					products.push(productsArray[i]);
+				}
+			}
+
+			// Response
+			response.write(JSON.stringify(products));
+		}
 	}
 	// Route - invalid
 	else {
@@ -56,5 +76,3 @@ const server = http.createServer((request, response) => {
 server.listen(3000);
 
 console.log("Listening on port 3000...");
-
-// parseInt(pathname.split("/")[3]);
