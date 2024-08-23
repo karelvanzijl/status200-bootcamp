@@ -27,7 +27,7 @@ Each folder in the `Classes` directory corresponds to a specific day of instruct
 -   **[2024-08-19](./Classes/2024-08-19/)**: Introduction into OOP. Assigment Number Game solution example
 -   **[2024-08-20](./Classes/2024-08-20/)**: More OOP. Assigments cat & bank
 -   **[2024-08-21](./Classes/2024-08-21/)**: Event module. Example code. Assignent dog, cat, chicken story
--   **[2024-08-22](./Classes/2024-08-22/)**: HTTP module. Axios (client - server connection). Example code
+-   **[2024-08-22](./Classes/2024-08-22/)**: HTTP module. Axios (client - server connection). Example code. Node server template
 
 ## Projects
 

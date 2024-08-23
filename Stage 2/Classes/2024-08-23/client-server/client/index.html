@@ -22,6 +22,11 @@
 			<div id="categories" class="clickables"></div>
 		</div>
 
+		<div id="productContainer" style="display: none">
+			<h2>Products</h2>
+			<div id="products" class="clickables"></div>
+		</div>
+
 		<script>
 			function startProgram() {
 				axios
@@ -52,6 +57,15 @@
 					.then(function (response) {
 						// handle success
 						console.log(response);
+
+						const products = response.data;
+
+						let output = "";
+						for (let i = 0; i < products.length; i++) {
+							output += "<div>" + products[i].name + "</div>";
+						}
+
+						document.getElementById("productContainer").style.display = "block";
 					})
 					.catch(function (error) {
 						// handle error
