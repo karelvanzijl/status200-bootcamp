@@ -4,7 +4,7 @@
  *
  * - In this example the path looks like:
  *
- * - http://localhost/products?id=102
+ * - http://localhost/product.html?id=102
  *
  */
 
