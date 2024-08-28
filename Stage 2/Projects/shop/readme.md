@@ -8,9 +8,9 @@
     -   "/"
     -   "/api/categories"
     -   "/api/categories/3"
-        -   _uses Route parameter_
+        -   _Route Parameter_
     -   "/api/category?id=3"
-        -   _uses URL Query Parameter_
+        -   _URL Query Parameter_
     -   Invalid route
 
 #### Parameters
@@ -18,7 +18,7 @@
 -   [node-url-query-parameters.js](node-url-query-parameters.js)
 -   [node-route-parameters.js](node-route-parameters.js)
 
-## Website (front-emd)
+## Website (front-end)
 
 #### Parameters
 
