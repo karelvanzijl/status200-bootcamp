@@ -20,6 +20,22 @@
 
 ## Website (front-end)
 
+#### XAMPP
+
+-   To host your web files:
+    -   HTML
+    -   Javascript
+    -   CSS
+    -   Media
+        -   Images
+        -   Videos
+-   [Setup info](xampp-setup.md)
+
+#### Axios
+
+-   To talk with the Node server (back-end)
+-   [web-axios.html](web-axios.html)
+
 #### Parameters
 
 -   [web-url-query-parameters.js](web-url-query-parameters.js)
