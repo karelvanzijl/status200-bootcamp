@@ -123,7 +123,7 @@ const server = http.createServer((request, response) => {
         response.write(JSON.stringify(category));
 
         // Close response
-        response;
+        response.end();
     }
     // Route - invalid
     else {
