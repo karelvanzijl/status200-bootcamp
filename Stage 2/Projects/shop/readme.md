@@ -4,7 +4,14 @@
 
 #### Server
 
--   [node-server-template.js](node-server-template.js)
+-   [node-server-template.js](node-server-template.js) - with example routes:
+    -   "/"
+    -   "/api/categories"
+    -   "/api/categories/3"
+        -   _uses Route parameter_
+    -   "/api/category?id=3"
+        -   _uses URL Query Parameter_
+    -   Invalid route
 
 #### Parameters
 
