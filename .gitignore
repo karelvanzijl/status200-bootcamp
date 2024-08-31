@@ -1,1 +1,4 @@
 .DS_Store
+**/node_modules/
+Stage-2/Projects/indexDB
+Stage-2/Projects/webshop
