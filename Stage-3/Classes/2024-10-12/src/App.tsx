@@ -3,15 +3,25 @@ import Counter from "./components/Counter/Counter";
 import TodoList from "./components/Todo/TodoList";
 import TodoListGroup from "./components/Todo/TodoWrapper";
 import EmojiPicker from "./components/Emoji/EmojiPicker";
-import ListGroup from "./components/List/ListGroup";
+import ListGroup from "./components/ListGroup/ListGroup";
 import TemperatureConverter from "./components/Converter/TemperatureConverter";
 
 function App() {
     return (
         <>
-            <div className="d-flex flex-column justify-content-center my-5 gap-5">
+            <div className="d-flex flex-column justify-content-center m-5 gap-5">
                 <div className="col-12 col-sm-12 col-md-3">
-                    <ListGroup />
+                    <ListGroup
+                        title="Cities"
+                        items={["New York", "Kuala Lumpur", "Rome", "Paris"]}
+                    />
+                </div>
+                <hr />
+                <div className="col-12 col-sm-12 col-md-3">
+                    <ListGroup
+                        title="Names"
+                        items={["John", "Jane", "Alice", "Bob", "Charlie"]}
+                    />
                 </div>
                 <hr />
                 <div className="col-12 col-sm-12 col-md-3">
