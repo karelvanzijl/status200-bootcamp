@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { MouseEvent } from "react";
 
 interface MoodCProps {
     title: string;
@@ -6,12 +6,13 @@ interface MoodCProps {
 }
 
 const MoodG = ({ title, moods }: MoodCProps) => {
-    const handleClick = (e) => {
+    const handleClick = (e: MouseEvent) => {
         document
             .querySelectorAll(".item")
             .forEach((badge) => badge.classList.remove("text-primary"));
 
         e.target.classList.add("text-primary");
+        // (e.target as HTMLElement).classList.add("text-primary");
     };
 
     return (

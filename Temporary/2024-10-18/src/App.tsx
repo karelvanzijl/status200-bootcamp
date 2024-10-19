@@ -15,6 +15,7 @@ import WelcomeB from "./components/WelcomeBanner/WelcomeB";
 import WelcomeC from "./components/WelcomeBanner/WelcomeC";
 import WelcomeD from "./components/WelcomeBanner/WelcomeD";
 import WelcomeE from "./components/WelcomeBanner/WelcomeE";
+import WelcomeF from "./components/WelcomeBanner/WelcomeF";
 
 function App() {
     return (
@@ -46,6 +47,14 @@ function App() {
                 />
                 <hr />
                 <WelcomeE
+                    people={[
+                        { name: "Ferry", role: "Dutch" },
+                        { name: "Sebastian", role: "Brazilian" },
+                        { name: "Karel", role: "Czech" },
+                    ]}
+                />
+                <hr />
+                <WelcomeF
                     people={[
                         { name: "Ferry", role: "Dutch" },
                         { name: "Sebastian", role: "Brazilian" },

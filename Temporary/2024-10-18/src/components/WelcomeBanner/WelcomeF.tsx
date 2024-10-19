@@ -1,8 +1,19 @@
-interface WelcomeEProps {
+import { MouseEvent } from "react";
+
+interface WelcomeFProps {
     people: { name: string; role: string }[];
 }
 
-const WelcomeE = ({ people }: WelcomeEProps) => {
+const WelcomeF = ({ people }: WelcomeFProps) => {
+    const handleClick = (e: MouseEvent) => {
+        document
+            .querySelectorAll(".second.card")
+            .forEach((card) => card.classList.remove("bg-info-subtle"));
+
+        e.currentTarget.classList.add("bg-info-subtle");
+        // (e.target as HTMLElement).classList.add("text-primary");
+    };
+
     return (
         <>
             <h3>Props + Event</h3>
@@ -10,15 +21,8 @@ const WelcomeE = ({ people }: WelcomeEProps) => {
                 {people.map((person, index) => (
                     <div
                         key={index}
-                        className="card m-2"
-                        onClick={(e) => {
-                            document
-                                .querySelectorAll(".card")
-                                .forEach((card) =>
-                                    card.classList.remove("bg-info-subtle")
-                                );
-                            e.currentTarget.classList.add("bg-info-subtle");
-                        }}
+                        className="second card m-2"
+                        onClick={handleClick}
                     >
                         <div className="card-body">
                             <h5 className="card-title">{person.name}</h5>
@@ -31,4 +35,4 @@ const WelcomeE = ({ people }: WelcomeEProps) => {
     );
 };
 
-export default WelcomeE;
+export default WelcomeF;
