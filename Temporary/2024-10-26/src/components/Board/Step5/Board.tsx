@@ -8,7 +8,9 @@ function Board({ cards }: BoardProps) {
     const [boardCards, setBoardCards] = useState(cards);
 
     const removeCard = (index: number) => {
-        const newCards = boardCards.filter((_, i) => i !== index);
+        const newCards = boardCards.filter(function (_, i) {
+            return i !== index;
+        });
         setBoardCards(newCards);
     };
 
