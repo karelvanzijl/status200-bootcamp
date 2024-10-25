@@ -10,41 +10,53 @@ function Board({ cards }: BoardProps) {
     const [newItemTitle, setNewItemTitle] = useState("");
 
     const removeCard = (index: number) => {
-        setBoardCards((prev) => prev.filter((_, i) => i !== index));
+        const newCards = boardCards.filter(function (_, i) {
+            return i !== index;
+        });
+        setBoardCards(newCards);
     };
 
     const removeItem = (indexCard: number, indexItem: number) => {
-        setBoardCards((prev) =>
-            prev.map((card, i) =>
-                i === indexCard
-                    ? {
-                          ...card,
-                          items: card.items.filter((_, j) => j !== indexItem),
-                      }
-                    : card
-            )
-        );
+        const newItems = boardCards[indexCard].items.filter(function (_, i) {
+            return i !== indexItem;
+        });
+
+        const newCards = boardCards.map(function (card, i) {
+            if (i === indexCard) {
+                return { ...card, items: newItems };
+            }
+            return card;
+        });
+
+        setBoardCards(newCards);
     };
 
     const addCard = () => {
         if (newCardTitle.trim()) {
-            setBoardCards([
-                ...boardCards,
-                { title: newCardTitle, items: ["Test item"] },
-            ]);
+            setBoardCards([...boardCards, { title: newCardTitle, items: [] }]);
             setNewCardTitle("");
         }
     };
 
     const addItem = (indexCard: number) => {
         if (newItemTitle.trim()) {
-            setBoardCards((prev) =>
-                prev.map((card, i) =>
-                    i === indexCard
-                        ? { ...card, items: [...card.items, newItemTitle] }
-                        : card
-                )
-            );
+            const newItems = boardCards[indexCard].items.filter(function (
+                _,
+                i
+            ) {
+                return i !== indexCard;
+            });
+
+            newItems.push(newItemTitle);
+
+            const newCards = boardCards.map(function (card, i) {
+                if (i === indexCard) {
+                    return { ...card, items: newItems };
+                }
+                return card;
+            });
+
+            setBoardCards(newCards);
             setNewItemTitle("");
         }
     };

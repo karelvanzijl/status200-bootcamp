@@ -8,7 +8,8 @@ function Board({ cards }: BoardProps) {
     const [boardCards, setBoardCards] = useState(cards);
 
     const removeCard = (index: number) => {
-        setBoardCards((prev) => prev.filter((_, i) => i !== index));
+        const newCards = boardCards.filter((_, i) => i !== index);
+        setBoardCards(newCards);
     };
 
     return (
@@ -42,21 +43,6 @@ function Board({ cards }: BoardProps) {
                         </div>
                     </div>
                 ))}
-            </div>
-            <div className="d-flex justify-content-center mt-5">
-                <code className="border p-2 bg-secondary text-light">
-                    <pre>
-                        {`
-const removeCard = (index: number) => {
-    setBoardCards((prev) => prev.filter((_, i) => i !== index));
-};
-
-# _ 
-  is a convention for unused variables, Vite compiler will
-  throw an error if you use any other name for this variable
-                        `}
-                    </pre>
-                </code>
             </div>
         </div>
     );

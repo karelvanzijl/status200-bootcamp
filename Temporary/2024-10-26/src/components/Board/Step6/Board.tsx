@@ -8,20 +8,25 @@ function Board({ cards }: BoardProps) {
     const [boardCards, setBoardCards] = useState(cards);
 
     const removeCard = (index: number) => {
-        setBoardCards((prev) => prev.filter((_, i) => i !== index));
+        const newCards = boardCards.filter(function (_, i) {
+            return i !== index;
+        });
+        setBoardCards(newCards);
     };
 
     const removeItem = (indexCard: number, indexItem: number) => {
-        setBoardCards((prev) =>
-            prev.map((card, i) =>
-                i === indexCard
-                    ? {
-                          ...card,
-                          items: card.items.filter((_, j) => j !== indexItem),
-                      }
-                    : card
-            )
-        );
+        const newItems = boardCards[indexCard].items.filter(function (_, i) {
+            return i !== indexItem;
+        });
+
+        const newCards = boardCards.map(function (card, i) {
+            if (i === indexCard) {
+                return { ...card, items: newItems };
+            }
+            return card;
+        });
+
+        setBoardCards(newCards);
     };
 
     return (
@@ -80,17 +85,6 @@ function Board({ cards }: BoardProps) {
                 <code className="border p-2 bg-secondary text-light">
                     <pre>
                         {`
-setBoardCards((prev) =>
-    prev.map((card, i) =>
-        i === indexCard
-            ? {
-                    ...card,
-                    items: card.items.filter((_, j) => j !== indexItem),
-                }
-            : card
-    )
-);
-
 # ...
   is called the spread operator
 
@@ -99,11 +93,7 @@ setBoardCards((prev) =>
 
 # { ...card, items: [] }
   copies the card object and replaces the 
-  items property with an empty array
-
-# { ...card, items: card.items.filter() }
-  copies the card object and replaces the items 
-  property with the array filter result`}
+  items property with an empty array`}
                     </pre>
                 </code>
             </div>

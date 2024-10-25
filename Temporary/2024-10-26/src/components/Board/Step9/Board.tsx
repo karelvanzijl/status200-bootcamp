@@ -61,7 +61,12 @@ function Board({ cards }: BoardProps) {
             <p className="text-center mb-4">
                 Difficult
                 <br />
-                Improve "Add Item" functionality.
+                <br />
+                Improved "Add Item" functionality.
+                <br />
+                Shortened code using arrow functions and combining array
+                methods.
+                <br />
                 <br />
                 useState declaration for newItemTitles becomes quite exotic
                 <br />
