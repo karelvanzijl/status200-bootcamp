@@ -14,7 +14,7 @@
 
 -   Remove App.css
 -   Remove index.css
--   Remove immport App.css (in App.tsx)
+-   Remove import App.css (in App.tsx)
 -   Remove immport index.css (in main.tsx)
 -   Remove HTHML code inside App.tsx
 

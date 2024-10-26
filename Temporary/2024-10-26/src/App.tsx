@@ -9,6 +9,7 @@ import BoardStep6 from "./components/Board/Step6/Board";
 import BoardStep7 from "./components/Board/Step7/Board";
 import BoardStep8 from "./components/Board/Step8/Board";
 import BoardStep9 from "./components/Board/Step9/Board";
+import Converter from "./components/Board/Converter/Converter";
 
 function App() {
     const [step, setStep] = useState(1);
