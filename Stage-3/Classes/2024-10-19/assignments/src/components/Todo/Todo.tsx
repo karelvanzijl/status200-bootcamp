@@ -17,6 +17,10 @@ function Todo({ title, todoItems }: TodoProps) {
         setNewItem("");
     }
 
+    function removeItem(index: number) {
+        setItems(items.filter((_, i) => i !== index));
+    }
+
     function activeItem(index: number) {
         if (activeIndex !== index) {
             setActiveIndex(index);
@@ -32,12 +36,18 @@ function Todo({ title, todoItems }: TodoProps) {
                 {items.map((item, index) => (
                     <li
                         key={index}
-                        className={`list-group-item ${
+                        className={`list-group-item d-flex justify-content-between ${
                             activeIndex === index && "active"
                         }`}
                         onClick={() => activeItem(index)}
                     >
                         {item}
+                        <span
+                            className="text-danger ms-3"
+                            onClick={() => removeItem(index)}
+                        >
+                            x
+                        </span>
                     </li>
                 ))}
             </ul>
