@@ -7,14 +7,14 @@ interface BoardProps {
 function Board({ cards }: BoardProps) {
     const [boardCards, setBoardCards] = useState(cards);
 
-    const removeCard = (index: number) => {
+    function removeCard(index: number) {
         const newCards = boardCards.filter(function (_, i) {
             return i !== index;
         });
         setBoardCards(newCards);
-    };
+    }
 
-    const removeItem = (indexCard: number, indexItem: number) => {
+    function removeItem(indexCard: number, indexItem: number) {
         const newItems = boardCards[indexCard].items.filter(function (_, i) {
             return i !== indexItem;
         });
@@ -27,7 +27,7 @@ function Board({ cards }: BoardProps) {
         });
 
         setBoardCards(newCards);
-    };
+    }
 
     return (
         <div className="container">

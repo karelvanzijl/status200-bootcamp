@@ -8,14 +8,14 @@ function Board({ cards }: BoardProps) {
     const [boardCards, setBoardCards] = useState(cards);
     const [newCardTitle, setNewCardTitle] = useState("");
 
-    const removeCard = (index: number) => {
+    function removeCard(index: number) {
         const newCards = boardCards.filter(function (_, i) {
             return i !== index;
         });
         setBoardCards(newCards);
-    };
+    }
 
-    const removeItem = (indexCard: number, indexItem: number) => {
+    function removeItem(indexCard: number, indexItem: number) {
         const newItems = boardCards[indexCard].items.filter(function (_, i) {
             return i !== indexItem;
         });
@@ -28,9 +28,9 @@ function Board({ cards }: BoardProps) {
         });
 
         setBoardCards(newCards);
-    };
+    }
 
-    const addCard = () => {
+    function addCard() {
         if (newCardTitle.trim()) {
             setBoardCards([
                 ...boardCards,
@@ -38,7 +38,7 @@ function Board({ cards }: BoardProps) {
             ]);
             setNewCardTitle("");
         }
-    };
+    }
 
     return (
         <div className="container">

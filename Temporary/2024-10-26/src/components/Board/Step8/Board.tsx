@@ -9,14 +9,14 @@ function Board({ cards }: BoardProps) {
     const [newCardTitle, setNewCardTitle] = useState("");
     const [newItemTitle, setNewItemTitle] = useState("");
 
-    const removeCard = (index: number) => {
+    function removeCard(index: number) {
         const newCards = boardCards.filter(function (_, i) {
             return i !== index;
         });
         setBoardCards(newCards);
-    };
+    }
 
-    const removeItem = (indexCard: number, indexItem: number) => {
+    function removeItem(indexCard: number, indexItem: number) {
         const newItems = boardCards[indexCard].items.filter(function (_, i) {
             return i !== indexItem;
         });
@@ -29,16 +29,19 @@ function Board({ cards }: BoardProps) {
         });
 
         setBoardCards(newCards);
-    };
+    }
 
-    const addCard = () => {
+    function addCard() {
         if (newCardTitle.trim()) {
-            setBoardCards([...boardCards, { title: newCardTitle, items: [] }]);
+            setBoardCards([
+                ...boardCards,
+                { title: newCardTitle, items: ["Test item"] },
+            ]);
             setNewCardTitle("");
         }
-    };
+    }
 
-    const addItem = (indexCard: number) => {
+    function addItem(indexCard: number) {
         if (newItemTitle.trim()) {
             const newItems = boardCards[indexCard].items.filter(function (
                 _,
@@ -59,7 +62,7 @@ function Board({ cards }: BoardProps) {
             setBoardCards(newCards);
             setNewItemTitle("");
         }
-    };
+    }
 
     return (
         <div className="container">
