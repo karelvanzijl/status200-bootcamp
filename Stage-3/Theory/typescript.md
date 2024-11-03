@@ -185,7 +185,7 @@ const users: User[] = [
 
 ## React examples
 
--   [Employee board assigment](https://github.com/karelvanzijl/status200-bootcamp/tree/main/Stage-3/Classes/2024-11-02/assignment)
+-   [Employee board assigment](https://github.com/karelvanzijl/status200-bootcamp/tree/main/Stage-3/Classes/2024-11-02/assigment/src)
 
 ## More
 
