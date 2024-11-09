@@ -19,7 +19,7 @@ const EmployeeForm = ({ addEmployee }: EmployeeFormProps) => {
         role: "",
         phone: "",
         hiring_year: new Date().getFullYear(),
-        picture: "https://picsum.photos/id/633/600/400",
+        picture: "https://picsum.photos/id/633/400/400",
         visible: true,
     });
 
