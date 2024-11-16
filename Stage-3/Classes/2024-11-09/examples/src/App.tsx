@@ -7,7 +7,7 @@ import RealApi from "./components/RealApi/RealApi";
 const App = () => {
     return (
         // start of class with useRef and useEffect
-        <Example1 />
+        // <Example1 />
 
         // Hardcoded data, using useEffect here doen't make sense, but it's just for demonstration
         // <Example2 />
@@ -19,7 +19,7 @@ const App = () => {
         // <Example4 />
 
         // useEffect with real API data
-        // <RealApi />
+        <RealApi />
     );
 };
 
