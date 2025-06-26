@@ -1,3 +1,0 @@
-
-Used as an example to the contents of a file
-using  the "File System (fs)" module of Node
