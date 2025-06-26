@@ -46,17 +46,17 @@ Make sure both links work.
 
 ### 4. Submit your code
 
-Classroom
+Submit your code in the Google Classroom
 
-Still needs to be setup
-
-Students need to get an invite
-
----
-
-## ✅ Check Before Submitting
+**✅ Check Before Submitting**
 
 -   Do both pages open in the browser?
 -   Can you navigate between them by clicking the links?
 -   Did you use correct HTML structure on both pages?
 -   Did you write something personal on the About page?
+
+---
+
+### 🎉 Done?
+
+Great job building your first multi-page website. You're not just learning - you're growing into a skilled web developer! 🧑‍💻
