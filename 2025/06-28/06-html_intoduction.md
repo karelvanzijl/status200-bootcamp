@@ -112,7 +112,7 @@ W3Schools is a beginner-friendly site where you can read examples and even try t
     - Windows:
 
         ```bash
-        echo. > index.html
+        echo > index.html
         ```
 
 6. Open the folder in VS Code:
