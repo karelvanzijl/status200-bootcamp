@@ -2,16 +2,34 @@
 
 This assignment helps you practice four important topics:
 
-1. ✅ File paths (relative and absolute)
-2. ✅ The anatomy of HTML tags
-3. ✅ Block vs inline elements
-4. ✅ Nesting tags properly
+1. File paths (relative and absolute)
+2. The anatomy of HTML tags
+3. Block vs inline elements
+4. Nesting tags properly
 
 ---
 
 ## Part 1: Folder & File Setup
 
-1. Use your terminal to create the following folder structure and files:
+### Task 1
+
+Use your terminal to create the following folder structure and files:
+
+```
+Bootcamp/
+└── day2/
+    └── index.html
+    └── pages/
+        └── about.html
+        └── extra.html
+    └── images/
+```
+
+### Task 2
+
+Save a profile photo inside the `images/` folder and name it: `profile.jpg`. Use your file explorer to do this (don't try it using the terminal)
+
+##### ✅ You should end up with the following structure
 
 ```
 Bootcamp/
@@ -23,8 +41,6 @@ Bootcamp/
     └── images/
         └── profile.jpg
 ```
-
-2. Save a profile photo inside the `images/` folder and name it: `profile.jpg`. Use your file explorer to do this (don't try it using the terminal)
 
 ---
 
@@ -41,7 +57,7 @@ Bootcamp/
 </html>
 ```
 
-### ✅ Task 1
+### Task 1
 
 Open `index.html`, `about.html`, `extra.html` and add this base structure
 
