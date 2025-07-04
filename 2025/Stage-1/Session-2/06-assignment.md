@@ -27,7 +27,7 @@ bio-website/
 
 ---
 
-## Part 2: Basic HTML Structure
+## Part 2: Basic HTML
 
 ```html
 <html>
@@ -40,7 +40,7 @@ bio-website/
 </html>
 ```
 
-### ✅ Task
+### ✅ Task 1
 
 Open `index.html`, `about.html`, `extra.html` and add this base structure
 
@@ -62,13 +62,15 @@ Open `index.html`, `about.html`, `extra.html` and add this base structure
 
 ---
 
-## Extra Challenge
+## Task 2
 
-In `extra.html` create a paragraph with nested elements. For example a text that has:
+In `extra.html` create a paragraph with nested elements.
 
-1. one word in it that is **bold**
-2. one word in it that links to `index.html`
-3. one word in it that is _italic_
+For example a text that has:
+
+1. one word in it that links to `index.html`
+2. one word in it that is **bold** | `<b>` or `<strong>`
+3. one word in it that is _italic_ `<em>`
 
 > ❌ Make sure you don’t overlap tags!
 > ✅ Close tags in the correct order.
