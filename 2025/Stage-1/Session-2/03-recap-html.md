@@ -27,7 +27,7 @@ Understanding how HTML works starts with understanding **how each element is wri
 A regular HTML element has **three main parts**:
 
 ```html
-<tagname attribute1="value1" attribute2="value2">Content</tagname>
+<tagname attribute1="value1" attribute2="value2"> Content </tagname>
 ```
 
 ---

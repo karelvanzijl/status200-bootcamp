@@ -1,1 +1,0 @@
-# Recap Folder & Terminal Basics
