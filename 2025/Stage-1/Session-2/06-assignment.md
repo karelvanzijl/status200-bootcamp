@@ -14,13 +14,14 @@ This assignment helps you practice four important topics:
 1. Use your terminal to create the following folder structure and files:
 
 ```
-bio-website/
-└── index.html
-└── pages/
-    └── about.html
-    └── extra.html
-└── images/
-    └── profile.jpg
+Bootcamp/
+└── day2
+    └── index.html
+    └── pages/
+        └── about.html
+        └── extra.html
+    └── images/
+        └── profile.jpg
 ```
 
 2. Save a profile photo inside the `images/` folder and name it: `profile.jpg`. Use your file explorer to do this (don't try it using the terminal)
