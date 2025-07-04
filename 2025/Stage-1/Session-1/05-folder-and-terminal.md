@@ -60,6 +60,12 @@ The **terminal** (or command prompt) lets you control your computer using text c
 
 ---
 
+## Interactive
+
+Go to https://status200.my/examples/folders/
+
+---
+
 ## Activity: Folder Practice
 
 We’re going to create a simple folder structure and add a file.

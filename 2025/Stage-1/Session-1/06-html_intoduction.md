@@ -137,6 +137,7 @@ In `index.html`, write your own homepage using this template:
     </head>
     <body>
         <h1>[Your Name]</h1>
+
         <p>
             Hello! My name is [Your Name]. I just started learning to code and
             this is my first webpage!
@@ -145,6 +146,7 @@ In `index.html`, write your own homepage using this template:
         <img src="https://via.placeholder.com/250" width="250" />
 
         <p>Here’s a link to something I like:</p>
+
         <a href="https://www.example.com" target="_blank">
             Visit my favorite website
         </a>
