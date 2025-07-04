@@ -78,7 +78,7 @@ For example, if you're listing steps to bake a cake, the order is important.
 </ol>
 ```
 
-### 🧠 Explanation:
+###  Explanation:
 
 - The `<ol>` tag creates a list where items are shown with numbers.
 - Like the unordered list, each item is defined using `<li>`.
