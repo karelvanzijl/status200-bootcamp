@@ -15,7 +15,7 @@ This assignment helps you practice four important topics:
 
 ```
 Bootcamp/
-└── day2
+└── day2/
     └── index.html
     └── pages/
         └── about.html
