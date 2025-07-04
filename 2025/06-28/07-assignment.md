@@ -46,7 +46,10 @@ Make sure both links work.
 
 ### 4. Submit your code
 
-Submit your code in the Google Classroom
+Submit your code in the Google Classroom. Upload your files:
+
+-   index.html
+-   about.html
 
 **✅ Check Before Submitting**
 
