@@ -19,9 +19,9 @@ Use your terminal to create the following folder structure and files:
 Bootcamp/
 └── day1
 └── day2
-└── assignment/
+└── assignment
     └── index.html
-    └── pages/
+    └── pages
         └── about.html
         └── extra.html
     └── images/
