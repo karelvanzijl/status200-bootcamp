@@ -102,4 +102,7 @@ Use an ordered list when the sequence of items matters. Some examples:
 - A ranked list (e.g., Top 5 movies)
 - A to-do list that must be done in order
 
+### Things to remember
 
+- Ordered list
+- unordered list 
