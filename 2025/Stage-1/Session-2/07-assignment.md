@@ -24,7 +24,7 @@ Bootcamp/
     └── pages
         └── about.html
         └── extra.html
-    └── images/
+    └── images
 ```
 
 ### Task 2
