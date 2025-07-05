@@ -17,7 +17,9 @@ Use your terminal to create the following folder structure and files:
 
 ```
 Bootcamp/
-└── day2/
+└── day1
+└── day2
+└── assignment/
     └── index.html
     └── pages/
         └── about.html
@@ -33,7 +35,9 @@ Save a profile photo inside the `images/` folder and name it: `profile.jpg`. Use
 
 ```
 Bootcamp/
-└── day2/
+└── day1
+└── day2
+└── assignment/
     └── index.html
     └── pages/
         └── about.html
@@ -72,10 +76,13 @@ Open `index.html`, `about.html`, `extra.html` and add this base structure
     -   add a link to `extra.html` using the relative path
     -   add a heading and about you text
     -   add image showing your `profile.jpg` using the relative path
--   `test.html`
+-   `extra.html`
     -   change the page title to `Extra`
     -   add a link to `index.html` using the relative path
     -   add a link to `about.html` using the relative path
+    -   add a ordered list
+    -   add a unordered list
+    -   ... add whatever you like
 
 ---
 
