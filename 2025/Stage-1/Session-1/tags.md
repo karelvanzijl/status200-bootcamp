@@ -3,7 +3,6 @@
 ## Basic Structure of an HTML Page
 
 ```html
-<!DOCTYPE html>
 <html>
     <head>
         <title>My Webpage</title>
