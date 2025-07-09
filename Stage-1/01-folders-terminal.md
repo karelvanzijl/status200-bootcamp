@@ -154,7 +154,7 @@ We're going to create a simple folder structure and add a file.
     - Windows:
 
         ```bash
-        echo. > index.html
+        echo > index.html
         ```
 
 You have now created a folder structure and an HTML file!
