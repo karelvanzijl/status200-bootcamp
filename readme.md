@@ -44,4 +44,4 @@ By the end of Stage 1, you'll be able to create multi-page websites with proper 
 3. Complete all activities and assignments
 4. Practice with the provided examples and resources
 
-Happy coding! :)
+Happy coding! 😊
