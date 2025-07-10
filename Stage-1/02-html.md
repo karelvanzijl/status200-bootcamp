@@ -111,10 +111,14 @@ A regular HTML element has **three main parts**:
 <tagname attribute1="value1" attribute2="value2"> Content </tagname>
 ```
 
-1. Opening tag
+1. **Opening tag**
+    - `<tagname>`
     - Can include attributes (e.g., `href`, `src`, `target`, `width`)
-2. Content
-3. Closing tag
+2. **Content**
+    - The text or other elements inside the tag
+    - Can be anything visible or interactive
+3. **Closing tag**
+    - `</tagname>`
 
 ---
 
@@ -122,31 +126,35 @@ A regular HTML element has **three main parts**:
 
 1.  **Opening Tag**
 
-    1.  Begins with a `<`
+    1.  Opening Angle Bracket
+
+        ```
+        <
+        ```
+
     2.  Tagname (e.g., `p`, `h1`, `a`, `div`)
 
-        ```html
+        ```
         <a
         ```
 
     3.  Attributes (optional) are written inside the opening tag. Each attribute has:
 
-        -   A name (like `href`, `src`, `target`)
+        -   A name (like `href`, `target`)
         -   An equal sign `=`
         -   A value inside quotes: `"value"`
         -   Example:
 
-            ```html
+            ```
             <a href="https://example.com" target="_blank"
             ```
 
-    4.  **Closing Angle Bracket**
+    4.  Closing Angle Bracket
         Ends the opening tag: `>`
-
         Example:
 
-        ```html
-        <a href="https://example.com" target="_blank"></a>
+        ```
+        <a href="https://example.com" target="_blank">
         ```
 
 2.  **Content**
@@ -154,8 +162,8 @@ A regular HTML element has **three main parts**:
 
     Example:
 
-    ```html
-    <a href="https://example.com" target="_blank"> Click here</a>
+    ```
+    <a href="https://example.com" target="_blank"> Click here
     ```
 
 3.  **Closing Tag**
@@ -175,16 +183,15 @@ A regular HTML element has **three main parts**:
 #### Example: Paragraph Tag
 
 ```html
-<p class="intro">This is a paragraph.</p>
+<p>This is a paragraph.</p>
 ```
 
-| Part                   | Meaning                                  |
-| ---------------------- | ---------------------------------------- |
-| `<p`                   | Opening bracket and tag name             |
-| `class="intro"`        | Attribute (`class`) with value `"intro"` |
-| `>`                    | Closes the opening tag                   |
-| `This is a paragraph.` | Inner content                            |
-| `</p>`                 | Closing tag                              |
+| Part                   | Meaning                      |
+| ---------------------- | ---------------------------- |
+| `<p`                   | Opening bracket and tag name |
+| `>`                    | Closes the opening tag       |
+| `This is a paragraph.` | Inner content                |
+| `</p>`                 | Closing tag                  |
 
 ---
 
@@ -194,13 +201,13 @@ A regular HTML element has **three main parts**:
 <a href="https://example.com" target="_blank">Visit Site</a>
 ```
 
-| Part              | Description              |
-| ----------------- | ------------------------ |
-| `<a`              | Anchor (link) tag        |
-| `href="..."`      | Destination of the link  |
-| `target="_blank"` | Open link in new tab     |
-| `Visit Site`      | Link text shown to users |
-| `</a>`            | Closing the anchor tag   |
+| Part                         | Description              |
+| ---------------------------- | ------------------------ |
+| `<a`                         | Anchor (link) tag        |
+| `href="https://example.com"` | Destination of the link  |
+| `target="_blank"`            | Open link in new tab     |
+| `Visit Site`                 | Link text shown to users |
+| `</a>`                       | Closing the anchor tag   |
 
 ---
 
@@ -219,13 +226,14 @@ Some HTML elements don't have any content and **don't need a closing tag**. Thes
 #### Example: Image Tag
 
 ```html
-<img src="cat.jpg" alt="A cute cat" />
+<img src="cat.jpg" width="300" alt="A cute cat" />
 ```
 
 | Part               | Meaning                            |
 | ------------------ | ---------------------------------- |
 | `<img`             | Tag name                           |
 | `src="cat.jpg"`    | Source of image                    |
+| `width="300"`      | Width of the image in pixels       |
 | `alt="A cute cat"` | Description if image fails to load |
 | `/>`               | Self-closing                       |
 
@@ -320,11 +328,14 @@ Some HTML elements don't have any content and **don't need a closing tag**. Thes
 -   **Attributes**:
     -   `href`: The URL the link points to.
     -   `target`: Specifies where to open the link (`_blank` opens in a new tab).
+    -   `title`: Optional text shown when hovering over the link.
 
 **Example**:
 
 ```html
-<a href="https://example.com" target="_blank">Visit Example</a>
+<a href="https://example.com" target="_blank" title="Visit Example">
+    Click here
+</a>
 ```
 
 ---
@@ -337,11 +348,12 @@ Some HTML elements don't have any content and **don't need a closing tag**. Thes
 -   **Attributes**:
     -   `src`: The image source (file path or URL).
     -   `width`: The width of the image in pixels or %.
+    -   `alt`: Alternative text for the image (shown if the image fails to load).
 
 **Example**:
 
 ```html
-<img src="photo.jpg" width="200" />
+<img src="photo.jpg" width="200" alt="A beautiful photo" />
 ```
 
 ---
@@ -513,7 +525,7 @@ Output:
 ```
 
 -   `<ul>` = Unordered list
--   `<li>` = List item
+-   `<li>` = List item (nested inside the list)
 -   `<a>` = Link (nested inside the list item)
 
 Output:
