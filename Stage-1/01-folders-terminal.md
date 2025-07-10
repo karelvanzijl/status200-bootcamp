@@ -65,7 +65,7 @@ Documents/
 
 _Steps to understand the relative path:_
 
--   . First step is to determine where you are currently located. In this case, we are in the `Vacation` folder.
+-   First step is to determine where you are currently located. In this case, we are in the `Vacation` folder.
 
 1. `../` goes up one folder (to `Photos`)
 2. `../` goes up another folder (to `Documents`)
@@ -170,24 +170,42 @@ Bootcamp/
 
 ## Assignment: Create a Folder Structure
 
-Create a folder structure like this:
+Now it's your turn to create a more complex folder structure and add some files.
 
-> 💡 Don't try to create the `profile.jpg` using the terminal; just copy an image file into the Images folder and rename it to `profile.jpg`.
+**Task**
+
+Create a folder structure like this:
 
 ```
 Bootcamp/
 └── Stage-1/
-    └── Images
+    └── Images/
         └── profile.jpg
-    └── Pages
+    └── Pages/
         └── about.html
         └── contact.html
     └── index.html
 ```
+
+💡 _Don't try to create the `profile.jpg` using the terminal; just copy an image file into the `Images/` folder and rename it to `profile.jpg`._
+
+**Done?**
+You can verify your folder structure by using:
+
+-   **The terminal**: use the `ls` command (Mac/Linux) or `dir` command (Windows), and `cd` command to list the contents of the folders.
+-   **File Explorer**: Navigate to the `Bootcamp/Stage-1` folder and check if the structure matches.
+
+**Solution**
+You can find the solution the `Assigments` folder of this stage in the file [01-create-a-folder-structure.md](Assignments/01-create-a-folder-structure.md)
 
 ---
 
 ## What You've Learned
 
 -   What folders are and why they matter
--   How to use the terminal to navigate and manage folders
+-   Display the contents of a folder using the terminal
+-   How to navigate folders using the terminal
+-   How to create a folder structure using the terminal
+-   How to create a file using the terminal
+-   The difference between absolute and relative paths
+-   Get the relative path from one folder to another folder or file

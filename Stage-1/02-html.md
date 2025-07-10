@@ -50,8 +50,10 @@ Now that you know how to use folders and the terminal, it's time to write your f
 ## Basic Structure of an HTML Page
 
 ```html
+<!DOCTYPE html>
 <html>
     <head>
+        <!-- Not visible content goes here -->
         <title>Name of page</title>
     </head>
     <body>
@@ -67,18 +69,21 @@ Now that you know how to use folders and the terminal, it's time to write your f
 
 ## Activity: Write Your First HTML Code
 
-Open your Bootcamp/Stage-1 folder in VS Code and open the file called `index.html` that you created in the assigment
-[Assignment: Create a Folder Structure](./01-folders-terminal.md#assignment-create-a-folder-structure).
+Open the file called `index.html` that you created in the assignment [Assignment: Create a Folder Structure](./01-folders-terminal.md#assignment-create-a-folder-structure) in your text editor.
+
+-   _Windows_: Right-click the file and select "Open with" → "Notepad"
+-   _Mac_: Right-click the file and select "Open with" → "TextEdit"
 
 Write the following code inside the `index.html` file:
 
 ```html
+<!DOCTYPE html>
 <html>
     <head>
         <title>Homepage</title>
     </head>
     <body>
-        Hello, this is my first HTML page!
+        <h1>Hello, this is my first HTML page!</h1>
     </body>
 </html>
 ```
@@ -87,6 +92,8 @@ Write the following code inside the `index.html` file:
 -   Try to use the **correct indentation** (spaces or tabs) to make it readable.
 
 Once done find the file in your file explorer and double-click it to open it in your browser.
+
+> You have now created your first web page 🎉
 
 ---
 
@@ -613,6 +620,9 @@ Once done find the `index.html` in your file explorer and double-click it to ope
 
 You should now be able to navigate between the pages and see your content displayed correctly.
 
+**Solution**
+You can find the solution the `Assigments` folder of this stage in the file [02-write-html.md](./Assignments/02-write-html.md).
+
 ---
 
 ## 🎉 What You've Learned
@@ -624,4 +634,4 @@ You should now be able to navigate between the pages and see your content displa
 -   The difference between block and inline elements
 -   How to nest tags properly
 
-You're now officially a web developer! 🧑‍💻
+> You're now officially a web developer! 🧑‍💻
