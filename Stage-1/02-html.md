@@ -616,11 +616,13 @@ Now it's your turn to practice writing HTML!
     - List 3 ways to contact you (e.g., email, phone, social media).
 
 **Done?**
+
 Once done find the `index.html` in your file explorer and double-click it to open it in your browser.
 
 You should now be able to navigate between the pages and see your content displayed correctly.
 
 **Solution**
+
 You can find the solution the `Assigments` folder of this stage in the file [02-write-html.md](./Assignments/02-write-html.md).
 
 ---

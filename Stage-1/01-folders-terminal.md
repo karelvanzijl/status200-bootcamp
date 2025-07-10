@@ -190,12 +190,14 @@ Bootcamp/
 💡 _Don't try to create the `profile.jpg` using the terminal; just copy an image file into the `Images/` folder and rename it to `profile.jpg`._
 
 **Done?**
+
 You can verify your folder structure by using:
 
 -   **The terminal**: use the `ls` command (Mac/Linux) or `dir` command (Windows), and `cd` command to list the contents of the folders.
 -   **File Explorer**: Navigate to the `Bootcamp/Stage-1` folder and check if the structure matches.
 
 **Solution**
+
 You can find the solution the `Assigments` folder of this stage in the file [01-create-a-folder-structure.md](Assignments/01-create-a-folder-structure.md)
 
 ---
