@@ -4,9 +4,9 @@ Welcome to the Status 200 Coding Bootcamp - your comprehensive journey into web 
 
 ## About Status 200
 
-Status 200 is a coding bootcamp focused on delivering practical, industry-relevant web development skills. We believe in learning by doing, with real-world projects and comprehensive support throughout your coding journey.
+Status 200 Coding Bootcamp is focused on delivering practical, industry-relevant web development skills. We believe in learning by doing, with real-world projects and comprehensive support throughout your coding journey.
 
-Visit [status200.my](https://status200.my) for more information about our programs.
+Visit [status200.my](https://status200.my) for more information about our program.
 
 ## Our Sponsors
 
@@ -19,7 +19,7 @@ We're proud to be supported by our amazing sponsors who help make this bootcamp 
 
 ## Bootcamp Structure
 
-This bootcamp is organized into progressive stages, each building upon the previous one:
+This bootcamp is organized into two stages, each building upon the previous one and every day new concepts and skills will be introduced.
 
 #### [Stage 1: Web Development Fundamentals](./Stage-1/readme.md)
 
