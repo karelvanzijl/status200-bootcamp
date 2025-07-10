@@ -627,7 +627,7 @@ You can find the solution the `Assigments` folder of this stage in the file [02-
 
 ---
 
-## 🎉 What You've Learned
+## What You've Learned
 
 -   What HTML is and what it looks like
 -   How to use basic HTML tags
