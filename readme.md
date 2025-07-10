@@ -2,7 +2,7 @@
 
 Welcome to the Status 200 Coding Bootcamp - your comprehensive journey into web development! This bootcamp is designed to take you from complete beginner to confident web developer through hands-on, practical learning.
 
-## About Status 200
+## About
 
 Status 200 Coding Bootcamp is focused on delivering practical, industry-relevant web development skills. We believe in learning by doing, with real-world projects and comprehensive support throughout your coding journey.
 
