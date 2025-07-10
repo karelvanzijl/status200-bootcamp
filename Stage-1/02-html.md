@@ -37,7 +37,7 @@ Now that you know how to use folders and the terminal, it's time to write your f
     -   [Nested Layout Example](#nested-layout-example)
     -   [Tips for Clean Nesting](#tips-for-clean-nesting)
 -   [Assigment: Write HTML](#assigment-write-html)
--   [🎉 What You've Learned](#what-youve-learned)
+-   [What You've Learned](#what-youve-learned)
 
 ---
 
