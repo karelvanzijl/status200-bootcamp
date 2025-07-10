@@ -21,20 +21,19 @@ We're proud to be supported by our amazing sponsors who help make this bootcamp 
 
 This bootcamp is organized into progressive stages, each building upon the previous one:
 
-### Stage 1: Web Development Fundamentals
+#### [Stage 1: Web Development Fundamentals](./Stage-1/readme.md)
 
 The foundation of your web development journey. In Stage 1, you'll master:
 
 -   **File system navigation** - Understanding folders, paths, and terminal commands
 -   **HTML basics** - Creating structured web pages with proper markup
 
-**[Get Started with Stage 1](./Stage-1/readme.md)**
-
 By the end of Stage 1, you'll be able to create multi-page websites with proper structure, navigation, and content organization.
 
-### Stage 2: Not Available Yet
+#### Stage 2: Not Available Yet
 
-Start on August 21, 2025. Content will be added progressively.
+-   Start on Monday, 21st of August 2025
+-   Content will be added progressively.
 
 ---
 
