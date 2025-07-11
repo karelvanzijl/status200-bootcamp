@@ -1,71 +1,3 @@
-# VS Code Complete Setup Guide
-
-This guide covers everything you need to install and configure VS Code for web development, including browser installation and essential extensions.
-
----
-
-## Browser Installation
-
-We recommend using **Google Chrome** or **Brave** for web development. These browsers have excellent developer tools and work well with Live Server and VS Code.
-
----
-
-### Option 1: Install **Google Chrome**
-
-#### Step 1: Download
-
--   Go to https://www.google.com/chrome/
-
-#### Step 2: Install
-
-##### On Windows:
-
-1. Click **Download Chrome**
-2. Open the downloaded file (`ChromeSetup.exe`)
-3. Follow the on-screen instructions
-
-##### On macOS:
-
-1. Click **Download Chrome**
-2. Open the `.dmg` file
-3. Drag the Chrome icon into your **Applications** folder
-4. Open Chrome from **Launchpad** or **Applications**
-
----
-
-### Option 2: Install **Brave Browser**
-
-#### Step 1: Download
-
--   Go to https://brave.com/
-
-#### Step 2: Install
-
-##### On Windows:
-
-1. Click **Download Brave**
-2. Open the downloaded file (`BraveBrowserSetup.exe`)
-3. Follow the setup instructions
-
-##### On macOS:
-
-1. Click **Download Brave**
-2. Open the `.dmg` file
-3. Drag the Brave icon into your **Applications** folder
-4. Open Brave from **Launchpad** or **Applications**
-
----
-
-### ✅ Check Browser Installation
-
-Open your new browser and type this in the address bar:
-
-```text
-https://status200.my
-```
-
----
-
 ## VS Code Installation
 
 **Visual Studio Code** (VS Code) is a free, lightweight code editor used by millions of developers. We'll use it to write and run our HTML, CSS, and JavaScript code.
@@ -193,44 +125,29 @@ These extensions help you write better code and see your results instantly in th
 
 ---
 
-### 3. Enable Format on Save
-
-#### This makes VS Code automatically clean up your code every time you press **Save**.
+### 3. Set Prettier as Default Formatter
 
 #### How to enable:
 
-1. Click on the gear icon ⚙️ in the bottom-left corner of VS Code
-2. Choose **"Settings"**
-3. In the search bar at the top, type:  
-   `format on save`
-4. Check the box: ✅ **Editor: Format On Save**
-
-> ✅ Prettier will now run every time you save a file!
-
----
+1. Open **Settings** in VS Code:
+    - Click the gear icon ⚙️ in the bottom-left corner
+    - Choose **"Settings"**
+2. Search for `default formatter`
+3. Set **Default Formatter** to `esbenp.prettier-vscode`
 
 ### Test it out
 
-1. Type messy code in an HTML or JS file:
-    ```html
-    <h1>Hello World</h1>
+1. Type messy code in an HTML file, like:
+    ```
+    <ul>
+    <li>Item 1</li><li>
+    Item 2</li></ul>
     ```
 2. Press **Save**
 3. The code should automatically become:
     ```html
-    <h1>Hello World</h1>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
     ```
-
----
-
-## Complete Setup Verification
-
-After completing all installations:
-
-1. ✅ Browser opens when you visit https://status200.my
-2. ✅ VS Code opens when you type `code .` in terminal
-3. ✅ Live Server extension is installed and working
-4. ✅ Prettier extension is installed and formatting on save
-5. ✅ You can create and edit HTML files
-
-You're now ready to start coding! 🚀
