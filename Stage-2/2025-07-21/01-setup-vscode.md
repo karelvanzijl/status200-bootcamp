@@ -1,4 +1,15 @@
-## VS Code Installation
+## Navigation
+
+1. [Overview](README.md)
+2. [VS Code Setup](01-setup-vscode.md) ← _You are here_
+3. [Terminal & Folder Basics](02-terminal-folder.md)
+4. [HTML Recap](03-html-recap.md)
+5. [CSS Basics](04-css-basics.md)
+6. [Advanced Selectors](05-advanced-selectors.md)
+
+---
+
+# VS Code Setup
 
 **Visual Studio Code** (VS Code) is a free, lightweight code editor used by millions of developers. We'll use it to write and run our HTML, CSS, and JavaScript code.
 
@@ -79,37 +90,11 @@ After installation, try this:
 
 ---
 
-## VS Code Extensions
+## VS Code Extension
 
 These extensions help you write better code and see your results instantly in the browser. More will be added while the course progresses.
 
----
-
-### 1. Install **Live Server**
-
-#### What it does:
-
--   Opens your HTML file in the browser
--   Automatically refreshes the page when you save your code
-
-#### How to install:
-
-1. Open **VS Code**
-2. Click the **Extensions icon** on the left sidebar (or press `Ctrl+Shift+X` / `Cmd+Shift+X`)
-3. Search for:  
-   **Live Server** by **Ritwick Dey**
-4. Click **Install**
-
-#### How to use:
-
-1. Open your HTML file
-2. Right-click anywhere in the editor
-3. Choose **"Open with Live Server"**
-4. Your default browser will open the page
-
----
-
-### 2. Install **Prettier**
+### 1. Install **Prettier**
 
 #### What it does:
 
@@ -123,9 +108,7 @@ These extensions help you write better code and see your results instantly in th
    **Prettier - Code Formatter** by **esbenp**
 3. Click **Install**
 
----
-
-### 3. Set Prettier as Default Formatter
+### 2. Set Prettier as Default Formatter
 
 #### How to enable:
 
@@ -135,7 +118,17 @@ These extensions help you write better code and see your results instantly in th
 2. Search for `default formatter`
 3. Set **Default Formatter** to `esbenp.prettier-vscode`
 
-### Test it out
+### 3. Enable Format on Save
+
+#### How to enable:
+
+1. In the same **Settings** screen
+2. Search for `format on save`
+3. Check the box for **"Format On Save"**
+
+Now your code will automatically format every time you save a file!
+
+### 4. Test it out
 
 1. Type messy code in an HTML file, like:
     ```
