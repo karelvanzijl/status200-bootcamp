@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Box Model Practice 1: Basic Box Inspection</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            .main-container {
+                display: flex;
+                gap: 40px;
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+
+            .left-column {
+                width: 400px;
+                background-color: #f8f9fa;
+                padding: 30px;
+                position: sticky;
+                height: fit-content;
+                top: 20px;
+            }
+
+            .right-column {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .practice-box {
+                width: 200px;
+                height: 100px;
+                padding: 20px;
+                border: 3px solid black;
+                margin: 30px;
+                background-color: lightblue;
+                font-size: 18px;
+            }
+
+
+            .instructions {
+                background-color: #f0f8ff;
+                padding: 20px;
+                border-left: 4px solid #0066cc;
+                margin: 20px 0;
+                font-size: 16px;
+            }
+
+            h1 {
+                color: #333;
+                margin-bottom: 30px;
+                margin-top: 0;
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .answers {
+                background-color: #d1ecf1;
+                padding: 15px;
+                border-left: 4px solid #17a2b8;
+                margin: 20px 0;
+                display: none;
+            }
+
+            .show-answers {
+                background-color: #17a2b8;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                margin: 10px 0;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="left-column">
+                <h3>Practice Box</h3>
+                <p>Right-click this box and inspect it!</p>
+                <div class="practice-box">This is the content area</div>
+            </div>
+
+            <div class="right-column">
+                <h1>Box Model Practice 1: Basic Box Inspection</h1>
+
+                <div class="instructions">
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>
+                            Right-click the blue box above and select "Inspect"
+                            (or "Inspect Element")
+                        </li>
+                        <li>
+                            Look for the box model diagram in the dev tools
+                            (usually at the bottom of the Elements panel)
+                        </li>
+                        <li>
+                            Identify each part: content (blue), padding (green),
+                            border (yellow), margin (orange)
+                        </li>
+                        <li>Note the measurements for each section</li>
+                    </ol>
+                </div>
+
+                <div class="instructions">
+                    <h3>Questions:</h3>
+                    <ul>
+                        <li>What is the content width and height?</li>
+                        <li>How much padding is applied on each side?</li>
+                        <li>What is the border thickness?</li>
+                        <li>How much margin space is around the box?</li>
+                        <li>
+                            What is the total width of the box including padding
+                            and border?
+                        </li>
+                    </ul>
+                </div>
+
+                <button
+                    class="show-answers"
+                    onclick="document.querySelector('.answers').style.display='block'; this.style.display='none';"
+                >
+                    Show Answers (try inspecting first!)
+                </button>
+
+                <div class="answers">
+                    <h3>Answers:</h3>
+                    <ul>
+                        <li>
+                            <strong>Content width and height:</strong> 200px
+                            &times; 100px
+                        </li>
+                        <li><strong>Padding on each side:</strong> 20px</li>
+                        <li><strong>Border thickness:</strong> 3px</li>
+                        <li><strong>Margin space around box:</strong> 30px</li>
+                        <li>
+                            <strong>Total box width:</strong> 200px (content) +
+                            40px (padding) + 6px (border) = 246px
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Note:</strong> Margin is NOT included in the box
+                        width - it just creates space around the box!
+                    </p>
+                </div>
+
+                <div class="instructions">
+                    <h3>Experiments:</h3>
+                    <ol>
+                        <li>
+                            In the CSS above, try changing
+                            <code>padding: 20px</code> to
+                            <code>padding: 10px</code> - what happens to the box
+                            size?
+                        </li>
+                        <li>
+                            Try changing <code>margin: 30px</code> to
+                            <code>margin: 50px</code> - what happens to the
+                            space around the box?
+                        </li>
+                        <li>
+                            Try changing <code>border: 3px solid black</code> to
+                            <code>border: 10px solid red</code> - how does this
+                            affect the total size?
+                        </li>
+                    </ol>
+                </div>
+
+                <button
+                    class="show-answers"
+                    onclick="document.querySelector('.experiment-answers').style.display='block'; this.style.display='none';"
+                >
+                    Show Answers (try them first!)
+                </button>
+
+                <div class="experiment-answers answers">
+                    <h3>What happens when you make the changes:</h3>
+                    <ul>
+                        <li>
+                            <strong>Changing padding to 10px:</strong> Box gets
+                            smaller (total width becomes 226px)
+                        </li>
+                        <li>
+                            <strong>Changing margin to 50px:</strong> More space
+                            around box, but box size stays 246px
+                        </li>
+                        <li>
+                            <strong>Changing border to 10px:</strong> Box gets
+                            bigger (total width becomes 260px)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

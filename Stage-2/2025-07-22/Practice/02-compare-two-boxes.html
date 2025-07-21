@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Box Model Practice 2: Compare Two Boxes</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            .main-container {
+                display: flex;
+                gap: 40px;
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+
+            .left-column {
+                width: 400px;
+                background-color: #f8f9fa;
+                padding: 30px;
+                position: sticky;
+                height: fit-content;
+                top: 20px;
+            }
+
+            .right-column {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .box1 {
+                width: 200px;
+                height: 100px;
+                padding: 10px;
+                border: 2px solid red;
+                margin: 20px;
+                background-color: pink;
+                font-size: 16px;
+            }
+
+            .box2 {
+                width: 200px;
+                height: 100px;
+                padding: 30px;
+                border: 5px solid blue;
+                margin: 20px;
+                background-color: lightblue;
+                font-size: 16px;
+            }
+
+
+            .instructions {
+                background-color: #f0f8ff;
+                padding: 20px;
+                border-left: 4px solid #0066cc;
+                margin: 20px 0;
+                font-size: 16px;
+            }
+
+            h1 {
+                color: #333;
+                margin-bottom: 30px;
+                margin-top: 0;
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .comparison-table {
+                border-collapse: collapse;
+                width: 100%;
+                margin: 20px 0;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            .comparison-table th {
+                background-color: #f2f2f2;
+            }
+
+            .answers {
+                background-color: #d1ecf1;
+                padding: 15px;
+                border-left: 4px solid #17a2b8;
+                margin: 20px 0;
+                display: none;
+            }
+
+            .show-answers {
+                background-color: #17a2b8;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                margin: 10px 0;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="left-column">
+                <h3>Compare These Boxes</h3>
+                <p>Right-click each box and inspect them!</p>
+
+                <div class="box1">Box 1<br />Small padding, thin border</div>
+                <div class="box2">Box 2<br />Large padding, thick border</div>
+            </div>
+
+            <div class="right-column">
+                <h1>Box Model Practice 2: Compare Two Boxes</h1>
+
+                <div class="instructions">
+                    <h3>Box Specifications:</h3>
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Property</th>
+                            <th>Box 1 (Pink)</th>
+                            <th>Box 2 (Light Blue)</th>
+                        </tr>
+                        <tr>
+                            <td>Width</td>
+                            <td>200px</td>
+                            <td>200px</td>
+                        </tr>
+                        <tr>
+                            <td>Height</td>
+                            <td>100px</td>
+                            <td>100px</td>
+                        </tr>
+                        <tr>
+                            <td>Padding</td>
+                            <td>10px</td>
+                            <td>30px</td>
+                        </tr>
+                        <tr>
+                            <td>Border</td>
+                            <td>2px solid red</td>
+                            <td>5px solid blue</td>
+                        </tr>
+                        <tr>
+                            <td>Margin</td>
+                            <td>20px</td>
+                            <td>20px</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="instructions">
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>
+                            Right-click each box and inspect it using browser
+                            dev tools
+                        </li>
+                        <li>Compare the box model diagrams for both boxes</li>
+                        <li>
+                            Calculate the total width and height for each box
+                        </li>
+                        <li>
+                            Notice how the content area is the same size, but
+                            the boxes look different
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="instructions">
+                    <h3>Questions:</h3>
+                    <ul>
+                        <li>
+                            If you needed to fit both boxes side by side in a
+                            500px container, would they fit? Why or why not?
+                        </li>
+                        <li>
+                            Which box would be better for displaying a small
+                            icon vs. a paragraph of text? Explain your
+                            reasoning.
+                        </li>
+                        <li>
+                            How does the visual hierarchy differ between the two
+                            boxes? Which one draws more attention?
+                        </li>
+                        <li>
+                            If you wanted to make Box 1 visually similar to Box
+                            2 (same apparent size), what would you change?
+                        </li>
+                    </ul>
+                </div>
+
+                <button
+                    class="show-answers"
+                    onclick="document.querySelector('.answers').style.display='block'; this.style.display='none';"
+                >
+                    Show Answers (try inspecting first!)
+                </button>
+
+                <div class="answers">
+                    <h3>Answers:</h3>
+                    <ul>
+                        <li>
+                            <strong>Container fit:</strong> No, they won't fit
+                            (224px + 270px + 40px margins = 534px total space
+                            needed)
+                        </li>
+                        <li>
+                            <strong>Use cases:</strong> Box 1 better for icons
+                            (less padding), Box 2 better for text (more
+                            breathing room)
+                        </li>
+                        <li>
+                            <strong>Visual hierarchy:</strong> Box 2 draws more
+                            attention due to larger size, thicker border, and
+                            more prominent appearance
+                        </li>
+                        <li>
+                            <strong>Making Box 1 similar:</strong> Increase
+                            padding to 30px and border to 5px
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Note:</strong> Margin is NOT included in box
+                        width calculations!
+                    </p>
+                </div>
+
+                <div class="instructions">
+                    <h3>Experiments:</h3>
+                    <ol>
+                        <li>
+                            Before making changes: Calculate and record the
+                            total width of each box (content + padding +
+                            border).
+                        </li>
+                        <li>
+                            Experiment A: Add
+                            <code>box-sizing: border-box</code> to both boxes -
+                            what changes about their total dimensions and
+                            content areas?
+                        </li>
+                        <li>
+                            Experiment B: Remove the border-box styling and try
+                            making Box 1 visually match Box 2 by adjusting
+                            padding and border - what combination works best?
+                        </li>
+                    </ol>
+                </div>
+
+                <button
+                    class="show-answers"
+                    onclick="document.querySelector('.experiment-answers').style.display='block'; this.style.display='none';"
+                >
+                    Show Answers (try them first!)
+                </button>
+
+                <div class="experiment-answers answers">
+                    <h3>Experiment Results:</h3>
+                    <ul>
+                        <li>
+                            <strong>Initial calculations:</strong> Box 1 = 224px
+                            total (200 + 20 + 4), Box 2 = 270px total (200 + 60
+                            + 10)
+                        </li>
+                        <li>
+                            <strong>Experiment A (border-box):</strong> Both
+                            boxes become exactly 200px total width, but Box 1's
+                            content area becomes 176px while Box 2's becomes
+                            130px
+                        </li>
+                        <li>
+                            <strong>Experiment B (matching visually):</strong>
+                            Increase Box 1's padding to 30px and border to 5px
+                            to match Box 2's visual weight
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Key insight:</strong> Box-sizing fundamentally
+                        changes how dimensions work - same width value produces
+                        different visual results!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
