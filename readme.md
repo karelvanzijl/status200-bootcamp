@@ -30,10 +30,18 @@ The foundation of your web development journey. In Stage 1, you'll master:
 
 By the end of Stage 1, you'll be able to create multi-page websites with proper structure, navigation, and content organization.
 
-#### Stage 2: Not Available Yet
+#### [Stage 2: Full-Stack Web Development](./Stage-2/README.md)
 
--   Start on Monday, 21st of August 2025
--   Content will be added progressively.
+Transform your basic HTML skills into complete full-stack web development expertise. In Stage 2, you'll master:
+
+-   **Advanced CSS** - Layouts, Flexbox, Grid, and responsive design
+-   **JavaScript Programming** - Language fundamentals, DOM manipulation, and modern ES6+ features
+-   **Node.js & NPM** - Server-side JavaScript and package management
+-   **Database Management** - SQL fundamentals and data operations
+-   **API Development** - Building and consuming REST APIs
+-   **TypeScript** - Type-safe JavaScript development
+
+By the end of Stage 2, you'll be a complete full-stack developer capable of building modern web applications from database to user interface.
 
 ---
 

@@ -142,7 +142,7 @@ When elements overlap, `z-index` controls which appears on top:
 </html>
 ```
 
-📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-22/practice-01-relative-positioning.html)
+📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-22/relative-positioning.html)
 
 ### Practice 2: Absolute Positioning
 
@@ -189,7 +189,7 @@ When elements overlap, `z-index` controls which appears on top:
 
 💡 Remember: absolute positioning is relative to the nearest positioned parent. If no positioned parent exists, it will be relative to the document body.
 
-📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-22/practice-02-absolute-positioning.html)
+📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-22/absolute-positioning.html)
 
 ### Practice 3: Fixed Positioning
 
@@ -302,7 +302,7 @@ When elements overlap, `z-index` controls which appears on top:
 
 💡 Remember: fixed positioning is relative to the viewport, so it stays in place even when scrolling.
 
-📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-22/practice-03-fixed-positioning.html)
+📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-22/fixed-positioning.html)
 
 ### Practice 4: Sticky Positioning
 
@@ -447,7 +447,7 @@ When elements overlap, `z-index` controls which appears on top:
 
 💡 Remember: sticky positioning requires a threshold value (like `top: 0`) and needs sufficient scroll space in its container to work properly.
 
-📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-22/practice-04-sticky-positioning.html)
+📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-22/sticky-positioning.html)
 
 ---
 
