@@ -77,7 +77,7 @@ _Steps to understand the relative path:_
 
 ## Activity: Train your relative path skills!
 
-Go to https://status200.my/examples/folders/
+Go to [Folder, paths & terminal interactive examples](https://status200.my/bootcamp/practice/2025-06-28/terminal-commands-and-paths.html)
 
 1. Select a "From" folder or file
 2. Select a "To" folder or file

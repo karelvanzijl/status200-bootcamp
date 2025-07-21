@@ -3,7 +3,7 @@
 ## 1. VS Code Setup
 
 -   Installing VS Code and essential extensions
--   Configuring Live Server and Prettier
+-   Prettier
 -   Setting up your development environment
 
 📖 [VS Code Setup Guide](01-setup-vscode.md)
@@ -43,3 +43,11 @@
 -   Combining selectors for precise targeting
 
 📖 [Advanced Selectors Guide](05-advanced-selectors.md)
+
+### 6. Box Model
+
+-   Understanding content, padding, border, margin
+-   Using browser dev tools to visualize
+-   Box-sizing property
+
+📖 [Detailed Box Model Guide](06-box-model.md)

@@ -5,54 +5,53 @@
 ## Learning Objectives
 
 By the end of today, you will understand:
-- The CSS Box Model and how it affects element sizing
-- Different positioning methods and when to use them
-- Flexbox fundamentals for creating flexible layouts
-- How to use browser dev tools to visualize the box model
+
+-   Different positioning methods and when to use them
+-   Flexbox fundamentals for creating flexible layouts
+-   How to use browser dev tools to visualize the box model
 
 ## Lesson Structure
 
-### 1. Box Model (45 minutes)
-- Understanding content, padding, border, margin
-- Using browser dev tools to visualize
-- Box-sizing property
+### 1. Positioning
 
-📖 [Detailed Box Model Guide](01-box-model.md)
+-   Static, relative, absolute, fixed, sticky
+-   Z-index and layering
+-   When to use each positioning method
 
-### 2. Positioning (30 minutes)
-- Static, relative, absolute, fixed, sticky
-- Z-index and layering
-- When to use each positioning method
+📖 [Complete Positioning Guide](01-positioning.md)
 
-📖 [Complete Positioning Guide](02-positioning.md)
+### 2. Flexbox Fundamentals
 
-### 3. Flexbox Fundamentals (60 minutes)
-- Flex containers and flex items
-- Main axis vs cross axis
-- Common flex properties
-- Building layouts with flexbox
+-   Flex containers and flex items
+-   Main axis vs cross axis
+-   Common flex properties
+-   Building layouts with flexbox
 
-📖 [Comprehensive Flexbox Guide](03-flexbox.md)
+📖 [Comprehensive Flexbox Guide](02-flexbox.md)
 
-### 4. Practice Exercises (45 minutes)
-- Hands-on exercises combining all concepts
-- Building a simple page layout
+### 4. Practice Exercises
+
+-   Hands-on exercises combining all concepts
+-   Building a simple page layout
 
 ## Files for Today
 
 ### Class Folder
-- `index.html` - Main practice file
-- `css/styles.css` - CSS for experiments
+
+-   `index.html` - Main practice file
+-   `css/styles.css` - CSS for experiments
 
 ### Projects Folder
-- `index.html` - Assignment starter
-- `about.html` - Second page for navigation
-- `css/styles.css` - CSS for assignment
-- `images/` - Placeholder for any images
+
+-   `index.html` - Assignment starter
+-   `about.html` - Second page for navigation
+-   `css/styles.css` - CSS for assignment
+-   `images/` - Placeholder for any images
 
 ## Quick Reference
 
 ### Box Model Properties
+
 ```css
 .element {
     width: 200px;
@@ -64,13 +63,27 @@ By the end of today, you will understand:
 ```
 
 ### Positioning
+
 ```css
-.relative { position: relative; top: 10px; left: 20px; }
-.absolute { position: absolute; top: 0; right: 0; }
-.fixed { position: fixed; bottom: 20px; right: 20px; }
+.relative {
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+.absolute {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
 ```
 
 ### Flexbox Basics
+
 ```css
 .container {
     display: flex;

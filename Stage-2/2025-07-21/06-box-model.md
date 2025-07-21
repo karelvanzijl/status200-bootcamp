@@ -146,6 +146,8 @@ Create an HTML file with this code and experiment with the values:
 </html>
 ```
 
+📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-21/basic-box-inspection.html)
+
 ### Practice 2: Compare Two Boxes
 
 ```html
@@ -184,6 +186,8 @@ Create an HTML file with this code and experiment with the values:
     </body>
 </html>
 ```
+
+📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-21/basic-box-inspection.html)
 
 ### Practice 3: Build Your Own Box
 
@@ -229,6 +233,8 @@ Create an HTML file with this code and experiment with the values:
     </body>
 </html>
 ```
+
+📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-21/build-your-box.html)
 
 ### Practice 4: Centering and Box-Sizing
 
@@ -297,6 +303,8 @@ Create an HTML file with this code and experiment with the values:
 </html>
 ```
 
+📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-21/centering-and-box-sizing.html)
+
 ---
 
 ## Using Browser Dev Tools
@@ -305,6 +313,8 @@ Create an HTML file with this code and experiment with the values:
 2. In the Elements panel, look for the box model diagram
 3. See how content, padding, border, and margin affect total size
 4. Hover over elements to see their box model highlighted on the page
+
+---
 
 ## Common Patterns
 

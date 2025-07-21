@@ -213,3 +213,5 @@ Copy this HTML code to practice basic CSS selectors:
     </body>
 </html>
 ```
+
+📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-21/css-basics.html)
