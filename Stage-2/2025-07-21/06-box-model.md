@@ -1,3 +1,15 @@
+## Navigation
+
+1. [Overview](README.md)
+2. [VS Code Setup](01-setup-vscode.md)
+3. [Terminal & Folder Basics](02-terminal-folder.md)
+4. [HTML Recap](03-html-recap.md)
+5. [CSS Basics](04-css-basics.md)
+6. [Advanced Selectors](05-advanced-selectors.md) ← _You are here_
+7. [Box Model](06-box-model.md) ← _You are here_
+
+---
+
 # The CSS Box Model
 
 ## What is the Box Model?

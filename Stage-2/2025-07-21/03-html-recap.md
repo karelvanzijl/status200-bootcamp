@@ -6,6 +6,7 @@
 4. [HTML Recap](03-html-recap.md) ← _You are here_
 5. [CSS Basics](04-css-basics.md)
 6. [Advanced Selectors](05-advanced-selectors.md)
+7. [Box Model](06-box-model.md)
 
 ---
 
