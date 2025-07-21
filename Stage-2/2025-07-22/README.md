@@ -1,66 +1,35 @@
-# Day 2: Box Model, Positioning & Flexbox
+# Advanced CSS Layout Methods
 
-**Goal**: Build strong layout foundation
+## 1. CSS Positioning
 
-## Learning Objectives
-
-By the end of today, you will understand:
-
--   Different positioning methods and when to use them
--   Flexbox fundamentals for creating flexible layouts
--   How to use browser dev tools to visualize the box model
-
-## Lesson Structure
-
-### 1. Positioning
-
--   Static, relative, absolute, fixed, sticky
--   Z-index and layering
--   When to use each positioning method
+-   Static, relative, absolute, fixed positioning
+-   Z-index and layering concepts
+-   Positioning context and document flow
+-   Common use cases and best practices
 
 📖 [Complete Positioning Guide](01-positioning.md)
 
-### 2. Flexbox Fundamentals
+## 2. Flexbox Fundamentals
 
 -   Flex containers and flex items
--   Main axis vs cross axis
--   Common flex properties
--   Building layouts with flexbox
+-   Main axis vs cross axis alignment
+-   Flex properties for responsive layouts
+-   Common flexbox layout patterns
 
 📖 [Comprehensive Flexbox Guide](02-flexbox.md)
 
-### 4. Practice Exercises
+## 3. CSS Grid Layout
 
--   Hands-on exercises combining all concepts
--   Building a simple page layout
+-   Grid containers and grid items
+-   Creating responsive grid systems
+-   Grid template areas and named lines
+-   Advanced grid functions and techniques
 
-## Files for Today
+📖 [CSS Grid Fundamentals Guide](03-grid.md)
 
-### Class Folder
-
--   `index.html` - Main practice file
--   `css/styles.css` - CSS for experiments
-
-### Projects Folder
-
--   `index.html` - Assignment starter
--   `about.html` - Second page for navigation
--   `css/styles.css` - CSS for assignment
--   `images/` - Placeholder for any images
+---
 
 ## Quick Reference
-
-### Box Model Properties
-
-```css
-.element {
-    width: 200px;
-    height: 100px;
-    padding: 20px;
-    border: 2px solid black;
-    margin: 10px;
-}
-```
 
 ### Positioning
 
@@ -89,6 +58,17 @@ By the end of today, you will understand:
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
+}
+```
+
+### CSS Grid Basics
+
+```css
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr auto;
     gap: 20px;
 }
 ```
