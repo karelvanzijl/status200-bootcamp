@@ -447,7 +447,7 @@ When elements overlap, `z-index` controls which appears on top:
 
 💡 Remember: sticky positioning requires a threshold value (like `top: 0`) and needs sufficient scroll space in its container to work properly.
 
-📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-22/practice-03-fixed-positioning.html)
+📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-22/practice-04-sticky-positioning.html)
 
 ---
 
