@@ -199,7 +199,7 @@ Create an HTML file with this code and experiment with the values:
 </html>
 ```
 
-📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-21/basic-box-inspection.html)
+📖 [Show Answers (try yourself first!)](https://status200.my/bootcamp/practice/2025-07-21/compare-two-boxes.html)
 
 ### Practice 3: Build Your Own Box
 
