@@ -153,6 +153,95 @@ li:nth-child(3n) {
 }
 ```
 
+## Attribute Selectors
+
+Attribute selectors allow you to target elements based on their attributes and attribute values:
+
+### Basic Attribute Selector
+
+Target elements that have a specific attribute:
+
+```css
+/* All elements with a 'title' attribute */
+[title] {
+    cursor: help;
+}
+
+/* All input elements with a 'required' attribute */
+input[required] {
+    border: 2px solid red;
+}
+```
+
+### Exact Value Match
+
+Target elements with a specific attribute value:
+
+```css
+/* Input elements with type="email" */
+input[type="email"] {
+    background-color: lightblue;
+}
+
+/* Links that point to external sites */
+a[href="https://example.com"] {
+    color: orange;
+}
+```
+
+### Partial Value Matching
+
+```css
+/* Attribute contains a specific word (space-separated) */
+[class~="button"] {
+    padding: 10px 20px;
+}
+
+/* Attribute starts with a specific value */
+[href^="https://"] {
+    color: green;
+}
+
+/* Attribute ends with a specific value */
+[href$=".pdf"] {
+    font-weight: bold;
+}
+
+/* Attribute contains a substring anywhere */
+[href*="github"] {
+    text-decoration: underline;
+}
+
+/* Attribute starts with value followed by hyphen */
+[lang|="en"] {
+    font-style: italic;
+}
+```
+
+### Common Use Cases
+
+```css
+/* Style required form fields */
+input[required] {
+    border-left: 3px solid red;
+}
+
+/* Style different input types */
+input[type="password"] {
+    font-family: monospace;
+}
+
+/* Style external links */
+a[href^="http"]:not([href*="yourdomain.com"]) {
+    color: blue;
+}
+
+/* Style images with alt text */
+img[alt] {
+    border: 1px solid green;
+}
+```
+
 ## Combining Selectors
 
 You can combine multiple selectors for precise targeting:
