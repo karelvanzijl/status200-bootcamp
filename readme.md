@@ -21,7 +21,7 @@ We're proud to be supported by our amazing sponsors who help make this bootcamp 
 
 This bootcamp is organized into two stages, each building upon the previous one and every day new concepts and skills will be introduced.
 
-#### [Stage 1: Web Development Fundamentals](./Stage-1/README.md)
+#### [Stage 1: Web Development Fundamentals](./Stage-1/readme.md)
 
 The foundation of your web development journey. In Stage 1, you'll master:
 
@@ -30,7 +30,7 @@ The foundation of your web development journey. In Stage 1, you'll master:
 
 By the end of Stage 1, you'll be able to create multi-page websites with proper structure, navigation, and content organization.
 
-#### [Stage 2: Full-Stack Web Development](./Stage-2/README.md)
+#### [Stage 2: Full-Stack Web Development](./Stage-2/readme.md)
 
 Transform your basic HTML skills into complete full-stack web development expertise. In Stage 2, you'll master:
 
