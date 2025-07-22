@@ -448,14 +448,6 @@ The remaining levels (14-24) cover advanced concepts including:
             <div class="item item-2">No Grow</div>
             <div class="item item-3">Grow 1x</div>
         </div>
-
-        <p>Tasks:</p>
-        <ol>
-            <li>Make item-1 have flex-grow: 2</li>
-            <li>Make item-2 have flex-grow: 0</li>
-            <li>Make item-3 have flex-grow: 1</li>
-            <li>Try resizing the browser window to see the effect</li>
-        </ol>
     </body>
 </html>
 ```
@@ -508,13 +500,6 @@ The remaining levels (14-24) cover advanced concepts including:
             <div class="item main-content">Main Content</div>
             <div class="item ads">Ads</div>
         </div>
-
-        <p>Tasks:</p>
-        <ol>
-            <li>Sidebar: flex: 0 0 200px (no grow, no shrink, 200px wide)</li>
-            <li>Main content: flex: 1 (grow to fill remaining space)</li>
-            <li>Ads: flex: 0 0 150px (no grow, no shrink, 150px wide)</li>
-        </ol>
     </body>
 </html>
 ```
@@ -572,15 +557,6 @@ The remaining levels (14-24) cover advanced concepts including:
             <div class="item second">Item B (HTML: 3rd)</div>
             <div class="item first">Item A (HTML: 4th)</div>
         </div>
-
-        <p>Tasks:</p>
-        <ol>
-            <li>Use the order property to display items as A, B, C, D</li>
-            <li>Give .first order: 1</li>
-            <li>Give .second order: 2</li>
-            <li>Give .third order: 3</li>
-            <li>Give .fourth order: 4</li>
-        </ol>
     </body>
 </html>
 ```
