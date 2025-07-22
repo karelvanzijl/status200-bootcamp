@@ -75,11 +75,9 @@ By the end of Stage 2, you'll be a complete full-stack developer capable of buil
     - Creating responsive layouts with flexbox
     - **Interactive Practice**: [Flexbox Froggy Game](https://flexboxfroggy.com)
 
-3. **[CSS Grid](./2025-07-22/03-grid.md)**
-    - Grid container and grid item properties
-    - Creating complex two-dimensional layouts
-    - Grid areas and template layouts
-    - **Interactive Practice**: [CSS Grid Garden Game](https://cssgridgarden.com)
+3. **[Project](./2025-07-22/03-project.md)**
+    - Try to build the same layout provided in the example.
+    - It uses subjects from todays and yesterdays lessons.
 
 ## Getting Started
 

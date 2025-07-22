@@ -18,14 +18,12 @@
 
 📖 [Comprehensive Flexbox Guide](02-flexbox.md)
 
-## 3. CSS Grid Layout
+## 3. Project
 
--   Grid containers and grid items
--   Creating responsive grid systems
--   Grid template areas and named lines
--   Advanced grid functions and techniques
+-   Try to build the same layout provided in the example.
+-   It uses subjects from todays and yesterdays lessons.
 
-📖 [CSS Grid Fundamentals Guide](03-grid.md)
+📖 [Project details](03-project.md)
 
 ---
 

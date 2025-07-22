@@ -3,7 +3,7 @@
 1. [Overview](readme.md)
 2. [CSS Positioning](01-positioning.md) ← _You are here_
 3. [Flexbox Fundamentals](02-flexbox.md)
-4. [CSS Grid Layout](03-grid.md)
+4. [Project: Flexbox Menu & Boxes](03-project.md)
 
 ---
 

@@ -3,7 +3,7 @@
 1. [Overview](readme.md)
 2. [CSS Positioning](01-positioning.md)
 3. [Flexbox Fundamentals](02-flexbox.md) ← _You are here_
-4. [CSS Grid Layout](03-grid.md)
+4. [Project: Flexbox Menu & Boxes](03-project.md)
 
 ---
 
@@ -128,7 +128,23 @@ Main Axis (horizontal) →                ↑
 }
 ```
 
-### 5. Gap (Spacing Between Items)
+### 5. Align Content (Multi-line Cross Axis Alignment)
+
+```css
+.container {
+    align-content: stretch; /* Default: stretch lines to fill */
+    align-content: flex-start; /* Lines at start of cross axis */
+    align-content: flex-end; /* Lines at end of cross axis */
+    align-content: center; /* Lines centered on cross axis */
+    align-content: space-between; /* Space between lines */
+    align-content: space-around; /* Space around lines */
+    align-content: space-evenly; /* Equal space between/around lines */
+}
+```
+
+**Note:** `align-content` only works when `flex-wrap: wrap` is used and there are multiple lines of flex items.
+
+### 6. Gap (Spacing Between Items)
 
 ```css
 .container {
@@ -139,7 +155,7 @@ Main Axis (horizontal) →                ↑
 }
 ```
 
-### 6. Flex Wrap
+### 7. Flex Wrap
 
 ```css
 .container {
@@ -188,6 +204,7 @@ This game teaches flexbox concepts by helping a frog reach its lily pad using CS
                 min-height: 200px;
                 /* TODO: Make this a flex container */
                 /* TODO: Try different flex-direction values */
+                /* There's no right or wrong here, just experiment! */
             }
             .item {
                 background: #3498db;
@@ -239,6 +256,7 @@ This game teaches flexbox concepts by helping a frog reach its lily pad using CS
                 background: #f8f9fa;
                 /* TODO: Add justify-content property */
                 /* TODO: Add align-items property */
+                /* There's no right or wrong here, just experiment! */
             }
             .item {
                 background: #e74c3c;
@@ -284,8 +302,11 @@ This game teaches flexbox concepts by helping a frog reach its lily pad using CS
                 background: #2c3e50;
                 padding: 15px 20px;
                 /* TODO: Make this a flex container */
+                display: flex;
                 /* TODO: Distribute space between logo and menu */
+                justify-content: space-between;
                 /* TODO: Align items vertically */
+                align-items: center;
             }
             .logo {
                 color: #ecf0f1;
@@ -294,7 +315,9 @@ This game teaches flexbox concepts by helping a frog reach its lily pad using CS
             }
             .menu {
                 /* TODO: Make this a flex container */
+                display: flex;
                 /* TODO: Add gap between menu items */
+                gap: 15px;
             }
             .menu-item {
                 color: #ecf0f1;
@@ -389,6 +412,19 @@ This game teaches flexbox concepts by helping a frog reach its lily pad using CS
 } /* Appears third */
 ```
 
+### 6. Align Self (Individual Cross Axis Alignment)
+
+```css
+.item {
+    align-self: auto; /* Default: inherit from align-items */
+    align-self: flex-start; /* Align to start of cross axis */
+    align-self: flex-end; /* Align to end of cross axis */
+    align-self: center; /* Center on cross axis */
+    align-self: stretch; /* Stretch to fill cross axis */
+    align-self: baseline; /* Align to text baseline */
+}
+```
+
 ---
 
 ### 🐸 Continue with Flexbox Froggy
@@ -437,15 +473,20 @@ The remaining levels (14-24) cover advanced concepts including:
                 margin: 5px;
                 text-align: center;
                 /* TODO: Experiment with flex-grow values */
+                /* There's no right or wrong here, just experiment! */
+                /* Be sure to undo what you did here before continuing to the next TODO's in this practice */
             }
             .item-1 {
                 /* TODO: Make this item grow twice as much as others */
+                flex-grow: 2;
             }
             .item-2 {
                 /* TODO: Make this item not grow at all */
+                flex-grow: 0;
             }
             .item-3 {
                 /* TODO: Make this item grow normally */
+                flex-grow: 1;
             }
         </style>
     </head>
@@ -490,14 +531,17 @@ The remaining levels (14-24) cover advanced concepts including:
             .sidebar {
                 /* TODO: Fixed width sidebar using flex shorthand */
                 /* Should be 200px wide and not grow or shrink */
+                flex: 0 0 200px; /* No grow, no shrink, basis 200px */
             }
             .main-content {
                 /* TODO: Main content that takes remaining space */
                 /* Should grow to fill available space */
+                flex: 1; /* Grow to fill remaining space */
             }
             .ads {
                 /* TODO: Fixed width ads section */
                 /* Should be 150px wide and not grow or shrink */
+                flex: 0 0 150px; /* No grow, no shrink, basis 150px */
             }
         </style>
     </head>
@@ -542,15 +586,19 @@ The remaining levels (14-24) cover advanced concepts including:
             }
             .first {
                 /* TODO: Make this appear first */
+                order: 1; /* Change order to 1 */
             }
             .second {
                 /* TODO: Make this appear second */
+                order: 2; /* Change order to 2 */
             }
             .third {
                 /* TODO: Make this appear third */
+                order: 3; /* Change order to 3 */
             }
             .fourth {
                 /* TODO: Make this appear fourth */
+                order: 4; /* Change order to 4 */
             }
         </style>
     </head>
