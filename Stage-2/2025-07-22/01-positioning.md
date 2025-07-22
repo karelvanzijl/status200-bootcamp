@@ -1,6 +1,6 @@
 ## Navigation
 
-1. [Overview](README.md)
+1. [Overview](readme.md)
 2. [CSS Positioning](01-positioning.md) ← _You are here_
 3. [Flexbox Fundamentals](02-flexbox.md)
 4. [CSS Grid Layout](03-grid.md)

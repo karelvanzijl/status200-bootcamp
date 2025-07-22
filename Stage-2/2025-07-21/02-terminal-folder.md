@@ -1,6 +1,6 @@
 ## Navigation
 
-1. [Overview](README.md)
+1. [Overview](readme.md)
 2. [VS Code Setup](01-setup-vscode.md)
 3. [Terminal & Folder Basics](02-terminal-folder.md) ← _You are here_
 4. [HTML Recap](03-html-recap.md)
