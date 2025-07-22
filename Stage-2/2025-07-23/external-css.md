@@ -1,30 +1,25 @@
 # Separating CSS from HTML
 
-Writing CSS in a separate file instead of inside the HTML document  
-improves structure, maintainability, and scalability of a web project.  
-Below are the main reasons and steps for separating CSS from HTML.
+Writing CSS in a separate file instead of inside the HTML document improves structure, maintainability, 
+and scalability of a web project. Below are the main reasons and steps for separating CSS from HTML.
 
 ## Reasons to Separate CSS
 
 ### 1. Cleaner and More Organized Code
-Keeping HTML and CSS in separate files helps maintain a clear structure.  
-HTML focuses on content and structure, while CSS handles presentation  
-and style. This makes the code easier to read and manage.
+Keeping HTML and CSS in separate files helps maintain a clear structure. HTML focuses on content and structure, 
+while CSS handles presentation and style. This makes the code easier to read and manage.
 
 ### 2. Reusability Across Pages
-A single CSS file can be linked to multiple HTML files.  
-This allows consistent styling across different pages  
+A single CSS file can be linked to multiple HTML files. This allows consistent styling across different pages 
 without repeating the same style rules.
 
 ### 3. Easier Maintenance
-Styles can be updated in one place without needing to edit  
-each HTML file individually. This is especially helpful in  
-larger projects with many pages.
+Styles can be updated in one place without needing to edit each HTML file individually. This is especially 
+helpful in larger projects with many pages.
 
 ### 4. Better Collaboration
-In team environments, front-end developers often divide work  
-between structure (HTML) and styling (CSS). Separating files  
-allows individuals to work in parallel more effectively.
+In team environments, front-end developers often divide work between structure (HTML) and styling (CSS).
+Separating files allows individuals to work in parallel more effectively.
 
 ---
 
