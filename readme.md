@@ -21,7 +21,7 @@ We're proud to be supported by our amazing sponsors who help make this bootcamp 
 
 This bootcamp is organized into two stages, each building upon the previous one and every day new concepts and skills will be introduced.
 
-#### [Stage 1: Web Development Fundamentals](./Stage-1/readme.md)
+#### [Stage 1: Web Development Fundamentals](./Stage-1/README.md)
 
 The foundation of your web development journey. In Stage 1, you'll master:
 
