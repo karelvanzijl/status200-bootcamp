@@ -194,6 +194,63 @@ It only adds space **between** them and helps keep layouts clean.
 
 [Play CSS Grid Garden](https://cssgridgarden.com)
 
+## 🧱 Understanding `grid-template-areas` in CSS Grid
+
+The `grid-template-areas` property allows you to define a grid layout in a **visual and readable way** by assigning **names to
+specific areas** of the grid. This makes your layout easier to understand and manage, especially for complex designs.
+
+### 🔹 How it works:
+
+1. You define a grid using `display: grid` and specify how many rows and columns you want using `grid-template-rows` and `grid-template-columns` (or the shorthand `grid-template`).
+
+2. Then, you map out the layout by giving each **cell or group of cells** a name using `grid-template-areas`.
+
+3. Each child element is assigned to one of those named areas using the `grid-area` property.
+
+This approach separates the **structure** from the **content**, making your code more organized and maintainable.
+
+### ✅ Example layout concept
+
+Imagine a layout with a header at the top, a sidebar and main content in the middle, and a footer at the bottom. You can describe this layout visually like this:
+
+### Example
+
+```html
+```html
+<body>
+  <div class="container">
+    <div class="box box1">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+  </div>
+</body>
+</html>
+```
+```
+
+```css
+.container {
+  display: grid;
+
+  /* Define row heights and column widths */
+  grid-template: 100px auto 100px / 30fr 70fr;
+
+  /* Name the layout areas */
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+
+  gap: 10px;
+  border: 3px solid lightgrey;
+  height: 100vh; /* Full height of the viewport */
+
+}
+```
+
+
+
 
 #  CSS Grid Playground Task
 
