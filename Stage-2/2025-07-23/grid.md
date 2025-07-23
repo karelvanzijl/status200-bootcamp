@@ -153,7 +153,7 @@ Common units for sizing tracks:
   height: 100vh;
 }
 ```
-- **Using fractions instead of percentages is generally considered a best practice
+- **Using fractions instead of percentages is generally considered a best practice**
 ```css
 .container {
   display: grid;
@@ -172,9 +172,9 @@ Common units for sizing tracks:
 }
 ```
 
-- **It makes the track size depend on its content.
+- **It makes the track size depend on its content.**
 
-- **The grid cell will grow just enough to fit its content, unless restricted by other styles (like max-width or overflow).
+- **The grid cell will grow just enough to fit its content, unless restricted by other styles (like max-width or overflow).**
 
 
 
