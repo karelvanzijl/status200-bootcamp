@@ -176,6 +176,76 @@ Common units for sizing tracks:
 
 - **The grid cell will grow just enough to fit its content, unless restricted by other styles (like max-width or overflow).**
 
+#  CSS Grid Playground Task
+
+Use **CSS Grid** to arrange six boxes inside a container. You’ll only work with the CSS — no need to touch the HTML.
+
+##  Your Goals
+1. Make the container a grid with **3 equal columns**.
+2. Add **20px gap** between boxes.
+3. Make **box 1 span 2 columns**.
+4. Make **box 6 span all 3 columns** at the bottom.
+5. *(Bonus)* Make the grid **responsive** with `auto-fit` and `minmax`.
+
+---
+
+##  index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Grid Task</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grid-container">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+    <div class="box box4">4</div>
+    <div class="box box5">5</div>
+    <div class="box box6">6</div>
+  </div>
+</body>
+</html>
+
+```
+```css
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* TASK 1: Turn the container into a grid */
+.grid-container {
+  width: 90%;
+  margin: 30px auto;
+  background: #f4f4f4;
+  padding: 20px;
+
+  /* Example: display: grid; */
+  /* TASK 2: Create a 3-column layout with equal width columns */
+  /* TASK 3: Add a 20px gap between all boxes */
+}
+
+/* TASK 4: Make box1 span 2 columns */
+
+/* TASK 5: Make box6 span all 3 columns */
+
+.box {
+  background-color: #3498db;
+  color: white;
+  padding: 30px;
+  font-size: 24px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+```
 
 
 
