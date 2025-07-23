@@ -189,7 +189,7 @@ Use **CSS Grid** to arrange six boxes inside a container. You’ll only work wit
 
 ---
 
-##  index.html
+###  index.html
 
 ```html
 <!DOCTYPE html>
@@ -213,6 +213,7 @@ Use **CSS Grid** to arrange six boxes inside a container. You’ll only work wit
 </html>
 
 ```
+###  index.html
 ```css
 body {
   margin: 0;
