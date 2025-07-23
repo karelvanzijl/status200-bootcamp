@@ -175,6 +175,21 @@ Common units for sizing tracks:
 - **It makes the track size depend on its content.**
 
 - **The grid cell will grow just enough to fit its content, unless restricted by other styles (like max-width or overflow).**
+- 
+# SPACING GRID ITEMS
+
+In CSS Grid, spacing between rows and columns  
+is controlled using the `gap` property.
+
+You can use `gap` in three ways:
+
+- `gap` – Sets space between both rows and columns  
+- `row-gap` – Controls vertical spacing between rows only  
+- `column-gap` – Controls horizontal spacing between columns only
+
+This spacing does not affect the size of the items themselves.  
+It only adds space **between** them and helps keep layouts clean.
+
 
 #  CSS Grid Playground Task
 
