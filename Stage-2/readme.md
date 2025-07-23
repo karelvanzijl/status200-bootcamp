@@ -21,7 +21,7 @@ By the end of Stage 2, you'll be a complete full-stack developer capable of buil
 
 ### Week 1: CSS Foundations (July 21, 2025)
 
-**[2025-07-21 - CSS Fundamentals](./2025-07-21/)**
+**[2025-07-21 - CSS Fundamentals](./2025-07-21/readme.md)**
 
 1. **[Setup VS Code](./2025-07-21/01-setup-vscode.md)**
 
@@ -60,7 +60,7 @@ By the end of Stage 2, you'll be a complete full-stack developer capable of buil
 
 ### Week 1: Advanced Layouts (July 22, 2025)
 
-**[2025-07-22 - Layout Systems](./2025-07-22/)**
+**[2025-07-22 - Layout Systems](./2025-07-22/readme.md)**
 
 1. **[CSS Positioning](./2025-07-22/01-positioning.md)**
 
@@ -79,9 +79,33 @@ By the end of Stage 2, you'll be a complete full-stack developer capable of buil
     - Try to build the same layout provided in the example.
     - It uses subjects from todays and yesterdays lessons.
 
+### Week 1: External CSS & CSS Grid (July 23, 2025)
+
+**[2025-07-23 - External CSS & CSS Grid](./2025-07-23/readme.md)**
+
+1. **[Project Solution: Flexbox Menu & Boxes](./2025-07-23/01-project-solution.md)**
+
+    - Complete solution for flexbox project
+    - Best practices for flexbox implementation
+    - Code organization and structure
+
+2. **[External CSS](./2025-07-23/02-external-css.md)**
+
+    - Separating CSS from HTML for better organization
+    - Linking external stylesheets
+    - File organization and performance benefits
+    - Best practices for CSS architecture
+
+3. **[CSS Grid Fundamentals](./2025-07-23/03-css-grid.md)**
+    - Two-dimensional layout system
+    - Grid container and item properties
+    - Creating complex layouts with rows and columns
+    - Grid functions: `fr`, `minmax()`, `repeat()`
+    - **Interactive Practice**: [Grid Garden Game](https://cssgridgarden.com/)
+
 ## Getting Started
 
-1. **Complete modules in chronological order** - Start with 2025-07-21, then move to 2025-07-22
+1. **Complete modules in chronological order** - From top to bottom, each module builds on the previous one
 2. **Practice with hands-on exercises** - Each module includes practical exercises and code examples
 3. **Use the practice files** - Copy HTML examples and complete the TODO tasks
 4. **Play the games** - Interactive learning with Flexbox Froggy and other tools
