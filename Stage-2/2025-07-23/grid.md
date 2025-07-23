@@ -252,6 +252,69 @@ Imagine a layout with a header at the top, a sidebar and main content in the mid
 ```
 
 
+##  Using `grid-template-areas` to Layout a Grid
+
+Instead of manually assigning grid positions using `grid-row` and `grid-column`, CSS Grid allows us to **name areas** using the `grid-template-areas` property. This makes layouts more **readable** and **easier to manage**.
+
+### 🔧 Steps:
+
+1. Define named areas inside the container using `grid-template-areas`.
+2. Assign each grid item to an area using `grid-area`.
+
+---
+
+### 🧩 Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grid Areas Example</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 100px auto 50px;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      gap: 10px;
+    }
+
+    .header {
+      grid-area: header;
+      background: lightblue;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background: lightcoral;
+    }
+
+    .main {
+      grid-area: main;
+      background: lightgreen;
+    }
+
+    .footer {
+      grid-area: footer;
+      background: lightgray;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">Header</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="main">Main Content</div>
+    <div class="footer">Footer</div>
+  </div>
+</body>
+</html>
+
 
 
 #  CSS Grid Playground Task
