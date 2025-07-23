@@ -56,7 +56,7 @@ grid-template: [row values] / [column values];
   display: grid;
   grid-template: repeat(3, 100px) / repeat(2, 100px);
 }
-
+```
 ## Example 1
 
 ```html
