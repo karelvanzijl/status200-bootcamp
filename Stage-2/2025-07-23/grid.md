@@ -190,6 +190,10 @@ You can use `gap` in three ways:
 This spacing does not affect the size of the items themselves.  
 It only adds space **between** them and helps keep layouts clean.
 
+## 🧪 Exercise: Practice CSS Grid
+
+[Play CSS Grid Garden](https://cssgridgarden.com)
+
 
 #  CSS Grid Playground Task
 
