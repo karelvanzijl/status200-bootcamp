@@ -185,7 +185,6 @@ Use **CSS Grid** to arrange six boxes inside a container. You’ll only work wit
 2. Add **20px gap** between boxes.
 3. Make **box 1 span 2 columns**.
 4. Make **box 6 span all 3 columns** at the bottom.
-5. *(Bonus)* Make the grid **responsive** with `auto-fit` and `minmax`.
 
 ---
 
@@ -247,6 +246,107 @@ body {
 }
 
 ```
+
+# CSS Grid Playground Task – Layout Challenge 2
+
+Use **CSS Grid** to build a custom layout. This time, you’ll place boxes using **grid areas** to create a more organized structure.
+
+## Your Goals
+1. Create a **3x3 grid layout** (3 columns, 3 rows).
+2. Use `grid-template-areas` to define the layout.
+3. Assign the following:
+   - Box 1 should be the **header** (span all 3 columns).
+   - Boxes 2 and 3 are side-by-side in the **middle row**.
+   - Box 4 should be in the last row, **left side only**.
+   - Box 5 should be in the last row, **right side only**.
+   - Box 6 is a **sidebar** on the middle row's right side.
+
+
+---
+
+##  index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Grid Task 2</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grid-container">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+    <div class="box box4">4</div>
+    <div class="box box5">5</div>
+    <div class="box box6">6</div>
+  </div>
+</body>
+</html>
+```
+```css
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.grid-container {
+  width: 90%;
+  margin: 30px auto;
+  background: #f9f9f9;
+  padding: 20px;
+
+  /* TASK 1: Turn this into a 3x3 grid */
+  /* TASK 2: Use grid-template-areas to define positions */
+
+  /* Example:
+     "header header header"
+     "content content sidebar"
+     "footer .     footer"
+  */
+}
+
+/* TASK 3: Assign grid-area names to each box */
+.box1 {
+  /* grid-area: header; */
+}
+
+.box2 {
+  /* grid-area: content; */
+}
+
+.box3 {
+  /* grid-area: content; */
+}
+
+.box4 {
+  /* grid-area: footer; */
+}
+
+.box5 {
+  /* grid-area: footer; */
+}
+
+.box6 {
+  /* grid-area: sidebar; */
+}
+
+/* Shared box styles */
+.box {
+  background-color: #e67e22;
+  color: white;
+  padding: 30px;
+  font-size: 24px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+```
+
 
 
 
