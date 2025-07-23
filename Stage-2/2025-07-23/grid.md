@@ -194,6 +194,8 @@ It only adds space **between** them and helps keep layouts clean.
 
 [Play CSS Grid Garden](https://cssgridgarden.com)
 
+
+
 ## 🧱 Understanding `grid-template-areas` in CSS Grid
 
 The `grid-template-areas` property allows you to define a grid layout in a **visual and readable way** by assigning **names to
