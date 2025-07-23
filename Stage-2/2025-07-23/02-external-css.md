@@ -188,25 +188,3 @@ body {
 1. **Check CSS syntax** - Missing semicolons, brackets, etc.
 2. **Check selectors** - Make sure they match your HTML elements
 3. **Check specificity** - More specific selectors override general ones
-
-## External CSS vs Other Methods
-
-| Method           | Pros                                  | Cons                         | Best For                    |
-| ---------------- | ------------------------------------- | ---------------------------- | --------------------------- |
-| **External CSS** | Reusable, cacheable, clean separation | Extra HTTP request           | Production websites         |
-| **Internal CSS** | No extra file, faster for single page | Not reusable, mixes concerns | Quick prototypes            |
-| **Inline CSS**   | Highest specificity, immediate        | Hard to maintain, repetitive | Quick fixes, dynamic styles |
-
-## Exercise
-
-Create a simple website with external CSS:
-
-1. Create `index.html` with basic structure
-2. Create `styles.css` with styling for:
-    - Body background and font
-    - Header styling
-    - Navigation menu
-    - Content area
-3. Link the CSS file and test in browser
-
-Remember: External CSS is the preferred method for production websites because it promotes clean, maintainable, and reusable code!
