@@ -745,29 +745,41 @@ The remaining levels (14-24) cover advanced concepts including:
                 padding: 20px;
                 margin-bottom: 30px;
                 border-radius: 10px;
+
                 /* TODO: Make this a flex container */
+                display: flex;
                 /* TODO: Center the content */
+                justify-content: center;
             }
             .card-container {
                 /* TODO: Create a flex container for cards */
+                display: flex;
                 /* TODO: Allow cards to wrap to new lines */
+                flex-wrap: wrap;
                 /* TODO: Add gap between cards */
+                gap: 20px;
             }
             .card {
                 background: white;
                 border-radius: 10px;
                 padding: 20px;
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
                 /* TODO: Set minimum width and allow growing */
+                flex: 1 0 300px;
                 /* TODO: Use flex shorthand for responsive behavior */
             }
             .card-header {
-                /* TODO: Make this a flex container */
-                /* TODO: Space between title and price */
-                /* TODO: Center items vertically */
                 border-bottom: 2px solid #ecf0f1;
                 padding-bottom: 15px;
                 margin-bottom: 15px;
+
+                /* TODO: Make this a flex container */
+                display: flex;
+                /* TODO: Space between title and price */
+                justify-content: space-between;
+                /* TODO: Center items vertically */
+                align-items: center;
             }
             .card-title {
                 font-size: 1.4em;
@@ -780,14 +792,20 @@ The remaining levels (14-24) cover advanced concepts including:
                 font-weight: bold;
             }
             .card-body {
-                /* TODO: Make this a flex container */
-                /* TODO: Column direction */
-                /* TODO: Take remaining space in card */
                 margin-bottom: 20px;
+
+                /* TODO: Make this a flex container */
+                display: flex;
+                /* TODO: Column direction */
+                flex-direction: column;
+                /* TODO: Take remaining space in card */
+                flex: 1;
             }
             .card-footer {
                 /* TODO: Make this a flex container */
+                display: flex;
                 /* TODO: Center the button */
+                justify-content: center;
             }
             .btn {
                 background: #3498db;
@@ -873,7 +891,12 @@ The remaining levels (14-24) cover advanced concepts including:
         </div>
 
         <div
-            style="margin-top: 40px; padding: 20px; background: white; border-radius: 10px;"
+            style="
+                margin-top: 40px;
+                padding: 20px;
+                background: white;
+                border-radius: 10px;
+            "
         >
             <h3>Tasks:</h3>
             <ol>
@@ -909,46 +932,62 @@ The remaining levels (14-24) cover advanced concepts including:
             }
             body {
                 font-family: Arial, sans-serif;
+
                 /* TODO: Make body a flex container */
+                display: flex;
                 /* TODO: Use column direction */
+                flex-direction: column;
                 /* TODO: Set minimum height to full viewport */
+                min-height: 100vh;
             }
             .header {
                 background: #34495e;
                 color: white;
                 padding: 20px;
                 text-align: center;
+
                 /* TODO: Prevent header from shrinking */
+                flex-shrink: 0;
             }
             .main-content {
                 /* TODO: Make this a flex container */
+                display: flex;
                 /* TODO: Take remaining vertical space */
+                flex: 1;
             }
             .sidebar-left {
                 background: #3498db;
                 color: white;
                 padding: 20px;
+
                 /* TODO: Fixed width, don't grow or shrink */
                 /* Width should be 200px */
+                flex: 0 0 200px;
             }
             .content {
                 background: #ecf0f1;
                 padding: 20px;
+
                 /* TODO: Take remaining horizontal space */
+                flex: 1;
             }
             .sidebar-right {
                 background: #e74c3c;
                 color: white;
                 padding: 20px;
+
                 /* TODO: Fixed width, don't grow or shrink */
                 /* Width should be 180px */
+                flex: 0 0 180px;
             }
             .footer {
                 background: #2c3e50;
                 color: white;
                 padding: 20px;
                 text-align: center;
+
                 /* TODO: Prevent footer from shrinking */
+                flex-shrink: 0;
             }
         </style>
     </head>
@@ -990,13 +1029,23 @@ The remaining levels (14-24) cover advanced concepts including:
             <div class="sidebar-right">
                 <h3>Right Sidebar</h3>
                 <div
-                    style="background: rgba(255,255,255,0.2); padding: 10px; margin: 10px 0; border-radius: 5px;"
+                    style="
+                        background: rgba(255, 255, 255, 0.2);
+                        padding: 10px;
+                        margin: 10px 0;
+                        border-radius: 5px;
+                    "
                 >
                     <strong>Ad Space</strong><br />
                     Your ad here
                 </div>
                 <div
-                    style="background: rgba(255,255,255,0.2); padding: 10px; margin: 10px 0; border-radius: 5px;"
+                    style="
+                        background: rgba(255, 255, 255, 0.2);
+                        padding: 10px;
+                        margin: 10px 0;
+                        border-radius: 5px;
+                    "
                 >
                     <strong>Widget</strong><br />
                     Some widget
@@ -1009,10 +1058,19 @@ The remaining levels (14-24) cover advanced concepts including:
         </div>
 
         <div
-            style="position: fixed; bottom: 20px; right: 20px; background: rgba(0,0,0,0.8); color: white; padding: 15px; border-radius: 10px; max-width: 300px;"
+            style="
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                max-width: 300px;
+            "
         >
             <h4>Tasks:</h4>
-            <ol style="margin-left: 20px; margin-top: 10px;">
+            <ol style="margin-left: 20px; margin-top: 10px">
                 <li>Body: flex column, min-height: 100vh</li>
                 <li>Header & Footer: flex-shrink: 0</li>
                 <li>Main-content: flex: 1, display: flex</li>
