@@ -247,7 +247,7 @@ body {
 
 ```
 
-# CSS Grid Playground Task – Layout Challenge 2
+# CSS Grid Playground Task 2
 
 Use **CSS Grid** to build a custom layout. This time, you’ll place boxes using **grid areas** to create a more organized structure.
 
