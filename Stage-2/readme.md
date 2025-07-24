@@ -103,6 +103,16 @@ By the end of Stage 2, you'll be a complete full-stack developer capable of buil
     - Grid functions: `fr`, `minmax()`, `repeat()`
     - **Interactive Practice**: [Grid Garden Game](https://cssgridgarden.com/)
 
+### Week 1: Portfolio Website Practice (July 24, 2025)
+
+**[2025-07-24 - Portfolio Website Project](./2025-07-24/readme.md)**
+
+1. **[Complete Portfolio Website Build](./2025-07-24/01-project-website.md)**
+    - Building a professional portfolio from scratch
+    - Progressive enhancement approach through 8 steps
+    - **Focus**: Steps 1-5 using CSS fundamentals, positioning, and flexbox
+    - **Out of scope**: Steps 6-7 (responsive design & animations)
+
 ## Getting Started
 
 1. **Complete modules in chronological order** - From top to bottom, each module builds on the previous one

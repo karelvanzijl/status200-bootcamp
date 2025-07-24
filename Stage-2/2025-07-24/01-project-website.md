@@ -1,3 +1,10 @@
+## Navigation
+
+1. [Overview](readme.md)
+2. [Portfolio Website Project](01-project-website.md) ← _You are here_
+
+---
+
 # Portfolio Website Project
 
 Build a professional portfolio website from scratch, learning fundamental web development concepts through progressive enhancement. You'll start with raw HTML and gradually add styling, layout, responsiveness, and interactive effects.
