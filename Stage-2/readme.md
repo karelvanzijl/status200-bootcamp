@@ -113,6 +113,45 @@ By the end of Stage 2, you'll be a complete full-stack developer capable of buil
     - **Focus**: Steps 1-5 using CSS fundamentals, positioning, and flexbox
     - **Out of scope**: Steps 6-7 (responsive design & animations)
 
+### Week 1: CSS Review & Practice Day (July 25, 2025)
+
+**[2025-07-25 - CSS Review & Practice](./2025-07-25/readme.md)**
+
+1. **[Quick Quiz](./2025-07-25/01-quick-quiz.md)**
+
+    - Review of HTML structure, CSS linking, and selectors
+    - Box model calculations and positioning concepts
+    - Interactive raise-hands format with detailed explanations
+
+2. **[Live Coding Session](./2025-07-25/02-live-coding.md)**
+
+    - Step-by-step webpage building from scratch
+    - Semantic HTML structure and CSS troubleshooting
+    - Real-time problem solving and best practices
+
+3. **[Box Model & Selectors Challenges](./2025-07-25/03-box-model-and-selectors.md)**
+
+    - Interactive debugging with content-box vs border-box
+    - Pseudo-classes, descendant selectors, and specificity
+    - DevTools exploration for visual debugging
+
+4. **[Positioning & Flexbox Experiments](./2025-07-25/04-positioning-and-flexbox.md)**
+
+    - Live comparison of positioning vs flexbox layouts
+    - Document flow impact and axis understanding
+    - Hands-on manipulation of layout properties
+
+5. **[Flexbox Froggy Game](./2025-07-25/05-flex-froggy-game.md)**
+
+    - Gamified learning with levels 1-13 (flex container focus)
+    - Collaborative gameplay with strategic discussion breaks
+    - Fun reinforcement of justify-content, align-items, flex-direction
+
+6. **[Media Queries & Responsive Design](./2025-07-25/06-media-queries.md)**
+    - Introduction to responsive web design principles
+    - Mobile-first vs desktop-first approaches
+    - Practical examples and breakpoint strategies
+
 ## Getting Started
 
 1. **Complete modules in chronological order** - From top to bottom, each module builds on the previous one
