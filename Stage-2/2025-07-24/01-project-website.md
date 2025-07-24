@@ -125,6 +125,8 @@ portfolio/
 
 [📖 View Demo](https://status200.my/bootcamp/practice/2025-07-24/step-0-foundation/index.html)
 
+[📖 View Files](./step-0-foundation/)
+
 ### Step 2: Basic Layout Foundation
 
 **Goal:** Add CSS reset and basic typography
@@ -141,6 +143,8 @@ portfolio/
 3. Add basic padding to body, 20px left and right
 
 [📖 View Demo](https://status200.my/bootcamp/practice/2025-07-24/step-1-layout/index.html)
+
+[📖 View Files](./step-1-layout/)
 
 **🎯 Learning Focus:** CSS reset, box-sizing, container patterns
 
@@ -160,6 +164,8 @@ portfolio/
     - Add CSS transitions
 
 [📖 View Demo](https://status200.my/bootcamp/practice/2025-07-24/step-2-navigation/index.html)
+
+[📖 View Files](./step-2-navigation/)
 
 **🎯 Learning Focus:** Flexbox layout, navigation patterns, hover effects
 
