@@ -39,11 +39,12 @@ Your final project should include:
 
 ```
 portfolio/
+├── css/
+│   └── styles.css
 ├── about.html
 ├── index.html
 ├── projects.html
-├── skills.html
-└── styles.css
+└── skills.html
 ```
 
 ---
