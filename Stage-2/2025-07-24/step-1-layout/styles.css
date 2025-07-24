@@ -1,0 +1,24 @@
+/* Step 1: Basic Layout Structure
+   Adding CSS reset, box-sizing, and basic body layout.
+   This creates a solid foundation for all styling. */
+
+/* CSS Reset - Remove default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container for consistent width */
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
