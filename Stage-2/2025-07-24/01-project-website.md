@@ -183,6 +183,10 @@ portfolio/
 3. Add section spacing and content layout
 4. Create hero section with centered content and larger text
 
+[📖 View Demo](https://status200.my/bootcamp/practice/2025-07-24/step-3-typography/index.html)
+
+[📖 View Files](./step-3-typography/)
+
 **🎯 Learning Focus:** Typography scale, spacing rhythm, visual hierarchy
 
 ### Step 5: Visual Design and Styling
@@ -204,6 +208,10 @@ portfolio/
     - Padding, border-radius
     - Box shadow and border
 
+[📖 View Demo](https://status200.my/bootcamp/practice/2025-07-24/step-4-sections/index.html)
+
+[📖 View Files](./step-4-sections/)
+
 **🎯 Learning Focus:** Color schemes, gradients, box shadows, sticky positioning
 
 ### Step 6: Footer and Page Layout
@@ -219,6 +227,10 @@ portfolio/
     - White text
     - Proper padding and content organization
 4. Center footer content with max-width
+
+[📖 View Demo](https://status200.my/bootcamp/practice/2025-07-24/step-5-footer/index.html)
+
+[📖 View Files](./step-5-footer/)
 
 **🎯 Learning Focus:** Full-height layouts, sticky footer, flexbox
 
@@ -239,6 +251,10 @@ portfolio/
     - Reduce margins and padding
     - Optimize for touch interaction
 
+[📖 View Demo](https://status200.my/bootcamp/practice/2025-07-24/step-6-responsive/index.html)
+
+[📖 View Files](./step-6-responsive/)
+
 **🎯 Learning Focus:** Media queries, mobile-first design, responsive patterns
 
 ### Step 8: Polish and Interactive Effects
@@ -256,6 +272,10 @@ portfolio/
     - Smooth scrolling
     - Enhanced transitions
     - Professional polish
+
+[📖 View Demo](https://status200.my/bootcamp/practice/2025-07-24/step-7-polish/index.html)
+
+[📖 View Files](./step-7-polish/)
 
 **🎯 Learning Focus:** CSS animations, transforms, user experience
 
