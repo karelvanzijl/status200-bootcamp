@@ -138,32 +138,14 @@ transition: color 0.3s ease, background-color 0.3s ease;
 - **[Adobe Color](https://color.adobe.com/)** - Create and explore color palettes
 - **[Coolors.co](https://coolors.co/)** - Generate beautiful color schemes
 - **[Color Hunt](https://colorhunt.co/)** - Discover trendy color palettes
-- **[WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)** - Check color accessibility
+- ** [Image Color Picker – Pick colors from images](https://imagecolorpicker.com/)**
 
 ### CSS Animation & Transition Resources
 - **[CSS-Tricks](https://css-tricks.com/)** - Excellent tutorials and guides
 - **[Animate.css](https://animate.style/)** - Ready-to-use CSS animations
 - **[Hover.css](https://ianlunn.github.io/Hover/)** - Collection of hover effects
 
-### Practice Platforms
-- **[CodePen](https://codepen.io/)** - Online code editor and community
-- **[JSFiddle](https://jsfiddle.net/)** - Test HTML, CSS, and JavaScript
-- **[Frontend Mentor](https://www.frontendmentor.io/)** - Real-world design challenges
 
-## 🚀 Next Steps for Advanced Learning
-
-### CSS Frameworks to Explore
-- **Bootstrap** - Popular CSS framework
-- **Tailwind CSS** - Utility-first CSS framework
-
-### Modern CSS Features
-- **CSS Grid** - Advanced layout system
-- **CSS Variables** - Custom properties
-- **CSS Animations** - Keyframe animations
-- **Media Queries** - Responsive design
-
-### JavaScript Integration
-Once comfortable with HTML/CSS, start learning JavaScript to make websites interactive.
 
 ## 💡 Quick Tips for Success
 
@@ -176,8 +158,6 @@ Once comfortable with HTML/CSS, start learning JavaScript to make websites inter
 ## 🔗 Essential Browser Developer Tools
 
 - **Right-click → Inspect Element** - View and edit HTML/CSS live
-- **Console tab** - See errors and test JavaScript
-- **Network tab** - Monitor loading performance
 - **Responsive mode** - Test different screen sizes
 
 Remember: Web development is a journey, not a destination. Keep practicing, stay curious, and don't be afraid to experiment!
