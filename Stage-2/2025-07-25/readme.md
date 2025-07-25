@@ -64,7 +64,7 @@
 
 ## 7. Weekend Assignment
 
--   Read inrtuctions carefully
+-   Read instructions carefully
 -   Submit your work before the deadline
 -   Focus on applying learned concepts
 -   Create a responsive webpage

@@ -4,7 +4,18 @@
 
 You will create a simple one-page business landing page by writing CSS for the provided HTML structure. This project will help you practice using flexbox layouts and responsive design with media queries.
 
-**Estimated Time:** 4 hours  
+-   Read instructions carefully
+-   Submit your work before the deadline
+-   Focus on applying learned concepts
+-   Create a responsive webpage
+
+**Remember:**
+
+-   We expect you to only write the CSS code, not the HTML structure.
+-   We expect you to submit a single CSS file with all your styles.
+
+**Estimated Time:** 4 hours
+
 **Difficulty:** Beginner (Week 1 HTML/CSS)
 
 ## Learning Goals
