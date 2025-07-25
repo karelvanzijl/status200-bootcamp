@@ -1,0 +1,28 @@
+/* Apply style to all element using the class "content" */
+.content {
+    background: aqua;
+    padding: 20px;
+}
+
+/* Set bg color and text color for HEADER element(s) */
+header {
+    background-color: blue;
+    color: white;
+}
+
+/* Remove bullets, create a flex container and add a gap between felx items for all UL elements */
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+/* Set colro for all A elements */
+a {
+    color: black;
+}
+
+/* Set hover color for all A elements inside a NAV element */
+nav a:hover {
+    color: blue;
+}
