@@ -1,6 +1,6 @@
 # HTML & CSS Essential Reference Guide
 
-## 🎯 Key HTML Elements You Should Know
+##  Key HTML Elements You Should Know
 
 ### Structure Elements
 - `<html>` - Root element
@@ -20,7 +20,7 @@
 ### Form Elements
 - `<form>`, `<input>`, `<textarea>`, `<button>`, `<select>`, `<option>`
 
-## 🎨 Essential CSS Properties
+##  Essential CSS Properties
 
 ### Layout & Positioning
 ```css
@@ -117,7 +117,7 @@ background-repeat: no-repeat | repeat | repeat-x | repeat-y;
 background-attachment: scroll | fixed | local;
 ```
 
-## 🌈 Color Systems & Transitions
+##  Color Systems & Transitions
 
 ### Color Formats
 
