@@ -164,7 +164,7 @@ Create the CSS file (`style.css`) that will style this HTML. Follow these requir
 
 ## Required Styling Tasks
 
-**💡 Note: You are welcome to create your own design—especially when it comes to choosing colors. Everywhere it says color, feel free to use your favorite shades that fit your style!**
+**💡 Note: You are welcome to create your own design, especially when it comes to choosing colors. Everywhere it says color, feel free to use your favorite shades that fit your style!**
 
 ### 1. Basic Reset & Body
 
