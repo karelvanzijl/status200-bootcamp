@@ -130,7 +130,6 @@ transition: color 0.3s ease, background-color 0.3s ease;
 ## 📚 Best Learning Resources
 
 ### Interactive Learning Platforms
-- **[freeCodeCamp](https://www.freecodecamp.org/)** - Free, comprehensive web development curriculum
 - **[Codecademy](https://www.codecademy.com/)** - Interactive coding lessons
 - **[MDN Web Docs](https://developer.mozilla.org/)** - The ultimate reference for web technologies
 - **[W3Schools](https://www.w3schools.com/)** - Easy-to-understand tutorials and examples
