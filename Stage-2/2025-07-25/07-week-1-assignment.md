@@ -326,4 +326,4 @@ This challenge will help you understand how to create smooth transitions between
 
 ---
 
-**Remember:** The goal is to practice flexbox and responsive design. Don't worry about making it perfect - focus on getting the layouts working correctly!
+**Remember:** The goal is to practice flexbox and responsive design. Don't worry about making it perfect - focus on getting the layouts working correctly! :))
