@@ -148,9 +148,21 @@ By the end of Stage 2, you'll be a complete full-stack developer capable of buil
     - Fun reinforcement of justify-content, align-items, flex-direction
 
 6. **[Media Queries & Responsive Design](./2025-07-25/06-media-queries.md)**
+
     - Introduction to responsive web design principles
     - Mobile-first vs desktop-first approaches
     - Practical examples and breakpoint strategies
+
+7. **[Weekend Assignment](./2025-07-25/07-week-1-assignment.md)**
+    - Follow instructions to create a responsive webpage
+    - Apply learned concepts from the week
+
+### Week 1: Extra Material (July 26, 2025)
+
+**[2025-07-26 - Extra](./2025-07-26/readme.md)**
+
+For reference and quick learning, this guide covers the most important HTML elements, CSS properties, color systems, and transitions.
+Perfect for beginners and as a refresher for experienced developers.
 
 ## Getting Started
 

@@ -62,6 +62,18 @@
 
 📖 [Media Queries & Responsive Design](06-media-queries.md)
 
+## 7. Weekend Assignment
+
+-   Read inrtuctions carefully
+-   Submit your work before the deadline
+-   Focus on applying learned concepts
+-   Create a responsive webpage
+-   **Remember:**
+    -   We expect you to only write the CSS code, not the HTML structure.
+    -   We expect you to submit a single CSS file with all your styles.
+
+📖 [Weekend Assignment](./07-week-1-assignment.md)
+
 ---
 
 ## Quick Reference
