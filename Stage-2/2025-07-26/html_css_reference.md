@@ -192,7 +192,7 @@ transition: color 0.3s ease, background-color 0.3s ease;
 }
 ```
 
-## 📚 Best Learning Resources
+##  Best Learning Resources
 
 ### Interactive Learning Platforms
 - **[Codecademy](https://www.codecademy.com/)** - Interactive coding lessons
