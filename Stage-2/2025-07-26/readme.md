@@ -329,4 +329,4 @@ ul.menu>li*4>a + Tab
 
 **💡 Pro Tip:** Most code editors (VS Code, Sublime Text, Atom) have Emmet built-in. Just type the abbreviation and press Tab!
 
-**📖 Full Reference:** [Emmet Cheat Sheet](https://docs.emmet.io/cheat-sheet/) - Complete guide with all shortcuts
+**📖 Full Reference:** [Emmet Cheat Sheet](https://docs.emmet.io/cheat-sheet/) - Complete guide with all shortcuts.
