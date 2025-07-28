@@ -1,6 +1,17 @@
-# JavaScript Exercise 2 - Speed Calculator
+## Navigation
+
+1. [Overview](readme.md)
+2. [JavaScript Introduction](01-javascript-introduction.md)
+3. [JavaScript in HTML](./02-javascript-in-browser.md)
+4. [JavaScript Variables](./03-javascript-variables.md)
+5. [JavaScript Functions](./04-javascript-functions.md)
+6. [Quick Quiz](./05-quick-quiz.md)
+7. [Exercise: change text](./06-exercise-and-html.md)
+8. [Exercise: speed calculator](./07-exercise-speed-calculator.md) ← _You are here_
 
 ---
+
+# JavaScript Exercise 2 - Speed Calculator
 
 ## Setup
 
@@ -230,6 +241,82 @@ Modify the calculator to also show the calculation formula. For example: "100 / 
 ### Exercise 2
 
 Add a third input field for "fuel used" and calculate fuel efficiency (distance / fuel used). Display the result as "Fuel Efficiency: X km/l".
+
+---
+
+After exercise 1 and 2, you calculator HTML and JavaScript files should look something like this:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Speed Calculator</title>
+    </head>
+    <body>
+        <h1>Speed Calculator</h1>
+        <p>Enter the distance and time to calculate speed:</p>
+
+        <label for="distance">Distance (km):</label>
+        <input type="number" id="distance" placeholder="Enter distance" />
+        <br /><br />
+
+        <label for="time">Time (hours):</label>
+        <input type="number" id="time" placeholder="Enter time" />
+        <br /><br />
+
+        <label for="fuelUsed">Fuel used (liters):</label>
+        <input type="number" id="fuelUsed" placeholder="Enter fuel used" />
+        <br /><br />
+
+        <button onclick="calculateSpeed()">Calculate Speed & Efficiency</button>
+
+        <p id="resultSpeed">Speed will appear here</p>
+        <p id="resultEfficiency">Efficiency will appear here</p>
+
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
+```
+
+```javascript
+// Function to calculate speed
+function calculateSpeed() {
+    // Get element object from HTML (DOM)
+    const distanceInput = document.getElementById("distance");
+    const timeInput = document.getElementById("time");
+    const resultSpeedDisplay = document.getElementById("resultSpeed");
+    const fuelUsedInput = document.getElementById("fuelUsed");
+    const resultEfficiencyDisplay = document.getElementById("resultEfficiency");
+
+    // Get the actual values from the inputs
+    const distance = distanceInput.value;
+    const time = timeInput.value;
+    const fuelUsed = fuelUsedInput.value;
+
+    // Calculate speed (Speed = Distance / Time)
+    const speed = distance / time;
+
+    // Calculate fuel efficiency (Efficiency = Distance / Fuel Used)
+    const efficiency = distance / fuelUsed;
+
+    // Display the result for speed
+    // resultSpeedDisplay.textContent = "Speed: " + speed + " km/h";
+    resultSpeedDisplay.textContent =
+        distance + " / " + time + " = " + speed + " km/h";
+
+    // Display the result for efficiency
+    resultEfficiencyDisplay.textContent =
+        "Fuel Efficiency: " + efficiency + " km/l";
+}
+```
+
+---
+
+## Home Exercises
+
+Try the following exercises at home to practice what you've learned. We'll go through the solutions in the next lesson.
 
 ### Exercise 3
 

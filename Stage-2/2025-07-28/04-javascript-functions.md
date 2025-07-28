@@ -1,3 +1,16 @@
+## Navigation
+
+1. [Overview](readme.md)
+2. [JavaScript Introduction](01-javascript-introduction.md)
+3. [JavaScript in HTML](./02-javascript-in-browser.md)
+4. [JavaScript Variables](./03-javascript-variables.md)
+5. [JavaScript Functions](./04-javascript-functions.md) ← _You are here_
+6. [Quick Quiz](./05-quick-quiz.md)
+7. [Exercise: change text](./06-exercise-and-html.md)
+8. [Exercise: speed calculator](./07-exercise-speed-calculator.md)
+
+---
+
 # JavaScript Functions
 
 So far all our JavaScript code was executed immediately when the page loaded / refreshed.
@@ -70,7 +83,7 @@ function addNumbers(a, b) {
 addNumbers(5, 10);
 ```
 
-**$Note$:** In the one parameter example we used `message` as a parameter, but you can name it anything you like, as long as it follows the [naming rules](./04-javascript-variables.md#rules) we discussed earlier. If you would replace `message` with `name`, the function would still work the same way.
+**$Note$:** In the one parameter example we used `message` as a parameter, but you can name it anything you like, as long as it follows the [naming rules](./03-javascript-variables.md#rules) we discussed earlier. If you would replace `message` with `name`, the function would still work the same way.
 
 **Parameters**: Variables listed as part of the function definition.
 

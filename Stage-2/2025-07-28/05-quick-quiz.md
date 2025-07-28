@@ -1,3 +1,16 @@
+## Navigation
+
+1. [Overview](readme.md)
+2. [JavaScript Introduction](01-javascript-introduction.md)
+3. [JavaScript in HTML](./02-javascript-in-browser.md)
+4. [JavaScript Variables](./03-javascript-variables.md)
+5. [JavaScript Functions](./04-javascript-functions.md)
+6. [Quick Quiz](./05-quick-quiz.md) ← _You are here_
+7. [Exercise: change text](./06-exercise-and-html.md)
+8. [Exercise: speed calculator](./07-exercise-speed-calculator.md)
+
+---
+
 # Quick Quiz - JavaScript Fundamentals
 
 ## Instructions:
@@ -22,10 +35,10 @@
 
 **Question 1:** In web development, what is JavaScript primarily responsible for?
 
-- a) Structure of the web page
-- b) Styling and appearance
-- c) Functionality and interactivity
-- d) Database management
+-   a) Structure of the web page
+-   b) Styling and appearance
+-   c) Functionality and interactivity
+-   d) Database management
 
 **Answer: c) Functionality and interactivity**
 
@@ -35,10 +48,10 @@
 
 **Question 2:** Which JavaScript engine does Google Chrome use?
 
-- a) SpiderMonkey
-- b) V8
-- c) JavaScriptCore
-- d) Chakra
+-   a) SpiderMonkey
+-   b) V8
+-   c) JavaScriptCore
+-   d) Chakra
 
 **Answer: b) V8**
 
@@ -48,10 +61,10 @@
 
 **Question 3:** What is the preferred way to include JavaScript in larger projects?
 
-- a) Inline JavaScript in HTML attributes
-- b) Internal JavaScript in `<script>` tags
-- c) External JavaScript files linked with `<script src="...">`
-- d) All methods are equally preferred
+-   a) Inline JavaScript in HTML attributes
+-   b) Internal JavaScript in `<script>` tags
+-   c) External JavaScript files linked with `<script src="...">`
+-   d) All methods are equally preferred
 
 **Answer: c) External JavaScript files linked with `<script src="...">`**
 
@@ -209,10 +222,10 @@ console.log(name);
 
 **Question 13:** What is a function in JavaScript?
 
-- a) A type of variable that stores numbers
-- b) A reusable block of code designed to perform a specific task
-- c) A way to style HTML elements
-- d) A method to create HTML tags
+-   a) A type of variable that stores numbers
+-   b) A reusable block of code designed to perform a specific task
+-   c) A way to style HTML elements
+-   d) A method to create HTML tags
 
 **Answer: b) A reusable block of code designed to perform a specific task**
 
@@ -222,10 +235,10 @@ console.log(name);
 
 **Question 14:** What is the correct way to define a function in JavaScript?
 
-- a) `function myFunction[] { }`
-- b) `function myFunction() { }`
-- c) `function myFunction<> { }`
-- d) `function myFunction; { }`
+-   a) `function myFunction[] { }`
+-   b) `function myFunction() { }`
+-   c) `function myFunction<> { }`
+-   d) `function myFunction; { }`
 
 **Answer: b) `function myFunction() { }`**
 
@@ -235,10 +248,10 @@ console.log(name);
 
 **Question 15:** What is the difference between parameters and arguments?
 
-- a) There is no difference, they are the same thing
-- b) Parameters are used in function calls, arguments are used in function definitions
-- c) Parameters are variables in the function definition, arguments are values passed when calling
-- d) Parameters are for numbers, arguments are for strings
+-   a) There is no difference, they are the same thing
+-   b) Parameters are used in function calls, arguments are used in function definitions
+-   c) Parameters are variables in the function definition, arguments are values passed when calling
+-   d) Parameters are for numbers, arguments are for strings
 
 **Answer: c) Parameters are variables in the function definition, arguments are values passed when calling**
 
@@ -248,10 +261,10 @@ console.log(name);
 
 **Question 16:** What happens when you try to access a function parameter outside the function?
 
-- a) It returns the last value used
-- b) It returns `undefined`
-- c) It throws a `ReferenceError`
-- d) It returns `null`
+-   a) It returns the last value used
+-   b) It returns `undefined`
+-   c) It throws a `ReferenceError`
+-   d) It returns `null`
 
 **Answer: c) It throws a `ReferenceError`**
 
@@ -261,10 +274,10 @@ console.log(name);
 
 **Question 17:** What is the difference between void functions and value functions?
 
-- a) Void functions use `let`, value functions use `const`
-- b) Void functions perform tasks without returning values, value functions return values
-- c) Void functions are faster, value functions are slower
-- d) There is no difference
+-   a) Void functions use `let`, value functions use `const`
+-   b) Void functions perform tasks without returning values, value functions return values
+-   c) Void functions are faster, value functions are slower
+-   d) There is no difference
 
 **Answer: b) Void functions perform tasks without returning values, value functions return values**
 

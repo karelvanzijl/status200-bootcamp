@@ -164,6 +164,60 @@ By the end of Stage 2, you'll be a complete full-stack developer capable of buil
 For reference and quick learning, this guide covers the most important HTML elements, CSS properties, color systems, and transitions.
 Perfect for beginners and as a refresher for experienced developers.
 
+### Week 2: JavaScript Introduction & Fundamentals (July 28, 2025)
+
+**[2025-07-28 - JavaScript Introduction & Fundamentals](./2025-07-28/readme.md)**
+
+1. **[JavaScript Introduction](./2025-07-28/01-javascript-introduction.md)**
+
+    - What is JavaScript and its role in web development
+    - JavaScript history and evolution
+    - Understanding client-side vs server-side programming
+    - JavaScript engines and how code gets executed
+
+2. **[JavaScript in the Browser](./2025-07-28/02-javascript-in-browser.md)**
+
+    - How JavaScript works in web browsers
+    - The Document Object Model (DOM)
+    - Browser developer tools and console
+    - Writing your first JavaScript code
+
+3. **[JavaScript Variables](./2025-07-28/03-javascript-variables.md)**
+
+    - Declaring variables with `var`, `let`, and `const`
+    - Variable naming conventions and best practices
+    - Understanding scope and hoisting
+    - Variable assignment and reassignment rules
+
+4. **[JavaScript Functions](./2025-07-28/04-javascript-functions.md)**
+
+    - Function declaration and expression syntax
+    - Parameters and arguments
+    - Return statements and function outputs
+    - Function scope and local vs global variables
+    - Arrow functions introduction
+
+5. **[Quick Quiz](./2025-07-28/05-quick-quiz.md)**
+
+    - Review of JavaScript basics covered so far
+    - Variable declaration and scope concepts
+    - Function syntax and usage
+    - Interactive questions to test understanding
+
+6. **[Exercise: HTML Integration](./2025-07-28/06-exercise-and-html.md)**
+
+    - Connecting JavaScript to HTML documents
+    - Using `<script>` tags effectively
+    - Event handling basics
+    - Practical exercises combining HTML and JavaScript
+
+7. **[Exercise: Speed Calculator](./2025-07-28/07-exercise-speed-calculator.md)**
+
+    - Building a practical JavaScript application
+    - User input handling and validation
+    - Mathematical calculations in JavaScript
+    - Displaying results dynamically
+
 ## Getting Started
 
 1. **Complete modules in chronological order** - From top to bottom, each module builds on the previous one

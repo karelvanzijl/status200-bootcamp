@@ -1,6 +1,17 @@
-# JavaScript & HTML Practice
+## Navigation
+
+1. [Overview](readme.md)
+2. [JavaScript Introduction](01-javascript-introduction.md)
+3. [JavaScript in HTML](./02-javascript-in-browser.md)
+4. [JavaScript Variables](./03-javascript-variables.md)
+5. [JavaScript Functions](./04-javascript-functions.md)
+6. [Quick Quiz](./05-quick-quiz.md)
+7. [Exercise: change text](./06-exercise-and-html.md) ← _You are here_
+8. [Exercise: speed calculator](./07-exercise-speed-calculator.md)
 
 ---
+
+# JavaScript & HTML Practice
 
 ## Setup
 
@@ -189,3 +200,47 @@ Create a new button below the existing one that, when clicked, changes the text 
 ## Practice Exercise 3
 
 Add a new paragraph below the button that says "This is a new paragraph." Use JavaScript to change its text to "This paragraph has been updated!" when the button with the ID `changeTextButton` is clicked.
+
+---
+
+After completing these exercises, you should have end up with the following HTML and JavaScript code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JavaScript Practice</title>
+    </head>
+    <body>
+        <h1>JavaScript & HTML Practice</h1>
+        <p id="greeting">Hello, World!</p>
+        <button id="changeTextButton" onclick="changeMessage()">
+            Change Text
+        </button>
+        <button onclick="resetText()">Reset Text</button>
+        <p id="anotherParagraph">This is a new paragraph.</p>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
+```
+
+```javascript
+// Select the button and paragraph elements
+const button = document.getElementById("changeTextButton");
+const greeting = document.getElementById("greeting");
+const anotherParagraph = document.getElementById("anotherParagraph");
+
+// Function to change the texts
+function changeMessage() {
+    greeting.textContent = "Welcome to JavaScript!";
+    anotherParagraph.textContent = "This paragraph has been updated!";
+}
+
+// Function to set the texts back
+function resetText() {
+    greeting.textContent = "Hello, World!";
+    anotherParagraph.textContent = "This is a new paragraph.";
+}
+```

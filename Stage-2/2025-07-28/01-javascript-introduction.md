@@ -1,3 +1,16 @@
+## Navigation
+
+1. [Overview](readme.md)
+2. [JavaScript Introduction](01-javascript-introduction.md) ← _You are here_
+3. [JavaScript in HTML](./02-javascript-in-browser.md)
+4. [JavaScript Variables](./03-javascript-variables.md)
+5. [JavaScript Functions](./04-javascript-functions.md)
+6. [Quick Quiz](./05-quick-quiz.md)
+7. [Exercise: change text](./06-exercise-and-html.md)
+8. [Exercise: speed calculator](./07-exercise-speed-calculator.md)
+
+---
+
 # JavaScript Introduction
 
 This section introduces JavaScript, a key technology in web development that enables interactivity and dynamic content on websites.
