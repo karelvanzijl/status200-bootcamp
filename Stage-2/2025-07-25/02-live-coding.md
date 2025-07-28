@@ -117,12 +117,6 @@ Let's see what happens when CSS doesn't work.
 
 ## Final Check & Wrap-up
 
-### Walking Around / Screen Sharing
-
--   **In-person:** Walk around to see who's struggling
--   **Online:** Ask 2-3 students to share their screens
--   **Help:** Assist anyone who fell behind
-
 ### Expected Final Result
 
 Students should have:
@@ -158,7 +152,7 @@ Students should have:
 
 ---
 
-## Extension (If Time Allows)
+## Extension (If Time)
 
 1. **Add more CSS:** Make the header background blue
 2. **Style the navigation:** Remove the bullet points from the list
