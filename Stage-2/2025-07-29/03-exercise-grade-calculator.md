@@ -65,7 +65,7 @@ function calculateAverage() {
     const average = (grade1 + grade2) / 2;
 
     // Display the result
-    resultDisplay.textContent = "Average grade: " + average + "/10";
+    resultDisplay.textContent = "Average grade: " + average;
 }
 ```
 
@@ -153,14 +153,14 @@ const average = (grade1 + grade2) / 2;
 **4. Displaying the Result**
 
 ```javascript
-resultDisplay.textContent = "Average grade: " + average + "/10";
+resultDisplay.textContent = "Average grade: " + average;
 ```
 
 **What's happening:**
 
 -   We change the text content of our result paragraph
 -   We use `+` to combine (concatenate) strings together
--   If average is 7, the result will show: "Average grade: 7/10"
+-   If average is 7, the result will show: "Average grade: 7"
 
 ### How It All Works Together
 
@@ -211,7 +211,7 @@ Here's what happens when someone uses the calculator:
 2. Enter a first grade (like 8)
 3. Enter a second grade (like 6)
 4. Click "Calculate Average"
-5. You should see "Average grade: 7/10"
+5. You should see "Average grade: 7"
 
 ---
 
@@ -219,7 +219,7 @@ Here's what happens when someone uses the calculator:
 
 ### Exercise 1
 
-Modify the calculator to also show the calculation formula. For example: "(8 + 6) / 2 = 7/10" instead of just "Average grade: 7/10".
+Modify the calculator to also show the calculation formula. For example: "(8 + 6) / 2 = 7" instead of just "Average grade: 7".
 
 ### Exercise 2
 
