@@ -191,4 +191,6 @@ anotherFunction(); // Outputs: I am global
 
 ---
 
-**Insight:** As long as a variable is declared outside a function, it is accessible throughout your script (in- and outside functions) and, in case let was used, you can change its value anytime.
+**Insight 1:** As long as a variable is declared outside a function, it is accessible throughout your script (in- and outside functions) and, in case let was used, you can change its value anytime.
+
+**Insight 2:** When a variable is declared inside a function, it is only accessible inside that function and nowhere else. In case let was used, you can change its value anytime inside that function.
