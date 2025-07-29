@@ -191,4 +191,4 @@ anotherFunction(); // Outputs: I am global
 
 ---
 
-**Insight:** As long as a variable is declared using `let` and outside a function, it is accessible throughout your script (in- and outside functions) and you can change its value anytime.
+**Insight:** As long as a variable is declared outside a function, it is accessible throughout your script (in- and outside functions) and, in case let was user, you can change its value anytime.
