@@ -4,7 +4,7 @@
 
 Create a page where a user can enter their name.
 
-When teh user clicks on a button, display a greeting message that says: "Hello, [name]! Welcome to our website!"
+When the user clicks on a button, display a greeting message that says: "Hello, [name]! Welcome to our website!"
 
 When the user click on another button, the greeting text should change to "Your personalized greeting will appear here!"
 
