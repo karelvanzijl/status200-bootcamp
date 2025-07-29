@@ -1,4 +1,9 @@
-# JavaScript Exercise 4 - Simple Counter
+# JavaScript Exercise - Simple Counter
+
+**Difficult part:**
+
+-   What variable declaration should you use for your counter?
+-   Where should you place the variable declaration?
 
 ### Exercise 1
 

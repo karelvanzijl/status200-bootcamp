@@ -1,4 +1,4 @@
-# JavaScript Exercise 5 - Name Greeting Generator
+# JavaScript Exercise - Name Greeting Generator
 
 ### Exercise 1
 
