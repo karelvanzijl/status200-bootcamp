@@ -219,3 +219,73 @@ Modify the calculator to also show the calculation formula. For example: "€2.5
 Add a third input for "discount percentage" and calculate the final price after discount. Display both the subtotal and the final price.
 
 **Hint:** Final price = Total - (Total × Discount / 100)
+
+---
+
+If you followed the steps during class, you should have ended up with something like this:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shopping Calculator</title>
+    </head>
+    <body>
+        <h1>Shopping Total Calculator</h1>
+        <p>Enter the price and quantity to calculate the total cost:</p>
+        <p>
+            <label for="price">Price per item (€):</label>
+            <input type="number" id="price" placeholder="Enter price" />
+        </p>
+        <p>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" placeholder="Enter quantity" />
+        </p>
+        <p>
+            <label for="discount">Disount (%):</label>
+            <input
+                type="number"
+                id="discount"
+                placeholder="Enter discount percentage"
+            />
+        </p>
+        <p>
+            <button onclick="calculateTotal()">Calculate Total</button>
+        </p>
+        <p id="result"></p>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
+```
+
+```javascript
+function calculateTotal() {
+    // Get user input values
+    const priceInput = document.getElementById("price").value;
+    const quantityInput = document.getElementById("quantity").value;
+    const discountInput = document.getElementById("discount").value;
+
+    // Get elemnt we're going to show the result
+    const result = document.getElementById("result");
+
+    // Calculate the total price
+    const total = priceInput * quantityInput;
+
+    // Calculate the discount
+    const discount = (total * discountInput) / 100;
+
+    // Calculate final price
+    const final = total - discount;
+
+    // Display result (step 1)
+    // result.textContent = "Total Price: €" + total;
+
+    // Display result (step 2)
+    // result.textContent = "€" + priceInput + " x " + quantityInput + " = " + "€" + total;
+
+    // Display result (step 3)
+    result.textContent = "Total Price: €" + final;
+}
+```
