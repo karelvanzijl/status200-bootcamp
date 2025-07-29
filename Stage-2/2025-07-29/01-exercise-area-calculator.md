@@ -218,3 +218,61 @@ Modify the calculator to also show the calculation formula. For example: "10 × 
 Add a "Clear" button that resets both input fields and the result display to their original state.
 
 **Hint:** You can set input values to an empty string `""` to clear them, just like you can set `textContent`.
+
+---
+
+If you followed the steps during class, you should have ended up with something like this:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Area Calculator</title>
+    </head>
+    <body>
+        <h1>Area Calculator</h1>
+        <p>
+            <label for="width">Enter width (cm)</label>
+            <input type="number" id="width" placeholder="Enter width" />
+        </p>
+        <p>
+            <label for="height">Enter height (cm)</label>
+            <input type="number" id="height" placeholder="Enter height" />
+        </p>
+        <p>
+            <button onclick="calculateArea()">Calculate Area</button>
+            <button onclick="reset()">Reset</button>
+        </p>
+        <p id="result"></p>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
+```
+
+```javascript
+// Calculatie Area based on user input
+function calculateArea() {
+    // Get use input values
+    const width = document.getElementById("width").value;
+    const height = document.getElementById("height").value;
+
+    // Find element for outputing the result
+    const result = document.getElementById("result");
+
+    // Calculate the area
+    const area = width * height;
+
+    // Display result
+    // result.textContent = "Area: " + area + " cm2";
+    result.textContent = width + " x " + height + " = " + area + " cm2";
+}
+
+// Reset page to its original "state"
+function reset() {
+    document.getElementById("width").value = "";
+    document.getElementById("height").value = "";
+    document.getElementById("result").textContent = "";
+}
+```
