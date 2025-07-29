@@ -274,7 +274,7 @@ function calculateTotal() {
     const total = priceInput * quantityInput;
 
     // Calculate the discount
-    const discount = (total * discountInput) / 100;
+    const discount = total * (discountInput / 100);
 
     // Calculate final price
     const final = total - discount;
