@@ -188,7 +188,7 @@ Here's what happens when someone uses the calculator:
 
 **String Concatenation**
 
--   Using `+` to combine text and numbers: `"Average grade: " + average + "/10"`
+-   Using `+` to combine text and numbers: `"Average grade: " + average`
 -   JavaScript automatically converts numbers to text when combining with strings
 
 **Order of Operations**
