@@ -25,6 +25,8 @@ Do you think you could rewrite the converter so that the user inputs their birth
 
 ---
 
+If you followed the steps during class, you should have ended up with something like this:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
