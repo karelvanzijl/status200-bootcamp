@@ -218,6 +218,84 @@ Perfect for beginners and as a refresher for experienced developers.
     - Mathematical calculations in JavaScript
     - Displaying results dynamically
 
+### Week 2: JavaScript Practice & Interactive Exercises (July 29, 2025)
+
+**[2025-07-29 - JavaScript Practice & Interactive Exercises](./2025-07-29/readme.md)**
+
+1. **[Button Click Exercises](./2025-07-29/00-exercise-button-click.md)**
+
+    - Basic DOM manipulation and event handling
+    - Understanding HTML IDs and JavaScript connection
+    - Making text change dynamically with button clicks
+    - Project setup and file organization
+
+2. **[Area Calculator Exercise](./2025-07-29/01-exercise-area-calculator.md)**
+
+    - Building a practical calculator application
+    - User input handling with HTML forms
+    - Mathematical calculations in JavaScript
+    - Displaying dynamic results
+
+3. **[Shopping Calculator Exercise](./2025-07-29/02-exercise-shopping-calculator.md)**
+
+    - Creating an interactive shopping cart calculator
+    - Working with multiple input fields
+    - Price calculations and totals
+    - Real-world application development
+
+4. **[Age Converter Exercise](./2025-07-29/03-exercise-age-converter.md)**
+
+    - Building age conversion utilities
+    - Date and time calculations in JavaScript
+    - Input validation and error handling
+    - Multiple calculation methods
+
+5. **[Simple Counter Exercise](./2025-07-29/04-exercise-simple-counter.md)**
+
+    - Creating interactive counters with multiple operations
+    - Variable scope and placement considerations
+    - Multiple button event handlers
+    - Mathematical operations (addition, subtraction, multiplication, division)
+
+6. **[Name Greeting Exercise](./2025-07-29/05-exercise-name-greeting.md)**
+
+    - String manipulation and concatenation
+    - Personalized user interactions
+    - Dynamic content generation
+    - User input processing
+
+### Week 2: Web App Logic Flow & Variable Fundamentals (July 30, 2025)
+
+**[2025-07-30 - Web App Logic Flow & Variable Fundamentals](./2025-07-30/readme.md)**
+
+1. **[Understanding Web App Logic Flow](./2025-07-30/01-web-app-logic-flow.md)**
+
+    - The universal pattern of interactive web applications
+    - Data flow from HTML input to JavaScript processing to HTML display
+    - The five-step pipeline: INPUT → RETRIEVE → PROCESS → OUTPUT → DISPLAY
+    - Recognizing patterns that apply to any calculator or interactive tool
+
+2. **[JavaScript Variables in Web Apps](./2025-07-30/02-variable-flow.md)**
+
+    - Variable lifecycle: CREATE → STORE → RETRIEVE → USE
+    - Understanding variables as labeled storage boxes in memory
+    - Variable scope and placement in web applications
+    - Practical variable usage patterns
+
+3. **[Counter Exercise Practice](./2025-07-30/03-counter-exercise.md)**
+
+    - Applying the web app logic flow to a practical example
+    - Variable declaration and placement considerations
+    - Multiple button interactions and event handling
+    - Building incremental functionality step by step
+
+4. **[BMI Calculator Exercise - Part 1](./2025-07-30/04-exercise-bmi-calculator-1.md)**
+
+    - Building a Body Mass Index calculator application
+    - User input validation and processing
+    - Mathematical formulas in JavaScript
+    - Displaying calculated results with proper formatting
+
 ## Getting Started
 
 1. **Complete modules in chronological order** - From top to bottom, each module builds on the previous one

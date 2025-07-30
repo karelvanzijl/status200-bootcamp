@@ -37,3 +37,22 @@ let temperature = 30;
 let weather = temperature > 25 ? "It's warm outside." : "It's cold outside.";
 console.log(weather); // Output: "It's warm outside."
 ```
+
+## Combining Ternary Operators
+
+You can nest ternary operators for multiple conditions, but be cautious as it can reduce code readability.
+
+```
+let score = 75;
+let result =
+    score >= 90
+        ? "A"
+        : score >= 80
+            ? "B"
+            : score >= 70
+                ? "C"
+                : score >= 60
+                    ? "D"
+                    : "F";
+console.log(result); // Output: "C"
+```

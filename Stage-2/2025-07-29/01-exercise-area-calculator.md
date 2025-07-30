@@ -1,3 +1,15 @@
+## Navigation
+
+1. [Overview](readme.md)
+2. [Button Click Exercises](00-exercise-button-click.md)
+3. [Area Calculator Exercise](01-exercise-area-calculator.md) ← _You are here_
+4. [Shopping Calculator Exercise](02-exercise-shopping-calculator.md)
+5. [Age Converter Exercise](03-exercise-age-converter.md)
+6. [Simple Counter Exercise](04-exercise-simple-counter.md)
+7. [Name Greeting Exercise](05-exercise-name-greeting.md)
+
+---
+
 # JavaScript Exercise - Area Calculator
 
 ## Setup

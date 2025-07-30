@@ -1,5 +1,7 @@
 # Quick Quiz - JavaScript Operators & Data Types
 
+20 questions to test your knowledge of JavaScript operators, data types, and expressions.
+
 ## Instructions:
 
 **1. Raise your hand if you know the answer**

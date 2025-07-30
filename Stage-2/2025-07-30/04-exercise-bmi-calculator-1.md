@@ -1,3 +1,13 @@
+## Navigation
+
+1. [Overview](readme.md)
+2. [Understanding Web App Logic Flow](01-web-app-logic-flow.md)
+3. [JavaScript Variables in Web Apps](02-variable-flow.md)
+4. [Counter Exercise Practice](03-counter-exercise.md)
+5. [BMI Calculator Exercise - Part 1](04-exercise-bmi-calculator-1.md) ← _You are here_
+
+---
+
 # Exercise: BMI Calculator 1.0
 
 ## Overview
@@ -124,21 +134,58 @@ Instead of asking for height in meters, change the input field to ask for height
 
 The BMI formula still needs meters, so you need to change something.
 
-### Task 4: two unit systems
+### Task 4: two unit systems - ⚠️ difficult!
 
-Add a dropdown to select between two unit systems:
+1. Add a dropdown menu allowing users to select between "Metric" (kg, cm) and "Imperial" (lbs, inches).
+2. Change the labels and calculation based on the selected unit system.
+3. Modify your calculation to handle both unit systems:
+    - For Metric: `BMI = weight (kg) / (height (m))^2)`
+    - For Imperial: `BMI = (weight (lbs) / (height (inches) * height (inches)) * 703`
+
+### Important notes:
+
+This exercise requires new a HTML element, a new trigger event you can listen to and a `if ... else` statement!
+
+#### The `<select>` element
+
+This element allows users to choose from a list of options. You write it like this:
 
 ```html
-<select>
+<select id="unitSystem">
     <option value="metric">Metric (kg, cm)</option>
     <option value="imperial">Imperial (lbs, inches)</option>
 </select>
 ```
 
-> A `select` element also has event listeners, just like buttons (`onclick`). For this execise, you can use the `onchange` event to trigger a function when the user selects a different unit system.
+The `value` attribute is used to identify which option was selected. You can use this value in your JavaScript code to determine which unit system the user has chosen _(just like hwo we got the value of the input field)_:
 
-1. When the users selects "Metric", The labels should say "Weight (kg)" and "Height (cm)".
-2. When the users selects "Imperial", The labels should change to "Weight (lbs)" and "Height (inches)".
-3. The calculation should also change:
-    - For Metric: `BMI = weight (kg) / (height (m))^2)`
-    - For Imperial: `BMI = (weight (lbs) / (height (inches) * height (inches)) * 703`
+```javascript
+const selectedUnitSystem = document.getElementById("unitSystem").value;
+```
+
+#### The `onchange` event
+
+There are many events you can listen to in JavaScript. So far we've only used the `onclick` event, which is triggered when a user clicks on an element. But for this exercise, we need to listen to the `onchange` event. This event is triggered when the user changes the selected option in a `<select>` element.
+
+To use this event, you can add it directly to the `<select>` element like this:
+
+```html
+<select id="unitSystem" onchange="changeUnitSystem()"></select>
+```
+
+#### The `if ... else` statement
+
+The `if ... else` statement allows you to execute different code based on a condition. In this case, you can use it to check which unit system the user has selected and change the labels, and change the calculation accordingly.
+
+This is how you can use the `if ... else` statement in your JavaScript code:
+
+```javascript
+if (selectedUnitSystem == "metric") {
+    // Code block for metric system
+} else {
+    // Code block for imperial system
+}
+```
+
+-   If the user selected the option with the value "metric", the code inside the first block will be executed.
+-   If the user selected the option with the value "imperial", the code inside the `else` block will be executed.

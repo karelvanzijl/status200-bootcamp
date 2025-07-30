@@ -1,3 +1,13 @@
+## Navigation
+
+1. [Overview](readme.md)
+2. [Understanding Web App Logic Flow](01-web-app-logic-flow.md)
+3. [JavaScript Variables in Web Apps](02-variable-flow.md)
+4. [Counter Exercise Practice](03-counter-exercise.md) ← _You are here_
+5. [BMI Calculator Exercise - Part 1](04-exercise-bmi-calculator-1.md)
+
+---
+
 # JavaScript Exercise 4 - Simple Counter
 
 ## Setup
