@@ -1,6 +1,6 @@
 # Exercise: BMI Calculator 1.0
 
-## Overvie
+## Overview
 
 Your task is to create a **Body Mass Index (BMI) Calculator** using HTML and JavaScript. This assignment will test your understanding of:
 
@@ -12,7 +12,7 @@ Your task is to create a **Body Mass Index (BMI) Calculator** using HTML and Jav
 
 ## What is BMI?
 
-**Body Mass Index (BMI)** is a measure used to determine if a person has a healthy weight for their height
+**Body Mass Index (BMI)** is a measure used to determine if a person has a healthy weight for their height.
 
 **Formula:** `BMI = weight (kg) / (height (m))^2`
 
@@ -61,3 +61,84 @@ Test your calculator with these values:
 -   **Height:** 1.75 m
 
 Should show _"Hello Alex, your BMI is 22.86"_
+
+---
+
+You should have ended up with something like this (not exact, but functionally similar):
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BMI Calculator</title>
+    </head>
+    <body>
+        <h1>BMI Calculator</h1>
+        <p>
+            <label for="name">Your name</label>
+            <input type="text" id="name" placeholder="Enter name" />
+        </p>
+        <p>
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" placeholder="Enter your weight" />
+        </p>
+        <p>
+            <label for="height">Height (m)</label>
+            <input type="number" id="height" placeholder="Enter your height" />
+        </p>
+        <p>
+            <button onclick="calculateBmi()">Calculate BMI Score</button>
+        </p>
+        <p id="result"></p>
+        <script src="./script.js"></script>
+    </body>
+</html>
+```
+
+```javascript
+function calculateBmi() {
+    // Step 1: HTML input fields
+    // Step 2: get user input
+    const name = document.getElementById("name").value;
+    const weight = document.getElementById("weight").value;
+    const height = document.getElementById("height").value;
+
+    // Step 3: process / calculation
+    const bmiScore = weight / (height * height);
+
+    // Step 4: create message
+    const message = "Hello " + name + ", your BMI is " + bmiScore;
+
+    // Step 5: display message in HTML
+    document.getElementById("result").textContent = message;
+}
+```
+
+---
+
+### Task 3: change height input to cm
+
+Instead of asking for height in meters, change the input field to ask for height in centimeters.
+
+The BMI formula still needs meters, so you need to change something.
+
+### Task 4: two unit systems
+
+Add a dropdown to select between two unit systems:
+
+```html
+<select>
+    <option value="metric">Metric (kg, cm)</option>
+    <option value="imperial">Imperial (lbs, inches)</option>
+</select>
+```
+
+> A `select` element also has event listeners, just like buttons (`onclick`). For this execise, you can use the `onchange` event to trigger a function when the user selects a different unit system.
+
+1. When the users selects "Metric", The labels should say "Weight (kg)" and "Height (cm)".
+2. When the users selects "Imperial", The labels should change to "Weight (lbs)" and "Height (inches)".
+3. The calculation should also change:
+    - For Metric: `BMI = weight (kg) / (height (m))^2)`
+    - For Imperial: `BMI = (weight (lbs) / (height (inches) * height (inches)) * 703`
