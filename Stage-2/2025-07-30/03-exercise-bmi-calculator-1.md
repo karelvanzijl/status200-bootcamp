@@ -1,6 +1,6 @@
 # Exercise: BMI Calculator 1.0
 
-## Overview
+## Overvie
 
 Your task is to create a **Body Mass Index (BMI) Calculator** using HTML and JavaScript. This assignment will test your understanding of:
 
@@ -12,7 +12,7 @@ Your task is to create a **Body Mass Index (BMI) Calculator** using HTML and Jav
 
 ## What is BMI?
 
-**Body Mass Index (BMI)** is a measure used to determine if a person has a healthy weight for their height.
+**Body Mass Index (BMI)** is a measure used to determine if a person has a healthy weight for their height
 
 **Formula:** `BMI = weight (kg) / (height (m))^2`
 
