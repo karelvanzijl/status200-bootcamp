@@ -75,7 +75,7 @@ Remember our 5-step web app pattern? Variables are essential in every step:
 
 ```
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│   HTML      │    │     JS      │    │     JS      │    │     JS      │    │   JS        │
+│   HTML      │    │     JS      │    │     JS      │    │     JS      │    │   HTM       │
 │   INPUT     │───▶│  RETRIEVE   │───▶│   PROCESS   │───▶│   OUTPUT    │───▶│  DISPLAY    │
 │             │    │             │    │             │    │             │    │             │
 │ User types  │    │ .value      │    │ Calculate   │    │ Result      │    │.textContent │

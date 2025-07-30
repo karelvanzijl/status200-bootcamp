@@ -10,7 +10,7 @@ Think of every web app as data flowing through a pipeline:
 
 ```
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│   HTML      │    │     JS      │    │     JS      │    │     JS      │    │   JS        │
+│   HTML      │    │     JS      │    │     JS      │    │     JS      │    │   HTML      │
 │   INPUT     │───▶│  RETRIEVE   │───▶│   PROCESS   │───▶│   OUTPUT    │───▶│  DISPLAY    │
 │             │    │             │    │             │    │             │    │             │
 │ User types  │    │ .value      │    │ Calculate   │    │ Result      │    │.textContent │
@@ -28,7 +28,7 @@ HTML INPUT → JS RETRIEVE → JS PROCESS → JS OUTPUT → HTML DISPLAY
 2. JS: Get values from input fields with `.value`
 3. JS: Process data (calculations, transformations) if needed
 4. JS: Create message or result based on the processed data
-5. JS: Display result with `.textContent`
+5. HTML: Display result with `.textContent`
 
 **Key insight 1**: Steps 2, 3, 4 and 5 all happen inside one JavaScript function! **Step 4 and 5 are often combined**.
 
