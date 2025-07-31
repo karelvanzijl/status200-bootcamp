@@ -123,10 +123,19 @@ Build the first version of an ATM machine simulator! This assignment focuses on 
 
 ## Bonus Challenges (Optional)
 
+**Validation Enhancements**
+
 -   Add a deposit / withdrawal limit (e.g., 1500 MYR)
 -   Prevent withdrawal an deposits of amounts not divisible by 10 MYR
 -   Ensure values entered by the user are integer numbers
 -   Ensure values entered by the user are greater than 0
+
+**Bank Operations**
+
+-   Add "Refill ATM" button that allows the bank to add extra money to the ATM machine balance
+-   Bank can add any positive amount divisible by 10 MYR to increase ATM cash availability
+-   Validate that refill amount is divisible by 10 MYR
+-   Display confirmation message when ATM is successfully refilled
 
 ## Submission Guidelines
 
