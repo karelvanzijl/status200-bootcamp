@@ -312,7 +312,7 @@ let num2 = 4;
 Create a program that calculates:
 
 1. The area of a circle (π \* radius²)
-2. The volume of a cylinder (π _ radius² _ height)
+2. The volume of a cylinder (π \* radius² \* height)
 3. The distance traveled (speed \* time)
 
 ```javascript

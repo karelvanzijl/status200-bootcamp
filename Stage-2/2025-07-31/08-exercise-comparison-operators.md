@@ -415,26 +415,7 @@ let user4Age = "20"; // String age
 // Display results with user-friendly messages
 ```
 
-### Challenge 2: Grade Classification
-
-Create a grading system using comparison operators:
-
-```javascript
-// Your code here
-let student1Score = 95;
-let student2Score = 82;
-let student3Score = 67;
-let student4Score = 45;
-
-// Classify grades:
-// A: >= 90
-// B: >= 80 and < 90
-// C: >= 70 and < 80
-// D: >= 60 and < 70
-// F: < 60
-```
-
-### Challenge 3: Price Comparison Shopping
+### Challenge 2: Price Comparison Shopping
 
 Create a price comparison system:
 
@@ -447,9 +428,6 @@ let budget = 30;
 
 // Compare prices and determine:
 // - Which products are within budget
-// - Which is the cheapest
-// - Which is the most expensive
-// - Handle the string price correctly
 ```
 
 ## Testing Your Work
