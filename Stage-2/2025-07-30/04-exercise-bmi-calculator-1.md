@@ -134,58 +134,57 @@ Instead of asking for height in meters, change the input field to ask for height
 
 The BMI formula still needs meters, so you need to change something.
 
-### Task 4: two unit systems - ⚠️ difficult!
+---
 
-1. Add a dropdown menu allowing users to select between "Metric" (kg, cm) and "Imperial" (lbs, inches).
-2. Change the labels and calculation based on the selected unit system.
-3. Modify your calculation to handle both unit systems:
-    - For Metric: `BMI = weight (kg) / (height (m))^2)`
-    - For Imperial: `BMI = (weight (lbs) / (height (inches) * height (inches)) * 703`
-
-### Important notes:
-
-This exercise requires new a HTML element, a new trigger event you can listen to and a `if ... else` statement!
-
-#### The `<select>` element
-
-This element allows users to choose from a list of options. You write it like this:
+You should have ended up with something like this (not exact, but functionally similar):
 
 ```html
-<select id="unitSystem">
-    <option value="metric">Metric (kg, cm)</option>
-    <option value="imperial">Imperial (lbs, inches)</option>
-</select>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BMI Calculator</title>
+    </head>
+    <body>
+        <h1>BMI Calculator</h1>
+        <p>
+            <label for="name">Your name</label>
+            <input type="text" id="name" placeholder="Enter name" />
+        </p>
+        <p>
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" placeholder="Enter your weight" />
+        </p>
+        <p>
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" placeholder="Enter your height" />
+        </p>
+        <p>
+            <button onclick="calculateBmi()">Calculate BMI Score</button>
+        </p>
+        <p id="result"></p>
+        <script src="./script.js"></script>
+    </body>
+</html>
 ```
-
-The `value` attribute is used to identify which option was selected. You can use this value in your JavaScript code to determine which unit system the user has chosen _(just like hwo we got the value of the input field)_:
 
 ```javascript
-const selectedUnitSystem = document.getElementById("unitSystem").value;
-```
+// Function to calculate BMI Score
+function calculateBmi() {
+    // Step 2: get user input
+    const name = document.getElementById("name").value;
+    const weight = document.getElementById("weight").value;
+    const height = document.getElementById("height").value;
 
-#### The `onchange` event
+    // Step 3: process / calculation
+    const heightInMeters = height / 100;
+    const bmiScore = weight / (heightInMeters * heightInMeters);
 
-There are many events you can listen to in JavaScript. So far we've only used the `onclick` event, which is triggered when a user clicks on an element. But for this exercise, we need to listen to the `onchange` event. This event is triggered when the user changes the selected option in a `<select>` element.
+    // Step 4: create message
+    const message = "Hello " + name + ", your BMI is " + bmiScore;
 
-To use this event, you can add it directly to the `<select>` element like this:
-
-```html
-<select id="unitSystem" onchange="changeUnitSystem()"></select>
-```
-
-#### The `if ... else` statement
-
-The `if ... else` statement allows you to execute different code based on a condition. In this case, you can use it to check which unit system the user has selected and change the labels, and change the calculation accordingly.
-
-This is how you can use the `if ... else` statement in your JavaScript code:
-
-```javascript
-if (selectedUnitSystem == "metric") {
-    // Code block for metric system
-} else {
-    // Code block for imperial system
+    // Step 5: display message in HTML
+    document.getElementById("result").textContent = message;
 }
 ```
-
--   If the user selected the option with the value "metric", the code inside the first block will be executed.
--   If the user selected the option with the value "imperial", the code inside the `else` block will be executed.

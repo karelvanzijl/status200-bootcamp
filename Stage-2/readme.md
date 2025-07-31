@@ -296,6 +296,66 @@ Perfect for beginners and as a refresher for experienced developers.
     - Mathematical formulas in JavaScript
     - Displaying calculated results with proper formatting
 
+### Week 2: JavaScript Data Types & Operators (July 31, 2025)
+
+**[2025-07-31 - JavaScript Data Types & Operators](./2025-07-31/readme.md)**
+
+1. **[JavaScript Primitive Data Types](./2025-07-31/01-js-primitive-data-types.md)**
+
+    - Understanding the fundamental data types in JavaScript
+    - String, Number, Boolean, Undefined, Null, and Symbol types
+    - Type checking and type conversion
+    - Working with different data types in practical applications
+
+2. **[Primitive Data Types Exercise](./2025-07-31/02-exercise-primitive-data-types.md)**
+
+    - Hands-on practice with JavaScript data types
+    - Creating variables of different types
+    - Type identification and manipulation
+    - Real-world examples and use cases
+
+3. **[JavaScript Arithmetic Operators](./2025-07-31/03-js-arithmetic-operators.md)**
+
+    - Mathematical operations in JavaScript
+    - Addition, subtraction, multiplication, and division
+    - Modulus operator and order of operations
+    - Working with numbers and calculations
+
+4. **[Arithmetic Operators Exercise](./2025-07-31/04-exercise-arithmetic-operators.md)**
+
+    - Practical exercises with mathematical operations
+    - Building calculator functionality
+    - Complex calculations and formula implementation
+    - Error handling with arithmetic operations
+
+5. **[JavaScript Assignment Operators](./2025-07-31/05-js-assignment-operators.md)**
+
+    - Basic assignment and compound assignment operators
+    - Shorthand operators for common operations
+    - Understanding operator precedence
+    - Efficient code writing techniques
+
+6. **[Assignment Operators Exercise](./2025-07-31/06-exercise-assignment-operators.md)**
+
+    - Hands-on practice with assignment operators
+    - Using compound operators effectively
+    - Code optimization with assignment operators
+    - Real-world application scenarios
+
+7. **[JavaScript Comparison Operators](./2025-07-31/07-js-comparison-operators.md)**
+
+    - Equality and inequality operators
+    - Strict vs loose comparison
+    - Greater than, less than, and relational operators
+    - Boolean results and conditional logic preparation
+
+8. **[Comparison Operators Exercise](./2025-07-31/08-exercise-comparison-operators.md)**
+
+    - Practical exercises with comparison operators
+    - Building conditional logic foundations
+    - Understanding truthy and falsy values
+    - Preparing for decision-making in code
+
 ## Getting Started
 
 1. **Complete modules in chronological order** - From top to bottom, each module builds on the previous one
