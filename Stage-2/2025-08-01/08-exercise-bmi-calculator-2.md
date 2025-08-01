@@ -13,16 +13,6 @@
 
 ---
 
-## Navigation
-
-1. [Overview](readme.md)
-2. [Understanding Web App Logic Flow](01-web-app-logic-flow.md)
-3. [JavaScript Variables in Web Apps](02-variable-flow.md)
-4. [Counter Exercise Practice](03-counter-exercise.md)
-5. [BMI Calculator Exercise - Part 1](04-exercise-bmi-calculator-1.md) ← _You are here_
-
----
-
 # Exercise: BMI Calculator 2.0
 
 Lets improve our BMI Calculator from the previous exercise by adding more features and making it more user-friendly.
