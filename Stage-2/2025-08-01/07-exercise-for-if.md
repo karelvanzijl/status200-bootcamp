@@ -83,7 +83,7 @@ console.log("Temperature check complete.");
 You are an adult.
 Temperature check complete.
 ```
-
+---
 ### Task 2: If-Else Statement
 
 Practice using if-else statements:
