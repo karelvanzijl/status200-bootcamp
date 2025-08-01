@@ -1,3 +1,17 @@
+## Navigation
+
+1. [Overview](readme.md)
+2. [Primitive Data Types](./01-js-primitive-data-types.md)
+3. [Exercise: Primitive Data Types](./02-exercise-primitive-data-types.md)
+4. [Arithmetic Operators](./03-js-arithmetic-operators.md)
+5. [Exercise: Arithmetic Operators](./04-exercise-arithmetic-operators.md)
+6. [Assignment Operators](./05-js-assignment-operators.md)
+7. [Exercise: Assignment Operators](./06-exercise-assignment-operators.md) ← _You are here_
+8. [Comparison Operators](./07-js-comparison-operators.md)
+9. [Exercise: Comparison Operators](./08-exercise-comparison-operators.md)
+
+---
+
 # Exercise: Assignment Operators
 
 ## Setup

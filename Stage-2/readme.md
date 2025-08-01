@@ -356,6 +356,73 @@ Perfect for beginners and as a refresher for experienced developers.
     - Understanding truthy and falsy values
     - Preparing for decision-making in code
 
+### Week 2: JavaScript Control Flow & Decision Making (August 1, 2025)
+
+**[2025-08-01 - JavaScript Control Flow & Decision Making](./2025-08-01/readme.md)**
+
+1. **[JavaScript Ternary Operator](./2025-08-01/01-js-ternary-operator.md)**
+
+    - Conditional operator for concise decision making
+    - Syntax and structure of ternary expressions
+    - When to use ternary vs if-else statements
+    - Practical examples and best practices
+
+2. **[Ternary Operator Exercise](./2025-08-01/02-exercise-ternary-operator.md)**
+
+    - Hands-on practice with ternary operators
+    - Building conditional logic with concise syntax
+    - Real-world application scenarios
+    - Comparing ternary and traditional conditional approaches
+
+3. **[JavaScript Logical Operators](./2025-08-01/03-js-logical-operators.md)**
+
+    - AND, OR, and NOT logical operators
+    - Understanding boolean logic and truth tables
+    - Short-circuit evaluation and operator precedence
+    - Combining multiple conditions effectively
+
+4. **[Logical Operators Exercise](./2025-08-01/04-exercise-logical-operators.md)**
+
+    - Practical exercises with logical operators
+    - Building complex conditional statements
+    - Understanding operator precedence in practice
+    - Real-world logic implementation
+
+5. **[Quick Quiz: JavaScript Operators](./2025-08-01/05-quick-quiz-javascript-operators.md)**
+
+    - Comprehensive review of all operator types
+    - Arithmetic, assignment, comparison, and logical operators
+    - Interactive questions and problem-solving
+    - Reinforcing operator precedence and usage
+
+6. **[JavaScript If-Else Statements](./2025-08-01/06-js-if-else.md)**
+
+    - Conditional statements and control flow
+    - If, else if, and else syntax and structure
+    - Nested conditionals and best practices
+    - Building decision-making logic in applications
+
+7. **[Exercise for If Statements](./2025-08-01/07-exercise-for-if.md)**
+
+    - Practical if-else statement implementation
+    - Building interactive decision-making features
+    - Combining user input with conditional logic
+    - Real-world application scenarios
+
+8. **[Exercise: BMI Calculator - Part 2](./2025-08-01/08-exercise-bmi-calculator-2.md)**
+
+    - Enhancing the BMI calculator with conditional logic
+    - Adding health category classifications
+    - Implementing decision-making based on calculated values
+    - User feedback and result interpretation
+
+9. **[Assignment: ATM Version 1](./2025-08-01/09-assignment-atm-v1.md)**
+
+    - Building a complete ATM simulation application
+    - Combining all learned concepts: variables, operators, and conditionals
+    - User input validation and error handling
+    - Multiple transaction types and account management
+
 ## Getting Started
 
 1. **Complete modules in chronological order** - From top to bottom, each module builds on the previous one

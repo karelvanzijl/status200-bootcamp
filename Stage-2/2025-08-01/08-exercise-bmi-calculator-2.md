@@ -1,6 +1,21 @@
 ## Navigation
 
 1. [Overview](readme.md)
+2. [Ternary Operator](./01-js-ternary-operator.md)
+3. [Exercise: Ternary Operator](./02-exercise-ternary-operator.md)
+4. [Logical Operators](./03-js-logical-operators.md)
+5. [Exercise: Logical Operators](./04-exercise-logical-operators.md)
+6. [Quick Quiz - Operators](./05-quick-quiz-javascript-operators.md)
+7. [If ... else Statements](./06-js-if-else.md)
+8. [Exercise: If ... else Statements](./07-exercise-for-if.md)
+9. [Exercise: BMI Calculator 2.0](./08-exercise-bmi-calculator-2.md) ← _You are here_
+10. [ssignment: ATM Machine - Version 1.0](./09-assignment-atm-v1.md)
+
+---
+
+## Navigation
+
+1. [Overview](readme.md)
 2. [Understanding Web App Logic Flow](01-web-app-logic-flow.md)
 3. [JavaScript Variables in Web Apps](02-variable-flow.md)
 4. [Counter Exercise Practice](03-counter-exercise.md)
@@ -14,7 +29,7 @@ Lets improve our BMI Calculator from the previous exercise by adding more featur
 
 ## Setup
 
-Use teh following HTML and Javascript code as a starting point for your BMI Calculator:
+Use the following HTML and Javascript code as a starting point for your BMI Calculator:
 
 ```html
 <!DOCTYPE html>
@@ -107,41 +122,74 @@ document.getElementById("result").style.fontSize = "20px";
 document.getElementById("result").style.backgroundColor = "lightblue";
 ```
 
-### Task 3: Two unit systems
+---
 
-1. Add a dropdown menu allowing users to select between "Metric" (kg, cm) and "Imperial" (lbs, inches).
-2. Change the labels and calculation based on the selected unit system.
-3. Modify your calculation to handle both unit systems:
-    - For Metric: `BMI = weight (kg) / (height (m))^2)`
-    - For Imperial: `BMI = (weight (lbs) / (height (inches) * height (inches)) * 703`
-
-#### Important notes for task 3:
-
-This exercise requires new a HTML element, a new trigger event you can listen to!
-
-##### The `<select>` element
-
-This element allows users to choose from a list of options. You write it like this:
+You should have ended up with something like this (not exact, but functionally similar):
 
 ```html
-<select id="unitSystem">
-    <option value="metric">Metric (kg, cm)</option>
-    <option value="imperial">Imperial (lbs, inches)</option>
-</select>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BMI Calculator</title>
+    </head>
+    <body>
+        <h1>BMI Calculator</h1>
+        <p>
+            <label for="name">Your name</label>
+            <input type="text" id="name" placeholder="Enter name" />
+        </p>
+        <p>
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" placeholder="Enter your weight" />
+        </p>
+        <p>
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" placeholder="Enter your height" />
+        </p>
+        <p>
+            <button onclick="calculateBmi()">Calculate BMI Score</button>
+        </p>
+        <p id="result"></p>
+        <script src="./script.js"></script>
+    </body>
+</html>
 ```
-
-The `value` attribute is used to identify which option was selected. You can use this value in your JavaScript code to determine which unit system the user has chosen _(just like hwo we got the value of the input field)_:
 
 ```javascript
-const selectedUnitSystem = document.getElementById("unitSystem").value;
-```
+// Function to calculate BMI Score
+function calculateBmi() {
+    // Step 2: get user input
+    const name = document.getElementById("name").value;
+    const weight = document.getElementById("weight").value;
+    const height = document.getElementById("height").value;
 
-##### The `onchange` event
+    // Step 3: process / calculation
+    const heightInMeters = height / 100;
+    const bmiScore = weight / (heightInMeters * heightInMeters);
 
-There are many events you can listen to in JavaScript. So far we've only used the `onclick` event, which is triggered when a user clicks on an element. But for this exercise, we need to listen to the `onchange` event. This event is triggered when the user changes the selected option in a `<select>` element.
+    // Step 4: create message
+    let message = "Hello " + name + ", your BMI is " + bmiScore;
+    let fontColor = "";
 
-To use this event, you can add it directly to the `<select>` element like this:
+    // Classify score
+    if (bmiScore < 18.5) {
+        message += " (Underweight)";
+        fontColor = "blue";
+    } else if (bmiScore < 24.9) {
+        message += " (Normal weight)";
+        fontColor = "green";
+    } else if (bmiScore < 29.9) {
+        message += " (Overweight)";
+        fontColor = "orange";
+    } else {
+        message += " (Obese)";
+        fontColor = "red";
+    }
 
-```html
-<select id="unitSystem" onchange="changeUnitSystem()"></select>
+    // Step 5: display message in HTML
+    document.getElementById("result").style.color = fontColor; // Set style font color
+    document.getElementById("result").textContent = message; // Show message in HTML
+}
 ```

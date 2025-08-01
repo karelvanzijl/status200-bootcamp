@@ -1,3 +1,18 @@
+## Navigation
+
+1. [Overview](readme.md)
+2. [Ternary Operator](./01-js-ternary-operator.md)
+3. [Exercise: Ternary Operator](./02-exercise-ternary-operator.md)
+4. [Logical Operators](./03-js-logical-operators.md)
+5. [Exercise: Logical Operators](./04-exercise-logical-operators.md)
+6. [Quick Quiz - Operators](./05-quick-quiz-javascript-operators.md)
+7. [If ... else Statements](./06-js-if-else.md)
+8. [Exercise: If ... else Statements](./07-exercise-for-if.md) ← _You are here_
+9. [Exercise: BMI Calculator 2.0](./08-exercise-bmi-calculator-2.md)
+10. [ssignment: ATM Machine - Version 1.0](./09-assignment-atm-v1.md)
+
+---
+
 # Exercise: If and Else Statements
 
 Remember: If-else statements are the foundation of decision-making in programming. Master these concepts and you'll be able to create dynamic, responsive applications!
