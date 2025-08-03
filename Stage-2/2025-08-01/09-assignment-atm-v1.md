@@ -34,7 +34,7 @@ Build the first version of an ATM machine simulator! This assignment focuses on 
 
 -   **ATM Machine Balance**: 5000 MYR (total money inside the machine)
 -   **User Account Balance**: 1000 MYR (user's starting balance)
--   **No login required** for this version
+-   **No login required** for this version.
 
 #### Features Required
 
