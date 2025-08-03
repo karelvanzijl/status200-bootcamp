@@ -1,6 +1,6 @@
 # ATM v1.0
 
-Step by step guide on how to build the ATM application using HTML and JavaScript.
+Let build the ATM machine together, step by step.
 
 ## Step 1: HTML
 
