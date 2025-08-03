@@ -48,7 +48,12 @@ JavaScript has several primitive data types, which are the most basic types of d
 ### 6. NaN
 
 -   Stands for "Not a Number" and is used to represent a value that is not a valid number.
--   Example: `let invalidNumber = "abc" / 2;` (This will result in `NaN`)
+-   Examples (these will return `NaN`):
+    -   `let invalidNumber = "abc" / 2;`
+    -   `let invalidNumber = 1 * "text";`
+-   A variable will get the value `NaN` when:
+    -   You specifically assign it like this: `let variable = NaN;`
+    -   It is the result of a mathematical operation that does not yield a valid number, such as dividing a string by a number.
 
 ## Example
 
