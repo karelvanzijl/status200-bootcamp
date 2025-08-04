@@ -458,7 +458,6 @@ let atmBalance = 5000;
 let userBalance = 2000;
 let transactionLimit = 1500;
 let message;
-let messageColor = colorSuccess;
 
 const atmBalanceElement = document.getElementById("atm-balance");
 const userBalanceElement = document.getElementById("user-balance");
@@ -656,5 +655,148 @@ function refill() {
 
     // Display the message
     resultMessage.textContent = message;
+}
+```
+
+Some CSS to make it look nice:
+
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+}
+
+main {
+    background-color: #2c3e50;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #ecf0f1;
+    font-size: 24px;
+}
+
+.balance-display {
+    background-color: #34495e;
+    border: 1px solid #73899f;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.balance-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.balance-item div:first-child {
+    font-weight: bold;
+    color: #bdc3c7;
+}
+
+.transaction-section {
+    background-color: #34495e;
+    border: 1px solid #73899f;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ecf0f1;
+}
+
+#amount {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#withdraw-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#withdraw-btn:hover {
+    background-color: #c0392b;
+}
+
+#deposit-btn {
+    background-color: #27ae60;
+    color: white;
+}
+
+#deposit-btn:hover {
+    background-color: #229954;
+}
+
+#refill-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+#refill-btn:hover {
+    background-color: #2980b9;
+}
+
+.result-section {
+    background-color: #34495e;
+    border-radius: 8px;
+    border: 1px solid #73899f;
+    padding: 15px;
+    text-align: center;
+}
+
+#result-message {
+    color: #ecf0f1;
+    font-size: 14px;
 }
 ```
