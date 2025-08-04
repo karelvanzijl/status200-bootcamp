@@ -16,8 +16,8 @@
 
 Create a distance unit converter with the following layout:
 
--   **Left input field**: For entering values
--   **Right input field**: For displaying converted values
+-   **Left input field**: For entering & showing values
+-   **Right input field**: For entering & showing values
 -   **Two conversion buttons** positioned between the input fields:
     -   **km to m button**: Converts kilometers (left) to meters (right)
     -   **m to km button**: Converts meters (left) to kilometers (right)
@@ -25,7 +25,7 @@ Create a distance unit converter with the following layout:
 **Requirements:**
 
 -   When user enters a number in the left field and clicks "km to m", display the result in meters in the right field
--   When user enters a number in the left field and clicks "m to km", display the result in kilometers in the right field
+-   When user enters a number in the right field and clicks "m to km", display the result in kilometers in the left field
 -   Use conversion factors: 1 km = 1000 m, 1 m = 0.001 km
 
 ## Task 2: Input Validation
