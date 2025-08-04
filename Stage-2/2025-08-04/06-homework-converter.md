@@ -20,7 +20,7 @@ Create a distance unit converter with the following layout:
 -   **Right input field**: For entering & showing values
 -   **Two conversion buttons** positioned between the input fields:
     -   **km to m button**: Converts kilometers (left) to meters (right)
-    -   **m to km button**: Converts meters (left) to kilometers (right)
+    -   **m to km button**: Converts meters (right) to kilometers (left)
 
 **Requirements:**
 
