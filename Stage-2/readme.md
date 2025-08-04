@@ -469,6 +469,13 @@ Perfect for beginners and as a refresher for experienced developers.
     - Input validation and error handling
     - Foundation for understanding unit conversion logic
 
+7. **[Calculator Example by Farwa & Dayan](./2025-08-04/07-calculator-farwa.md)**
+
+    - Student example: Complete calculator with four operations
+    - Input validation and error handling implementation
+    - Code written by Farwa with validation added by Dayan
+    - Practical demonstration of JavaScript functions in action
+
 ## Getting Started
 
 1. **Complete modules in chronological order** - From top to bottom, each module builds on the previous one
