@@ -423,6 +423,52 @@ Perfect for beginners and as a refresher for experienced developers.
     - User input validation and error handling
     - Multiple transaction types and account management
 
+### Week 2: JavaScript Functions & Homework (August 4, 2025)
+
+**[2025-08-04 - JavaScript Functions & Homework](./2025-08-04/readme.md)**
+
+1. **[Build ATM Machine v1.0](./2025-08-04/01-build-atm-machine-v1.md)**
+
+    - Complete the ATM machine assignment from previous day
+    - Implement deposit and withdrawal functionality 
+    - Add balance validation and error handling
+    - Test all transaction scenarios thoroughly
+
+2. **[JavaScript Function: isNaN()](./2025-08-04/02-function-isNan().md)**
+
+    - Understanding the isNaN() function for number validation
+    - Detecting invalid numeric input from users
+    - Common use cases in form validation
+    - Difference between isNaN() and Number.isNaN()
+
+3. **[JavaScript Function: parseFloat()](./2025-08-04/03-function-parseFloat().md)**
+
+    - Converting strings to floating-point numbers
+    - Handling decimal values in user input
+    - Parsing numbers with decimal places
+    - Error handling for invalid conversions
+
+4. **[JavaScript Function: parseInt()](./2025-08-04/04-function-parseInt().md)**
+
+    - Converting strings to integers
+    - Understanding radix parameter for different number bases
+    - Truncating decimal values to whole numbers
+    - Best practices for integer parsing
+
+5. **[JavaScript Function: toFixed()](./2025-08-04/05-function-toFixed().md)**
+
+    - Formatting numbers with fixed decimal places
+    - Controlling decimal precision in calculations
+    - Display formatting for currency and measurements
+    - Rounding behavior and edge cases
+
+6. **[Homework: Converter](./2025-08-04/06-homework-converter.md)**
+
+    - **Homework Assignment**: Build a kilometer to meter converter
+    - Two-way conversion with intuitive button interface
+    - Input validation and error handling
+    - Foundation for understanding unit conversion logic
+
 ## Getting Started
 
 1. **Complete modules in chronological order** - From top to bottom, each module builds on the previous one

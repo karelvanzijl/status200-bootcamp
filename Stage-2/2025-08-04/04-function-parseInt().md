@@ -105,28 +105,6 @@ compareConversions("99");
 
 ---
 
-## Exercise 3: ATM Note Counter
-
-**Task**: Create a function that counts how many banknotes are needed for a withdrawal.
-
-```javascript
-function countBanknotes(amountString, noteValue) {
-    // Convert amountString to a whole number using parseInt()
-    // Calculate how many notes of noteValue are needed
-    // Return the count and any remainder
-    // Example: countBanknotes("155.67", 50)
-    // Amount: 155 (integer), Note: 50
-    // Result: 3 notes of 50, remainder: 5
-}
-
-// Test your function
-console.log(countBanknotes("155.67", 50)); // Should show 3 notes, remainder 5
-console.log(countBanknotes("200", 100)); // Should show 2 notes, remainder 0
-console.log(countBanknotes("75.99", 20)); // Should show 3 notes, remainder 15
-```
-
----
-
 ## Exercise 4: User Age Validator
 
 **Task**: Create a function that validates user age input (must be whole numbers).
