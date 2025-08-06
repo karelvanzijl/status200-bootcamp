@@ -1,3 +1,13 @@
+## Navigation
+
+1. [Overview](readme.md)
+2. [Return Statement](./01-return-statement.md)
+3. [Function Arguments & Parameters](./02-function-arguments-parameters.md) ← _You are here_
+4. [Nested Functions](./03-nested-function-call.md)
+5. [Arrays Introduction Part 1](./04-arrays-introduction-part-1.md)
+
+---
+
 # Function Arguments and Parameters in JavaScript
 
 ## What's the Difference?

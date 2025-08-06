@@ -1,4 +1,14 @@
-# Arrays in JavaScript
+## Navigation
+
+1. [Overview](readme.md)
+2. [Return Statement](./01-return-statement.md)
+3. [Function Arguments & Parameters](./02-function-arguments-parameters.md)
+4. [Nested Functions](./03-nested-function-call.md)
+5. [Arrays Introduction Part 1](./04-arrays-introduction-part-1.md) ← _You are here_
+
+---
+
+# Arrays Introduction Part 1
 
 ## Primitive Types
 
@@ -60,6 +70,12 @@ To create an array in JavaScript, you can use square brackets `[]`. Here's how y
 let myDrawer = ["Book", "Pen", "Notebook", "Eraser", "Sticky Notes"];
 ```
 
+You can also create an empty array like this:
+
+```javascript
+let myDrawer = [];
+```
+
 ### Accessing Items in an Array
 
 To access items in an array, you use the index of the item you want to retrieve.
@@ -101,13 +117,38 @@ You can add items to an array using the `.push()` method. This method adds a new
 It's like a special drawer where you can keep adding new compartments for new items. Each time you add a new item, the drawer gets a new compartment.
 
 ```javascript
-let myDrawer = ["Book", "Pen", "Notebook", "Eraser", "Sticky Notes"];
+let myDrawer = [
+    "Book",
+    "Pen",
+    "Notebook",
+    "Eraser",
+    "Sticky Notes",
+    "Highlighter",
+];
 
 myDrawer.push("Highlighter"); // Adding a new item to the array
 
 console.log(myDrawer);
 
 // Output: ["Book", "Pen", "Notebook", "Eraser", "Sticky Notes", "Highlighter"]
+```
+
+### Removing Items from an Array
+
+You can remove the last item from an array using the `.pop()` method. This method removes the last item from the array and returns it.
+
+```javascript
+let myDrawer = [
+    "Book",
+    "Pen",
+    "Notebook",
+    "Eraser",
+    "Sticky Notes",
+    "Highlighter",
+];
+let removedItem = myDrawer.pop(); // Removing the last item
+console.log(removedItem); // Output: Highlighter
+console.log(myDrawer); // Output: ["Book", "Pen", "Notebook", "Eraser", "Sticky Notes"]
 ```
 
 ### Finding an Item in an Array
@@ -172,7 +213,16 @@ console.log(myHobbies);
 // Output: ["Reading", "Gaming", "Cooking", "Hiking"]
 ```
 
-## Example 6: Accessing the Last Item
+## Example 6: Removing the Last Item
+
+```javascript
+let myHobbies = ["Reading", "Gaming", "Cooking", "Hiking"];
+let removedHobby = myHobbies.pop(); // Removing the last item
+console.log(removedHobby); // Output: Hiking
+console.log(myHobbies); // Output: ["Reading", "Gaming", "Cooking"]
+```
+
+## Example 7: Accessing the Last Item
 
 ```javascript
 let myHobbies = ["Reading", "Gaming", "Cooking"];
@@ -180,7 +230,7 @@ let lastHobby = myHobbies[myHobbies.length - 1]; // Accessing the last item
 console.log(lastHobby); // Output: Cooking
 ```
 
-## Example 7: Changing an Item
+## Example 8: Changing an Item
 
 ```javascript
 let myHobbies = ["Reading", "Gaming", "Cooking"];
@@ -212,6 +262,11 @@ function checkPassword(password) {
     }
     console.log("Password not found");
 }
+
+checkPassword("password1"); // Output: Karel
+checkPassword("password2"); // Output: Safa
+checkPassword("password3"); // Output: Khalid
+checkPassword("password4"); // Output: Password not found
 ```
 
 ## Example 9: same as above, but with `indexOf()`
@@ -231,6 +286,11 @@ function checkPassword(password) {
     }
     console.log("Password not found");
 }
+
+checkPassword("password1"); // Output: Karel
+checkPassword("password2"); // Output: Safa
+checkPassword("password3"); // Output: Khalid
+checkPassword("password4"); // Output: Password not found
 ```
 
 ## Example 10: Keep track of history
@@ -253,6 +313,12 @@ function displayHistory() {
     // Display all messages in the history
     console.log(messageHistory);
 }
+
+displayMessage("Karel"); // Output: Hi Karel, how are you?
+displayMessage("Safa"); // Output: Hi Safa, how are you?
+displayMessage("Khalid"); // Output: Hi Khalid, how are you?
+
+displayHistory(); // Output: ["Hi Karel, how are you?", "Hi Safa, how are you?", "Hi Khalid, how are you?"]
 ```
 
 ---
@@ -298,54 +364,3 @@ Create an empty array called `history`. Write a function that takes a message as
 ## Exercise 10: Combining Arrays
 
 Create two arrays: `myCities` and `myCountries`. The `myCities` array should contain the names of three cities, and the `myCountries` array should contain the names of the countries those cities are in. Write a function that takes a city name as an argument and prints the corresponding country.
-
----
-
-# Lets Continue
-
-So far we only used strings in our arrays, but you can also use numbers, booleans, and even other arrays. Any type of variable can be stored in an array.
-
-The following arrays are all valid:
-
-```javascript
-let myArray1 = ["apple", "banana", "cherry"]; // Array of strings
-let myArray2 = [1, 2, 3, 4, 5]; // Array of numbers
-let myArray3 = [true, false, true]; // Array of booleans
-let myArray4 = [1, "apple", true]; // Mixed array with different types
-let myArray5 = [
-    [1, 2],
-    [3, 4],
-    [5, 6],
-]; // Array of arrays (2D array)
-let myArray6 = ["apple", 1, true, [2, 3]];
-```
-
-Console log these arrays to see how they look:
-
-```javascript
-console.log(myArray1);
-console.log(myArray2);
-console.log(myArray3);
-console.log(myArray4);
-console.log(myArray5);
-console.log(myArray6);
-```
-
-So an array can hold any type of variable, even another array. It's like adding a "sub" drawer inside one of the compartments of your main drawer. This "sub" drawer itself has its own compartments to hold items.
-
-How cool is that? 😎
-
-```javascript
-let mySubDrawer = [
-    ["apple", "banana"],
-    ["carrot", "broccoli"],
-];
-
-// Access the first compartment of my main drawer,
-// Than access the second compartment of the sub drawer
-console.log(mySubDrawer[0][1]); // Accessing "banana" from the first sub-drawer
-
-// Access the second compartment of my main drawer,
-// Than access the first compartment of the sub drawer
-console.log(mySubDrawer[1][0]); // Accessing "carrot
-```

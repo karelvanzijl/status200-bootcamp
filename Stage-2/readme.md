@@ -430,32 +430,32 @@ Perfect for beginners and as a refresher for experienced developers.
 1. **[Build ATM Machine v1.0](./2025-08-04/01-build-atm-machine-v1.md)**
 
     - Complete the ATM machine assignment from previous day
-    - Implement deposit and withdrawal functionality 
+    - Implement deposit and withdrawal functionality
     - Add balance validation and error handling
     - Test all transaction scenarios thoroughly
 
-2. **[JavaScript Function: isNaN()](./2025-08-04/02-function-isNan().md)**
+2. **[JavaScript Function: isNaN()](<./2025-08-04/02-function-isNan().md>)**
 
     - Understanding the isNaN() function for number validation
     - Detecting invalid numeric input from users
     - Common use cases in form validation
     - Difference between isNaN() and Number.isNaN()
 
-3. **[JavaScript Function: parseFloat()](./2025-08-04/03-function-parseFloat().md)**
+3. **[JavaScript Function: parseFloat()](<./2025-08-04/03-function-parseFloat().md>)**
 
     - Converting strings to floating-point numbers
     - Handling decimal values in user input
     - Parsing numbers with decimal places
     - Error handling for invalid conversions
 
-4. **[JavaScript Function: parseInt()](./2025-08-04/04-function-parseInt().md)**
+4. **[JavaScript Function: parseInt()](<./2025-08-04/04-function-parseInt().md>)**
 
     - Converting strings to integers
     - Understanding radix parameter for different number bases
     - Truncating decimal values to whole numbers
     - Best practices for integer parsing
 
-5. **[JavaScript Function: toFixed()](./2025-08-04/05-function-toFixed().md)**
+5. **[JavaScript Function: toFixed()](<./2025-08-04/05-function-toFixed().md>)**
 
     - Formatting numbers with fixed decimal places
     - Controlling decimal precision in calculations
@@ -475,6 +475,56 @@ Perfect for beginners and as a refresher for experienced developers.
     - Input validation and error handling implementation
     - Code written by Farwa with validation added by Dayan
     - Practical demonstration of JavaScript functions in action
+
+### Week 2: JavaScript Control Flow & Functions (August 5, 2025)
+
+**[2025-08-05 - JavaScript Control Flow & Functions](./2025-08-05/readme.md)**
+
+1. **[JavaScript If-Else Statements](./2025-08-05/01-js-if-else.md)**
+
+    - Structured conditional logic with if, else if, and else statements
+    - Code blocks and decision-making in JavaScript applications
+    - Multiple condition handling and nested conditional structures
+    - Building on ternary operator knowledge with more complex logic patterns
+
+2. **[Return Statement](./2025-08-05/02-return-statement.md)**
+
+    - Understanding function exits and return values in JavaScript
+    - Basic return syntax and function output mechanisms
+    - Multiple return statements and early function exit strategies
+    - Foundation concepts for advanced function programming techniques
+
+### Week 2: JavaScript Functions & Data Structures (August 6, 2025)
+
+**[2025-08-06 - JavaScript Functions & Data Structures](./2025-08-06/readme.md)**
+
+1. **[Return Statement](./2025-08-06/01-return-statement.md)**
+
+    - Understanding function exits and return values in JavaScript programming
+    - Basic return syntax and function output mechanisms for data flow
+    - Multiple return statements and early function exit strategies
+    - Foundation concepts for advanced function programming techniques
+
+2. **[Function Arguments & Parameters](./2025-08-06/02-function-arguments-parameters.md)**
+
+    - Understanding the distinction between parameters and arguments
+    - Creating functions that accept and process input values
+    - Passing data between functions effectively and efficiently
+    - Building reusable functions with dynamic inputs and flexible behavior
+
+3. **[Nested Functions](./2025-08-06/03-nested-function-call.md)**
+
+    - Functions calling other functions within their code blocks
+    - Breaking down complex tasks into smaller, manageable pieces
+    - Building modular and organized JavaScript applications
+    - Understanding function composition and code reusability patterns
+
+4. **[Arrays Introduction Part 1](./2025-08-06/04-arrays-introduction-part-1.md)**
+
+    - Introduction to reference types beyond primitive data types
+    - Understanding arrays as collections of multiple values
+    - Array syntax, creation, and basic operations for data management
+    - Foundation concepts for more complex data structure implementations
 
 ## Getting Started
 
