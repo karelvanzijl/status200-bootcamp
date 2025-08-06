@@ -273,9 +273,29 @@ console.log(formatMessage("Hello", true, true)); // Output: [DATE] [TIME] Hello
 
 Try creating these functions:
 
-1. `calculateTip(billAmount, tipPercentage)` - calculates tip amount
-2. `isEligibleToVote(age, hasId)` - returns true/false based on criteria
-3. `formatName(firstName, lastName, middleName)` - handles missing middle name
-4. `convertTemperature(value, fromUnit, toUnit)` - converts between C and F
+JavaScript Functions Exercise
+
+1. `calculateTip(billAmount, tipPercentage)`  
+   Purpose: Calculate tip amount for a restaurant bill  
+   Math: `billAmount × tipPercentage ÷ 100`  
+   Example: `calculateTip(30, 20)` → `30 × 20 ÷ 100 = 6`
+
+2. `isEligibleToVote(age, hasId)`  
+   Purpose: Check if someone can vote (must be 18+ AND have ID)  
+   Logic: `age >= 18 && hasId === true`  
+   Example: `isEligibleToVote(20, true)` → `true`
+
+3. `formatName(firstName, lastName, middleName)`  
+   Purpose: Create full name (handle missing middle name)  
+   Logic: Add middle name only if it exists  
+   Example: `formatName("John", "Smith", "Michael")` → `"John Michael Smith"`
+
+4. `convertTemperature(value, fromUnit, toUnit)`  
+   Purpose: Convert between Celsius and Fahrenheit  
+   Formulas:
+
+-   C to F: `(value × 9/5) + 32`
+-   F to C: `(value - 32) × 5/9`  
+    Example: `convertTemperature(0, "C", "F")` → `32`
 
 Remember: Start simple, then add complexity. Always think about what happens with unexpected inputs!
