@@ -161,9 +161,9 @@ function findIndex() {
     const index = numbers.indexOf(searchValue);
 
     if (index !== -1) {
-        alert(`Number found at index: ${index}`);
+        document.getElementById("arrayDisplay").textContent = "Number found at index: " + index";
     } else {
-        alert("Number not found");
+        document.getElementById("arrayDisplay").textContent = "Number not found";
     }
 }
 ```
