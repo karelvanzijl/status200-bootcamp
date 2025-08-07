@@ -75,14 +75,20 @@ Use the same webpage as Exercise 1. Add a second button that:
 
 ```javascript
 let numbers = [1];
+
+function displayMessages() {
+    // Update the display
+    document.getElementById("arrayDisplay").textContent = numbers;
+    document.getElementById("lengthDisplay").textContent = numbers.length;
+}
+
 function addNumber() {
     // Add the next number to the array
     const nextNumber = numbers[numbers.length - 1] + 1;
     numbers.push(nextNumber);
 
     // Update the display
-    document.getElementById("arrayDisplay").textContent = numbers;
-    document.getElementById("lengthDisplay").textContent = numbers.length;
+    displayMessages();
 }
 
 function removeLastNumber() {
@@ -92,8 +98,7 @@ function removeLastNumber() {
     }
 
     // Update the display
-    document.getElementById("arrayDisplay").textContent = numbers;
-    document.getElementById("lengthDisplay").textContent = numbers.length;
+    displayMessages();
 }
 ```
 
@@ -135,14 +140,19 @@ Use the same webpage as Exercise 1 & 2. Add a third button that:
 ```javascript
 let numbers = [1];
 
+function displayMessages() {
+    // Update the display
+    document.getElementById("arrayDisplay").textContent = numbers;
+    document.getElementById("lengthDisplay").textContent = numbers.length;
+}
+
 function addNumber() {
     // Add the next number to the array
     const nextNumber = numbers[numbers.length - 1] + 1;
     numbers.push(nextNumber);
 
     // Update the display
-    document.getElementById("arrayDisplay").textContent = numbers;
-    document.getElementById("lengthDisplay").textContent = numbers.length;
+    displayMessages();
 }
 
 function removeLastNumber() {
@@ -152,8 +162,7 @@ function removeLastNumber() {
     }
 
     // Update the display
-    document.getElementById("arrayDisplay").textContent = numbers;
-    document.getElementById("lengthDisplay").textContent = numbers.length;
+    displayMessages();
 }
 
 function findIndex() {
