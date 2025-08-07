@@ -273,7 +273,6 @@ for (let i = 0; i < names.length; i++) {
         longestName = names[i];
     }
 }
-
 console.log("The longest name is: " + longestName); // Christopher
 ```
 
@@ -334,27 +333,77 @@ for (let i = 0; i < menuItems.length; i++) {
 
 Write a for loop that prints "Hello" 3 times.
 
+**Answer:**
+
+```javascript
+for (let i = 0; i < 3; i++) {
+    console.log("Hello");
+}
+// Output: Hello, Hello, Hello
+```
+
 ## Exercise 2: Number Sequence
 
 Create a for loop that prints numbers from 1 to 10.
+
+**Answer:**
+
+```javascript
+for (let i = 1; i < 11; i++) {
+    console.log(i);
+}
+// Output: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+```
 
 ## Exercise 3: Your Favorite Things
 
 Create an array with 4 of your favorite movies. Use a for loop to print each movie with its position number (1, 2, 3, 4).
 
+**Answer:**
+
+```javascript
+let movies = ["Titanic", "Kill Bill", "Terminator", "Alien"];
+for (let i = 0; i < movies.length; i++) {
+    console.log(i + 1 + ". " + movies[i]);
+}
+// Output: 1. Titanic, 2. Kill Bill, 3. Terminator, 4. Alien
+```
+
 ## Exercise 4: Sum Calculator
 
 Create an array of 5 numbers. Use a for loop to calculate and print the sum of all numbers.
+
+**Answer:**
+
+```javascript
+let numbers = [2, 5, 9, 6, 3];
+let total = 0;
+for (let i = 0; i < numbers.length; i++) {
+    total += numbers[i];
+}
+console.log(total);
+// Output: 25
+```
 
 ## Exercise 5: Age Checker
 
 Create an array with different ages: [16, 25, 17, 30, 14]. Use a for loop to check each age and print whether each person can vote (18 or older) or not.
 
-## Exercise 6: String Length Finder
+**Asnwer:**
 
-Create an array of different words. Use a for loop to find and print the word with the most characters.
+```javascript
+let ages = [16, 25, 17, 30, 14];
+for (let i = 0; i < ages.length; i++) {
+    if (ages[i] >= 18) {
+        console.log("Person " + (i + 1) + " can vote.");
+    } else {
+        console.log("Person " + (i + 1) + " can not vote.");
+    }
+}
+// Output: Person 1 can not vote, Person 2 can vote, Person 3 can not vote, Person 4 can vote, Person 5 can not vote
+```
 
-## Exercise 7: Price Calculator
+## Exercise 6: Price Calculator
 
 You have an array of item prices: [5.99, 12.50, 3.25, 8.75]. Use a for loop to:
 
@@ -362,11 +411,20 @@ You have an array of item prices: [5.99, 12.50, 3.25, 8.75]. Use a for loop to:
 -   Apply a 10% tax
 -   Print the final total
 
-## Exercise 8: Name Formatter
+**Answer:**
 
-Create an array of names in lowercase: ["john", "mary", "david"]. Use a for loop to create a new array where each name starts with a capital letter.
+```javascript
+let prices = [5.99, 12.5, 3.25, 8.75];
+let tax = 1.1;
+total = 0;
+for (let i = 0; i < prices.length; i++) {
+    total += prices[i] * tax;
+}
+console.log("Total price (incl. tax): " + total);
+// Output: Total price (incl. tax): 31.425
+```
 
-## Exercise 9: Inventory Manager
+## Exercise 7: Inventory Manager
 
 You have two arrays:
 
@@ -375,6 +433,16 @@ You have two arrays:
 
 Use a for loop to print inventory status like: "apples: 10 in stock"
 
-## Exercise 10: Simple Search Engine
+## Exercise 8: Simple Search Engine
 
 Create an array of website names: ["google", "facebook", "youtube", "amazon"]. Write a function that takes a search term and uses a for loop to check if any website contains that term. Print all matching websites.
+
+---
+
+## Exercise 9: String Length Finder
+
+Create an array of different words. Use a for loop to find and print the word with the most characters.
+
+## Exercise 10: Name Formatter
+
+Create an array of names in lowercase: ["john", "mary", "david"]. Use a for loop to create a new array where each name starts with a capital letter.
