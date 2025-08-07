@@ -1,3 +1,11 @@
+## Navigation
+
+1. [Overview](readme.md)
+2. [Array Practice](./01-array-practice.md)
+3. [For Loop](./02-for-loop.md) ← _You are here_
+
+---
+
 # For Loops in JavaScript
 
 We learned about arrays and how they can store multiple values. We learned how to access individual items, but what if we want to do something with ALL items in an array? Writing code for each item manually would be inefficient.

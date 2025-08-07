@@ -526,6 +526,24 @@ Perfect for beginners and as a refresher for experienced developers.
     - Array syntax, creation, and basic operations for data management
     - Foundation concepts for more complex data structure implementations
 
+### Week 2: Arrays & Loops (August 7, 2025)
+
+**[2025-08-07 - Arrays & Loops](./2025-08-07/readme.md)**
+
+1. **[Array Practice](./2025-08-07/01-array-practice.md)**
+
+    - Array practice: adding/removing elements, finding indices, forms, validation
+    - Hands-on exercises with array manipulation methods
+    - Building practical array-based applications
+    - User input validation with arrays
+
+2. **[For Loop](./2025-08-07/02-for-loop.md)**
+
+    - For loop structure, array iteration, patterns, extensive exercises
+    - Understanding loop syntax and execution flow
+    - Iterating through arrays with for loops
+    - Building dynamic content with loops
+
 ## Getting Started
 
 1. **Complete modules in chronological order** - From top to bottom, each module builds on the previous one

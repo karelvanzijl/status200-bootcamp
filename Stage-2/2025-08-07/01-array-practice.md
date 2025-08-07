@@ -1,3 +1,11 @@
+## Navigation
+
+1. [Overview](readme.md)
+2. [Array Practice](./01-array-practice.md) ← _You are here_
+3. [For Loop](./02-for-loop.md)
+
+---
+
 ## Exercise 1: Add Numbers to an Array
 
 Create a webpage with a button. When the user clicks the button:
