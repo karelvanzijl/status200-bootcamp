@@ -1,4 +1,4 @@
-# Website Search – Easy JavaScript Explanation
+# Website Search
 
 ## HTML Structure (given)
 ```html
