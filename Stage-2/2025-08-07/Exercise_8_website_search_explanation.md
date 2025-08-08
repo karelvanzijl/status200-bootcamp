@@ -2,12 +2,20 @@
 
 ## HTML Structure (given)
 ```html
-<h2>Website Search</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Website Search</h2>
 
-<input type="text" id="searchTerm" placeholder="Enter term" />
-<button onclick="searchWebsites()">Search</button>
+    <input type="text" id="searchTerm" placeholder="Enter term" />
+    <button onclick="searchWebsites()">Search</button>
 
-<p id="result"></p>
+    <p id="result"></p>
+</body>
+</html>
 ```
 
 ---
