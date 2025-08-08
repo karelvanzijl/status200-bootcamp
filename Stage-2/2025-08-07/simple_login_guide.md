@@ -1,9 +1,9 @@
 # Simple Login System - Step by Step Guide
 
-## What we're building 🎯
+## What we're building 
 Think of this like a secret club! You have a list of secret passwords, and each password belongs to a different person. When someone types the right password, we welcome them by name!
 
-## How it works (explained for a 10-year-old) 🧠
+## How it works
 
 ### Step 1: Create our "lists" (arrays)
 ```javascript
@@ -139,7 +139,7 @@ Try typing these passwords:
 - `rainbow` → Should say "Welcome, Diana!"
 - `wrongpassword` → Should say "Unknown password. Try again."
 
-## Why we use a simple loop instead of fancy methods 🤔
+## Why we use a simple loop instead of fancy methods 
 We use a basic `for` loop because:
 1. **It's easy to understand** - you can see exactly what's happening step by step
 2. **We can stop early** - when we find the password, we use `return` to stop looking
