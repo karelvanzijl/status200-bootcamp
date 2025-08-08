@@ -164,7 +164,6 @@ Copy the following JavaScript code into a file named `script.js`:
 let atmBalance = 5000;
 let userBalance = 2000;
 let transactionLimit = 1500;
-let message;
 
 // Store HTML elements we will interact with throughout the code
 // Instead of using `document.getElementById` multiple times, we store them in variables for:
@@ -183,42 +182,49 @@ transactionLimitElement.textContent = "MYR " + transactionLimit;
 
 function withdraw() {
     // Get the amount to withdraw from the input field
-    const amount = amountInput.value;
+    let amount = amountInput.value;
+    amount = parseInt(amount);
+
+    // Is the amount a number?
+    if (isNaN(amount)) {
+        resultMessage.textContent = "Please enter a valid number.";
+        return;
+    }
 
     // Is the amount > 0?
     if (amount <= 0) {
-        message = "Amount must be greater than 0.";
+        resultMessage.textContent = "Amount must be greater than 0.";
         return;
     }
 
     // Is the amount a factor of 10?
     if (amount % 10 !== 0) {
-        message = "Amount must be a multiple of 10.";
+        resultMessage.textContent = "Amount must be a multiple of 10.";
         return;
     }
 
     // Does the user have enough balance?
     if (amount > userBalance) {
-        message = "Insufficient funds in your account.";
+        resultMessage.textContent = "Insufficient funds in your account.";
         return;
     }
 
     // Does the ATM have enough balance?
     if (amount > atmBalance) {
-        message = "ATM has insufficient funds.";
+        resultMessage.textContent = "ATM has insufficient funds.";
         return;
     }
 
     // Is the amount within the transaction limit?
     if (amount > transactionLimit) {
-        message = "Amount exceeds limit of MYR " + transactionLimit + ".";
+        resultMessage.textContent =
+            "Amount exceeds limit of MYR " + transactionLimit + ".";
         return;
     }
 
     // If all validations pass, proceed with the withdrawal
     userBalance -= amount;
     atmBalance -= amount;
-    message = "Successfully withdrew MYR " + amount;
 
     // Reset the input field
     amountInput.value = "";
@@ -230,33 +236,42 @@ function withdraw() {
     userBalanceElement.textContent = "MYR " + userBalance;
 
     // Display the message
-    resultMessage.textContent = message;
+    resultMessage.textContent = "Successfully withdrew MYR " + amount;
 }
 
 function deposit() {
     // Get the amount to deposit from the input field
-    const amount = amountInput.value;
+    let amount = amountInput.value;
+    amount = parseInt(amount);
+
+    // Is the amount a number?
+    if (isNaN(amount)) {
+        resultMessage.textContent = "Please enter a valid number.";
+        return;
+    }
 
     // Is the amount > 0?
     if (amount <= 0) {
-        message = "Amount must be greater than 0.";
+        resultMessage.textContent = "Amount must be greater than 0.";
         return;
     }
+
     // Is the amount a factor of 10?
     if (amount % 10 !== 0) {
-        message = "Amount must be a multiple of 10.";
+        resultMessage.textContent = "Amount must be a multiple of 10.";
         return;
     }
+
     // Is the amount within the transaction limit?
     if (amount > transactionLimit) {
-        message = "Amount exceeds limit of MYR " + transactionLimit + ".";
+        resultMessage.textContent =
+            "Amount exceeds limit of MYR " + transactionLimit + ".";
         return;
     }
 
     // If all validations pass, proceed with the withdrawal
-    userBalance += 1 * amount;
-    atmBalance += 1 * amount;
-    message = "Successfully deposited MYR " + amount + ".";
+    userBalance += amount;
+    atmBalance += amount;
 
     // Reset the input field
     amountInput.value = "";
@@ -268,28 +283,34 @@ function deposit() {
     userBalanceElement.textContent = "MYR " + userBalance;
 
     // Display the message
-    resultMessage.textContent = message;
+    resultMessage.textContent = "Successfully deposited MYR " + amount + ".";
 }
 
 function refill() {
     // Get the amount to refill from the input field
-    const amount = amountInput.value;
+    let amount = amountInput.value;
+    amount = parseInt(amount);
+
+    // Is the amount a number?
+    if (isNaN(amount)) {
+        resultMessage.textContent = "Please enter a valid number.";
+        return;
+    }
 
     // Is the amount > 0?
     if (amount <= 0) {
-        message = "Amount must be greater than 0.";
+        resultMessage.textContent = "Amount must be greater than 0.";
         return;
     }
 
     // Is the amount a factor of 10?
     if (amount % 10 !== 0) {
-        message = "Amount must be a multiple of 10.";
+        resultMessage.textContent = "Amount must be a multiple of 10.";
         return;
     }
 
     // If all validations pass, proceed with the withdrawal
-    atmBalance += 1 * amount;
-    message = "Successfully added MYR " + amount + ".";
+    atmBalance += amount;
 
     // Reset the input field
     amountInput.value = "";
@@ -298,7 +319,7 @@ function refill() {
     atmBalanceElement.textContent = "MYR " + atmBalance;
 
     // Display the message
-    resultMessage.textContent = message;
+    resultMessage.textContent = "Successfully added MYR " + amount + ".";
 }
 ```
 
