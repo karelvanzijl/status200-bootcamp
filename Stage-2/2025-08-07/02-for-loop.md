@@ -445,6 +445,85 @@ Use a for loop to print inventory status like: "apples: 10 in stock"
 
 Create an array of website names: ["google", "facebook", "youtube", "amazon"]. Write a function that takes a search term and uses a for loop to check if any website contains that term. Print all matching websites.
 
+**Code written by Abdallah:**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                margin: 10%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>(wanna be)Search Engine</h1>
+        <br /><br />
+        <input type="text" id="search-input" placeholder="Search for ...." />
+        <br /><br />
+        <button onclick="search()">Search</button>
+        <p id="result">#####</p>
+        <script src="./srchEng.js"></script>
+    </body>
+</html>
+```
+
+```javascript
+let websites = [
+    "google",
+    "facebook",
+    "youtube",
+    "twittergram",
+    "instagram",
+    "linkedintube",
+    "githubflow",
+    "stackoverflow",
+    "reddit",
+    "wikipedit",
+    "amazonflix",
+    "netflix",
+];
+
+function search() {
+    let input = document.getElementById("search-input").value;
+    let searchResults = [];
+
+    // clear things when function is called agian
+    document.getElementById("result").textContent = "";
+
+    // validate input
+    if (input === "") {
+        document.getElementById("result").textContent =
+            "Please enter something to look for.";
+        return;
+    }
+    //store the results
+    for (let i = 0; i < websites.length; i++) {
+        if (websites[i].includes(input)) {
+            searchResults.push(websites[i]);
+        }
+    }
+    // display the results
+    if (searchResults.length === 0) {
+        document.getElementById("result").textContent =
+            "No results found for '" + input + "'.";
+    } else {
+        document.getElementById("result").textContent =
+            searchResults.join(", ");
+    }
+    // clear input
+    document.getElementById("search-input").value = "";
+}
+```
+
 ---
 
 ## Exercise 9: String Length Finder

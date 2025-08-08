@@ -324,6 +324,46 @@ You will create a simple login system using two arrays:
 -   One array stores passwords.
 -   The other array stores the matching names for those passwords.
 
+**Code written by Khattab!**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple Login</title>
+    </head>
+    <body>
+        <h1>Login</h1>
+        <input type="number" id="passwordInput" placeholder="Enter password" />
+        <button onclick="password()">Log In</button>
+        <p id="message"></p>
+        <script src="index.js"></script>
+    </body>
+</html>
+```
+
+```javascript
+let passwords = ["123", "456", "1789"];
+let names = ["Alice", "Bob", "Ali"];
+let passwordInput = document.getElementById("passwordInput");
+let messageDisplay = document.getElementById("message");
+
+function password() {
+    let enteredPassword = passwordInput.value;
+    let passwordIndex = passwords.indexOf(enteredPassword);
+
+    if (passwordIndex !== -1) {
+        let sameName = names[passwordIndex];
+        messageDisplay.textContent = "Welcome, " + sameName;
+    } else {
+        messageDisplay.textContent = "Unknown password. Try again.";
+    }
+    passwordInput.value = "";
+}
+```
+
 **What to Build:**
 
 -   An input field to type a password.
