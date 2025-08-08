@@ -82,6 +82,8 @@ Implement proper state tracking:
 -   Screen visibility management (login vs transaction views)
 -   Input field clearing and reset functionality
 
+_**Checkout** [CSS Display Property](./05-css-display-property.md) for more information on how to use the `display` property to show/hide elements. At the bottom of this document, you can find an example script that toggles the display of a paragraph element._
+
 ### 4. Permission-Based Features
 
 Add role-based access control:
@@ -105,8 +107,6 @@ Update the interface to support the new functionality:
 -   Show login form on page load
 -   Implement smooth transitions between login and transaction views
 -   Update CSS for responsive button layouts
-
-_**Checkout** [CSS Display Property](./05-css-display-property.md) for more information on how to use the `display` property to show/hide elements. At the bottom of this document, you can find an example script that toggles the display of a paragraph element._
 
 ## Technical Requirements
 
