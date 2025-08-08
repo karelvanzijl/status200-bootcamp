@@ -175,50 +175,80 @@ const transactionLimitElement = document.getElementById("tranaction-limit");
 const amountInput = document.getElementById("amount");
 const resultMessage = document.getElementById("result-message");
 
-// Initialize the ATM and user balance displays
-atmBalanceElement.textContent = "MYR " + atmBalance;
-userBalanceElement.textContent = "MYR " + userBalance;
-transactionLimitElement.textContent = "MYR " + transactionLimit;
+function displayBalances() {
+    // Update ATM balance display
+    atmBalanceElement.textContent = "MYR " + atmBalance;
 
-function withdraw() {
+    // Update user balance display
+    userBalanceElement.textContent = "MYR " + userBalance;
+
+    // Update transaction limit display
+    transactionLimitElement.textContent = "MYR " + transactionLimit;
+}
+
+function displayMessage(message) {
+    // Display result message
+    resultMessage.textContent = message;
+}
+
+function clearInput() {
+    // Clear the input field
+    amountInput.value = "";
+}
+
+function getValidatedAmount() {
     // Get the amount to withdraw from the input field
     let amount = amountInput.value;
+
+    // Try to convert the input to an integer
     amount = parseInt(amount);
 
     // Is the amount a number?
     if (isNaN(amount)) {
-        resultMessage.textContent = "Please enter a valid number.";
+        displayMessage("Please enter a valid number.");
         return;
     }
 
     // Is the amount > 0?
     if (amount <= 0) {
-        resultMessage.textContent = "Amount must be greater than 0.";
+        displayMessage("Amount must be greater than 0.");
         return;
     }
 
     // Is the amount a factor of 10?
     if (amount % 10 !== 0) {
-        resultMessage.textContent = "Amount must be a multiple of 10.";
+        displayMessage("Amount must be a multiple of 10.");
+        return;
+    }
+
+    // Return the validated amount if all checks pass
+    return amount;
+}
+
+function withdraw() {
+    // Get the amout and validate it
+    let amount = getValidatedAmount();
+
+    // If the amount is not valid, exit the function
+    if (!amount) {
         return;
     }
 
     // Does the user have enough balance?
     if (amount > userBalance) {
-        resultMessage.textContent = "Insufficient funds in your account.";
+        displayMessage("Insufficient funds in your account.");
         return;
     }
 
     // Does the ATM have enough balance?
     if (amount > atmBalance) {
-        resultMessage.textContent = "ATM has insufficient funds.";
+        displayMessage("ATM has insufficient funds.");
         return;
     }
 
     // Is the amount within the transaction limit?
     if (amount > transactionLimit) {
-        resultMessage.textContent =
-            "Amount exceeds limit of MYR " + transactionLimit + ".";
+        displayMessage("Amount exceeds limit of MYR " + transactionLimit + ".");
         return;
     }
 
@@ -227,45 +257,27 @@ function withdraw() {
     atmBalance -= amount;
 
     // Reset the input field
-    amountInput.value = "";
+    clearInput();
 
-    // Update ATM balance display
-    atmBalanceElement.textContent = "MYR " + atmBalance;
-
-    // Update user balance display
-    userBalanceElement.textContent = "MYR " + userBalance;
+    // Update ATM balances display
+    displayBalances();
 
     // Display the message
-    resultMessage.textContent = "Successfully withdrew MYR " + amount;
+    displayMessage("Successfully withdrew MYR " + amount);
 }
 
 function deposit() {
-    // Get the amount to deposit from the input field
-    let amount = amountInput.value;
-    amount = parseInt(amount);
+    // Get the amout and validate it
+    let amount = getValidatedAmount();
 
-    // Is the amount a number?
-    if (isNaN(amount)) {
-        resultMessage.textContent = "Please enter a valid number.";
-        return;
-    }
-
-    // Is the amount > 0?
-    if (amount <= 0) {
-        resultMessage.textContent = "Amount must be greater than 0.";
-        return;
-    }
-
-    // Is the amount a factor of 10?
-    if (amount % 10 !== 0) {
-        resultMessage.textContent = "Amount must be a multiple of 10.";
+    // If the amount is not valid, exit the function
+    if (!amount) {
         return;
     }
 
     // Is the amount within the transaction limit?
     if (amount > transactionLimit) {
-        resultMessage.textContent =
-            "Amount exceeds limit of MYR " + transactionLimit + ".";
+        displayMessage("Amount exceeds limit of MYR " + transactionLimit + ".");
         return;
     }
 
@@ -274,38 +286,21 @@ function deposit() {
     atmBalance += amount;
 
     // Reset the input field
-    amountInput.value = "";
+    clearInput();
 
-    // Update ATM balance display
-    atmBalanceElement.textContent = "MYR " + atmBalance;
-
-    // Update user balance display
-    userBalanceElement.textContent = "MYR " + userBalance;
+    // Update ATM balances display
+    displayBalances();
 
     // Display the message
-    resultMessage.textContent = "Successfully deposited MYR " + amount + ".";
+    displayMessage("Successfully deposited MYR " + amount + ".");
 }
 
 function refill() {
-    // Get the amount to refill from the input field
-    let amount = amountInput.value;
-    amount = parseInt(amount);
+    // Get the amout and validate it
+    let amount = getValidatedAmount();
 
-    // Is the amount a number?
-    if (isNaN(amount)) {
-        resultMessage.textContent = "Please enter a valid number.";
-        return;
-    }
-
-    // Is the amount > 0?
-    if (amount <= 0) {
-        resultMessage.textContent = "Amount must be greater than 0.";
-        return;
-    }
-
-    // Is the amount a factor of 10?
-    if (amount % 10 !== 0) {
-        resultMessage.textContent = "Amount must be a multiple of 10.";
+    // If the amount is not valid, exit the function
+    if (!amount) {
         return;
     }
 
@@ -313,13 +308,13 @@ function refill() {
     atmBalance += amount;
 
     // Reset the input field
-    amountInput.value = "";
+    clearInput();
 
-    // Update ATM balance display
-    atmBalanceElement.textContent = "MYR " + atmBalance;
+    // Update ATM balances display
+    displayBalances();
 
     // Display the message
-    resultMessage.textContent = "Successfully added MYR " + amount + ".";
+    displayMessage("Successfully added MYR " + amount + ".");
 }
 ```
 

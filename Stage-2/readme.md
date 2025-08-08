@@ -544,6 +544,59 @@ Perfect for beginners and as a refresher for experienced developers.
     - Iterating through arrays with for loops
     - Building dynamic content with loops
 
+### Week 2: Objects, Arrays Methods & CSS Display Property (August 8, 2025)
+
+**[2025-08-08 - Objects, Arrays Methods & CSS Display Property](./2025-08-08/readme.md)**
+
+1. **[Objects Introduction](./2025-08-08/01-objects-introduction.md)**
+
+    - Introduction to JavaScript objects as key-value data structures
+    - Understanding object syntax, creation, and property access
+    - Comparing objects to arrays and primitive data types
+    - Building complex data structures with objects
+
+2. **[Arrays Methods Part 1](./2025-08-08/02-arrays-methods-part-1.md)**
+
+    - Built-in JavaScript array methods for data manipulation
+    - Common array methods: push, pop, shift, unshift, splice
+    - Practical exercises with array method applications
+    - Understanding method chaining and return values
+
+3. **[Arrays Methods Part 2](./2025-08-08/03-arrays-methods-part-2.md)**
+
+    - Advanced array methods and their practical applications
+    - Working with array search, filtering, and transformation methods
+    - Building dynamic applications with array manipulation
+    - Combining multiple array methods for complex operations
+
+4. **[Object Methods](./2025-08-08/04-object-methods.md)**
+
+    - Methods for working with JavaScript objects
+    - Object property manipulation and iteration
+    - Understanding object references and nested structures
+    - Practical applications with object-based data management
+
+5. **[CSS Display Property](./2025-08-08/05-css-display-property.md)**
+
+    - Display property values: block, inline, inline-block, none
+    - Understanding how display affects element behavior and layout
+    - JavaScript manipulation for dynamic show/hide functionality
+    - Practical applications with interactive web elements
+
+6. **[ATM Machine v2.0](./2025-08-08/06-atm-machine-v2.0.md)**
+
+    - Enhanced ATM machine implementation with improved features
+    - Advanced validation and error handling techniques
+    - Building upon previous ATM versions with new functionality
+    - Object-oriented approach to banking application development
+
+7. **[Assignment: ATM v3.0](./2025-08-08/07-assignment-atm-v3.0.md)**
+
+    - Comprehensive ATM machine assignment with full feature set
+    - Integration of objects, arrays, and advanced JavaScript concepts
+    - Complete banking simulation with multiple account management
+    - Final assessment of JavaScript programming fundamentals
+
 ## Getting Started
 
 1. **Complete modules in chronological order** - From top to bottom, each module builds on the previous one
