@@ -145,4 +145,4 @@ We use a basic `for` loop because:
 2. **We can stop early** - when we find the password, we use `return` to stop looking
 3. **It's like how you'd do it by hand** - check the first password, then the second, then the third, until you find it!
 
-The loop is like being a detective going through clues one by one until you solve the mystery! 🕵️‍♂️
+The loop is like being a detective going through clues one by one until you solve the mystery! 
