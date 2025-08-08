@@ -2,9 +2,21 @@
 
 ## HTML Structure (given)
 ```html
-<input type="password" id="passwordInput" placeholder="Enter password">
-<button onclick="login()">Log In</button>
-<p id="message"></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login System</title>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <input type="password" id="passwordInput" placeholder="Enter password" />
+    <button onclick="login()">Log In</button>
+
+    <p id="message"></p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
 ```
 
 ---
