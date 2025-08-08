@@ -32,32 +32,6 @@ Create a multi-user system by implementing:
     -   `balance` - User's account balance
     -   `canRefill` - Boolean permission for ATM refill access
 
-**Sample Users to Include:**
-
-```javascript
-{
-    name: "Karel",
-    pin: "1234",
-    accountNumber: "4321",
-    balance: 2000,
-    canRefill: true,
-},
-{
-    name: "John",
-    pin: "2345",
-    accountNumber: "5432",
-    balance: 1000,
-    canRefill: false,
-},
-{
-    name: "Jane",
-    pin: "3456",
-    accountNumber: "6543",
-    balance: 3000,
-    canRefill: true,
-}
-```
-
 ### 2. Authentication System
 
 Implement login/logout functionality:
