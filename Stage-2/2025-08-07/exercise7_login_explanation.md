@@ -1,4 +1,4 @@
-# Exercise 7: Login with Array Check – Easy JavaScript Explanation
+# Exercise 7: Login with Array Check, Easy JavaScript Explanation
 
 ## HTML Structure (given)
 ```html
