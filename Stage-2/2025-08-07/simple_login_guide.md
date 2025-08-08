@@ -131,7 +131,7 @@ function checkPassword() {
     passwordInput.value = ""; // Clear the input box
 }
 ```
-## How to test it 🧪
+## How to test it 
 Try typing these passwords:
 - `secret123` → Should say "Welcome, Alice!"
 - `mydog` → Should say "Welcome, Bob!"
