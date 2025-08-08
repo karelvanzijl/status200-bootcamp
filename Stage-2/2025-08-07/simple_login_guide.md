@@ -130,7 +130,7 @@ function checkPassword() {
     message.textContent = "Unknown password. Try again.";
     passwordInput.value = ""; // Clear the input box
 }
-
+```
 ## How to test it 🧪
 Try typing these passwords:
 - `secret123` → Should say "Welcome, Alice!"
