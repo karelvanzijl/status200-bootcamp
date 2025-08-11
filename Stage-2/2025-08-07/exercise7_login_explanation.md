@@ -23,7 +23,7 @@
 
 ## JavaScript Code
 ```javascript
-const names = ["Eva", "Qiff", "Safa", "Dayan"];
+const names = ["Eva", "Qiff", "Lim", "Dayan"];
 const passwords = ["password123", "123456", "abcdefg", "forgotpassword"];
 
 function login() {
