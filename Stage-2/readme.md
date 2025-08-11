@@ -597,6 +597,31 @@ Perfect for beginners and as a refresher for experienced developers.
     - Complete banking simulation with multiple account management
     - Final assessment of JavaScript programming fundamentals
 
+### Week 2: Review & Practice Exercises (August 11, 2025)
+
+**[2025-08-11 - Review & Practice Exercises](./2025-08-11/readme.md)**
+
+1. **[Quick Quiz](./2025-08-11/01-quick-quiz.md)**
+
+    - Comprehensive review of JavaScript fundamentals
+    - Variables, functions, arrays, and objects concepts
+    - Interactive questions to assess understanding
+    - Preparation for advanced programming concepts
+
+2. **[Morning Practice Exercises](./2025-08-11/02-morning-practice-exercises.md)**
+
+    - Hands-on coding exercises combining multiple concepts
+    - Array manipulation and object property management
+    - Function creation with parameter handling
+    - Practical problem-solving with JavaScript
+
+3. **[Homework Exercises](./2025-08-11/03-homework-exercises.md)**
+
+    - Take-home assignments to reinforce learning
+    - Building complete applications using learned concepts
+    - Independent practice with guidance and examples
+    - Preparation for more advanced programming topics
+
 ## Getting Started
 
 1. **Complete modules in chronological order** - From top to bottom, each module builds on the previous one
