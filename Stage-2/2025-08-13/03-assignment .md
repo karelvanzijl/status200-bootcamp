@@ -30,7 +30,7 @@ Calculate the average score of all students' assignments.
 
 **Expected Output:**
 ```
-Average bootcamp score: 78.20
+Average bootcamp score: 80.20
 ```
 
 ### Task 2: Find Outstanding Performers
