@@ -622,6 +622,27 @@ Perfect for beginners and as a refresher for experienced developers.
     - Independent practice with guidance and examples
     - Preparation for more advanced programming topics
 
+### Week 2: Arrays & Loops Practice Day (August 12, 2025)
+
+**[2025-08-12 - Arrays & Loops Practice Day](./2025-08-12/readme.md)**
+
+1. **[Practice: Arrays and For Loops](./2025-08-12/01-practice-arrays-and-loops.md)**
+
+    - Practice the concepts from today's lesson with hands-on exercises
+    - Strengthen understanding of arrays and for loops through practical applications
+    - Quick for loop refresher including basic structure and creative variations
+    - Advanced array looping techniques with different starting points and step patterns
+    - Working with numeric arrays for mathematical operations and data processing
+    - Nested loops for creating combinations and processing multi-dimensional data
+
+2. **[Homework: Arrays and For Loops](./2025-08-12/02-homework-arrays-and-loops.md)**
+
+    - Take-home assignments to reinforce learning with arrays and for loops
+    - Progressive exercises from basic loops to advanced array manipulation
+    - Array methods introduction: push(), pop(), and indexOf()
+    - Challenge exercises combining loops with array methods and logical thinking
+    - Real-world applications including shopping carts and grade calculations
+
 ## Getting Started
 
 1. **Complete modules in chronological order** - From top to bottom, each module builds on the previous one
