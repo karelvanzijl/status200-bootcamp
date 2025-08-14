@@ -75,9 +75,28 @@ So far we've used string concatenation to build HTML strings. But there's anothe
 
 Using backticks (`` ` ``) allows us to create **template literals**, which are multi-line strings that can include variables and expressions. This makes it easier to build complex HTML structures.
 
-#### Example with Template Literals
+#### Simple Example
 
 ```javascript
+const name = "John";
+const greeting = `Hello, ${name}! Welcome to our website.`;
+console.log(greeting); // → Hello, John! Welcome to our website.
+```
+
+```javascript
+const firstname = "John";
+const lastname = "Doe";
+const age = 30;
+const userInfo = `User: ${firstname} ${lastname}, Age: ${age}`;
+console.log(userInfo); // → User: John Doe, Age: 30
+```
+
+#### Example with HTML
+
+```javascript
+const productName = "Laptop";
+const productDescription = "A high-performance laptop for professionals.";
+
 const htmlCode = `
     <div class="card">
         <h3>${productName}</h3>
@@ -90,6 +109,9 @@ const htmlCode = `
 #### Example with String Concatenation
 
 ```javascript
+const productName = "Laptop";
+const productDescription = "A high-performance laptop for professionals.";
+
 const htmlCode =
     "<div class='card'>" +
     "<h3>" +
@@ -104,6 +126,8 @@ const htmlCode =
 
 Which one is easier to read? The template literal! It allows us to write HTML in a more natural way, without worrying about escaping quotes or breaking lines.
 
+It's up to you to decide which one to use, but template literals are often preferred for building HTML strings because they make the code cleaner and easier to maintain.
+
 ---
 
 ## Practical Examples
@@ -115,14 +139,13 @@ Which one is easier to read? The template literal! It allows us to write HTML in
 
 <script>
     const container = document.getElementById("cardContainer");
-
     container.innerHTML = `
-    <div class="card">
-        <h3>Product Name</h3>
-        <p>Product description goes here.</p>
-        <button>Buy Now</button>
-    </div>
-`;
+        <div class="card">
+            <h3>Product Name</h3>
+            <p>Product description goes here.</p>
+            <button>Buy Now</button>
+        </div>
+    `;
 </script>
 ```
 
@@ -183,7 +206,20 @@ Nothing really special here, we can just add CSS like we normally do. Using elem
 </html>
 ```
 
-### Example 2: Building a Shopping List
+### Example 2: Lets add muliple paragraphs
+
+```html
+<div id="content"></div>
+
+<script>
+    const content = document.getElementById("content");
+    for (let i = 1; i <= 3; i++) {
+        content.innerHTML += `<p>This is paragraph ${i}.</p>`;
+    }
+</script>
+```
+
+### Example 3: Building a Shopping List
 
 ```html
 <div id="shoppingList"></div>
@@ -201,7 +237,7 @@ Nothing really special here, we can just add CSS like we normally do. Using elem
 </script>
 ```
 
-### Example 3: Patient with IDs
+### Example 4: Patient with IDs
 
 ```html
 <p id="patient1"></p>
