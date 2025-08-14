@@ -11,8 +11,8 @@ You've learned that servers send data as **text/plain** strings. But what if we 
 
 ```javascript
 // This WON'T work - servers can only send strings!
-res.end(["Apple", "Banana", "Orange"]); // L Error!
-res.end({ name: "John", age: 25 }); // L Error!
+res.end(["Apple", "Banana", "Orange"]); // → Error!
+res.end({ name: "John", age: 25 }); // → Error!
 ```
 
 **The Solution:** Convert everything to strings first, then convert back!
