@@ -10,33 +10,49 @@ Copy this data into your JavaScript file:
 
 ```javascript
 const students = [
-  { id: 1, name: "Aamena", score: 85, project: "JavaScript", week: 4 },
-  { id: 2, name: "Ahmed", score: 72, project: "HTML/CSS", week: 2 },
-  { id: 3, name: "Azizullah", score: 94, project: "JavaScript", week: 4 },
-  { id: 4, name: "Elyas", score: 68, project: "JavaScript", week: 3 },
-  { id: 5, name: "Esther", score: 91, project: "HTML/CSS", week: 4 },
-  { id: 6, name: "Farwa", score: 78, project: "JavaScript", week: 3 },
-  { id: 7, name: "Fathima", score: 83, project: "HTML/CSS", week: 4 },
-  { id: 8, name: "Gong", score: 67, project: "JavaScript", week: 2 },
-  { id: 9, name: "Yasser", score: 89, project: "HTML/CSS", week: 4 },
-  { id: 10, name: "Ismail", score: 75, project: "JavaScript", week: 3 }
+    { id: 1, name: "Aamena", score: 85, project: "JavaScript", week: 4 },
+    { id: 2, name: "Ahmed", score: 72, project: "HTML/CSS", week: 2 },
+    { id: 3, name: "Azizullah", score: 94, project: "JavaScript", week: 4 },
+    { id: 4, name: "Elyas", score: 68, project: "JavaScript", week: 3 },
+    { id: 5, name: "Esther", score: 91, project: "HTML/CSS", week: 4 },
+    { id: 6, name: "Farwa", score: 78, project: "JavaScript", week: 3 },
+    { id: 7, name: "Fathima", score: 83, project: "HTML/CSS", week: 4 },
+    { id: 8, name: "Gong", score: 67, project: "JavaScript", week: 2 },
+    { id: 9, name: "Yasser", score: 89, project: "HTML/CSS", week: 4 },
+    { id: 10, name: "Ismail", score: 75, project: "JavaScript", week: 3 },
 ];
 ```
 
 ## Tasks to Complete
 
 ### Task 1: Calculate Average Assignment Score
+
 Calculate the average score of all students' assignments.
 
 **Expected Output:**
+
 ```
 Average bootcamp score: 80.20
 ```
 
+**Answer:**
+
+```javascript
+let totalScore = 0;
+let studentCount = students.length;
+for (let i = 0; i < studentCount; i++) {
+    totalScore += students[i].score;
+}
+let averageScore = (totalScore / studentCount).toFixed(2);
+console.log(`Average bootcamp score: ${averageScore}`);
+```
+
 ### Task 2: Find Outstanding Performers
+
 Find and display all students who scored 80 or above on their assignments.
 
 **Expected Output:**
+
 ```
 Outstanding performers:
 Aamena: 85
@@ -46,27 +62,69 @@ Fathima: 83
 Yasser: 89
 ```
 
+**Answer:**
+
+```javascript
+console.log("Outstanding performers:");
+for (let i = 0; i < students.length; i++) {
+    if (students[i].score >= 80) {
+        console.log(`${students[i].name}: ${students[i].score}`);
+    }
+}
+```
+
 ### Task 3: Count JavaScript Projects
+
 Find all students working on JavaScript projects, add them to a new array, then count how many students are in the new array.
 
 **Expected Output:**
+
 ```
 JavaScript projects: 6
 ```
 
+**Answer:**
+
+```javascript
+let jsStudents = [];
+for (let i = 0; i < students.length; i++) {
+    if (students[i].project === "JavaScript") {
+        jsStudents.push(students[i]);
+    }
+}
+console.log(`JavaScript projects: ${jsStudents.length}`);
+```
+
 ### Task 4: Find Top Performer
+
 Find and display the student with the highest assignment score.
 
 **Expected Output:**
+
 ```
 Top performer:
 Azizullah: 94
 ```
 
+**Answer:**
+
+```javascript
+let topPerformer = students[0];
+for (let i = 1; i < students.length; i++) {
+    if (students[i].score > topPerformer.score) {
+        topPerformer = students[i];
+    }
+}
+console.log(`Top performer:`);
+console.log(`${topPerformer.name}: ${topPerformer.score}`);
+```
+
 ### Task 5: Find Students in Week 4
+
 Find all students who are currently in week 4, add them to a new array, then loop through the new array to display each one.
 
 **Expected Output:**
+
 ```
 Students in week 4:
 Aamena: JavaScript
@@ -76,11 +134,26 @@ Fathima: HTML/CSS
 Yasser: HTML/CSS
 ```
 
+**Answer:**
+
+```javascript
+let week4Students = [];
+for (let i = 0; i < students.length; i++) {
+    if (students[i].week === 4) {
+        week4Students.push(students[i]);
+    }
+}
+
+console.log("Students in week 4:");
+for (let i = 0; i < week4Students.length; i++) {
+    console.log(`${week4Students[i].name}: ${week4Students[i].project}`);
+}
+```
+
 ## Requirements
 
-- **Run your code using Node.js** in the terminal with `node filename.js`
-- - Use `.toFixed(2)` to format the average to 2 decimal places
-
+-   **Run your code using Node.js** in the terminal with `node filename.js`
+-   -   Use `.toFixed(2)` to format the average to 2 decimal places
 
 ## Submission
 
