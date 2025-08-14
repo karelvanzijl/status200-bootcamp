@@ -192,7 +192,6 @@ Nothing really special here, we can just add CSS like we normally do. Using elem
 <script>
     function addItem() {
         const list = document.getElementById("shoppingList");
-
         list.innerHTML += `
             <div class="item">
                 <span>New Item</span>
@@ -223,29 +222,6 @@ Nothing really special here, we can just add CSS like we normally do. Using elem
         `;
     }
 </script>
-```
-
----
-
-## Template Literals with innerHTML
-
-Using template literals (backticks) makes innerHTML much more readable:
-
-```javascript
-const name = "John";
-const age = 25;
-const city = "New York";
-
-const profileHTML = `
-    <div class="profile">
-        <h2>${name}</h2>
-        <p>Age: ${age}</p>
-        <p>City: ${city}</p>
-        <img src="profile-${name.toLowerCase()}.jpg" alt="${name}'s photo">
-    </div>
-`;
-
-document.getElementById("profile").innerHTML = profileHTML;
 ```
 
 ---
