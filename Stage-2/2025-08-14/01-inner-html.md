@@ -126,6 +126,63 @@ Which one is easier to read? The template literal! It allows us to write HTML in
 </script>
 ```
 
+**Question:**
+Can you write a complete HTML page that uses the above code and style the card with CSS?
+
+**Answer:**
+
+Nothing really special here, we can just add CSS like we normally do. Using element and class selectors, we can style the card:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Card Example</title>
+        <style>
+            body {
+                font-family: Arial;
+                background-color: #f0f8ff;
+                padding: 20px;
+            }
+            .card {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            h3 {
+                color: #333;
+            }
+            button {
+                padding: 10px 20px;
+                background-color: #28a745;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #218838;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="cardContainer"></div>
+        <script>
+            const container = document.getElementById("cardContainer");
+
+            container.innerHTML = `
+                <div class="card">
+                    <h3>Product Name</h3>
+                    <p>Product description goes here.</p>
+                    <button>Buy Now</button>
+                </div>
+            `;
+        </script>
+    </body>
+</html>
+```
+
 ### Example 2: Building a Shopping List
 
 ```html
@@ -137,15 +194,10 @@ Which one is easier to read? The template literal! It allows us to write HTML in
         const list = document.getElementById("shoppingList");
 
         list.innerHTML += `
-        <div class="item">
-            <span>New Item</span>
-            <button onclick="removeItem(this)">Delete</button>
-        </div>
-    `;
-    }
-
-    function removeItem(button) {
-        button.parentElement.remove();
+            <div class="item">
+                <span>New Item</span>
+            </div>
+        `;
     }
 </script>
 ```
@@ -377,3 +429,7 @@ Create a navigation menu that changes based on user type.
 4. Perfect for creating **dynamic content** and **interactive interfaces**
 5. Great for **lists, tables, forms, and complex layouts**
 6. Always **validate** and **sanitize** user input when using innerHTML
+
+```
+
+```
