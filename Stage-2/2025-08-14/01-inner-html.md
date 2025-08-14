@@ -234,7 +234,7 @@ document.getElementById("header").innerHTML = headerHTML;
 
 ---
 
-## Exercise Time! =�
+## Exercise Time!
 
 ### Exercise 1: Product Catalog
 
