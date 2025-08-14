@@ -69,6 +69,43 @@ const currentHTML = container.innerHTML;
 
 ---
 
+## Template Literals
+
+So far we've used string concatenation to build HTML strings. But there's another way we can create strings. Depending on each case, we can use either single quotes, double quotes, or backticks (`` ` ``) to create strings. Which one should we use? It depends on the situation.
+
+Using backticks (`` ` ``) allows us to create **template literals**, which are multi-line strings that can include variables and expressions. This makes it easier to build complex HTML structures.
+
+#### Example with Template Literals
+
+```javascript
+const htmlCode = `
+    <div class="card">
+        <h3>${productName}</h3>
+        <p>${productDescription}</p>
+        <button>Buy Now</button>
+    </div>
+`;
+```
+
+#### Example with String Concatenation
+
+```javascript
+const htmlCode =
+    "<div class='card'>" +
+    "<h3>" +
+    productName +
+    "</h3>" +
+    "<p>" +
+    productDescription +
+    "</p>" +
+    "<button>Buy Now</button>" +
+    "</div>";
+```
+
+Which one is easier to read? The template literal! It allows us to write HTML in a more natural way, without worrying about escaping quotes or breaking lines.
+
+---
+
 ## Practical Examples
 
 ### Example 1: Creating a Simple Card
