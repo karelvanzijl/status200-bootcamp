@@ -164,11 +164,12 @@ Which one is easier to read? The template literal! It allows us to write HTML in
         { id: 3, name: "Charlie", age: 35 },
     ];
 
-    patients.forEach((patient) => {
+    for (let i = 0; i < patients.length; i++) {
+        const patient = patients[i];
         document.getElementById(`patient${patient.id}`).innerHTML = `
             <strong>${patient.name}</strong> is ${patient.age} years old.
         `;
-    });
+    }
 </script>
 ```
 
@@ -228,7 +229,8 @@ let tableHTML = `
         <tr><th>Name</th><th>Grade</th></tr>
 `;
 
-for (let student of students) {
+for (let i = 0; i < students.length; i++) {
+    const student = students[i];
     tableHTML += `
         <tr>
             <td>${student.name}</td>

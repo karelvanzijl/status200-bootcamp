@@ -242,7 +242,9 @@ server.listen(3000, () => {
                         // Display using innerHTML
                         let html =
                             '<div class="fruit-list"><h3>Available Fruits:</h3>';
-                        for (let fruit of fruits) {
+
+                        for (let i = 0; i < fruits.length; i++) {
+                            const fruit = fruits[i];
                             html += `<div class="fruit-item">${fruit}</div>`;
                         }
                         html += "</div>";
@@ -348,7 +350,8 @@ server.listen(3000, () => {
 
                         // Build skills HTML
                         let skillsHtml = "";
-                        for (let skill of user.skills) {
+                        for (let i = 0; i < user.skills.length; i++) {
+                            const skill = user.skills[i];
                             skillsHtml += `<span class="skill">${skill}</span>`;
                         }
 
