@@ -113,30 +113,25 @@ const currentHTML = container.innerHTML;
 </script>
 ```
 
-### Example 3: Dynamic Form Creation
+### Example 3: Patient with IDs
 
 ```html
-<div id="formContainer"></div>
-<button onclick="createForm()">Create Form</button>
+<p id="patient1"></p>
+<p id="patient2"></p>
+<p id="patient3"></p>
 
 <script>
-    function createForm() {
-        const container = document.getElementById("formContainer");
+    const patients = [
+        { id: 1, name: "Alice", age: 30 },
+        { id: 2, name: "Bob", age: 25 },
+        { id: 3, name: "Charlie", age: 35 },
+    ];
 
-        container.innerHTML = `
-        <form>
-            <label>Name: <input type="text" id="name"></label><br>
-            <label>Email: <input type="email" id="email"></label><br>
-            <button type="button" onclick="submitForm()">Submit</button>
-        </form>
-    `;
-    }
-
-    function submitForm() {
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        alert(`Name: ${name}, Email: ${email}`);
-    }
+    patients.forEach((patient) => {
+        document.getElementById(`patient${patient.id}`).innerHTML = `
+            <strong>${patient.name}</strong> is ${patient.age} years old.
+        `;
+    });
 </script>
 ```
 
@@ -328,70 +323,6 @@ Create a navigation menu that changes based on user type.
 
             // Set default navigation
             setUserType("guest");
-        </script>
-    </body>
-</html>
-```
-
-### Exercise 3: Interactive Quiz Builder
-
-Build a simple quiz using innerHTML.
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Quiz Builder</title>
-        <style>
-            .question {
-                background-color: #f5f5f5;
-                padding: 20px;
-                margin: 10px 0;
-                border-radius: 8px;
-            }
-            .option {
-                margin: 5px 0;
-            }
-            button {
-                background-color: #007bff;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>JavaScript Quiz</h1>
-        <div id="quiz"></div>
-        <button onclick="showResults()">Show Results</button>
-
-        <script>
-            const questions = [
-                {
-                    question: "What does 'DOM' stand for?",
-                    options: [
-                        "Document Object Model",
-                        "Data Object Management",
-                        "Dynamic Object Method",
-                    ],
-                    correct: 0,
-                },
-                {
-                    question: "Which method selects an element by ID?",
-                    options: [
-                        "querySelector()",
-                        "getElementById()",
-                        "getElementsByClassName()",
-                    ],
-                    correct: 1,
-                },
-            ];
-
-            // Your code here: Use innerHTML to create the quiz
-            // Show each question with radio button options
-            // Make it interactive!
         </script>
     </body>
 </html>
