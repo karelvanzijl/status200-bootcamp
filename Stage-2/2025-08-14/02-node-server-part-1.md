@@ -20,14 +20,27 @@ A **Node.js HTTP server** is a program that listens for requests from web browse
 Create a new file called `server.js` and copy-paste this code:
 
 ```javascript
+// Import the built-in HTTP module
 const http = require("http");
 
+// Create an HTTP server
 const server = http.createServer((req, res) => {
+    // Set CORS headers
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    // Set response status and content type
     res.writeHead(200, { "Content-Type": "text/html" });
+
+    // Send the response
     res.end("<h1>Hello World!</h1><p>My first Node.js server is running!</p>");
 });
 
+// Define the port to listen on
 const PORT = 3000;
+
+// Start the server and listen on the specified port
 server.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}/`);
 });
@@ -51,7 +64,7 @@ You'll see your "Hello World!" message!
 
 ### Step 4: Stop the Server
 
-Press `Ctrl + C` (Windows/Linux) or `Cmd + C` (Mac) in the terminal to stop the server.
+Press `Ctrl + C` in the terminal to stop the server.
 
 ---
 
@@ -63,10 +76,19 @@ Press `Ctrl + C` (Windows/Linux) or `Cmd + C` (Mac) in the terminal to stop the 
 const http = require("http");
 
 const server = http.createServer((req, res) => {
+    // Set CORS headers
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    // Set response status and content type
     res.writeHead(200, { "Content-Type": "text/plain" });
+
+    // Send the response
     res.end("Welcome to my Node.js server!");
 });
 
+// Define the port to listen on
 server.listen(3000, () => {
     console.log("Server running at http://localhost:3000/");
 });
@@ -78,8 +100,15 @@ server.listen(3000, () => {
 const http = require("http");
 
 const server = http.createServer((req, res) => {
+    // Set CORS headers
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    // Set response status and content type
     res.writeHead(200, { "Content-Type": "text/html" });
 
+    // Create a simple HTML page with styles
     const html = `
     <!DOCTYPE html>
     <html>
@@ -106,9 +135,11 @@ const server = http.createServer((req, res) => {
     </html>
     `;
 
+    // Send the HTML response
     res.end(html);
 });
 
+// Define the port to listen on
 server.listen(3000, () => {
     console.log("Server running at http://localhost:3000/");
 });
