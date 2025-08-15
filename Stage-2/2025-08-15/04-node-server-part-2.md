@@ -174,27 +174,122 @@ After creating the server, you can test it by visiting different routes in your 
 
 ---
 
-# Exercise
+# Practice
 
-## Task 1
+Let's use the code we cxreated in the previous section:
 
-Create a simple Node.js server that responds with "Hello, World!" when you visit the root URL (`/`).
+**Server Code:**
 
-## Task 2
+```javascript
+// Create an array of products
+const products = [
+    { id: 1, name: "Product 1", price: 100 },
+    { id: 2, name: "Product 2", price: 200 },
+    { id: 3, name: "Product 3", price: 300 },
+];
 
-Modify your server so it responds differently when you visit:
+// Import the built-in HTTP module
+const http = require("http");
 
--   `/`
-    -   Response: "Welcome to the Home Page!"
--   `/about`
-    -   Response: "About Us"
--   `/contact`
-    -   Response: "Contact Us"
+// Create an HTTP server
+const server = http.createServer((req, res) => {
+    // Set CORS headers
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-## Task 3
+    // Set response status and content type
+    res.writeHead(200, { "Content-Type": "application/json" });
 
-What happens if you try to load a route that doesn't exist?
+    // Stringify the products array to JSON
+    let response = JSON.stringify(products);
 
-## Task 4
+    // Write the response
+    res.write(JSON.stringify(response));
+    res.end();
+});
 
-Take care of routes requests that do not exist by returning a `404 Not Found` message.
+// Start the server on port 3000
+const PORT = 3000;
+server.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+```
+
+**Client Code:**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Server Client Interaction</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            h1 {
+                color: #333;
+            }
+            .product,
+            .service {
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            <button onclick="fetchProducts()">Fetch Products</button>
+        </p>
+        <h1 id="title"></h1>
+        <div id="items"></div>
+
+        <script>
+            function fetchProducts() {
+                fetch("http://localhost:3000")
+                    .then((response) => response.json())
+                    .then((data) => {
+                        document.getElementById("title").innerText = "Products";
+                        const itemsDiv = document.getElementById("items");
+                        itemsDiv.innerHTML = "";
+                        data.forEach((product) => {
+                            itemsDiv.innerHTML += `<div class="product">
+                                <h2>${product.name}</h2>
+                                <p>Price: $${product.price}</p>
+                            </div>`;
+                        });
+                    });
+            }
+        </script>
+    </body>
+</html>
+```
+
+### Task 1 - add routes
+
+-   `/` - Home page
+-   `/products` - Products page
+-   `/services` - Services page
+
+Test to make sure these routes work!
+
+### Task 2: fetch services
+
+-   Add another button to fetch services.
+-   When clicked, it should fetch data from the `/services` route and display it in a similar way to the products.
+
+### Task 3: 404 Not Found
+
+-   make sure your server handles requests to routes that do not exist by returning a `404 Not Found` message.
+
+---
+
+# Exercise - different pages
+
+We now use buttons to fetch data from the server and change the content of the page dynamically. On the same page we show the products and services.
+
+In reality, you would probably want to have different pages for products and services. Can you modify the code to create separate pages for the homepage, products and services?

@@ -25,13 +25,6 @@ const products = [
     { id: 3, name: "Product 3", price: 300 },
 ];
 
-// Create an array of services
-const services = [
-    { id: 1, name: "Service 1", description: "Description of Service 1" },
-    { id: 2, name: "Service 2", description: "Description of Service 2" },
-    { id: 3, name: "Service 3", description: "Description of Service 3" },
-];
-
 // Import the built-in HTTP module
 const http = require("http");
 
@@ -45,24 +38,11 @@ const server = http.createServer((req, res) => {
     // Set response status and content type
     res.writeHead(200, { "Content-Type": "application/json" });
 
-    // Initialize response variable
-    let response;
-
-    // Home page
-    if (req.url === "/services") {
-        // Convert the services array to a JSON string
-        response = JSON.stringify(services);
-    }
-    // Products page
-    else if (req.url === "/products") {
-        // Convert the products array to a JSON string
-        response = JSON.stringify(products);
-    }
-
-    // Lets ignore non existing routes for now
+    // Stringify the products array to JSON
+    let response = JSON.stringify(products);
 
     // Write the response
-    res.write(response);
+    res.write(JSON.stringify(response));
     res.end();
 });
 
@@ -119,14 +99,13 @@ Now, let's use the `fetch()` API to get data from our server. We'll create a sim
     <body>
         <p>
             <button onclick="fetchProducts()">Fetch Products</button>
-            <button onclick="fetchServices()">Fetch Services</button>
         </p>
         <h1 id="title"></h1>
         <div id="items"></div>
 
         <script>
             function fetchProducts() {
-                fetch("http://localhost:3000/products")
+                fetch("http://localhost:3000")
                     .then((response) => response.json())
                     .then((data) => {
                         document.getElementById("title").innerText = "Products";
@@ -140,30 +119,7 @@ Now, let's use the `fetch()` API to get data from our server. We'll create a sim
                         });
                     });
             }
-
-            function fetchServices() {
-                fetch("http://localhost:3000/services")
-                    .then((response) => response.json())
-                    .then((data) => {
-                        document.getElementById("title").innerText = "Services";
-                        const itemsDiv = document.getElementById("items");
-                        itemsDiv.innerHTML = "";
-                        data.forEach((service) => {
-                            itemsDiv.innerHTML += `<div class="service">
-                                <h2>${service.name}</h2>
-                                <p>${service.description}</p>
-                            </div>`;
-                        });
-                    });
-            }
+        </script>
     </body>
 </html>
 ```
-
----
-
-## Exercise: List of movies
-
-Create a new route in your Node.js server that returns a list of movies. The movies should be an array of objects, each containing a title and a year.
-
-Add a button in your HTML file to fetch and display the movies when clicked.
