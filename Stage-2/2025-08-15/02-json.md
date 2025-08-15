@@ -246,3 +246,54 @@ server.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}/`);
 });
 ```
+
+---
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Products</title>
+        <style>
+            .product {
+                border: 1px solid black;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>products</h1>
+
+        <button onclick="getProducts()">Get Products</button>
+
+        <div id="products"></div>
+
+        <script>
+            let productsList = document.getElementById("products");
+
+            function getProducts() {
+                fetch("http://localhost:3000/")
+                    .then(function (response) {
+                        return response.text(); // Convert response to text
+                    })
+                    .then(function (data) {
+                        const products = JSON.parse(data);
+
+                        let htmlOutput = "";
+
+                        for (let i = 0; i < products.length; i++) {
+                            htmlOutput += `
+                                <div class="product">
+                                    <h2>${products[i].name}</h2>
+                                    <p>Price: MYR${products[i].price}</p>
+                                </div>
+                            `;
+                        }
+
+                        productsList.innerHTML = htmlOutput;
+                    });
+            }
+        </script>
+    </body>
+</html>
+```
