@@ -125,7 +125,7 @@ You can find the templates to get you you get started over here:
 
 -   Do this in the client-side JavaScript, you alrready have the data of the movies you need on a specific page.
 -   **Search**: You already sort of know how to do the search feature, we did it in the class before. Search in an array, like find all students in week 4.
-    -   You can use the following methods (be aware of the fact that we haven't learned some of these methods yet, but you can look them up. If you understand the logic, you can use them):
+    -   You can use the following methods, but be aware of the fact that we haven't learned some of these methods yet, but you can look them up. If you understand the logic, you can use them:
         -   `toLowerCase()`: [more info here](https://www.w3schools.com/jsref/jsref_tolowercase.asp)
         -   `includes()`: [more info here](https://www.w3schools.com/jsref/jsref_includes.asp)
         -   `filter()`: [more info here](https://www.w3schools.com/jsref/jsref_filter.asp)
