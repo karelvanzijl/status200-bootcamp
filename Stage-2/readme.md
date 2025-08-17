@@ -462,7 +462,7 @@ Perfect for beginners and as a refresher for experienced developers.
     - User input validation and error handling
     - Multiple transaction types and account management
 
-### Week 2: JavaScript Functions & Homework (August 4, 2025)
+### Week 3: JavaScript Functions & Homework (August 4, 2025)
 
 **[2025-08-04 - JavaScript Functions & Homework](./2025-08-04/readme.md)**
 
@@ -515,7 +515,7 @@ Perfect for beginners and as a refresher for experienced developers.
     - Code written by Farwa with validation added by Dayan
     - Practical demonstration of JavaScript functions in action
 
-### Week 2: JavaScript Control Flow & Functions (August 5, 2025)
+### Week 3: JavaScript Control Flow & Functions (August 5, 2025)
 
 **[2025-08-05 - JavaScript Control Flow & Functions](./2025-08-05/readme.md)**
 
@@ -533,7 +533,7 @@ Perfect for beginners and as a refresher for experienced developers.
     - Multiple return statements and early function exit strategies
     - Foundation concepts for advanced function programming techniques
 
-### Week 2: JavaScript Functions & Data Structures (August 6, 2025)
+### Week 3: JavaScript Functions & Data Structures (August 6, 2025)
 
 **[2025-08-06 - JavaScript Functions & Data Structures](./2025-08-06/readme.md)**
 
@@ -565,7 +565,7 @@ Perfect for beginners and as a refresher for experienced developers.
     - Array syntax, creation, and basic operations for data management
     - Foundation concepts for more complex data structure implementations
 
-### Week 2: Arrays & Loops (August 7, 2025)
+### Week 3: Arrays & Loops (August 7, 2025)
 
 **[2025-08-07 - Arrays & Loops](./2025-08-07/readme.md)**
 
@@ -583,7 +583,7 @@ Perfect for beginners and as a refresher for experienced developers.
     - Iterating through arrays with for loops
     - Building dynamic content with loops
 
-### Week 2: Objects, Arrays Methods & CSS Display Property (August 8, 2025)
+### Week 3: Objects, Arrays Methods & CSS Display Property (August 8, 2025)
 
 **[2025-08-08 - Objects, Arrays Methods & CSS Display Property](./2025-08-08/readme.md)**
 
@@ -636,7 +636,7 @@ Perfect for beginners and as a refresher for experienced developers.
     - Complete banking simulation with multiple account management
     - Final assessment of JavaScript programming fundamentals
 
-### Week 2: Review & Practice Exercises (August 11, 2025)
+### Week 4: Review & Practice Exercises (August 11, 2025)
 
 **[2025-08-11 - Review & Practice Exercises](./2025-08-11/readme.md)**
 
@@ -661,7 +661,7 @@ Perfect for beginners and as a refresher for experienced developers.
     - Independent practice with guidance and examples
     - Preparation for more advanced programming topics
 
-### Week 2: Arrays & Loops Practice Day (August 12, 2025)
+### Week 4: Arrays & Loops Practice Day (August 12, 2025)
 
 **[2025-08-12 - Arrays & Loops Practice Day](./2025-08-12/readme.md)**
 
@@ -682,7 +682,7 @@ Perfect for beginners and as a refresher for experienced developers.
     - Challenge exercises combining loops with array methods and logical thinking
     - Real-world applications including shopping carts and grade calculations
 
-### Week 3: Node.js Introduction & Advanced JavaScript (August 13, 2025)
+### Week 4: Node.js Introduction & Advanced JavaScript (August 13, 2025)
 
 **[2025-08-13 - Node.js Introduction & Arrays Practice](./2025-08-13/readme.md)**
 
@@ -710,7 +710,7 @@ Perfect for beginners and as a refresher for experienced developers.
     - Calculating averages, finding top performers, and filtering data
     - Running JavaScript files with Node.js in the terminal
 
-### Week 3: DOM Manipulation & Node.js Server Development (August 14, 2025)
+### Week 4: DOM Manipulation & Node.js Server Development (August 14, 2025)
 
 **[2025-08-14 - DOM Manipulation & Node.js Server Development](./2025-08-14/readme.md)**
 
@@ -730,7 +730,7 @@ Perfect for beginners and as a refresher for experienced developers.
     - Setting up CORS headers for cross-origin requests
     - Testing servers in the browser and handling common server issues
 
-### Week 3: Fetch API, JSON Data & Full-Stack Integration (August 15, 2025)
+### Week 4: Fetch API, JSON Data & Full-Stack Integration (August 15, 2025)
 
 **[2025-08-15 - Fetch API, JSON Data & Full-Stack Integration](./2025-08-15/readme.md)**
 
