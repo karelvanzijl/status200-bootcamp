@@ -28,4 +28,4 @@
 -   Calculating averages, finding top performers, and filtering data
 -   Running JavaScript files with Node.js in the terminal
 
-📖 [Assignment: Student Tracker](03-assignment .md)
+📖 [Assignment: Student Tracker](03-assignment.md)

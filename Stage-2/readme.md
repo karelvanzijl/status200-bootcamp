@@ -663,7 +663,7 @@ Perfect for beginners and as a refresher for experienced developers.
     - Working with object properties and nested data structures
     - Mathematical operations with price calculations and quantity handling
 
-3. **[Assignment: Status200 Student Tracker](./2025-08-13/03-assignment .md)**
+3. **[Assignment: Status200 Student Tracker](./2025-08-13/03-assignment.md)**
 
     - Building a student assignment tracking system
     - Arrays and objects practice with educational data
