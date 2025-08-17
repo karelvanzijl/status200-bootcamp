@@ -176,7 +176,7 @@ After creating the server, you can test it by visiting different routes in your 
 
 # Practice
 
-Let's use the code we cxreated in the previous section:
+Let's use the code we created in the previous section:
 
 **Server Code:**
 
@@ -277,14 +277,164 @@ server.listen(PORT, () => {
 
 Test to make sure these routes work!
 
+**Solution - Node server:**
+
+```javascript
+// Import the built-in HTTP module
+const http = require("http");
+
+// Create an HTTP server
+const server = http.createServer((req, res) => {
+    // Set CORS headers
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    // Set response status and content type
+    res.writeHead(200, { "Content-Type": "application/json" });
+
+    // Your logic
+    if (req.url === "/") {
+        res.write(JSON.stringify({ message: "Welcome to the Home Page!" }));
+    } else if (req.url === "/products") {
+        res.write(JSON.stringify(products));
+    } else if (req.url === "/services") {
+        res.write(JSON.stringify(services));
+    }
+
+    // Send response back to the client
+    res.end();
+});
+
+// Start the server and listen on the specified port
+const PORT = 3000;
+server.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}/`);
+});
+```
+
 ### Task 2: fetch services
 
 -   Add another button to fetch services.
 -   When clicked, it should fetch data from the `/services` route and display it in a similar way to the products.
 
+**Solution - Client code:**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Server Client Interaction</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            h1 {
+                color: #333;
+            }
+            .product,
+            .service {
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            <button onclick="fetchProducts()">Fetch Products</button>
+            <button onclick="fetchServices()">Fetch Services</button>
+        </p>
+        <h1 id="title"></h1>
+        <div id="items"></div>
+
+        <script>
+            function fetchProducts() {
+                fetch("http://localhost:3000")
+                    .then((response) => response.json())
+                    .then((data) => {
+                        document.getElementById("title").innerText = "Products";
+                        const itemsDiv = document.getElementById("items");
+                        itemsDiv.innerHTML = "";
+                        data.forEach((product) => {
+                            itemsDiv.innerHTML += `
+                                <div class="product">
+                                    <h2>${product.name}</h2>
+                                    <p>Price: $${product.price}</p>
+                                </div>
+                            `;
+                        });
+                    });
+            }
+
+            function fetchServices() {
+                fetch("http://localhost:3000/services")
+                    .then((response) => response.json())
+                    .then((data) => {
+                        document.getElementById("title").innerText = "Services";
+                        const itemsDiv = document.getElementById("items");
+                        itemsDiv.innerHTML = "";
+                        data.forEach((service) => {
+                            itemsDiv.innerHTML += `
+                                <div class="service">
+                                    <h2>${service.name}</h2>
+                                    <p>Price: $${service.price}</p>
+                                </div>
+                            `;
+                        });
+                    });
+            }
+        </script>
+    </body>
+</html>
+```
+
 ### Task 3: 404 Not Found
 
 -   make sure your server handles requests to routes that do not exist by returning a `404 Not Found` message.
+
+**Solution - Node server:**
+
+We use this "Not Found" to handle requests to routes that we do not have defined. Normally a user would never see this, but it is good to have a fallback in case of errors.
+
+```javascript
+// Import the built-in HTTP module
+const http = require("http");
+
+// Create an HTTP server
+const server = http.createServer((req, res) => {
+    // Set CORS headers
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    // Set response status and content type
+    res.writeHead(200, { "Content-Type": "application/json" });
+
+    // Your logic
+    if (req.url === "/") {
+        res.write(JSON.stringify({ message: "Welcome to the Home Page!" }));
+    } else if (req.url === "/products") {
+        res.write(JSON.stringify(products));
+    } else if (req.url === "/services") {
+        res.write(JSON.stringify(services));
+    } else {
+        res.write(JSON.stringify({ message: "404 Not Found" }));
+    }
+
+    // Send response back to the client
+    res.end();
+});
+
+// Start the server and listen on the specified port
+const PORT = 3000;
+server.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}/`);
+});
+```
 
 ---
 
@@ -292,4 +442,183 @@ Test to make sure these routes work!
 
 We now use buttons to fetch data from the server and change the content of the page dynamically. On the same page we show the products and services.
 
-In reality, you would probably want to have different pages for products and services. Can you modify the code to create separate pages for the homepage, products and services?
+In reality, you would probably want to have different pages for products and services. Each page would automatically fetch the relevant data when the page loads.
+
+-   Can you modify the code to create separate pages for the homepage, products and services?
+-   And make sure the server responds with the correct data for each page?
+-   Fetch the data from the server when the page loads?
+
+**Solution - Node server:**
+
+Same code as before, we already have the routes set up for `/`, `/products`, and `/services`. We don't need to change the server code for this exercise, but we will modify the client code to create separate pages.
+
+```javascript
+// Import the built-in HTTP module
+const http = require("http");
+
+// Create an HTTP server
+const server = http.createServer((req, res) => {
+    // Set CORS headers
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    // Set response status and content type
+    res.writeHead(200, { "Content-Type": "application/json" });
+
+    // Your logic
+    if (req.url === "/") {
+        res.write(JSON.stringify({ message: "Welcome to the Home Page!" }));
+    } else if (req.url === "/products") {
+        res.write(JSON.stringify(products));
+    } else if (req.url === "/services") {
+        res.write(JSON.stringify(services));
+    } else {
+        res.write(JSON.stringify({ message: "404 Not Found" }));
+    }
+
+    // Send response back to the client
+    res.end();
+});
+
+// Start the server and listen on the specified port
+const PORT = 3000;
+server.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}/`);
+});
+```
+
+**Solution - Client code:**
+
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Server Client Interaction</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            h1 {
+                color: #333;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="message"></h1>
+    </body>
+    <script>
+        // Fetch the home page data when the page loads
+        fetch("http://localhost:3000/")
+            .then((response) => response.text())
+            .then((data) => {
+                data = JSON.parse(data);
+                document.getElementById("message").textContent = data.message;
+            });
+    </script>
+</html>
+```
+
+```html
+<!-- products.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Products</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            h1 {
+                color: #333;
+            }
+            .product {
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Products</h1>
+        <a href="services.html">Services</a>
+        <div id="result"></div>
+        <script>
+            let resultDisplay = document.getElementById("result");
+            fetch("http://localhost:3000/products")
+                .then(function (response) {
+                    return response.text();
+                })
+                .then(function (data) {
+                    const products = JSON.parse(data);
+
+                    for (let i = 0; i < products.length; i++) {
+                        resultDisplay.innerHTML += `
+                        <div class="product">
+                            <h4>${products[i].name}</h4>
+                            <p>Price: ${products[i].price}</p>
+                        </div>
+                        `;
+                    }
+                });
+        </script>
+    </body>
+</html>
+```
+
+```html
+<!-- services.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Services</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            h1 {
+                color: #333;
+            }
+            .service {
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Services</h1>
+        <a href="products.html">Products</a>
+        <div id="result"></div>
+        <script>
+            let resultDisplay = document.getElementById("result");
+            fetch("http://localhost:3000/services")
+                .then(function (response) {
+                    return response.text();
+                })
+                .then(function (data) {
+                    const services = JSON.parse(data);
+
+                    for (let i = 0; i < services.length; i++) {
+                        resultDisplay.innerHTML += `
+                        <div class="service">
+                            <h4>${services[i].name}</h4>
+                            <p>Price: ${services[i].price}</p>
+                        </div>
+                        `;
+                    }
+                });
+        </script>
+    </body>
+</html>
+```

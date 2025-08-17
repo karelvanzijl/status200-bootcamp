@@ -643,6 +643,106 @@ Perfect for beginners and as a refresher for experienced developers.
     - Challenge exercises combining loops with array methods and logical thinking
     - Real-world applications including shopping carts and grade calculations
 
+### Week 3: Node.js Introduction & Advanced JavaScript (August 13, 2025)
+
+**[2025-08-13 - Node.js Introduction & Arrays Practice](./2025-08-13/readme.md)**
+
+1. **[Node.js Introduction](./2025-08-13/01-node-introduction.md)**
+
+    - Understanding JavaScript runtime environments: browser vs server
+    - The history and creation of Node.js in 2009 using Google's V8 engine
+    - Client-server architecture and the need for back-end services
+    - Installing and verifying Node.js installation
+    - Asynchronous programming concepts and Node.js strengths
+
+2. **[Shopping Cart Exercise](./2025-08-13/02-shopping-cart-execise.md)**
+
+    - Practical application of arrays and objects with real-world data
+    - Implementing shopping cart functionality using for loops
+    - Array manipulation: filtering, calculating totals, and finding items
+    - Working with object properties and nested data structures
+    - Mathematical operations with price calculations and quantity handling
+
+3. **[Assignment: Status200 Student Tracker](./2025-08-13/03-assignment .md)**
+
+    - Building a student assignment tracking system
+    - Arrays and objects practice with educational data
+    - For loops and if statements for data processing
+    - Calculating averages, finding top performers, and filtering data
+    - Running JavaScript files with Node.js in the terminal
+
+### Week 3: DOM Manipulation & Node.js Server Development (August 14, 2025)
+
+**[2025-08-14 - DOM Manipulation & Node.js Server Development](./2025-08-14/readme.md)**
+
+1. **[Introduction to innerHTML](./2025-08-14/01-inner-html.md)**
+
+    - Understanding innerHTML vs textContent for dynamic HTML content creation
+    - Using template literals with backticks for cleaner multi-line HTML strings
+    - Building interactive web applications with dynamic content insertion
+    - Creating cards, lists, tables, and complex layouts programmatically
+    - Best practices for HTML string construction and conditional content rendering
+
+2. **[Node.js HTTP Server - Part 1](./2025-08-14/02-node-server-part-1.md)**
+
+    - Setting up your first Node.js HTTP server with the built-in http module
+    - Understanding server-client architecture and request-response cycle
+    - Creating and running simple web servers that serve HTML content
+    - Setting up CORS headers for cross-origin requests
+    - Testing servers in the browser and handling common server issues
+
+### Week 3: Fetch API, JSON Data & Full-Stack Integration (August 15, 2025)
+
+**[2025-08-15 - Fetch API, JSON Data & Full-Stack Integration](./2025-08-15/readme.md)**
+
+1. **[JavaScript fetch() - Getting Data from Servers](./2025-08-15/01-fetch.md)**
+
+    - Understanding fetch() API for making HTTP requests without page reload
+    - Server-client communication patterns and data flow
+    - Converting response data with .text() and .json() methods
+    - Building interactive web applications that communicate with servers
+    - Auto-refresh functionality and real-time data updates
+
+2. **[JSON Data Format](./2025-08-15/02-json.md)**
+
+    - Introduction to JSON (JavaScript Object Notation) for data exchange
+    - Converting JavaScript objects to JSON strings with JSON.stringify()
+    - Parsing JSON strings back to JavaScript objects with JSON.parse()
+    - Server implementation for sending JSON responses
+    - Real-world examples with product catalogs and dynamic content
+
+3. **[Server & Client Integration](./2025-08-15/03-putting-it-all-together.md)**
+
+    - Complete server-client integration using Node.js and fetch()
+    - Building full-stack applications with data flow
+    - Combining innerHTML, JSON parsing, and server responses
+    - Creating dynamic web applications with real-time data
+    - Template patterns for common server-client interactions
+
+4. **[Node.js HTTP Server - Part 2](./2025-08-15/04-node-server-part-2.md)**
+
+    - Advanced server routing with URL path handling
+    - Multiple routes for different data endpoints
+    - Implementing 404 error handling for unknown routes
+    - Creating separate pages for products and services
+    - Testing and debugging server applications
+
+5. **[Class Code Templates](./2025-08-15/05-class-code.md)**
+
+    - Production-ready Node.js server templates
+    - Client-side fetch() patterns and best practices
+    - Complete examples for products and services pages
+    - Navigation between multiple HTML pages
+    - Code templates for quick project setup
+
+6. **[Assignment: Movie Website](./2025-08-15/06-assigment.md)**
+
+    - Building a complete movie database website
+    - Multiple genre pages (Action, Comedy, Drama, Horror, Sci-Fi)
+    - Homepage showcasing featured movies from each genre
+    - Movie card design with posters, ratings, and descriptions
+    - Navigation system and responsive design implementation
+
 ## Getting Started
 
 1. **Complete modules in chronological order** - From top to bottom, each module builds on the previous one

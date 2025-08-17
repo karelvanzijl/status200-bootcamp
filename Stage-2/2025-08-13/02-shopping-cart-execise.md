@@ -80,3 +80,71 @@ for (let i = 0; i < expensiveItems.length; i++) {
     console.log(item.name + ": $" + item.price);
 }
 ```
+
+### 3. Count Electronics Items
+
+```javascript
+// Count electronics items
+let electronicsCount = 0;
+for (let i = 0; i < shoppingCart.length; i++) {
+    const item = shoppingCart[i];
+    if (item.category === "electronics") {
+        electronicsCount++;
+    }
+}
+
+console.log("Electronics items: " + electronicsCount);
+// Output: Electronics items: 2
+```
+
+### 4. Find the Most Expensive Item
+
+```javascript
+// Find the item with the highest price
+let mostExpensive = shoppingCart[0]; // Start with the first item
+for (let i = 1; i < shoppingCart.length; i++) {
+    const item = shoppingCart[i];
+    if (item.price > mostExpensive.price) {
+        mostExpensive = item;
+    }
+}
+
+console.log("Most expensive item:");
+console.log(mostExpensive.name + ": $" + mostExpensive.price);
+// Output: Bluetooth Speaker: $89.99
+```
+
+### 5. Apply 10% Discount to Items Over $50
+
+```javascript
+// Show items with discount applied (but don't change original data)
+console.log("Items with 10% discount applied:");
+for (let i = 0; i < shoppingCart.length; i++) {
+    const item = shoppingCart[i];
+
+    if (item.price > 50) {
+        const discountedPrice = item.price * 0.9; // 10% discount
+        console.log(
+            item.name +
+                ": $" +
+                item.price +
+                " → $" +
+                discountedPrice.toFixed(2) +
+                " (10% off!)"
+        );
+    } else {
+        console.log(item.name + ": $" + item.price + " (no discount)");
+    }
+}
+```
+
+**Working with objects:**
+
+-   Access properties with dot notation: `item.price` or `item.name`
+-   Create new objects by listing properties: `{ name: "test", price: 10 }`
+
+**Working with arrays:**
+
+-   Use `array.length` to get the size
+-   Use `array.push(item)` to add items
+-   Access items with index: `array[0]` for first item
