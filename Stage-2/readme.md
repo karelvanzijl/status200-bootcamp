@@ -17,6 +17,45 @@ Throughout Stage 2, you'll master the complete web development stack:
 
 By the end of Stage 2, you'll be a complete full-stack developer capable of building modern web applications from database to user interface.
 
+## Quick Links (Days & Keywords)
+
+Jump straight to any day. Each line lists the main focus & repeated keywords to help you recall where topics live. Full detail is below in the Table of Contents.
+
+### Week 1
+
+-   Jul 21 – [CSS Fundamentals](./2025-07-21/readme.md): setup, terminal, HTML recap, css basics, selectors, box model
+-   Jul 22 – [Layout Systems](./2025-07-22/readme.md): positioning, flexbox, mini project
+-   Jul 23 – [External CSS & Grid](./2025-07-23/readme.md): project solution, external styles, css grid
+-   Jul 24 – [Portfolio Project](./2025-07-24/readme.md): portfolio build steps (layout, nav, typography, sections, footer)
+-   Jul 25 – [Review & Practice](./2025-07-25/readme.md): quiz, live coding, box model, positioning vs flexbox, media queries, weekend assignment
+-   Jul 26 – [Extra Reference](./2025-07-26/readme.md): html elements, css properties, colors, transitions cheat sheet
+
+### Week 2
+
+-   Jul 28 – [JS Intro & Basics](./2025-07-28/readme.md): js intro, dom, variables, functions, quiz, speed calculator
+-   Jul 29 – [JS Practice Exercises](./2025-07-29/readme.md): button click, area calc, shopping calc, age converter, counter, greeting
+-   Jul 30 – [Logic Flow & Variables](./2025-07-30/readme.md): app logic pattern, variable lifecycle, counter practice, bmi part 1
+-   Jul 31 – [Data Types & Operators](./2025-07-31/readme.md): primitives, arithmetic, assignment, comparison (exercises)
+-   Aug 01 – [Control Flow Basics](./2025-08-01/readme.md): ternary, logical ops, if/else, bmi part 2, atm v1
+
+### Week 3
+
+-   Aug 04 – [Functions & Number Handling](./2025-08-04/readme.md): atm build, isNaN, parseFloat, parseInt, toFixed, converter hw, calculator example
+-   Aug 05 – [Control Flow + Return](./2025-08-05/readme.md): if/else deep dive, return statement
+-   Aug 06 – [Functions & Arrays Intro](./2025-08-06/readme.md): parameters vs arguments, nested calls, arrays intro
+-   Aug 07 – [Arrays & Loops](./2025-08-07/readme.md): array practice, for loop patterns
+-   Aug 08 – [Objects & Methods](./2025-08-08/readme.md): objects, array methods (parts 1 & 2), object methods, display property, atm v2 + v3 assignment
+
+### Week 4
+
+-   Aug 11 – [Review & Practice](./2025-08-11/readme.md): quiz, mixed exercises, homework set
+-   Aug 12 – [Arrays & Loops Practice](./2025-08-12/readme.md): loop variations, nested loops, homework
+-   Aug 13 – [Node Intro & Arrays Practice](./2025-08-13/readme.md): node basics, shopping cart exercise, student tracker
+-   Aug 14 – [DOM innerHTML + Node Server P1](./2025-08-14/readme.md): innerHTML patterns, basic http server
+-   Aug 15 – [Fetch, JSON & Full Stack](./2025-08-15/readme.md): fetch, json, integration, server routing, templates, movie assignment
+
+---
+
 ## Table of Contents
 
 ### Week 1: CSS Foundations (July 21, 2025)
