@@ -6,7 +6,7 @@ Add a movie details page using the movie ID allowing users to view more informat
 
 **1. Link to the movie details page (Client-Side):**
 
-Add a link to each movie card in you website that navigates to your movie details page with a `query paramater` to tell which movie details you want to see:
+Add a link to each movie card in your website that navigates to your movie details page with a `query paramater` to tell which movie details you want to see:
 
 `movie.html?id=1`
 
@@ -41,7 +41,8 @@ The server should respond with the movie data in JSON format when a request is m
 -   Title
 -   Year
 -   Director
--   Rating
+-   Rating (based on review rating)
+-   Reviews (count of reviews)
 -   Genre
 -   Description
 -   Actors
@@ -55,18 +56,20 @@ The server should respond with the movie data in JSON format when a request is m
 
 ## Started Code
 
-You can download a [zip file](./movie-website-v3.zip) with all the code so far used in class. You're welcome to use this code as a starting point for your homework.
+You can download this [ZIP file](./movie-website-v3.zip) with all the code used in class so far. You're welcome to use this code as a starting point for your homework.
 
 **Important:**
 
-This zip file contains 2 directories:
+This ZIP file contains 2 directories:
 
-`server/`: Contains the Node.js server code.
+`server/`:
+
+Contains the Node.js server code.
 
 1.  **You'll need to run `npm install` in this directory to install the required packages (express and cors).**
-2.  After that, you can run the server with `node server.js`. **Make sure you in the `server` directory when you run this command.**
+2.  After that, you can run the server with `node server.js`. **Make sure you're in the `server` directory when you run this command.**
 3.  Check if the server is running by visiting `http://localhost:3000` in your browser.
 
 `website/`:
 
--   Contains the HTML, CSS, and JavaScript files for the client-side of the movie website.
+Contains the HTML, CSS, and JavaScript files for the client-side of the movie website.
