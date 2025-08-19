@@ -54,6 +54,11 @@ Jump straight to any day. Each line lists the main focus & repeated keywords to 
 -   Aug 14 – [DOM innerHTML + Node Server P1](./2025-08-14/readme.md): innerHTML patterns, basic http server
 -   Aug 15 – [Fetch, JSON & Full Stack](./2025-08-15/readme.md): fetch, json, integration, server routing, templates, movie assignment
 
+### Week 5
+
+-   Aug 18 – [Express Intro & Movie Expansion](./2025-08-18/readme.md): express setup, routes, json
+-   Aug 19 – [Query Params & Movie Details](./2025-08-19/readme.md): urlsearchparams, dynamic id fetch, movie details page
+
 ---
 
 ## Table of Contents
@@ -781,6 +786,39 @@ Perfect for beginners and as a refresher for experienced developers.
     - Homepage showcasing featured movies from each genre
     - Movie card design with posters, ratings, and descriptions
     - Navigation system and responsive design implementation
+
+### Week 5: Express.js & Advanced Routing (August 18, 2025)
+
+**[2025-08-18 - Express.js Introduction & Movie Website Expansion](./2025-08-18/readme.md)**
+
+1. **[Weekend Assignment Code Review](./2025-08-18/01-code-assignment.md)**
+
+    - Raw http server recap & multi-route JSON responses
+    - Genre-limited homepage construction (nested loops)
+    - Client consumption pattern (fetch + innerHTML)
+
+2. **[Express Framework & Routes](./2025-08-18/02-express-package.md)**
+
+    - Why Express (abstraction, middleware, routing simplicity)
+    - Project scaffolding: npm init, express, cors
+    - Static vs dynamic routes (`/accounts/:id`)
+    - Sending text, HTML, JSON responses
+
+### Week 5: Query Parameters & Movie Details (August 19, 2025)
+
+**[2025-08-19 - Query Parameters & Movie Details Page](./2025-08-19/readme.md)**
+
+1. **[Query Parameters](./2025-08-19/01-query-parameters.md)**
+
+    - URL pattern: `?key=value&key2=value2`
+    - Parsing with `URLSearchParams`
+    - Using IDs to fetch specific resources
+
+2. **[Homework: Movie Details Page](./2025-08-19/02-homework.md)**
+
+    - Add `movie.html?id=123` links to all cards
+    - Implement `/movies/:id` (server) & fetch client logic
+    - Render full movie detail including embedded video
 
 ## Getting Started
 
