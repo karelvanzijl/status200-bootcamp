@@ -1,7 +1,7 @@
 # Bootcamp Class Project - CLAUDE.md
 
 ## Project Overview
-This is a comprehensive web development bootcamp curriculum organized into progressive stages. The project contains educational materials, exercises, assignments, and project files for teaching web development from HTML/CSS basics through JavaScript fundamentals.
+This is a comprehensive web development bootcamp curriculum organized into progressive stages. The project contains educational materials, exercises, assignments, and project files for teaching web development from HTML/CSS basics through JavaScript fundamentals and full-stack development.
 
 ## Project Structure
 
@@ -9,8 +9,8 @@ This is a comprehensive web development bootcamp curriculum organized into progr
 - HTML basics and folder/terminal navigation
 - Foundation concepts and assignments
 
-### Stage 2: Advanced Web Development (July 21 - August 8, 2025)
-Progressive curriculum covering CSS layouts, responsive design, and JavaScript programming fundamentals.
+### Stage 2: Full-Stack Web Development (July 21 - August 19, 2025+)
+Progressive curriculum covering CSS layouts, responsive design, JavaScript programming fundamentals, Node.js, Express.js, and full-stack web development.
 
 ## Stage 2 Curriculum Breakdown
 
@@ -45,7 +45,7 @@ Progressive curriculum covering CSS layouts, responsive design, and JavaScript p
 - Media queries and responsive design introduction
 - **Week 1 Assignment**: Comprehensive CSS project
 
-### Week 2: JavaScript Programming (July 28 - August 8)
+### Week 2-3: JavaScript Programming (July 28 - August 8)
 
 #### **July 28** - JavaScript Introduction
 - JavaScript role in web development and browser engines
@@ -101,9 +101,52 @@ Progressive curriculum covering CSS layouts, responsive design, and JavaScript p
 - **Arrays Introduction Part 2**: Advanced methods (push, pop, indexOf, shift, unshift, splice)
 - **For loops**: Structure, array iteration, patterns, extensive exercises
 
-#### **August 8** - CSS Display Property
-- Display property values: block, inline, inline-block, none
+#### **August 8** - Objects, Array Methods & CSS Display
+- Objects: key-value data structures and property access
+- Array methods: push, pop, shift, unshift, splice, indexOf
+- CSS Display property: block, inline, inline-block, none
 - JavaScript manipulation for dynamic show/hide functionality
+- ATM simulator v2 and v3 with object-oriented approach
+
+### Week 4-5: Advanced JavaScript & Full-Stack Development (August 11-19)
+
+#### **August 11** - Review & Practice
+- Comprehensive JavaScript fundamentals review
+- Mixed exercises combining arrays, objects, and functions
+- Independent practice with guided exercises
+
+#### **August 12** - Arrays & Loops Deep Dive
+- Advanced for loop patterns and nested loops
+- Array manipulation with mathematical operations
+- Multi-dimensional data processing techniques
+
+#### **August 13** - Node.js Introduction
+- Server-side JavaScript with Node.js runtime
+- Client-server architecture understanding
+- Shopping cart exercise with real-world data
+- Student tracker assignment
+
+#### **August 14** - DOM Manipulation & HTTP Servers
+- innerHTML for dynamic HTML content creation
+- Template literals and complex layout generation
+- Node.js HTTP server setup and CORS handling
+- Server-client communication basics
+
+#### **August 15** - Fetch API & JSON Integration
+- JavaScript fetch() for server communication
+- JSON data format and parsing techniques
+- Full-stack application development patterns
+- Movie database website assignment
+
+#### **August 18** - Express.js Framework
+- Express.js setup and routing simplification
+- Static vs dynamic routes with parameters
+- JSON response handling and middleware
+
+#### **August 19** - Query Parameters & Dynamic Content
+- URL query parameter parsing with URLSearchParams
+- Dynamic ID-based resource fetching
+- Movie details page implementation
 
 ## Key Learning Objectives
 
@@ -116,21 +159,34 @@ Progressive curriculum covering CSS layouts, responsive design, and JavaScript p
 ### JavaScript Programming
 - Core concepts: variables, functions, data types, operators
 - Control flow: conditionals, logical operators, decision making
-- Data structures: arrays, methods, manipulation techniques
-- DOM interaction: connecting JavaScript to HTML
+- Data structures: arrays, objects, methods, manipulation techniques
+- DOM interaction: connecting JavaScript to HTML, innerHTML manipulation
 - Problem solving: calculators, converters, interactive applications
+- Server-side JavaScript: Node.js runtime and HTTP servers
+
+### Full-Stack Development
+- Client-server architecture and communication patterns
+- HTTP request/response cycle and API development
+- JSON data format and parsing techniques
+- Fetch API for asynchronous data retrieval
+- Express.js framework for simplified server routing
+- Dynamic content generation and template patterns
 
 ### Project-Based Learning
 - Flexbox navigation and responsive grid project
 - Progressive portfolio website (8-step development)
-- ATM machine simulator (major assignment)
+- ATM machine simulator (major assignment with multiple versions)
 - Multiple calculators and interactive tools
+- Shopping cart and student tracker applications
+- Movie database website with server integration
 - Real-world problem-solving applications
 
 ### Development Tools & Practices
 - VS Code setup and extensions (Prettier)
 - Command line navigation and file management
 - Browser Developer Tools for debugging
+- Node.js installation and server management
+- NPM package management and Express.js setup
 - Code organization and file structure
 - Progressive skill building and concept reinforcement
 
@@ -139,8 +195,16 @@ Progressive curriculum covering CSS layouts, responsive design, and JavaScript p
 1. **Flexbox Grid Project** (July 22-23): Responsive navigation and colored box layout
 2. **Portfolio Website** (July 24): 8-step progressive development
 3. **Week 1 CSS Assignment** (July 25): Comprehensive responsive webpage
-4. **ATM Simulator v1** (August 1-4): Complete banking application with validation
+4. **ATM Simulator Series** (August 1-8): Progressive banking application development
+   - v1.0: Basic deposits and withdrawals with validation
+   - v2.0: Enhanced features and error handling
+   - v3.0: Object-oriented approach with advanced functionality
 5. **Converter Homework** (August 4): Two-way kilometer/meter conversion tool
+6. **Student Tracker** (August 13): Educational data management system
+7. **Movie Database Website** (August 15-19): Full-stack application with server integration
+   - Multiple genre pages and homepage
+   - Server-client communication with JSON data
+   - Dynamic movie details with query parameters
 
 ## File Organization Notes
 
@@ -165,14 +229,34 @@ This structure ensures students build solid foundations while gaining practical 
 
 ## Development Commands
 
-*Note: No specific build/test commands were found in the curriculum files. This appears to be an educational repository focused on teaching concepts rather than a production codebase.*
+*Note: This is an educational repository focused on teaching web development concepts. Individual exercises and projects may have specific run commands documented within their respective folders.*
 
-## Next Steps for Stage 2
+### Node.js Applications
+- `node filename.js` - Run JavaScript files with Node.js
+- `npm init` - Initialize new Node.js projects
+- `npm install express cors` - Install Express.js and CORS packages
 
-Based on the file structure, Stage 2 continues beyond August 8, 2025, with additional content that may cover:
-- Advanced JavaScript concepts
-- More complex projects and applications
-- Additional programming fundamentals
-- Potential introduction to frameworks or libraries
+## Curriculum Status
+
+Stage 2 is actively being developed with content through August 19, 2025. The curriculum progression includes:
+
+✅ **Completed Sections:**
+- CSS Fundamentals and Advanced Layouts
+- JavaScript Programming Fundamentals
+- Control Flow and Data Structures
+- Node.js and Server-Side Development
+- Full-Stack Integration with Express.js
+
+🚧 **Current Focus:**
+- Query Parameters and Dynamic Content
+- Advanced Server-Client Communication
+- Movie Database Project Completion
+
+🔮 **Potential Future Topics:**
+- Database Integration (SQL fundamentals)
+- Advanced Express.js middleware
+- Authentication and user management
+- Front-end frameworks introduction
+- Production deployment strategies
 
 The curriculum demonstrates a well-structured, progressive approach to web development education with strong emphasis on practical application and project-based learning.
