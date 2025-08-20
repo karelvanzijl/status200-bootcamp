@@ -58,6 +58,7 @@ Jump straight to any day. Each line lists the main focus & repeated keywords to 
 
 -   Aug 18 – [Express Intro & Movie Expansion](./2025-08-18/readme.md): express setup, routes, json
 -   Aug 19 – [Query Params & Movie Details](./2025-08-19/readme.md): urlsearchparams, dynamic id fetch, movie details page
+-   Aug 20 – [Database Foundations & SQL](./2025-08-20/readme.md): sql setup, tableplus, mysql, database relationships, homework
 
 ---
 
@@ -819,6 +820,45 @@ Perfect for beginners and as a refresher for experienced developers.
     - Add `movie.html?id=123` links to all cards
     - Implement `/movies/:id` (server) & fetch client logic
     - Render full movie detail including embedded video
+
+### Week 5: Database Foundations & SQL Introduction (August 20, 2025)
+
+**[2025-08-20 - Database Foundations & SQL Introduction](./2025-08-20/readme.md)**
+
+1. **[Code Assignment: Movie Website](./2025-08-20/01-code-assignment-movie-website.md)**
+
+    - Movie website assignment completion and review
+    - Full-stack application with server-client integration
+    - Express.js routing and dynamic content generation
+    - JSON data handling and template patterns
+
+2. **[SQL & TablePlus Complete Setup](./2025-08-20/02_sql-tableplus-complete-setup.md)**
+
+    - Database management tool installation and configuration
+    - TablePlus GUI interface for visual database operations
+    - Database connection setup and server configuration
+    - Visual database design and schema management
+
+3. **[MySQL Installation and Tutorial](./2025-08-20/03_mysql-installation-and-tutorial.md)**
+
+    - MySQL server installation process and configuration
+    - Command-line tools and client setup procedures
+    - Database server management and basic operations
+    - MySQL syntax fundamentals and query execution
+
+4. **[Database Relationships](./2025-08-20/04_database-relationships.md)**
+
+    - Relational database concepts and terminology
+    - Primary keys, foreign keys, and data integrity
+    - One-to-one, one-to-many, many-to-many relationships
+    - Database normalization and schema design principles
+
+5. **[Database Homework](./2025-08-20/05-database_homework.md)**
+
+    - Practical SQL exercises and query challenges
+    - Database design assignments and schema creation
+    - Real-world data manipulation and retrieval scenarios
+    - Foundation building for full-stack database integration
 
 ## Getting Started
 
