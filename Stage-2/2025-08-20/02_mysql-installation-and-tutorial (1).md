@@ -276,12 +276,6 @@ SELECT COUNT(*) FROM courses;
 -- Average credits per course
 SELECT AVG(credits) FROM courses;
 
--- Course with most credits
-SELECT title, MAX(credits) FROM courses;
-
--- Course with least credits
-SELECT title, MIN(credits) FROM courses;
-
 -- Total credits offered
 SELECT SUM(credits) FROM courses;
 ```
@@ -310,10 +304,9 @@ SELECT CONCAT(title, ' by ', instructor) FROM courses;
 Try these simple functions:
 
 1. **Count** how many courses you have
-2. **Find** the course with the highest credits using MAX()
-3. **Show** all student names in uppercase
-4. **Find** courses that contain the word 'Design'
-5. **Calculate** the total credits of all courses combined
+2. **Show** all student names in uppercase
+3. **Find** courses that contain the word 'Design'
+4. **Calculate** the total credits of all courses combined
 
 <details>
 <summary><strong>Answers</strong></summary>
