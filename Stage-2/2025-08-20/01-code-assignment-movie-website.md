@@ -28,7 +28,7 @@ The Movie website V4 is built using Node.js for the server-side functionality. T
 
 **Setup Instructions:**
 
-1. Go to the `server` directory:(https://nodejs.org/).
+1. Go to the `server` directory.
 2. Install dependencies:
     ```bash
     npm install
@@ -45,6 +45,6 @@ The client-side of the Movie website V4 is built using HTML, CSS, and JavaScript
 
 **Setup Instructions:**
 
-1. Go to the `website` directory:
+1. Go to the `website` directory.
 2. Open the `index.html` file in your web browser to view the website.
 3. If you see the movies displayed, the client-side is set up correctly.
