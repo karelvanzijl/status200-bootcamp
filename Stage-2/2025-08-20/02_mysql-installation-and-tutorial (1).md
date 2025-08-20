@@ -315,9 +315,6 @@ Try these simple functions:
 -- 1. Count courses
 SELECT COUNT(*) FROM courses;
 
--- 2. Highest credits
-SELECT title, MAX(credits) FROM courses;
-
 -- 3. Uppercase names
 SELECT UPPER(name) FROM students;
 
