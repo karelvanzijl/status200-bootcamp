@@ -20,6 +20,7 @@ WHERE [conditions]
 GROUP BY [grouping columns]
 HAVING [group conditions]
 ORDER BY [sorting columns]
+LIMIT [number of rows]
 ```
 
 ## SELECT Statement
@@ -185,6 +186,55 @@ SELECT * FROM customers
 ORDER BY date_of_birth DESC;
 ```
 
+## LIMIT - Restricting Number of Results
+
+The LIMIT clause controls how many rows are returned by your query. This is especially useful for large tables or when you only need a few examples.
+
+### Basic LIMIT
+
+```sql
+-- Get only the first 5 customers
+SELECT * FROM customers LIMIT 5;
+
+-- Get the top 3 oldest customers
+SELECT *, YEAR(CURDATE()) - YEAR(date_of_birth) AS age
+FROM customers
+ORDER BY date_of_birth ASC
+LIMIT 3;
+```
+
+### LIMIT with OFFSET
+
+Skip some rows and then limit the results:
+
+```sql
+-- Skip first 10 customers, then show next 5
+SELECT * FROM customers LIMIT 5 OFFSET 10;
+
+-- Alternative syntax (MySQL specific)
+SELECT * FROM customers LIMIT 10, 5;
+```
+
+### Practical LIMIT Examples
+
+```sql
+-- Top 10 youngest customers
+SELECT 
+    CONCAT(first_name, ' ', last_name) AS 'Name',
+    YEAR(CURDATE()) - YEAR(date_of_birth) AS 'Age'
+FROM customers
+ORDER BY date_of_birth DESC
+LIMIT 10;
+
+-- Sample of customers for testing
+SELECT first_name, last_name, city FROM customers LIMIT 3;
+
+-- Most recent products added
+SELECT product_name, date_added FROM products
+ORDER BY date_added DESC
+LIMIT 5;
+```
+
 ## Date Functions
 
 Working with dates is common in SQL:
@@ -274,6 +324,9 @@ Try these queries with the customers table:
 3. Find customers from cities ending with 'ton' or 'land'
 4. List all male customers over 35 years old, sorted by city
 5. Create a report showing "John from New York is 40 years old" format
+6. Show only the 3 oldest customers with their ages
+7. Get a sample of 5 customers from Chicago for testing
+8. Find the top 10 most expensive products
 
 ## Partice Yourself Exercises
 

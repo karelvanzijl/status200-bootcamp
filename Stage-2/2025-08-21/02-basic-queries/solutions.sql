@@ -80,6 +80,28 @@ SELECT * FROM customers ORDER BY city, last_name;
 SELECT * FROM customers ORDER BY date_of_birth DESC;
 
 -- ================================================
+-- SECTION 4.5: LIMITING RESULTS SOLUTIONS
+-- ================================================
+
+-- Exercise 4.5: Basic LIMIT
+SELECT * FROM customers LIMIT 5;
+
+-- Exercise 4.6: Top results with ORDER BY + LIMIT
+SELECT *, YEAR(CURDATE()) - YEAR(date_of_birth) AS age 
+FROM customers 
+ORDER BY date_of_birth ASC 
+LIMIT 3;
+
+-- Exercise 4.7: Sample data
+SELECT * FROM customers WHERE city = 'Chicago' LIMIT 5;
+
+-- Exercise 4.8: Top expensive products
+SELECT * FROM products ORDER BY price DESC LIMIT 10;
+
+-- Exercise 4.9: LIMIT with OFFSET
+SELECT * FROM customers LIMIT 3 OFFSET 5;
+
+-- ================================================
 -- SECTION 5: CALCULATED COLUMNS SOLUTIONS
 -- ================================================
 
@@ -305,3 +327,21 @@ SELECT CONCAT(
 ) AS customer_report
 FROM customers
 ORDER BY first_name;
+
+-- ================================================
+-- SECTION 12: LIMIT PRACTICE FROM MARKDOWN SOLUTIONS
+-- ================================================
+
+-- Exercise 12.1: Top oldest customers
+SELECT 
+    CONCAT(first_name, ' ', last_name) AS 'Name',
+    YEAR(CURDATE()) - YEAR(date_of_birth) AS 'Age'
+FROM customers
+ORDER BY date_of_birth ASC
+LIMIT 3;
+
+-- Exercise 12.2: Sample customers for testing
+SELECT * FROM customers WHERE city = 'Chicago' LIMIT 5;
+
+-- Exercise 12.3: Most expensive products
+SELECT * FROM products ORDER BY price DESC LIMIT 10;

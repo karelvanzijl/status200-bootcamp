@@ -268,6 +268,51 @@ JOIN customers AS c2 ON c1.city = c2.city
 ORDER BY c1.city;
 ```
 
+## LIMIT with JOINs
+
+LIMIT is crucial when working with JOINs as they can return very large result sets:
+
+### Top Results from JOINs
+
+```sql
+-- Top 5 biggest orders by value
+SELECT
+    o.order_id,
+    c.customer_name,
+    SUM(od.quantity * od.price) AS 'Order Total'
+FROM orders AS o
+JOIN customers AS c ON o.customer_id = c.customer_id
+JOIN order_details AS od ON o.order_id = od.order_id
+GROUP BY o.order_id, c.customer_name
+ORDER BY SUM(od.quantity * od.price) DESC
+LIMIT 5;
+
+-- Most recent 10 orders with customer details
+SELECT
+    o.order_id,
+    c.customer_name,
+    c.city,
+    o.order_date
+FROM orders AS o
+JOIN customers AS c ON o.customer_id = c.customer_id
+ORDER BY o.order_date DESC
+LIMIT 10;
+```
+
+### Pagination with LIMIT and OFFSET
+
+```sql
+-- Get orders 11-20 (second page, 10 per page)
+SELECT
+    o.order_id,
+    c.customer_name,
+    o.order_date
+FROM orders AS o
+JOIN customers AS c ON o.customer_id = c.customer_id
+ORDER BY o.order_date DESC
+LIMIT 10 OFFSET 10;
+```
+
 ## Best Practices
 
 ### 1. Always Use Table Aliases

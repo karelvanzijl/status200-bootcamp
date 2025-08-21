@@ -76,6 +76,25 @@
 -- TODO: Show customers sorted by birth year, most recent first
 
 -- ================================================
+-- SECTION 4.5: LIMITING RESULTS
+-- ================================================
+
+-- Exercise 4.5: Basic LIMIT
+-- TODO: Show only the first 5 customers
+
+-- Exercise 4.6: Top results with ORDER BY + LIMIT
+-- TODO: Show the 3 oldest customers (hint: use ORDER BY date_of_birth ASC LIMIT 3)
+
+-- Exercise 4.7: Sample data
+-- TODO: Get a sample of 5 customers from Chicago for testing
+
+-- Exercise 4.8: Top expensive products
+-- TODO: Find the top 10 most expensive products
+
+-- Exercise 4.9: LIMIT with OFFSET
+-- TODO: Skip the first 5 customers and show the next 3 (use LIMIT with OFFSET)
+
+-- ================================================
 -- SECTION 5: CALCULATED COLUMNS
 -- ================================================
 
@@ -201,6 +220,20 @@
 
 -- Exercise 11.5: Descriptive reporting
 -- TODO: Create a report showing "John from New York is 40 years old" format
+
+-- ================================================
+-- SECTION 12: LIMIT PRACTICE FROM MARKDOWN
+-- ================================================
+-- These exercises practice the LIMIT examples from the markdown
+
+-- Exercise 12.1: Top oldest customers
+-- TODO: Show only the 3 oldest customers with their ages
+
+-- Exercise 12.2: Sample customers for testing
+-- TODO: Get a sample of 5 customers from Chicago for testing
+
+-- Exercise 12.3: Most expensive products
+-- TODO: Find the top 10 most expensive products
 
 -- ================================================
 -- HELPFUL REMINDERS:

@@ -158,6 +158,7 @@ ORDER BY AVG(YEAR(CURDATE()) - YEAR(date_of_birth)) DESC;
 4. **SELECT**: Calculate aggregates for each group
 5. **HAVING**: Filter groups with more than 1 customer
 6. **ORDER BY**: Sort results by average age
+7. **LIMIT**: Restrict number of results (if used)
 
 ## Real-World Examples
 
@@ -252,7 +253,9 @@ FROM customers
 GROUP BY gender;
 ```
 
-### 3. Top N Analysis
+### 3. Top N Analysis with LIMIT
+
+LIMIT is especially useful with aggregate queries for finding top performers:
 
 ```sql
 -- Top 3 cities by customer count
@@ -262,6 +265,24 @@ SELECT
 FROM customers
 GROUP BY city
 ORDER BY COUNT(*) DESC
+LIMIT 3;
+
+-- Top 5 most expensive product categories
+SELECT
+    category,
+    AVG(price) AS 'Average Price'
+FROM products
+GROUP BY category
+ORDER BY AVG(price) DESC
+LIMIT 5;
+
+-- Bottom 3 performing categories by product count
+SELECT
+    category,
+    COUNT(*) AS 'Product Count'
+FROM products
+GROUP BY category
+ORDER BY COUNT(*) ASC
 LIMIT 3;
 ```
 
