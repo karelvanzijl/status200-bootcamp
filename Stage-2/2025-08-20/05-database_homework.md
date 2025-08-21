@@ -3,23 +3,27 @@
 ## Instructions
 
 **Step 1:** Create the customers table
-- Look at the sample data below
-- Write CREATE TABLE with correct data types
-- Take a screenshot => name it `create_table.png`
+
+-   Look at the sample data below
+-   Write CREATE TABLE with correct data types
+-   Take a screenshot => name it `create_table.png`
 
 **Step 2:** Insert the sample data
-- Copy the INSERT statement and run it
+
+-   Copy the INSERT statement and run it
 
 **Step 3:** Write SELECT queries
-- For each question below, write the SELECT query
-- Take a screenshot showing your code + results
-- Name screenshots: `query1.png`, `query2.png`, etc.
+
+-   For each question below, write the SELECT query
+-   Take a screenshot showing your code + results
+-   Name screenshots: `query1.png`, `query2.png`, etc.
 
 **Step 4:** Submit your work
-- Create a folder named: `YourName_Database_HW`
-- Put all 16 screenshots in the folder
-- Zip the folder
-- Upload the zip file
+
+-   Create a folder named: `YourName_Database_HW`
+-   Put all 16 screenshots in the folder
+-   Zip the folder
+-   Upload the zip file
 
 ---
 
@@ -28,10 +32,11 @@
 **Step 1: Create the customers table yourself!**
 
 Look at the sample data below and create a table with appropriate:
-- Column names
-- Data types (VARCHAR, INT, DECIMAL, DATE, CHAR)
-- Field lengths (hint: names need about 50 characters, emails need 100)
-- Primary key (hint: use AUTO_INCREMENT for id)
+
+-   Column names
+-   Data types (VARCHAR, INT, DECIMAL, DATE, CHAR)
+-   Field lengths (hint: names need about 50 characters, emails need 100)
+-   Primary key (hint: use AUTO_INCREMENT for id)
 
 **Step 2: Insert this sample data:**
 
@@ -90,10 +95,11 @@ INSERT INTO customers (first_name, last_name, email, city, age, salary, departme
 ## Need Help?
 
 If you get stuck, try looking up these SQL concepts:
-- Pattern matching with LIKE and wildcards
-- GROUP BY for grouping data 
-- Aggregate functions: COUNT(), AVG(), MAX(), MIN()
-- ORDER BY and LIMIT for sorting and limiting results
+
+-   Pattern matching with LIKE and wildcards
+-   GROUP BY for grouping data
+-   Aggregate functions: COUNT(), AVG(), MAX(), MIN()
+-   ORDER BY and LIMIT for sorting and limiting results
 
 ---
 
@@ -102,9 +108,11 @@ If you get stuck, try looking up these SQL concepts:
 Submit a folder named: `YourName_Database_HW`
 
 Include **16 screenshots**:
-- `create_table.png` - Your CREATE TABLE statement
-- `query1.png` to `query15.png` - Each query with results
+
+-   `create_table.png` - Your CREATE TABLE statement
+-   `query1.png` to `query15.png` - Each query with results
 
 Each query screenshot should show:
-- Your SQL query in the editor
-- The results below
+
+-   Your SQL query in the editor
+-   The results below
