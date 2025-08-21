@@ -329,4 +329,4 @@ Follow the instructions for the remaining exercises as outlined in the file:
 
 ## Next Steps
 
-Ready to learn how to combine data from multiple tables? Continue to [Database Relationships](04-database-relationships.md).
+Ready to learn how to combine data from multiple tables? Continue to [Database Relationships](../2025-08-22/01-database-relationships.md).

@@ -59,6 +59,7 @@ Jump straight to any day. Each line lists the main focus & repeated keywords to 
 -   Aug 18 – [Express Intro & Movie Expansion](./2025-08-18/readme.md): express setup, routes, json
 -   Aug 19 – [Query Params & Movie Details](./2025-08-19/readme.md): urlsearchparams, dynamic id fetch, movie details page
 -   Aug 20 – [Database Foundations & SQL](./2025-08-20/readme.md): sql setup, tableplus, mysql, database relationships, homework
+-   Aug 21 – [Database Basics & Operations](./2025-08-21/readme.md): sql fundamentals, basic queries, aggregate functions
 
 ---
 
@@ -859,6 +860,31 @@ Perfect for beginners and as a refresher for experienced developers.
     - Database design assignments and schema creation
     - Real-world data manipulation and retrieval scenarios
     - Foundation building for full-stack database integration
+
+### Week 5: Database Operations & SQL Fundamentals (August 21, 2025)
+
+**[2025-08-21 - Database Basics & Operations](./2025-08-21/readme.md)**
+
+1. **[Database Fundamentals & SQL Basics](./2025-08-21/01-database-basics/readme.md)**
+
+    - SQL syntax fundamentals and query structure
+    - Basic SELECT statements and data retrieval
+    - Filtering data with WHERE clauses and conditions
+    - Practical exercises with real database scenarios
+
+2. **[SQL Joins & Table Relationships](./2025-08-21/02-sql-joins/readme.md)**
+
+    - Understanding table relationships and foreign keys
+    - INNER JOIN, LEFT JOIN, RIGHT JOIN operations
+    - Combining data from multiple tables effectively
+    - Real-world examples with customer and order data
+
+3. **[Aggregate Functions & Data Analysis](./2025-08-21/03-aggregate-functions.md)**
+
+    - COUNT, SUM, AVG, MIN, MAX functions
+    - GROUP BY clauses for data grouping
+    - HAVING clauses for filtering grouped data
+    - Statistical analysis with SQL queries
 
 ## Getting Started
 

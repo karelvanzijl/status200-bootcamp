@@ -3,7 +3,7 @@
 ## Before We Start
 
 To follow along with all examples in this lesson, first run the setup file:
-**[04-database-relationships/setup.sql](04-database-relationships/setup.sql)**
+**[04-database-relationships/setup.sql](01-database-relationships/setup.sql)**
 
 This creates a complete e-commerce database with customers, products, orders, suppliers, and order details tables - all properly related with foreign keys. The setup takes a bit longer as it creates realistic sample data for complex relationship practice.
 
@@ -389,8 +389,8 @@ FROM customers AS c...
 
 Follow the instructions for the remaining exercises as outlined in the file:
 
--   **[04-database-relationships/exercises.sql](04-database-relationships/exercises.sql)**: Progressive JOIN exercises from basic to business intelligence
--   **[04-database-relationships/solutions.sql](04-database-relationships/solutions.sql)**: Complete solutions with complex business queries
+-   **[01-database-relationships/exercises.sql](01-database-relationships/exercises.sql)**: Progressive JOIN exercises from basic to business intelligence
+-   **[01-database-relationships/solutions.sql](01-database-relationships/solutions.sql)**: Complete solutions with complex business queries
 
 ## Database Structure Created
 
