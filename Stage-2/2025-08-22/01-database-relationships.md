@@ -3,7 +3,7 @@
 ## Before We Start
 
 To follow along with all examples in this lesson, first run the setup file:
-**[04-database-relationships/setup.sql](01-database-relationships/setup.sql)**
+**[01-database-relationships/setup.sql](01-database-relationships/setup.sql)**
 
 This creates a complete e-commerce database with customers, products, orders, suppliers, and order details tables - all properly related with foreign keys. The setup takes a bit longer as it creates realistic sample data for complex relationship practice.
 
@@ -49,43 +49,67 @@ Let's build a simple e-commerce system with four related tables:
 ```sql
 CREATE TABLE customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_name VARCHAR(100),
+    customer_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
     city VARCHAR(100),
-    country VARCHAR(100)
+    country VARCHAR(100),
+    date_joined DATE,
+    is_active BOOLEAN DEFAULT TRUE
 );
 ```
 
-### 2. Products Table
+### 2. Supplier Table
+
+```sql
+CREATE TABLE suppliers (
+    supplier_id INT AUTO_INCREMENT PRIMARY KEY,
+    supplier_name VARCHAR(100) NOT NULL,
+    contact_person VARCHAR(100),
+    phone VARCHAR(20),
+    email VARCHAR(100),
+    country VARCHAR(50)
+);
+```
+
+### 3. Products Table
 
 ```sql
 CREATE TABLE products (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
-    product_name VARCHAR(100),
-    unit_price DECIMAL(10, 2)
+    supplier_id INT,
+    product_name VARCHAR(100) NOT NULL,
+    category VARCHAR(50),
+    unit_price DECIMAL(10, 2) NOT NULL,
+    stock_quantity INT DEFAULT 0,
+    supplier_id INT,
+    date_added DATE,
+    FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id)
 );
 ```
 
-### 3. Orders Table
+### 4. Orders Table
 
 ```sql
 CREATE TABLE orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
-    order_date DATE,
-    customer_id INT,
-    voucher DECIMAL(5, 2),
+    customer_id INT NOT NULL,
+    order_date DATE NOT NULL,
+    voucher_percent DECIMAL(5, 2) DEFAULT 0,
+    shipping_cost DECIMAL(8, 2) DEFAULT 0,
+    order_status VARCHAR(20) DEFAULT 'Pending',
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
 ```
 
-### 4. Order Details Table
+### 5. Order Details Table
 
 ```sql
 CREATE TABLE order_details (
     order_id INT,
     product_id INT,
-    quantity INT,
-    price DECIMAL(10, 2),
-    PRIMARY KEY (order_id, product_id),          -- Composite Primary Key
+    quantity INT NOT NULL,
+    unit_price DECIMAL(10, 2) NOT NULL,
+    PRIMARY KEY (order_id, product_id),
     FOREIGN KEY (order_id) REFERENCES orders(order_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
@@ -93,14 +117,15 @@ CREATE TABLE order_details (
 
 ## Understanding the Relationships
 
-```
-customers (1) ──── (many) orders (1) ──── (many) order_details (many) ──── (1) products
-```
+<img src="./01-database-relationships/diagram.svg">
+<br><br>
 
 -   One customer can have many orders
 -   One order belongs to one customer
 -   One order can have many order details (different products)
 -   One product can appear in many order details
+-   One product belongs to one supplier
+-   One supplier can supply many products
 
 ## JOIN Operations
 
@@ -144,7 +169,7 @@ SELECT
     c.customer_name,
     p.product_name,
     od.quantity,
-    od.price,
+    od.unit_price,
     o.order_date
 FROM order_details AS od
 JOIN orders AS o ON od.order_id = o.order_id
@@ -176,14 +201,14 @@ SELECT
     o.order_id,
     c.customer_name,
     o.order_date,
-    SUM(od.quantity * od.price) AS 'Order Total',
-    o.voucher AS 'Discount %',
-    ROUND(SUM(od.quantity * od.price) * (1 - o.voucher / 100), 2) AS 'Final Total'
+    SUM(od.quantity * od.unit_price) AS 'Order Total',
+    o.voucher_percent AS 'Discount %',
+    ROUND(SUM(od.quantity * od.unit_price) * (1 - o.voucher_percent / 100), 2) AS 'Final Total'
 FROM orders AS o
 JOIN customers AS c ON o.customer_id = c.customer_id
 JOIN order_details AS od ON o.order_id = od.order_id
-GROUP BY o.order_id, c.customer_name, o.order_date, o.voucher
-ORDER BY SUM(od.quantity * od.price) DESC;
+GROUP BY o.order_id, c.customer_name, o.order_date, o.voucher_percent
+ORDER BY SUM(od.quantity * od.unit_price) DESC;
 ```
 
 ### Example 3: Product Popularity Analysis
@@ -194,7 +219,7 @@ SELECT
     p.product_name,
     COUNT(od.order_id) AS 'Times Ordered',
     SUM(od.quantity) AS 'Total Quantity Sold',
-    AVG(od.price) AS 'Average Selling Price'
+    AVG(od.unit_price) AS 'Average Selling Price'
 FROM products AS p
 JOIN order_details AS od ON p.product_id = od.product_id
 GROUP BY p.product_id, p.product_name
@@ -210,7 +235,7 @@ SELECT
     c.country,
     COUNT(DISTINCT c.customer_id) AS 'Number of Customers',
     COUNT(o.order_id) AS 'Total Orders',
-    ROUND(AVG(od.quantity * od.price), 2) AS 'Average Order Line Value'
+    ROUND(AVG(od.quantity * od.unit_price), 2) AS 'Average Order Line Value'
 FROM customers AS c
 JOIN orders AS o ON c.customer_id = o.customer_id
 JOIN order_details AS od ON o.order_id = od.order_id
@@ -240,7 +265,11 @@ ORDER BY p.unit_price DESC;
 
 ### LEFT JOIN (LEFT OUTER JOIN)
 
-Returns all rows from the left table, even if no match in the right table:
+Returns all rows from the left table, even if no match in the right table.
+
+**Why use LEFT JOIN?** Imagine you're running a business and want to see ALL your customers - including those who haven't bought anything yet. A regular JOIN would only show customers who made purchases, but LEFT JOIN shows everyone. This is crucial for business reports like "customer engagement" or "marketing reach" where you need to see the full picture, including inactive customers.
+
+**Real-world example**: You have 100 registered customers, but only 60 have placed orders. LEFT JOIN shows all 100 customers (with order counts of 0 for the 40 who haven't ordered), while regular JOIN would only show the 60 active customers.
 
 ```sql
 -- Get all customers, including those who haven't placed orders
@@ -254,7 +283,11 @@ GROUP BY c.customer_id, c.customer_name;
 
 ### Self JOIN
 
-Join a table to itself:
+Join a table to itself - this sounds weird at first, but it's incredibly useful!
+
+**Why use Self JOIN?** Think of it like comparing people within your friend group. You want to find connections or similarities between records in the same table. Common uses include finding employees who work in the same department, students in the same class, or customers from the same city who might be interested in group discounts.
+
+**Real-world example**: You're organizing a local meetup and want to connect customers who live in the same city so they can carpool together. Self JOIN lets you pair up customers from each city, creating a "buddy system" for your event.
 
 ```sql
 -- Find customers from the same city (assuming we want to find pairs)
@@ -279,12 +312,12 @@ LIMIT is crucial when working with JOINs as they can return very large result se
 SELECT
     o.order_id,
     c.customer_name,
-    SUM(od.quantity * od.price) AS 'Order Total'
+    SUM(od.quantity * od.unit_price) AS 'Order Total'
 FROM orders AS o
 JOIN customers AS c ON o.customer_id = c.customer_id
 JOIN order_details AS od ON o.order_id = od.order_id
 GROUP BY o.order_id, c.customer_name
-ORDER BY SUM(od.quantity * od.price) DESC
+ORDER BY SUM(od.quantity * od.unit_price) DESC
 LIMIT 5;
 
 -- Most recent 10 orders with customer details
