@@ -27,11 +27,11 @@ CREATE TABLE suppliers (
 
 CREATE TABLE products (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
+    supplier_id INT,
     product_name VARCHAR(100) NOT NULL,
     category VARCHAR(50),
     unit_price DECIMAL(10, 2) NOT NULL,
     stock_quantity INT DEFAULT 0,
-    supplier_id INT,
     date_added DATE,
     FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id)
 );
