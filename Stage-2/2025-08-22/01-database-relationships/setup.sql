@@ -1,12 +1,11 @@
--- ================================================
--- COMPLETE E-COMMERCE DATABASE SETUP
--- ================================================
--- This script creates a full e-commerce database with relationships
--- Use this for practicing JOINs and complex queries
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS order_details;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS suppliers;
+DROP TABLE IF EXISTS customers;
+SET FOREIGN_KEY_CHECKS = 1;
 
--- ================================================
--- 1. CUSTOMERS TABLE
--- ================================================
 CREATE TABLE customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_name VARCHAR(100) NOT NULL,
@@ -16,6 +15,47 @@ CREATE TABLE customers (
     date_joined DATE,
     is_active BOOLEAN DEFAULT TRUE
 );
+
+CREATE TABLE suppliers (
+    supplier_id INT AUTO_INCREMENT PRIMARY KEY,
+    supplier_name VARCHAR(100) NOT NULL,
+    contact_person VARCHAR(100),
+    phone VARCHAR(20),
+    email VARCHAR(100),
+    country VARCHAR(50)
+);
+
+CREATE TABLE products (
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(100) NOT NULL,
+    category VARCHAR(50),
+    unit_price DECIMAL(10, 2) NOT NULL,
+    stock_quantity INT DEFAULT 0,
+    supplier_id INT,
+    date_added DATE,
+    FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id)
+);
+
+CREATE TABLE orders (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT NOT NULL,
+    order_date DATE NOT NULL,
+    voucher_percent DECIMAL(5, 2) DEFAULT 0,
+    shipping_cost DECIMAL(8, 2) DEFAULT 0,
+    order_status VARCHAR(20) DEFAULT 'Pending',
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+CREATE TABLE order_details (
+    order_id INT,
+    product_id INT,
+    quantity INT NOT NULL,
+    unit_price DECIMAL(10, 2) NOT NULL,
+    PRIMARY KEY (order_id, product_id),
+    FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
 
 INSERT INTO customers (customer_name, email, city, country, date_joined, is_active) VALUES
 ('Alice Johnson', 'alice.johnson@email.com', 'New York', 'USA', '2024-01-15', TRUE),
@@ -39,18 +79,16 @@ INSERT INTO customers (customer_name, email, city, country, date_joined, is_acti
 ('Sandra Bullock', 'sandra.bullock@email.com', 'Singapore', 'Singapore', '2024-02-08', TRUE),
 ('Tom Hardy', 'tom.hardy@email.com', 'Hong Kong', 'China', '2024-01-12', TRUE);
 
--- ================================================
--- 2. PRODUCTS TABLE
--- ================================================
-CREATE TABLE products (
-    product_id INT AUTO_INCREMENT PRIMARY KEY,
-    product_name VARCHAR(100) NOT NULL,
-    category VARCHAR(50),
-    unit_price DECIMAL(10, 2) NOT NULL,
-    stock_quantity INT DEFAULT 0,
-    supplier_id INT,
-    date_added DATE
-);
+
+INSERT INTO suppliers (supplier_name, contact_person, phone, email, country) VALUES
+('Apple Inc', 'Tim Cook', '+1-408-996-1010', 'contact@apple.com', 'USA'),
+('Tech Accessories Co', 'John Doe', '+1-555-0123', 'sales@techaccess.com', 'USA'),
+('Wireless Solutions', 'Jane Smith', '+44-20-1234567', 'info@wireless.uk', 'UK'),
+('Home Essentials', 'Maria Garcia', '+1-555-0456', 'orders@homeessentials.com', 'USA'),
+('Smart Home Tech', 'David Lee', '+49-30-12345678', 'contact@smarthome.de', 'Germany'),
+('Fitness First', 'Sarah Johnson', '+1-555-0789', 'sales@fitnessfirst.com', 'USA'),
+('Sports Pro', 'Michael Chen', '+86-10-12345678', 'info@sportspro.cn', 'China');
+
 
 INSERT INTO products (product_name, category, unit_price, stock_quantity, supplier_id, date_added) VALUES
 ('MacBook Pro', 'Electronics', 1999.99, 25, 1, '2024-01-05'),
@@ -74,42 +112,6 @@ INSERT INTO products (product_name, category, unit_price, stock_quantity, suppli
 ('Running Shoes', 'Sports', 149.99, 75, 7, '2024-01-24'),
 ('Protein Powder', 'Sports', 59.99, 100, 6, '2024-02-08');
 
--- ================================================
--- 3. SUPPLIERS TABLE
--- ================================================
-CREATE TABLE suppliers (
-    supplier_id INT AUTO_INCREMENT PRIMARY KEY,
-    supplier_name VARCHAR(100) NOT NULL,
-    contact_person VARCHAR(100),
-    phone VARCHAR(20),
-    email VARCHAR(100),
-    country VARCHAR(50)
-);
-
-INSERT INTO suppliers (supplier_name, contact_person, phone, email, country) VALUES
-('Apple Inc', 'Tim Cook', '+1-408-996-1010', 'contact@apple.com', 'USA'),
-('Tech Accessories Co', 'John Doe', '+1-555-0123', 'sales@techaccess.com', 'USA'),
-('Wireless Solutions', 'Jane Smith', '+44-20-1234567', 'info@wireless.uk', 'UK'),
-('Home Essentials', 'Maria Garcia', '+1-555-0456', 'orders@homeessentials.com', 'USA'),
-('Smart Home Tech', 'David Lee', '+49-30-12345678', 'contact@smarthome.de', 'Germany'),
-('Fitness First', 'Sarah Johnson', '+1-555-0789', 'sales@fitnessfirst.com', 'USA'),
-('Sports Pro', 'Michael Chen', '+86-10-12345678', 'info@sportspro.cn', 'China');
-
--- Add foreign key constraint for products
-ALTER TABLE products ADD FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id);
-
--- ================================================
--- 4. ORDERS TABLE
--- ================================================
-CREATE TABLE orders (
-    order_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT NOT NULL,
-    order_date DATE NOT NULL,
-    voucher_percent DECIMAL(5, 2) DEFAULT 0,
-    shipping_cost DECIMAL(8, 2) DEFAULT 0,
-    order_status VARCHAR(20) DEFAULT 'Pending',
-    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
-);
 
 INSERT INTO orders (customer_id, order_date, voucher_percent, shipping_cost, order_status) VALUES
 (1, '2024-08-01', 10.00, 15.99, 'Delivered'),
@@ -133,18 +135,6 @@ INSERT INTO orders (customer_id, order_date, voucher_percent, shipping_cost, ord
 (19, '2024-08-19', 0.00, 12.99, 'Shipped'),
 (20, '2024-08-20', 10.00, 15.99, 'Processing');
 
--- ================================================
--- 5. ORDER_DETAILS TABLE
--- ================================================
-CREATE TABLE order_details (
-    order_id INT,
-    product_id INT,
-    quantity INT NOT NULL,
-    unit_price DECIMAL(10, 2) NOT NULL,
-    PRIMARY KEY (order_id, product_id),
-    FOREIGN KEY (order_id) REFERENCES orders(order_id),
-    FOREIGN KEY (product_id) REFERENCES products(product_id)
-);
 
 INSERT INTO order_details (order_id, product_id, quantity, unit_price) VALUES
 (1, 1, 1, 1999.99),
@@ -187,48 +177,3 @@ INSERT INTO order_details (order_id, product_id, quantity, unit_price) VALUES
 (19, 18, 2, 89.99),
 (20, 19, 1, 149.99),
 (20, 20, 1, 59.99);
-
--- ================================================
--- VERIFICATION QUERIES
--- ================================================
--- Uncomment these to test your database after setup:
-
--- Check table creation
--- SELECT 
---     'customers' AS table_name, COUNT(*) AS record_count FROM customers
--- UNION ALL
--- SELECT 
---     'products' AS table_name, COUNT(*) AS record_count FROM products
--- UNION ALL
--- SELECT 
---     'suppliers' AS table_name, COUNT(*) AS record_count FROM suppliers
--- UNION ALL
--- SELECT 
---     'orders' AS table_name, COUNT(*) AS record_count FROM orders
--- UNION ALL
--- SELECT 
---     'order_details' AS table_name, COUNT(*) AS record_count FROM order_details;
-
--- Sample JOIN query
--- SELECT 
---     c.customer_name,
---     c.city,
---     c.country,
---     COUNT(o.order_id) AS 'Total Orders'
--- FROM customers c
--- LEFT JOIN orders o ON c.customer_id = o.customer_id
--- GROUP BY c.customer_id, c.customer_name, c.city, c.country
--- ORDER BY COUNT(o.order_id) DESC;
-
--- ================================================
--- PRACTICE QUERY IDEAS:
--- ================================================
--- 1. Total sales by country
--- 2. Most popular products
--- 3. Customer lifetime value
--- 4. Average order value by month
--- 5. Supplier performance analysis
--- 6. Product category profitability
--- 7. Customer acquisition trends
--- 8. Order fulfillment status analysis
--- ================================================
