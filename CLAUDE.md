@@ -9,8 +9,8 @@ This is a comprehensive web development bootcamp curriculum organized into progr
 - HTML basics and folder/terminal navigation
 - Foundation concepts and assignments
 
-### Stage 2: Full-Stack Web Development (July 21 - August 19, 2025+)
-Progressive curriculum covering CSS layouts, responsive design, JavaScript programming fundamentals, Node.js, Express.js, and full-stack web development.
+### Stage 2: Full-Stack Web Development (July 21 - August 22, 2025+)
+Progressive curriculum covering CSS layouts, responsive design, JavaScript programming fundamentals, Node.js, Express.js, database fundamentals, and full-stack web development.
 
 ## Stage 2 Curriculum Breakdown
 
@@ -148,6 +148,30 @@ Progressive curriculum covering CSS layouts, responsive design, JavaScript progr
 - Dynamic ID-based resource fetching
 - Movie details page implementation
 
+### Week 5-6: Database Fundamentals & SQL Mastery (August 20-22)
+
+#### **August 20** - Database Foundations & SQL Introduction
+- Database management tool installation (TablePlus, MySQL)
+- Database connection setup and server configuration
+- Relational database concepts and terminology
+- Primary keys, foreign keys, and data integrity
+- Database homework and practical exercises
+
+#### **August 21** - Database Operations & SQL Fundamentals
+- SQL syntax fundamentals and query structure
+- Basic SELECT statements and data retrieval
+- Filtering data with WHERE clauses and conditions
+- Aggregate functions: COUNT, SUM, AVG, MIN, MAX
+- GROUP BY clauses for data grouping and analysis
+
+#### **August 22** - Database Relationships & JOINs
+- Primary keys and foreign key constraints for data integrity
+- INNER JOIN operations for combining related table data
+- Table aliases for cleaner, readable multi-table queries
+- Aggregate functions with joined data across multiple tables
+- Real-world e-commerce database scenarios and business applications
+- **Weekend Assignment**: Movie database design with comprehensive relationships
+
 ## Key Learning Objectives
 
 ### CSS Mastery
@@ -172,6 +196,14 @@ Progressive curriculum covering CSS layouts, responsive design, JavaScript progr
 - Express.js framework for simplified server routing
 - Dynamic content generation and template patterns
 
+### Database Management & SQL
+- Relational database design and normalization principles
+- SQL fundamentals: SELECT, WHERE, ORDER BY, GROUP BY, HAVING
+- Table relationships: primary keys, foreign keys, data integrity
+- JOIN operations: INNER JOIN for combining related data
+- Aggregate functions for data analysis and reporting
+- Database management tools and server configuration
+
 ### Project-Based Learning
 - Flexbox navigation and responsive grid project
 - Progressive portfolio website (8-step development)
@@ -187,6 +219,7 @@ Progressive curriculum covering CSS layouts, responsive design, JavaScript progr
 - Browser Developer Tools for debugging
 - Node.js installation and server management
 - NPM package management and Express.js setup
+- Database management tools (TablePlus, MySQL)
 - Code organization and file structure
 - Progressive skill building and concept reinforcement
 
@@ -205,6 +238,10 @@ Progressive curriculum covering CSS layouts, responsive design, JavaScript progr
    - Multiple genre pages and homepage
    - Server-client communication with JSON data
    - Dynamic movie details with query parameters
+8. **Movie Database Design Assignment** (August 22): Comprehensive database design project
+   - 8-table relational database with proper constraints
+   - One-to-many and many-to-many relationships implementation
+   - Sample data generation and complex JOIN queries
 
 ## File Organization Notes
 
@@ -236,9 +273,14 @@ This structure ensures students build solid foundations while gaining practical 
 - `npm init` - Initialize new Node.js projects
 - `npm install express cors` - Install Express.js and CORS packages
 
+### Database Operations
+- MySQL server installation and configuration
+- TablePlus for visual database management
+- SQL query execution and testing
+
 ## Curriculum Status
 
-Stage 2 is actively being developed with content through August 19, 2025. The curriculum progression includes:
+Stage 2 is actively being developed with content through August 22, 2025. The curriculum progression includes:
 
 ✅ **Completed Sections:**
 - CSS Fundamentals and Advanced Layouts
@@ -246,17 +288,19 @@ Stage 2 is actively being developed with content through August 19, 2025. The cu
 - Control Flow and Data Structures
 - Node.js and Server-Side Development
 - Full-Stack Integration with Express.js
+- Database Fundamentals and SQL Mastery
+- Database Relationships and JOIN Operations
 
 🚧 **Current Focus:**
-- Query Parameters and Dynamic Content
-- Advanced Server-Client Communication
-- Movie Database Project Completion
+- Advanced database concepts and optimization
+- Database integration with Node.js applications
+- Full-stack application development with databases
 
 🔮 **Potential Future Topics:**
-- Database Integration (SQL fundamentals)
-- Advanced Express.js middleware
-- Authentication and user management
+- Advanced SQL operations and stored procedures
+- Database integration with Express.js applications
+- Authentication and user management systems
 - Front-end frameworks introduction
-- Production deployment strategies
+- Production deployment strategies with databases
 
 The curriculum demonstrates a well-structured, progressive approach to web development education with strong emphasis on practical application and project-based learning.

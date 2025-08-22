@@ -60,6 +60,7 @@ Jump straight to any day. Each line lists the main focus & repeated keywords to 
 -   Aug 19 – [Query Params & Movie Details](./2025-08-19/readme.md): urlsearchparams, dynamic id fetch, movie details page
 -   Aug 20 – [Database Foundations & SQL](./2025-08-20/readme.md): sql setup, tableplus, mysql, database relationships, homework
 -   Aug 21 – [Database Basics & Operations](./2025-08-21/readme.md): sql fundamentals, basic queries, aggregate functions
+-   Aug 22 – [Database Relationships & JOINs](./2025-08-22/readme.md): primary/foreign keys, INNER JOINs, table aliases, multi-table queries, weekend assignment
 
 ---
 
@@ -885,6 +886,34 @@ Perfect for beginners and as a refresher for experienced developers.
     - GROUP BY clauses for data grouping
     - HAVING clauses for filtering grouped data
     - Statistical analysis with SQL queries
+
+### Week 5: Database Relationships & JOINs (August 22, 2025)
+
+**[2025-08-22 - Database Relationships & JOINs](./2025-08-22/readme.md)**
+
+1. **[Database Relationships & JOINs](./2025-08-22/01-database-relationships.md)**
+
+    - Primary keys and foreign key constraints for data integrity
+    - INNER JOIN operations for combining related table data
+    - Table aliases for cleaner, readable multi-table queries
+    - Aggregate functions (COUNT, SUM, AVG) with joined data
+    - Filtering and grouping with WHERE, GROUP BY, and HAVING clauses
+    - Real-world e-commerce database scenarios and business applications
+
+2. **[Database Relationships - Optional Content](./2025-08-22/02-database-relationships-optional.md)**
+
+    - LEFT JOINs, RIGHT JOINs, and FULL OUTER JOINs (not required)
+    - Self JOINs for hierarchical data relationships
+    - CROSS JOINs and performance considerations
+    - Advanced business intelligence and reporting scenarios
+
+3. **[Weekend Assignment: Movie Database Design](./2025-08-22/03-weekend-assignment.md)**
+
+    - Comprehensive movie database system with 8 tables and junction relationships
+    - Implementation of one-to-many and many-to-many relationships with proper constraints
+    - Sample data generation and complex JOIN queries for data retrieval
+    - Real-world application of database design principles and best practices
+    - Due: Sunday, August 24, 8 PM, 2025 (3-4 hours estimated)
 
 ## Getting Started
 

@@ -9,6 +9,14 @@ This creates a complete e-commerce database with customers, products, orders, su
 
 Real-world applications rarely use just one table. Database relationships allow us to connect related information across multiple tables, avoiding data duplication and maintaining data integrity.
 
+**The setup creates these related tables:**
+
+-   **customers**: Customer information with geographic data
+-   **products**: Product catalog with suppliers and categories
+-   **orders**: Order transactions with discounts and shipping
+-   **order_details**: Individual items within orders
+-   **suppliers**: Product supplier information
+
 ## Understanding Keys
 
 ### Primary Key (PK)
@@ -42,7 +50,7 @@ CREATE TABLE orders (
 
 ## Database Relationship Example
 
-Let's build a simple e-commerce system with four related tables:
+The following examples are included in the [setup file](./01-database-relationships/setup.sql) and demonstrate a simple e-commerce database with the following tables:
 
 ### 1. Customers Table
 
@@ -81,7 +89,6 @@ CREATE TABLE products (
     category VARCHAR(50),
     unit_price DECIMAL(10, 2) NOT NULL,
     stock_quantity INT DEFAULT 0,
-    supplier_id INT,
     date_added DATE,
     FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id)
 );
@@ -117,37 +124,83 @@ CREATE TABLE order_details (
 
 ## Understanding the Relationships
 
+What did we just create? Here's a quick overview of the relationships:
+
 <img src="./01-database-relationships/diagram.svg">
 <br><br>
 
--   One customer can have many orders
--   One order belongs to one customer
--   One order can have many order details (different products)
--   One product can appear in many order details
--   One product belongs to one supplier
--   One supplier can supply many products
+_Customer - Order relationships:_
+
+-   **Customers** can place multiple **Orders** (1-to-many relationship).
+-   **Orders** can have multiple **Order Details** (1-to-many relationship).
+
+_Product - Supplier relationships:_
+
+-   **Products** can be supplied by **Suppliers** (many-to-1 relationship).
+-   **Suppliers** can provide multiple **Products** (1-to-many relationship).
+
+_Order - Product relationships:_
+
+-   **Order Details** link **Orders** to **Products** (many-to-many relationship).
+-   **Products** can be part of multiple **Order Details** (1-to-many relationship).
 
 ## JOIN Operations
 
 JOINs combine rows from multiple tables based on related columns.
+
+_It is like we creating a new table on-the-fly that contains only the rows where there is a match between the two tables._
+
+> In this "on-the-fly" table we can perform _`SELECT`, `WHERE`, `GROUP BY`, `HAVING`, `ORDER BY`_ and _`LIMIT`_ operations, just like we do with a single table.
 
 ### JOIN (INNER JOIN)
 
 Returns only rows that have matching values in both tables:
 
 ```sql
--- Get orders with customer names
-SELECT
-    orders.order_id,
-    customers.customer_name,
-    orders.order_date
+-- Get all columns from orders and customers
+SELECT *
 FROM orders
-JOIN customers ON orders.customer_id = customers.customer_id;
+JOIN customers AS c ON orders.customer_id = customers.customer_id;
 ```
 
-### Using Table Aliases
+**Using Table Aliases**
 
-Make queries cleaner with table aliases:
+The above query can be simplified using aliases for better readability:
+
+```sql
+-- Same query with aliases
+SELECT *
+FROM orders AS o
+JOIN customers AS c ON o.customer_id = c.customer_id;
+```
+
+#### Try it out and lets see what's happening here!
+
+The `JOIN` combines the `orders` and `customers` tables where the `customer_id` matches.
+
+An "on-the-fly" table is created that contains only the rows where there is a match between the two tables. This new table contains all columns of all orders and customers that have matching `customer_id`:
+
+-   `order_id` from `orders`
+-   `customer_id` from `orders`
+-   `order_date` from `orders`
+-   `voucher_percent` from `orders`
+-   `shipping_cost` from `orders`
+-   `order_status` from `orders`
+-   `customer_id` from `customers`
+-   `customer_name` from `customers`
+-   `email` from `customers`
+-   `city` from `customers`
+-   `country` from `customers`
+-   `date_joined` from `customers`
+-   `is_active` from `customers`
+
+#### Important to remember!
+
+As mentioned earlier, we can perform _`SELECT`, `WHERE`, `GROUP BY`, `HAVING`, `ORDER BY`_ and _`LIMIT`_ operations on this on-the-fly table just like we do with a single table.
+
+**BUT!** when we use `JOIN` and want to **select specific columns**, we need to **specify which table each column comes from**, especially if they have the same name in both tables.
+
+For example:
 
 ```sql
 -- Same query with aliases
@@ -159,7 +212,17 @@ FROM orders AS o
 JOIN customers AS c ON o.customer_id = c.customer_id;
 ```
 
+We're telling SQL to select:
+
+-   `order_id` from the `orders` table (aliased as `o`)
+-   `customer_name` from the `customers` table (aliased as `c`)
+-   `order_date` from the `orders` table (aliased as `o`)
+
 ### Multiple Table JOINs
+
+You can join more than two tables in a single query. This is useful for retrieving related data from multiple sources.
+
+In the end it still creates an "on-the-fly" table that contains only the rows where there is a match between all tables.
 
 Join more than two tables:
 
@@ -177,7 +240,25 @@ JOIN customers AS c ON o.customer_id = c.customer_id
 JOIN products AS p ON od.product_id = p.product_id;
 ```
 
+The `FROM` and `JOIN` part of this query creates an "on-the-fly" table that combines the `order_details`, `orders`, `customers`, and `products` tables.
+
+_It only includes rows where there is a match across all four tables based on the specified join conditions._
+
+The `SELECT` statement then retrieves specific columns from this combined "on-the-fly" table:
+
+-   `customer_name` from the `customers` table (aliased as `c`)
+-   `product_name` from the `products` table (aliased as `p`)
+-   `quantity` from the `order_details` table (aliased as `od`)
+-   `unit_price` from the `order_details` table (aliased as `od`)
+-   `order_date` from the `orders` table (aliased as `o`)
+
 ## Practical JOIN Examples
+
+To illustrate how JOINs can be used in real-world scenarios, here are some practical examples based on our e-commerce database setup.
+
+Try them out in your SQL environment to see how they work with the sample data created in the setup file.
+
+Also try to understand what each query is doing and how it relates to the relationships between the tables.
 
 ### Example 1: Customer Order Summary
 
@@ -261,91 +342,6 @@ WHERE p.unit_price > 200
 ORDER BY p.unit_price DESC;
 ```
 
-## Advanced JOIN Concepts
-
-### LEFT JOIN (LEFT OUTER JOIN)
-
-Returns all rows from the left table, even if no match in the right table.
-
-**Why use LEFT JOIN?** Imagine you're running a business and want to see ALL your customers - including those who haven't bought anything yet. A regular JOIN would only show customers who made purchases, but LEFT JOIN shows everyone. This is crucial for business reports like "customer engagement" or "marketing reach" where you need to see the full picture, including inactive customers.
-
-**Real-world example**: You have 100 registered customers, but only 60 have placed orders. LEFT JOIN shows all 100 customers (with order counts of 0 for the 40 who haven't ordered), while regular JOIN would only show the 60 active customers.
-
-```sql
--- Get all customers, including those who haven't placed orders
-SELECT
-    c.customer_name,
-    COUNT(o.order_id) AS 'Order Count'
-FROM customers AS c
-LEFT JOIN orders AS o ON c.customer_id = o.customer_id
-GROUP BY c.customer_id, c.customer_name;
-```
-
-### Self JOIN
-
-Join a table to itself - this sounds weird at first, but it's incredibly useful!
-
-**Why use Self JOIN?** Think of it like comparing people within your friend group. You want to find connections or similarities between records in the same table. Common uses include finding employees who work in the same department, students in the same class, or customers from the same city who might be interested in group discounts.
-
-**Real-world example**: You're organizing a local meetup and want to connect customers who live in the same city so they can carpool together. Self JOIN lets you pair up customers from each city, creating a "buddy system" for your event.
-
-```sql
--- Find customers from the same city (assuming we want to find pairs)
-SELECT
-    c1.customer_name AS 'Customer 1',
-    c2.customer_name AS 'Customer 2',
-    c1.city
-FROM customers AS c1
-JOIN customers AS c2 ON c1.city = c2.city
-    AND c1.customer_id < c2.customer_id
-ORDER BY c1.city;
-```
-
-## LIMIT with JOINs
-
-LIMIT is crucial when working with JOINs as they can return very large result sets:
-
-### Top Results from JOINs
-
-```sql
--- Top 5 biggest orders by value
-SELECT
-    o.order_id,
-    c.customer_name,
-    SUM(od.quantity * od.unit_price) AS 'Order Total'
-FROM orders AS o
-JOIN customers AS c ON o.customer_id = c.customer_id
-JOIN order_details AS od ON o.order_id = od.order_id
-GROUP BY o.order_id, c.customer_name
-ORDER BY SUM(od.quantity * od.unit_price) DESC
-LIMIT 5;
-
--- Most recent 10 orders with customer details
-SELECT
-    o.order_id,
-    c.customer_name,
-    c.city,
-    o.order_date
-FROM orders AS o
-JOIN customers AS c ON o.customer_id = c.customer_id
-ORDER BY o.order_date DESC
-LIMIT 10;
-```
-
-### Pagination with LIMIT and OFFSET
-
-```sql
--- Get orders 11-20 (second page, 10 per page)
-SELECT
-    o.order_id,
-    c.customer_name,
-    o.order_date
-FROM orders AS o
-JOIN customers AS c ON o.customer_id = c.customer_id
-ORDER BY o.order_date DESC
-LIMIT 10 OFFSET 10;
-```
-
 ## Best Practices
 
 ### 1. Always Use Table Aliases
@@ -390,6 +386,24 @@ SELECT
 FROM customers AS c...
 ```
 
+### 4. LIMIT with JOINs
+
+LIMIT is crucial when working with JOINs as they can return very large result sets. **It's not always necessary**, but you should be aware of your data set size and use LIMIT to avoid an overwhelming amount of results.
+
+```sql
+-- Top 5 biggest orders by value
+SELECT
+    o.order_id,
+    c.customer_name,
+    SUM(od.quantity * od.unit_price) AS 'Order Total'
+FROM orders AS o
+JOIN customers AS c ON o.customer_id = c.customer_id
+JOIN order_details AS od ON o.order_id = od.order_id
+GROUP BY o.order_id, c.customer_name
+ORDER BY SUM(od.quantity * od.unit_price) DESC
+LIMIT 5;
+```
+
 ## Practice Exercises
 
 ### Basic JOINs
@@ -418,22 +432,12 @@ FROM customers AS c...
 13. Calculate customer lifetime value (total amount spent per customer)
 14. Identify seasonal trends (if you have enough date range in your data)
 
-## Partice Yourself Exercises
+## Practice Yourself Exercises
 
 Follow the instructions for the remaining exercises as outlined in the file:
 
 -   **[01-database-relationships/exercises.sql](01-database-relationships/exercises.sql)**: Progressive JOIN exercises from basic to business intelligence
 -   **[01-database-relationships/solutions.sql](01-database-relationships/solutions.sql)**: Complete solutions with complex business queries
-
-## Database Structure Created
-
-The setup creates these related tables:
-
--   **customers**: Customer information with geographic data
--   **products**: Product catalog with suppliers and categories
--   **orders**: Order transactions with discounts and shipping
--   **order_details**: Individual items within orders
--   **suppliers**: Product supplier information
 
 ## Common JOIN Mistakes
 
@@ -441,9 +445,3 @@ The setup creates these related tables:
 2. **Wrong JOIN type**: Using JOIN when you need LEFT JOIN (or vice versa)
 3. **Ambiguous column names**: Not specifying which table a column comes from
 4. **Forgetting GROUP BY**: When using aggregate functions with JOINs
-
-## Next Steps
-
-You now understand the fundamentals of SQL! Practice these concepts with the provided setup files and exercises. The key to mastering SQL is practice with real data scenarios.
-
-Continue practicing with the comprehensive exercise files in each lesson folder.
