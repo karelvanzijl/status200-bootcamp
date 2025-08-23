@@ -33,7 +33,9 @@ app.listen(port, () => {
  *   ↓↓↓ ADD your code below this comment.
  */
 
-res.send("Welcome to my Node.js app!");
+app.get("/", (req, res) => {
+    res.send("Hello World");
+});
 ```
 
 #### Explanation
