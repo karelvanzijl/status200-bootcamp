@@ -148,7 +148,7 @@ Progressive curriculum covering CSS layouts, responsive design, JavaScript progr
 - Dynamic ID-based resource fetching
 - Movie details page implementation
 
-### Week 5-6: Database Fundamentals & SQL Mastery (August 20-22)
+### Week 5-6: Database Fundamentals & SQL Mastery (August 20-25)
 
 #### **August 20** - Database Foundations & SQL Introduction
 - Database management tool installation (TablePlus, MySQL)
@@ -171,6 +171,15 @@ Progressive curriculum covering CSS layouts, responsive design, JavaScript progr
 - Aggregate functions with joined data across multiple tables
 - Real-world e-commerce database scenarios and business applications
 - **Weekend Assignment**: Movie database design with comprehensive relationships
+
+#### **August 25** - Advanced JavaScript & Database Integration
+- ES6 arrow function syntax and comparison with traditional functions
+- Essential array methods: forEach, map, filter, find, reduce for functional programming
+- String manipulation methods: split, join, slice, substring, indexOf, includes, replace
+- Asynchronous vs synchronous programming concepts and JavaScript event loop
+- MySQL2 package installation and database connection setup
+- Executing SQL queries from JavaScript applications with proper error handling
+- **Homework Assignment**: Comprehensive JavaScript practice with database integration
 
 ## Key Learning Objectives
 
@@ -280,7 +289,7 @@ This structure ensures students build solid foundations while gaining practical 
 
 ## Curriculum Status
 
-Stage 2 is actively being developed with content through August 22, 2025. The curriculum progression includes:
+Stage 2 is actively being developed with content through August 25, 2025. The curriculum progression includes:
 
 ✅ **Completed Sections:**
 - CSS Fundamentals and Advanced Layouts
@@ -290,6 +299,7 @@ Stage 2 is actively being developed with content through August 22, 2025. The cu
 - Full-Stack Integration with Express.js
 - Database Fundamentals and SQL Mastery
 - Database Relationships and JOIN Operations
+- Advanced JavaScript and Database Integration
 
 🚧 **Current Focus:**
 - Advanced database concepts and optimization

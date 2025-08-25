@@ -62,6 +62,11 @@ Jump straight to any day. Each line lists the main focus & repeated keywords to 
 -   Aug 21 – [Database Basics & Operations](./2025-08-21/readme.md): sql fundamentals, basic queries, aggregate functions
 -   Aug 22 – [Database Relationships & JOINs](./2025-08-22/readme.md): primary/foreign keys, INNER JOINs, table aliases, multi-table queries, weekend assignment
 
+### Week 6
+
+-   Aug 25 – [Advanced JavaScript](./2025-08-25/readme.md): arrow functions, array methods, string methods, async/sync concepts
+-   Aug 26 – [Database Integration](./2025-08-26/readme.md): mysql2 package
+
 ---
 
 ## Table of Contents
@@ -914,6 +919,56 @@ Perfect for beginners and as a refresher for experienced developers.
     - Sample data generation and complex JOIN queries for data retrieval
     - Real-world application of database design principles and best practices
     - Due: Sunday, August 24, 8 PM, 2025 (3-4 hours estimated)
+
+### Week 6: Advanced JavaScript (August 25, 2025)
+
+**[2025-08-25 - Advanced JavaScript](./2025-08-25/readme.md)**
+
+1. **[Arrow Functions](./2025-08-25/01-arrow-functions.md)**
+
+    - ES6 arrow function syntax and concise function expressions
+    - Comparison between traditional function declarations and arrow functions
+    - Use cases, best practices, and when to use each function type
+    - Practical examples with array methods and callback functions
+
+2. **[Array Methods](./2025-08-25/02-arrays-methods.md)**
+
+    - Essential array methods: forEach, map, filter, find, reduce
+    - Functional programming concepts with immutable data transformation
+    - Chaining array methods for complex data processing
+    - Real-world applications with practical examples and exercises
+
+3. **[String Methods](./2025-08-25/03-string-methods.md)**
+
+    - Core string manipulation methods: split, join, slice, substring
+    - String searching and replacement: indexOf, includes, replace
+    - Case transformation and whitespace handling
+    - Practical applications for data processing and validation
+
+4. **[Asynchronous vs Synchronous Programming](./2025-08-25/04-async-vs-sync.md)**
+
+    - Understanding blocking vs non-blocking code execution
+    - JavaScript event loop and call stack fundamentals
+    - Synchronous code limitations and performance implications
+    - Introduction to asynchronous programming concepts
+
+### Week 6: Database Integration (August 26, 2025)
+
+**[2025-08-26 - Database Integration](./2025-08-25/readme.md)**
+
+1. **[MySQL2 Package & Database Integration](./2025-08-26/01-mysql2-package.md)**
+
+    - Installing and configuring MySQL2 package for Node.js
+    - Establishing database connections with proper error handling
+    - Executing SQL queries from JavaScript applications
+    - Database connection best practices and security considerations
+
+2. **[Homework Assignment](./2025-08-26/02-homework.md)**
+
+    - Comprehensive JavaScript practice combining all learned concepts
+    - Array methods and string manipulation exercises
+    - Database integration project with MySQL2
+    - Real-world problem-solving applications
 
 ## Getting Started
 

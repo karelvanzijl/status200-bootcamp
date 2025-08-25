@@ -103,7 +103,7 @@ Create a route `/movies` that returns all movies from the `movies` table in JSON
 -   You need to use the database connection to fetch the data from the `movies` table.
 -   You need to use the `db.query` method to execute a SQL query.
 -   You need to return the data in JSON format using `res.json` method.
--   Example codes can be found in [the mysql2 documentation](./05-mysql2-package.md).
+-   Example codes can be found in [the mysql2 documentation](./01-mysql2-package.md).
 
 **Test:** You can test your route by opening the following URL in your browser: `http://localhost:3000/movies`. You should see a JSON array of movies.
 
