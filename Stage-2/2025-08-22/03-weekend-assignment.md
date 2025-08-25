@@ -12,6 +12,12 @@ You will create a **Movie Database System** that can store information about mov
 -   `optional` fields can be NULL
 -   `unique` fields must have UNIQUE constraints
 
+### Solutions
+
+-   [schema.sql](./03-weekend-assigment/schema.sql)
+-   [sample_data.sql](./03-weekend-assigment/sample_data.sql)
+-   [queries.sql](./03-weekend-assigment/queries.sql)
+
 ### Core Tables to Create
 
 #### 1. Directors Table
