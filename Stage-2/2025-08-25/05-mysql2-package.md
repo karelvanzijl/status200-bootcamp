@@ -149,10 +149,7 @@ console.log(result);
 
 async function getAllUsers() {
     // Run a SELECT query
-    const result = await db.query("SELECT * FROM users");
-
-    // First element is the rows array
-    const users = result[0];
+    const [users] = await db.query("SELECT * FROM users");
 
     // users is an array of user objects
     console.log("All users:", users);
@@ -171,13 +168,10 @@ getAllUsers();
 
 async function getUser() {
     // Run a SELECT query with a WHERE clause
-    const result = await db.query("SELECT * FROM users WHERE id = 1");
-
-    // First element is the rows array
-    const users = result[0];
+    const [users] = await db.query("SELECT * FROM users WHERE id = 1");
 
     // Log the user in the console
-    console.log("Found user:", users);
+    console.log("Found user:", users[0]);
 
     // Return the first user (there should only be one)
     return users[0];
@@ -193,19 +187,16 @@ getUser();
 
 async function addUser() {
     // Run an INSERT query
-    const result = await db.query(
+    const [insertInfo] = await db.query(
         "INSERT INTO users (name, email) VALUES ('Alice', 'alice@email.com')"
     );
-
-    // First element is the result object
-    const insertInfo = result[0];
 
     // insertInfo contains insertId and affectedRows
     console.log("New user added with ID:", insertInfo.insertId);
     console.log("Rows affected:", insertInfo.affectedRows);
 
     // Return the new user's ID
-    return result.insertId;
+    return insertInfo.insertId;
 }
 
 addUser();
@@ -218,22 +209,19 @@ async function updateUser() {
     // Assuming you created the connection pool as shown above
 
     // Run an UPDATE query
-    const result = await db.query(
+    const [updateInfo] = await db.query(
         "UPDATE users SET email = 'john.new@email.com' WHERE id = 1"
     );
 
-    // First element is the result object
-    const updateInfo = result[0];
-
     // Log how many rows were affected
-    if (result.affectedRows > 0) {
+    if (updateInfo.affectedRows > 0) {
         console.log("User updated successfully!");
     } else {
         console.log("No user found with that ID");
     }
 
     // Return true if update worked
-    return result.affectedRows > 0;
+    return updateInfo.affectedRows > 0;
 }
 
 updateUser();
@@ -265,10 +253,10 @@ async function runQuery(sql) {
         });
 
         // run the query
-        const results = await db.query(sql);
+        const [results] = await db.query(sql);
 
         // return only the rows
-        return results[0];
+        return results;
     } catch (error) {
         console.log("Query error:", error.message);
         throw error;
@@ -306,20 +294,17 @@ async function getUserWithOrders() {
         });
 
         // Get user info
-        const usersResult = await db.query("SELECT * FROM users WHERE id = 1");
+        const [users] = await db.query("SELECT * FROM users WHERE id = 1");
 
         // Get their orders
-        const ordersResult = await db.query(
+        const [orders] = await db.query(
             "SELECT * FROM orders WHERE user_id = 1"
         );
 
-        // Extract rows from results
-        const users = usersResult[0];
-        const orders = ordersResult[0];
-
+        // Return combined data
         return {
-            user: users[0],
-            orders: orders,
+            user: users[0], // first user (should only be one)
+            orders: orders, // all their orders
         };
     } catch (error) {
         console.log("Error:", error.message);
