@@ -1,19 +1,38 @@
-# Database Integration
+# Async/Await Recap & Database Integration
 
-## 1. MySQL2 Package & Database Integration
+Building on yesterday's async concepts, today we review with hands-on practice and learn to connect JavaScript to MySQL databases.
 
--   Installing and configuring MySQL2 package for Node.js
--   Establishing database connections with proper error handling
--   Executing SQL queries from JavaScript applications
--   Database connection best practices and security considerations
+## 1. Async vs Sync Recap & In-Class Practice
 
-📖 [MySQL2 Package](01-mysql2-package.md)
+Interactive recap of yesterday's restaurant waiter metaphor with 5 hands-on coding exercises.
 
-## 2. Homework Assignment
+-   Quick review of synchronous vs asynchronous programming concepts
+-   The "restaurant pattern" for concurrent operations without Promise.all()
+-   5 progressive exercises from problem identification to performance comparison
+-   Interactive knowledge check with collapsible answers for self-paced learning
+-   Practice converting sync code to efficient async patterns
 
--   Comprehensive JavaScript practice combining all learned concepts
--   Array methods and string manipulation exercises
--   Database integration project with MySQL2
--   Real-world problem-solving applications
+📖 [Async vs Sync Recap & Practice](01-async-vs-sync-recap.md)
 
-📝 [Homework Assignment](02-homework.md)
+## 2. MySQL2 Package & Database Connections
+
+Learn to connect your JavaScript applications to MySQL databases without array destructuring.
+
+-   Installing and configuring the mysql2 package for Node.js projects
+-   Understanding connection.query() return format and data extraction
+-   Database connection patterns and error handling best practices  
+-   Practical examples for SELECT, INSERT, UPDATE, and DELETE operations
+-   Reusable patterns for database operations and connection management
+
+📖 [MySQL2 Package Manual](02-mysql2-package.md)
+
+## 3. Practice Exercises
+
+Hands-on coding practice combining async/await with database operations.
+
+-   Combining yesterday's async concepts with today's database knowledge
+-   Building real applications that use both async patterns and database queries
+-   Error handling in asynchronous database operations
+-   Performance optimization using concurrent database queries
+
+📖 [Practice Exercises](03-practice.md)

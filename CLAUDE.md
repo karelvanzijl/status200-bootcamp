@@ -9,7 +9,7 @@ This is a comprehensive web development bootcamp curriculum organized into progr
 - HTML basics and folder/terminal navigation
 - Foundation concepts and assignments
 
-### Stage 2: Full-Stack Web Development (July 21 - August 22, 2025+)
+### Stage 2: Full-Stack Web Development (July 21 - August 26, 2025+)
 Progressive curriculum covering CSS layouts, responsive design, JavaScript programming fundamentals, Node.js, Express.js, database fundamentals, and full-stack web development.
 
 ## Stage 2 Curriculum Breakdown
@@ -148,7 +148,7 @@ Progressive curriculum covering CSS layouts, responsive design, JavaScript progr
 - Dynamic ID-based resource fetching
 - Movie details page implementation
 
-### Week 5-6: Database Fundamentals & SQL Mastery (August 20-25)
+### Week 5-6: Database Fundamentals & SQL Mastery (August 20-26)
 
 #### **August 20** - Database Foundations & SQL Introduction
 - Database management tool installation (TablePlus, MySQL)
@@ -172,14 +172,24 @@ Progressive curriculum covering CSS layouts, responsive design, JavaScript progr
 - Real-world e-commerce database scenarios and business applications
 - **Weekend Assignment**: Movie database design with comprehensive relationships
 
-#### **August 25** - Advanced JavaScript & Database Integration
-- ES6 arrow function syntax and comparison with traditional functions
-- Essential array methods: forEach, map, filter, find, reduce for functional programming
-- String manipulation methods: split, join, slice, substring, indexOf, includes, replace
-- Asynchronous vs synchronous programming concepts and JavaScript event loop
-- MySQL2 package installation and database connection setup
-- Executing SQL queries from JavaScript applications with proper error handling
-- **Homework Assignment**: Comprehensive JavaScript practice with database integration
+#### **August 25** - Advanced JavaScript
+- **Arrow Functions**: ES6 syntax and concise function expressions, comparison with traditional functions
+- **Array Methods**: Essential methods (forEach, map, filter, find, reduce) for functional programming
+- **String Methods**: Text manipulation (split, join, slice, substring, indexOf, includes, replace)
+- **Asynchronous vs Synchronous Programming**: Restaurant waiter metaphor for efficient code execution
+- JavaScript event loop and call stack fundamentals
+- Introduction to async/await and concurrent operations patterns
+- Practical exercises with modern JavaScript features
+
+#### **August 26** - Async/Await Recap & Database Integration
+- Interactive async vs synchronous programming recap with hands-on exercises
+- Restaurant waiter metaphor for concurrent operations without Promise.all()
+- 5 progressive coding exercises from problem identification to performance comparison
+- MySQL2 package configuration and database connection patterns
+- Understanding connection.query() return format and data extraction
+- Database connection error handling and best practices
+- Practical examples for SELECT, INSERT, UPDATE, and DELETE operations
+- **Practice Exercises**: Combining async patterns with database operations
 
 ## Key Learning Objectives
 
@@ -289,7 +299,7 @@ This structure ensures students build solid foundations while gaining practical 
 
 ## Curriculum Status
 
-Stage 2 is actively being developed with content through August 25, 2025. The curriculum progression includes:
+Stage 2 is actively being developed with content through August 26, 2025. The curriculum progression includes:
 
 ✅ **Completed Sections:**
 - CSS Fundamentals and Advanced Layouts
@@ -300,6 +310,7 @@ Stage 2 is actively being developed with content through August 25, 2025. The cu
 - Database Fundamentals and SQL Mastery
 - Database Relationships and JOIN Operations
 - Advanced JavaScript and Database Integration
+- Async/Await Programming and Database Connections
 
 🚧 **Current Focus:**
 - Advanced database concepts and optimization

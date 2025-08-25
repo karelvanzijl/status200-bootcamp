@@ -64,8 +64,8 @@ Jump straight to any day. Each line lists the main focus & repeated keywords to 
 
 ### Week 6
 
--   Aug 25 – [Advanced JavaScript](./2025-08-25/readme.md): arrow functions, array methods, string methods, async/sync concepts
--   Aug 26 – [Database Integration](./2025-08-26/readme.md): mysql2 package
+-   Aug 25 – [Advanced JavaScript](./2025-08-25/readme.md): arrow functions, array methods, string methods, async/sync concepts, restaurant waiter metaphor
+-   Aug 26 – [Async Recap & Database Integration](./2025-08-26/readme.md): async/await practice exercises, mysql2 package, database connections
 
 ---
 
@@ -954,21 +954,30 @@ Perfect for beginners and as a refresher for experienced developers.
 
 ### Week 6: Database Integration (August 26, 2025)
 
-**[2025-08-26 - Database Integration](./2025-08-25/readme.md)**
+**[2025-08-26 - Async Recap & Database Integration](./2025-08-26/readme.md)**
 
-1. **[MySQL2 Package & Database Integration](./2025-08-26/01-mysql2-package.md)**
+1. **[Async vs Sync Recap & In-Class Practice](./2025-08-26/01-async-vs-sync-recap.md)**
 
-    - Installing and configuring MySQL2 package for Node.js
-    - Establishing database connections with proper error handling
-    - Executing SQL queries from JavaScript applications
-    - Database connection best practices and security considerations
+    - Interactive recap of yesterday's restaurant waiter metaphor with 5 hands-on coding exercises
+    - Quick review of synchronous vs asynchronous programming concepts
+    - The "restaurant pattern" for concurrent operations without Promise.all()
+    - 5 progressive exercises from problem identification to performance comparison
+    - Interactive knowledge check with collapsible answers for self-paced learning
 
-2. **[Homework Assignment](./2025-08-26/02-homework.md)**
+2. **[MySQL2 Package & Database Connections](./2025-08-26/02-mysql2-package.md)**
 
-    - Comprehensive JavaScript practice combining all learned concepts
-    - Array methods and string manipulation exercises
-    - Database integration project with MySQL2
-    - Real-world problem-solving applications
+    - Installing and configuring the mysql2 package for Node.js projects (without array destructuring)
+    - Understanding connection.query() return format and data extraction using result[0]
+    - Database connection patterns and error handling best practices
+    - Practical examples for SELECT, INSERT, UPDATE, and DELETE operations
+    - Reusable patterns for database operations and connection management
+
+3. **[Practice Exercises](./2025-08-26/03-practice.md)**
+
+    - Hands-on coding practice combining async/await with database operations
+    - Building real applications that use both async patterns and database queries
+    - Error handling in asynchronous database operations
+    - Performance optimization using concurrent database queries
 
 ## Getting Started
 

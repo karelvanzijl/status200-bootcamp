@@ -20,7 +20,7 @@ This downloads the mysql2 package and adds it to your project.
 
 ### Step 2: Verify Installation
 
-Check your `package.json` file - you should see:
+Check your `package.json` file - you should see something like this under "dependencies":
 
 ```json
 {
@@ -51,15 +51,14 @@ const mysql = require("mysql2/promise");
 
 const db = mysql.createPool({
     host: "localhost",
-    user: "root",
+    user: "your_username",
     password: "your_password",
     database: "your_database_name",
-    port: 3306,
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0,
-    namedPlaceholders: true, // allows :id, :name, ...
 });
+
+// FYI:
+// There are more options you can add, like port, connectionLimit, etc.
+// But we'll keep it simple for now and use the defaults.
 ```
 
 ---
@@ -73,18 +72,27 @@ The `connection.query()` method is your main tool for talking to the database. H
 `connection.query()` always returns an **array with 2 elements**:
 
 ```javascript
-const [rows, fields] = await connection.query("SELECT * FROM users");
+const result = await connection.query("SELECT * FROM users");
+console.log(result); // This is an array: [rows, fields]
 ```
 
--   **rows**: The actual data from your query (what you usually want)
--   **fields**: Information about the columns (usually ignore this)
+-   **result[0]**: The actual data from your query (what you usually want)
+-   **result[1]**: Information about the columns (usually ignore this)
+
+So to get your data, you use `result[0]`:
+
+```javascript
+const result = await connection.query("SELECT * FROM users");
+const rows = result[0]; // This is your data
+```
 
 ### Different Types of Queries Return Different Things
 
 #### SELECT Queries - Getting Data
 
 ```javascript
-const [rows, fields] = await connection.query("SELECT * FROM users");
+const result = await connection.query("SELECT * FROM users");
+const rows = result[0]; // Get the data part
 
 console.log(rows);
 // Output: Array of objects
@@ -97,11 +105,12 @@ console.log(rows);
 #### INSERT Queries - Adding Data
 
 ```javascript
-const [result, fields] = await connection.query(
+const result = await connection.query(
     "INSERT INTO users (name, email) VALUES ('Bob', 'bob@email.com')"
 );
+const insertInfo = result[0]; // Get the result information
 
-console.log(result);
+console.log(insertInfo);
 // Output: Information about what happened
 // {
 //   insertId: 3,        // The ID of the new row
@@ -112,11 +121,12 @@ console.log(result);
 #### UPDATE Queries - Changing Data
 
 ```javascript
-const [result, fields] = await connection.query(
+const result = await connection.query(
     "UPDATE users SET email = 'newemail@email.com' WHERE id = 1"
 );
+const updateInfo = result[0]; // Get the result information
 
-console.log(result);
+console.log(updateInfo);
 // Output:
 // {
 //   affectedRows: 1,    // How many rows were changed
@@ -127,11 +137,10 @@ console.log(result);
 #### DELETE Queries - Removing Data
 
 ```javascript
-const [result, fields] = await connection.query(
-    "DELETE FROM users WHERE id = 1"
-);
+const result = await connection.query("DELETE FROM users WHERE id = 1");
+const deleteInfo = result[0]; // Get the result information
 
-console.log(result);
+console.log(deleteInfo);
 // Output:
 // {
 //   affectedRows: 1     // How many rows were deleted
@@ -149,7 +158,8 @@ console.log(result);
 
 async function getAllUsers() {
     // Run a SELECT query
-    const [users] = await db.query("SELECT * FROM users");
+    const result = await db.query("SELECT * FROM users");
+    const users = result[0]; // Get the data part
 
     // users is an array of user objects
     console.log("All users:", users);
@@ -168,7 +178,8 @@ getAllUsers();
 
 async function getUser() {
     // Run a SELECT query with a WHERE clause
-    const [users] = await db.query("SELECT * FROM users WHERE id = 1");
+    const result = await db.query("SELECT * FROM users WHERE id = 1");
+    const users = result[0]; // Get the data part
 
     // Log the user in the console
     console.log("Found user:", users[0]);
@@ -187,9 +198,10 @@ getUser();
 
 async function addUser() {
     // Run an INSERT query
-    const [insertInfo] = await db.query(
+    const result = await db.query(
         "INSERT INTO users (name, email) VALUES ('Alice', 'alice@email.com')"
     );
+    const insertInfo = result[0]; // Get the result information
 
     // insertInfo contains insertId and affectedRows
     console.log("New user added with ID:", insertInfo.insertId);
@@ -209,9 +221,10 @@ async function updateUser() {
     // Assuming you created the connection pool as shown above
 
     // Run an UPDATE query
-    const [updateInfo] = await db.query(
+    const result = await db.query(
         "UPDATE users SET email = 'john.new@email.com' WHERE id = 1"
     );
+    const updateInfo = result[0]; // Get the result information
 
     // Log how many rows were affected
     if (updateInfo.affectedRows > 0) {
@@ -242,18 +255,14 @@ async function runQuery(sql) {
         // Try to connect
         db = mysql.createPool({
             host: "localhost",
-            user: "root",
+            user: "your_username",
             password: "your_password",
             database: "your_database_name",
-            port: 3306,
-            waitForConnections: true,
-            connectionLimit: 10,
-            queueLimit: 0,
-            namedPlaceholders: true, // allows :id, :name, ...
         });
 
         // run the query
-        const [results] = await db.query(sql);
+        const result = await db.query(sql);
+        const results = result[0]; // Get the data part
 
         // return only the rows
         return results;
@@ -274,6 +283,8 @@ const user = await runQuery("SELECT * FROM users WHERE id = 1");
 
 ### Pattern 2: Multiple Queries in One Function
 
+**Sequential Example** - one after the other:
+
 ```javascript
 async function getUserWithOrders() {
     // Initialize connection variable
@@ -283,23 +294,20 @@ async function getUserWithOrders() {
         // Try to connect
         db = mysql.createPool({
             host: "localhost",
-            user: "root",
+            user: "your_username",
             password: "your_password",
             database: "your_database_name",
-            port: 3306,
-            waitForConnections: true,
-            connectionLimit: 10,
-            queueLimit: 0,
-            namedPlaceholders: true, // allows :id, :name, ...
         });
 
         // Get user info
-        const [users] = await db.query("SELECT * FROM users WHERE id = 1");
+        const userResult = await db.query("SELECT * FROM users WHERE id = 1");
+        const users = userResult[0]; // Get the data part
 
         // Get their orders
-        const [orders] = await db.query(
+        const orderResult = await db.query(
             "SELECT * FROM orders WHERE user_id = 1"
         );
+        const orders = orderResult[0]; // Get the data part
 
         // Return combined data
         return {
@@ -317,14 +325,59 @@ async function getUserWithOrders() {
 }
 ```
 
+**Concurrent Example** - both at the same time:
+
+```javascript
+async function getUserWithOrders() {
+    // Initialize connection variable
+    let db;
+
+    try {
+        // Try to connect
+        db = mysql.createPool({
+            host: "localhost",
+            user: "your_username",
+            password: "your_password",
+            database: "your_database_name",
+        });
+
+        // Run both queries at the same time
+        const userPromise = db.query("SELECT * FROM users WHERE id = 1");
+        const orderPromise = db.query("SELECT * FROM orders WHERE user_id = 1");
+
+        // Wait for both to finish
+        const usersResult = await userPromise;
+        const ordersResult = await orderPromise;
+
+        const users = usersResult[0]; // Get the data part
+        const orders = ordersResult[0]; // Get the data part
+
+        // Return combined data
+        return {
+            user: users[0], // first user (should only be one)
+            orders: orders, // all their orders
+        };
+    } catch (error) {
+        console.log("Error:", error.message);
+        throw error;
+    } finally {
+        if (db) {
+            await db.end();
+        }
+    }
+}
+```
+
+**Remember**, the concurrent version is faster because it doesn't wait for one query to finish before starting the next!
+
 ---
 
 ## Key Points to Remember
 
 1. **Always use `"mysql2/promise"`** - This gives you async/await support
-2. **query() returns an array** - Use `const results = await query()`
-    - results[0] = rows (data you want)
-    - results[1] = fields (metadata you usually ignore)
+2. **query() returns an array** - Use `const result = await query()` then `result[0]` for data
+    - result[0] = rows (data you want)
+    - result[1] = fields (metadata you usually ignore)
 3. **Different queries return different things**:
     - SELECT: Array of row objects
     - UPDATE/DELETE: Object with `affectedRows`
@@ -344,9 +397,14 @@ const mysql = require("mysql2/promise");
 const connection = await mysql.createConnection({ config });
 
 // Query patterns
-const [rows] = await connection.query("SELECT * FROM table");
-const [result] = await connection.query("INSERT INTO table VALUES ('value')");
-const [users] = await connection.query("SELECT * FROM users WHERE id = 1");
+const result1 = await connection.query("SELECT * FROM table");
+const rows = result1[0]; // Get the data
+
+const result2 = await connection.query("INSERT INTO table VALUES ('value')");
+const insertInfo = result2[0]; // Get the insert information
+
+const result3 = await connection.query("SELECT * FROM users WHERE id = 1");
+const users = result3[0]; // Get the user data
 
 // Close
 await connection.end();
