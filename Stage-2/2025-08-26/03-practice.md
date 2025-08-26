@@ -90,6 +90,17 @@ app.listen(port, () => {
     -   database: "your_database_name"
 -   Run a simple query to test the connection.
 
+```javascript
+const mysql = require("mysql2/promise");
+
+const db = mysql.createPool({
+    host: "localhost",
+    user: "your_user",
+    password: "your_password",
+    database: "your_databqse",
+});
+```
+
 ---
 
 # Frontend Setup
@@ -106,7 +117,7 @@ app.listen(port, () => {
 ## Task 2 - HTML boilerplate & Navigation Menu
 
 -   Add the HTML boilerplate to both `index.html` and `movies.html`.
--   Add a navigation menu to both `index.html` and `movies.html` that links to both pages.
+-   Add a navigation menu to both `index.html`, `genre.html` and `movies.html` that links to both pages.
 
 ```html
 <!DOCTYPE html>
@@ -122,7 +133,6 @@ app.listen(port, () => {
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="movies.html">Movies</a></li>
             </ul>
         </nav>
 
