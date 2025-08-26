@@ -606,7 +606,8 @@ fetchAndDisplayGenres();
         <script src="app.js"></script>
         <script>
             // Call the function to fetch and display the movies for the specific genre
-            // We do this here because we only want to show the movies on the genre.html page and not the other pages (index.html and movie.html)
+            // We do this here because we only want to show the movies on the genre.html
+            // page and not the other pages (index.html and movie.html)
             fetchAndDisplayMoviesByGenre();
         </script>
     </body>
