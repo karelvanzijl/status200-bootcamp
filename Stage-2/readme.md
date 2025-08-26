@@ -65,7 +65,7 @@ Jump straight to any day. Each line lists the main focus & repeated keywords to 
 ### Week 6
 
 -   Aug 25 – [Advanced JavaScript](./2025-08-25/readme.md): arrow functions, array methods, string methods, async/sync concepts, restaurant waiter metaphor
--   Aug 26 – [Async Recap & Database Integration](./2025-08-26/readme.md): async/await practice exercises, mysql2 package, database connections
+-   Aug 26 – [Async Recap & Database Integration](./2025-08-26/readme.md): async/await practice exercises, mysql2 package, database connections, movie ratings homework
 
 ---
 
@@ -978,6 +978,13 @@ Perfect for beginners and as a refresher for experienced developers.
     - Building real applications that use both async patterns and database queries
     - Error handling in asynchronous database operations
     - Performance optimization using concurrent database queries
+
+4. **[Homework: Movie Ratings](./2025-08-26/04-homework.md)**
+
+    - Movie database assignment with ratings functionality enhancement
+    - Server-side SQL queries using JOINs and aggregate functions
+    - Database integration with Node.js applications and mysql2 package
+    - Client-side display of calculated ratings data and user interface updates
 
 ## Getting Started
 

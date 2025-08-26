@@ -36,3 +36,14 @@ Hands-on coding practice combining async/await with database operations.
 -   Performance optimization using concurrent database queries
 
 📖 [Practice Exercises](03-practice.md)
+
+## 4. Homework
+
+Movie database assignment - enhance your movie website with ratings functionality.
+
+-   Server-side SQL queries with JOINs and aggregate functions
+-   Database integration with Node.js applications
+-   Client-side display of calculated ratings data
+-   Real-world full-stack development practice
+
+📖 [Homework: Movie Ratings](04-homework.md)
