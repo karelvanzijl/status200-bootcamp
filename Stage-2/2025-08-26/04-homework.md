@@ -8,7 +8,7 @@ Your task is to enhance the application by adding the average rating and the num
 
 Before you get started, ensure you have the latest version of the project code we worked on in class.
 
-In case you don't have it: [follow the setup instruction](#setup-instructions) provided at the bottom of this file
+In case you don't have it: [follow the setup instruction](#setup-instructions-optional) at the bottom of this document.
 
 ---
 
