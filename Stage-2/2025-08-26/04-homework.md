@@ -73,6 +73,7 @@ If you haven't already, set up your MySQL database using the `setup-databse.sql`
 3. Update the database connection details in `index.js` if necessary (username, password, database name).
 4. Start the server: `node --watch index.js`
 5. Test the server by navigating to `http://localhost:3000` in your web browser.
+6. You should see "Hello World!" displayed in the browser.
 
 ### 4. Setup - Website
 
