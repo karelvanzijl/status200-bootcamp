@@ -52,7 +52,7 @@ Setup your Node.js server:
 Here is the Node.js server starter template code:
 
 ```javascript
-// Server
+// server/index.js
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -91,13 +91,44 @@ app.listen(port, () => {
 -   Run a simple query to test the connection.
 
 ```javascript
-const mysql = require("mysql2/promise");
+// server/index.js
+const express = require("express");
+const cors = require("cors");
+const app = express();
+const port = 3000;
+app.use(cors());
 
+// Database connection
+const mysql = require("mysql2/promise");
 const db = mysql.createPool({
     host: "localhost",
     user: "your_user",
     password: "your_password",
     database: "your_database",
+});
+
+/*
+ *   ↑↑↑ DO NOT change the code above this comment
+ *   =============================================
+ *   ↓↓↓ ADD your code below this comment
+ */
+
+app.get("/", async (req, res) => {
+    // Test the database connection
+    const test = await db.query("SELECT * FROM genres");
+    console.log(test[0]);
+
+    // Send a response
+    res.send("Hello World!");
+});
+
+/*
+ *   ↑↑↑ ADD your code above this comment
+ *   =============================================
+ *   ↓↓↓ DO NOT change the code below this comment
+ */
+app.listen(port, () => {
+    console.log(`Server app listening at http://localhost:${port}`);
 });
 ```
 
@@ -161,6 +192,58 @@ We want to add the different movie genres to the navigation menu. Each genre sho
 -   Return the data in JSON format using `res.json` method.
 -   Test your route by opening the following URL in your browser: `http://localhost:3000/genres`. You should see a JSON array of genres.
 
+```javascript
+// server/index.js
+const express = require("express");
+const cors = require("cors");
+const app = express();
+const port = 3000;
+app.use(cors());
+
+// Database connection
+const mysql = require("mysql2/promise");
+const db = mysql.createPool({
+    host: "localhost",
+    user: "your_user",
+    password: "your_password",
+    database: "your_database",
+});
+
+/*
+ *   ↑↑↑ DO NOT change the code above this comment
+ *   =============================================
+ *   ↓↓↓ ADD your code below this comment
+ */
+
+// Root route
+app.get("/", async (req, res) => {
+    // Send a response
+    res.send("Hello World!");
+});
+
+// Create a route to get all genres
+app.get("/genres", async (req, res) => {
+    // Query the database for all genres
+    const results = await db.query(`
+        SELECT genre_id, name 
+        FROM genres 
+        ORDER BY name
+    `);
+
+    // Send the results as the response
+    res.send(results[0]);
+});
+
+/*
+ *   ↑↑↑ ADD your code above this comment
+ *   =============================================
+ *   ↓↓↓ DO NOT change the code below this comment
+ */
+app.listen(port, () => {
+    console.log(`Server app listening at http://localhost:${port}`);
+});
+```
+
 ## Task 2 - Fetch Genres in the Frontend
 
 We want to fetch the genres from the server and display them in the navigation menu. We need to do this for all our pages: `index.html`, `genre.html` and `movies.html`.
@@ -197,6 +280,74 @@ Since we want to do this on multiple pages, it's best to put the code in `app.js
     -   Add the list items to the navigation menu using `innerHTML`
     -   Something like `<li><a href="genre.html?genre_id=1">Action</a></li>`
 
+```javascript
+// public/app.js
+function fetchAndDisplayGenres() {
+    // Fetch the genres from the server
+    fetch("http://localhost:3000/genres")
+        .then((response) => response.json())
+        .then((genres) => {
+            // Test if we get the genres
+            // console.log(genres);
+
+            // Get the navigation menu element
+            // Still need to add id="nav-menu" to the <ul> element in index.html
+            const navMenu = document.getElementById("nav-menu");
+
+            // Loop through the genres and create a list item for each genre
+            for (let i = 0; i < genres.length; i++) {
+                // Get the genre
+                const genre = genres[i];
+
+                // Add the list item to the navigation menu
+                navMenu.innerHTML += `
+                    <li>
+                        <a href="genre.html">
+                            ${genre.name}
+                        </a>
+                    </li>
+                `;
+            }
+        })
+        // Didn't cover error handling in the lesson, but it's a good practice to add it
+        .catch((error) => {
+            // In case of an error (404, 500, etc)
+            console.error("Error fetching genres:", error);
+        });
+}
+
+// Call the function to fetch and display the genres
+// We can do this because because all our pages load app.js
+// and we want to show the genres in the navigation menu on all pages
+fetchAndDisplayGenres();
+```
+
+```html
+<!-- public/index.html -->
+<!-- public/genre.html -->
+<!-- public/movie.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Movie Website</title>
+    </head>
+    <body>
+        <!-- Navigation Menu -->
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+
+        <!-- Load app.js -->
+        <script src="app.js"></script>
+    </body>
+</html>
+```
+
 ---
 
 # Genre Page
@@ -217,6 +368,83 @@ Now that we have the genres in the navigation menu, we want to display the movie
 -   Order the movies by release_year in descending order (newest to oldest) while querying the database.
 -   Return the data in JSON format using `res.json` method.
 -   Test your route by opening the following URL in your browser: `http://localhost:3000/genre/1`. You should see a JSON array of movies for the genre with ID 1.
+
+```javascript
+// server/index.js
+const express = require("express");
+const cors = require("cors");
+const app = express();
+const port = 3000;
+app.use(cors());
+
+// Database connection
+const mysql = require("mysql2/promise");
+const db = mysql.createPool({
+    host: "localhost",
+    user: "your_user",
+    password: "your_password",
+    database: "your_database",
+});
+
+/*
+ *   ↑↑↑ DO NOT change the code above this comment
+ *   =============================================
+ *   ↓↓↓ ADD your code below this comment
+ */
+
+// Root route
+app.get("/", async (req, res) => {
+    // Send a response
+    res.send("Hello World!");
+});
+
+// Create a route to get all genres
+app.get("/genres", async (req, res) => {
+    // Query the database for all genres
+    const results = await db.query(`
+        SELECT genre_id, name 
+        FROM genres 
+        ORDER BY name
+    `);
+
+    // Send the results as the response
+    res.send(results[0]);
+});
+
+// Create a route to get all movies for a specific genre
+app.get("/genre/:genre_id", async (req, res) => {
+    // Get the genre_id from the request parameters
+    const genreId = req.params.genre_id;
+
+    // Query the database for all movies for the specific genre
+    const results = await db.query(`
+        SELECT 
+            m.movie_id,
+            m.title,
+            m.release_year,
+            m.duration_minutes,
+            m.description,
+            d.name AS director_name
+        FROM movies m
+        JOIN directors d ON m.director_id = d.director_id
+        JOIN movie_genres mg ON m.movie_id = mg.movie_id
+        WHERE mg.genre_id = ${genreId}
+        ORDER BY m.release_year DESC, m.title
+    `);
+
+    // Send the results as the response
+    res.send(results[0]);
+});
+
+/*
+ *   ↑↑↑ ADD your code above this comment
+ *   =============================================
+ *   ↓↓↓ DO NOT change the code below this comment
+ */
+app.listen(port, () => {
+    console.log(`Server app listening at http://localhost:${port}`);
+});
+```
 
 ## Task 2 - Frontend Integration
 
@@ -264,6 +492,126 @@ Once we have the `genreId`, we can use it to fetch the movies for that genre fro
 -   Get the container element using `document.getElementById()`
 -   Loop through the movies and create a card for each movie
     -   Add the movie cards to the container using `innerHTML`
+
+```javascript
+/*
+    1. Add "?genre_id=..."" to each genre link in the navigation menu
+    2. Create a function to fetch and display the movies for a specific genre
+*/
+
+// public/app.js
+function fetchAndDisplayGenres() {
+    // Fetch the genres from the server
+    fetch("http://localhost:3000/genres")
+        .then((response) => response.json())
+        .then((genres) => {
+            // Test if we get the genres
+            // console.log(genres);
+
+            // Get the navigation menu element
+            // Still need to add id="nav-menu" to the <ul> element in index.html
+            const navMenu = document.getElementById("nav-menu");
+
+            // Loop through the genres and create a list item for each genre
+            for (let i = 0; i < genres.length; i++) {
+                // Get the genre
+                const genre = genres[i];
+
+                // Add the list item to the navigation menu
+                navMenu.innerHTML += `
+                    <li>
+                        <a href="genre.html?genre_id=${genre.genre_id}">
+                            ${genre.name}
+                        </a>
+                    </li>
+                `;
+            }
+        })
+        // Didn't cover error handling in the lesson, but it's a good practice to add it
+        .catch((error) => {
+            // In case of an error (404, 500, etc)
+            console.error("Error fetching genres:", error);
+        });
+}
+
+function fetchAndDisplayMoviesByGenre() {
+    // Get the genre ID from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const genreId = urlParams.get("genre_id");
+
+    // Fetch the movies for that genre from the server
+    fetch(`http://localhost:3000/genre/${genreId}`)
+        .then((response) => response.json())
+        .then((movies) => {
+            // Test if we get the movies
+            // console.log(movies);
+
+            // Get the container element
+            // Still need to add id="movies-container" to a <div> element in genre.html
+            const moviesContainer = document.getElementById("movies-container");
+
+            // Loop through the movies and create a card for each movie
+            for (let i = 0; i < movies.length; i++) {
+                // Get the movie
+                const movie = movies[i];
+
+                // Add the movie card to the container
+                moviesContainer.innerHTML += `
+                    <div class="movie-card">
+                        <h2>${movie.title} (${movie.release_year})</h2>
+                        <p><strong>Duration:</strong> ${movie.duration_minutes} minutes</p>
+                        <p><strong>Director:</strong> ${movie.director_name}</p>
+                        <p>${movie.description}</p>
+                    </div>
+                `;
+            }
+        })
+        // Didn't cover error handling in the lesson, but it's a good practice to add it
+        .catch((error) => {
+            // In case of an error (404, 500, etc)
+            console.error("Error fetching movies:", error);
+        });
+}
+
+// Call the function to fetch and display the genres in the nav menu
+// We can do this because because all our pages load app.js
+// and we want to show the genres in the navigation menu on all pages
+fetchAndDisplayGenres();
+```
+
+```html
+<!-- public/genre.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Movie Details</title>
+    </head>
+    <body>
+        <!-- Navigation Menu -->
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+
+        <!-- Container for movie cards -->
+        <div id="movie-container">
+            <!-- Movie cards will be added here -->
+        </div>
+
+        <!-- Load app.js -->
+        <script src="app.js"></script>
+        <script>
+            // Call the function to fetch and display the movies for the specific genre
+            // We do this here because we only want to show the movies on the genre.html page and not the other pages (index.html and movie.html)
+            fetchAndDisplayMoviesByGenre();
+        </script>
+    </body>
+</html>
+```
 
 ---
 
