@@ -116,8 +116,7 @@ const db = mysql.createPool({
 
 ## Task 2 - HTML boilerplate & Navigation Menu
 
--   Add the HTML boilerplate to both `index.html` and `movies.html`.
--   Add a navigation menu to both `index.html`, `genre.html` and `movies.html` that links to both pages.
+-   Add the HTML boilerplate to the `index.html`, `genre.html` and `movies.html` pages.
 
 ```html
 <!DOCTYPE html>
