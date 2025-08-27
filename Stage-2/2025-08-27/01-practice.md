@@ -1,28 +1,8 @@
 # Practice: Movie Details Page
 
-Create a movie details page that displays detailed information about a selected movie, including its title, description, release year, genre, average rating, and number of ratings.
+Create a movie details page that displays detailed information about a selected movie, including its title, description, release year, genre, average rating, and number of ratings. Each movie card on the genre page should link to this movie details page.
 
-Each movie card on the genre page should link to this movie details page.
-
-**Thought Process:**
-
-To get the average rating and the number of ratings, we need to collect that data from the `reviews` table.
-
-We can do this by joining the `reviews` table with the `movies` table on the `movie_id` column.
-
-Do we need to use GROUP BY?
-
--   Yes, because we want to group the reviews by movie and calculate the average rating and the number of ratings for each movie.
--   [Checkout this document for help](../2025-08-21/03-aggregate-functions.md)
-    -   You will need to use the `AVG()`, `SUM()` and `COUNT()` aggregate functions.
-    -   You will need to join the `ratings` table to get the ratings for each movie.
-
-**Work out what we just discussed above.**
-
--   Update the SQL query in the `/genre/:genre_id` route to include the average rating and the number of ratings for each movie.
-    -   Before changing the query in your server script, you can test the query in a MySQL client like TablePlus, SQL Fiddle, or any other MySQL client you prefer.
--   Once you have the query working, update the server script to use the new query.
--   Test the route by opening the following URL in your browser: `http://localhost:3000/genre/1`. You should see a JSON array of movies for the genre with ID 1, including the average rating and the number of ratings for each movie.
+---
 
 ```javascript
 // server/index.js
