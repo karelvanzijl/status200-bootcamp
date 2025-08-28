@@ -66,6 +66,8 @@ Jump straight to any day. Each line lists the main focus & repeated keywords to 
 
 -   Aug 25 – [Advanced JavaScript](./2025-08-25/readme.md): arrow functions, array methods, string methods, async/sync concepts, restaurant waiter metaphor
 -   Aug 26 – [Async Recap & Database Integration](./2025-08-26/readme.md): async/await practice exercises, mysql2 package, database connections, movie ratings homework
+-   Aug 27 – [Database Integration & Debugging](./2025-08-27/readme.md): movie details page practice, debugging techniques, troubleshooting, movie website v6
+-   Aug 28 – [RESTful API Development](./2025-08-28/readme.md): RESTful API fundamentals, CRUD operations, POST/PUT/DELETE requests, movie website v7
 
 ---
 
@@ -985,6 +987,52 @@ Perfect for beginners and as a refresher for experienced developers.
     - Server-side SQL queries using JOINs and aggregate functions
     - Database integration with Node.js applications and mysql2 package
     - Client-side display of calculated ratings data and user interface updates
+
+### Week 7: Database Integration & RESTful API Development (August 27-28)
+
+**[2025-08-27 - Database Integration & Debugging](./2025-08-27/readme.md)**
+
+1. **[Practice: Movie Details Page](./2025-08-27/01-practice.md)**
+
+    - Server-side implementation with Express.js and MySQL2 integration
+    - Database queries using JOINs and aggregate functions for movie ratings
+    - Dynamic routing with query parameters for movie selection
+    - Client-side display of detailed movie information and ratings data
+    - Real-world full-stack development practice combining all learned concepts
+
+2. **[Debugging Guide](./2025-08-27/02-debugging.md)**
+
+    - Common debugging scenarios: 404 errors and route issues
+    - Systematic debugging approach for non-working code
+    - Using console.log() and browser developer tools effectively
+    - Testing server endpoints and database queries independently
+    - Step-by-step problem isolation and resolution strategies
+
+3. **[Homework: Movie Website v6](./2025-08-27/03-homework.md)**
+
+    - Complete implementation of movie details page with ratings
+    - Database integration with proper error handling
+    - Client-server communication using modern JavaScript
+    - Full-stack application development combining frontend and backend
+
+**[2025-08-28 - RESTful API Development](./2025-08-28/readme.md)**
+
+1. **[RESTful API Fundamentals](./2025-08-28/01-restful-api.md)**
+
+    - Understanding REST (Representational State Transfer) fundamentals
+    - Client-server communication patterns and HTTP methods
+    - The restaurant metaphor for API interactions and data flow
+    - Real-world examples: Netflix, social media, and e-commerce APIs
+    - Benefits of RESTful architecture for scalable web applications
+
+2. **[RESTful API Practice](./2025-08-28/02-practice.md)**
+
+    - Complete CRUD operations: Create, Read, Update, Delete
+    - POST requests for creating new directors and movies
+    - PUT requests for updating existing database records
+    - DELETE requests for removing data with proper validation
+    - HTTP status codes and error handling best practices
+    - Building on movie-website-v7 project with enhanced functionality
 
 ## Getting Started
 

@@ -22,7 +22,9 @@ const cors = require("cors");
 const app = express();
 const port = 3000;
 
+app.use(express.json());
 app.use(cors());
+
 app.listen(port, () => {
     console.log(`Server app listening at http://localhost:${port}`);
 });
@@ -128,7 +130,9 @@ const cors = require("cors");
 const app = express();
 const port = 3000;
 
+app.use(express.json());
 app.use(cors());
+
 app.listen(port, () => {
     console.log(`Server app listening at http://localhost:${port}`);
 });
@@ -187,7 +191,7 @@ const categories = [
 ];
 ```
 
-----
+---
 
 ```javascript
 // Genre Array

@@ -191,6 +191,27 @@ Progressive curriculum covering CSS layouts, responsive design, JavaScript progr
 - Practical examples for SELECT, INSERT, UPDATE, and DELETE operations
 - **Practice Exercises**: Combining async patterns with database operations
 
+### Week 6-7: Full-Stack Development & RESTful APIs (August 27-28)
+
+#### **August 27** - Database Integration & Debugging
+- Full-stack implementation practice with movie details page development
+- Server-side Express.js integration with MySQL2 database connections
+- Complex SQL queries with JOINs and aggregate functions for ratings data
+- Dynamic routing with query parameters and client-server communication
+- Essential debugging skills and systematic troubleshooting techniques
+- Common error resolution strategies (404 errors, route mismatches, database connection issues)
+- **Major Project**: Movie website v6 with database-integrated ratings system
+
+#### **August 28** - RESTful API Development & CRUD Operations
+- Complete introduction to RESTful API architecture and design principles
+- Understanding HTTP methods and client-server communication patterns
+- Comprehensive CRUD operations implementation (Create, Read, Update, Delete)
+- POST requests for creating new database records (directors, movies)
+- PUT requests for updating existing data with validation and error handling
+- DELETE requests with proper data integrity and constraint management
+- HTTP status codes, error handling, and API best practices
+- **Advanced Project**: Movie website v7 with full RESTful API functionality
+
 ## Key Learning Objectives
 
 ### CSS Mastery
@@ -261,6 +282,16 @@ Progressive curriculum covering CSS layouts, responsive design, JavaScript progr
    - 8-table relational database with proper constraints
    - One-to-many and many-to-many relationships implementation
    - Sample data generation and complex JOIN queries
+9. **Movie Website v6** (August 27): Database-integrated web application
+   - Full-stack implementation with Express.js and MySQL2 connections
+   - Complex SQL queries with JOINs and aggregate functions for ratings
+   - Movie details page with dynamic routing and client-server communication
+   - Debugging and troubleshooting practice with real-world scenarios
+10. **Movie Website v7** (August 28): Complete RESTful API implementation
+    - Full CRUD operations with POST, PUT, DELETE, and GET requests
+    - RESTful API design principles and HTTP method implementation
+    - Database operations with proper validation and error handling
+    - Advanced full-stack development with modern API patterns
 
 ## File Organization Notes
 
@@ -299,7 +330,7 @@ This structure ensures students build solid foundations while gaining practical 
 
 ## Curriculum Status
 
-Stage 2 is actively being developed with content through August 26, 2025. The curriculum progression includes:
+Stage 2 is actively being developed with content through August 28, 2025. The curriculum progression includes:
 
 ✅ **Completed Sections:**
 - CSS Fundamentals and Advanced Layouts
@@ -311,11 +342,13 @@ Stage 2 is actively being developed with content through August 26, 2025. The cu
 - Database Relationships and JOIN Operations
 - Advanced JavaScript and Database Integration
 - Async/Await Programming and Database Connections
+- Full-Stack Database Integration and Debugging Techniques
+- RESTful API Development and CRUD Operations
 
 🚧 **Current Focus:**
-- Advanced database concepts and optimization
-- Database integration with Node.js applications
-- Full-stack application development with databases
+- Advanced RESTful API patterns and architecture
+- Full-stack application development with comprehensive CRUD functionality
+- Production-ready web application development practices
 
 🔮 **Potential Future Topics:**
 - Advanced SQL operations and stored procedures
