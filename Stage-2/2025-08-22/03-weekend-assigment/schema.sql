@@ -1,9 +1,13 @@
 SET FOREIGN_KEY_CHECKS = 0;
-DROP TABLE IF EXISTS order_details;
-DROP TABLE IF EXISTS orders;
-DROP TABLE IF EXISTS products;
-DROP TABLE IF EXISTS suppliers;
-DROP TABLE IF EXISTS customers;
+-- Drop tables if they exist to start fresh
+DROP TABLE IF EXISTS movie_actors;
+DROP TABLE IF EXISTS movie_genres;
+DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS actors;
+DROP TABLE IF EXISTS directors;
+DROP TABLE IF EXISTS genres;
 SET FOREIGN_KEY_CHECKS = 1;
 
 -- ================================================
@@ -58,7 +62,7 @@ CREATE TABLE movies (
     duration_minutes INT NOT NULL,
     poster_url VARCHAR(500) NOT NULL,
     trailer_url VARCHAR(500),
-    FOREIGN KEY (director_id) REFERENCES directors(director_id)
+    FOREIGN KEY (director_id) REFERENCES directors(director_id) ON DELETE CASCADE
 );
 
 -- Reviews table (references movies and users)
@@ -69,8 +73,8 @@ CREATE TABLE reviews (
     review_date DATE NOT NULL,
     rating INT NOT NULL,
     comment TEXT,
-    FOREIGN KEY (movie_id) REFERENCES movies(movie_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id)
+    FOREIGN KEY (movie_id) REFERENCES movies(movie_id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
 -- ================================================
@@ -84,8 +88,8 @@ CREATE TABLE movie_actors (
     actor_id INT NOT NULL,
     character_name VARCHAR(100) NOT NULL,
     PRIMARY KEY (movie_id, actor_id),
-    FOREIGN KEY (movie_id) REFERENCES movies(movie_id),
-    FOREIGN KEY (actor_id) REFERENCES actors(actor_id)
+    FOREIGN KEY (movie_id) REFERENCES movies(movie_id) ON DELETE CASCADE,
+    FOREIGN KEY (actor_id) REFERENCES actors(actor_id) ON DELETE CASCADE
 );
 
 -- Movie-Genres junction table (many-to-many relationship)
@@ -93,16 +97,6 @@ CREATE TABLE movie_genres (
     movie_id INT NOT NULL,
     genre_id INT NOT NULL,
     PRIMARY KEY (movie_id, genre_id),
-    FOREIGN KEY (movie_id) REFERENCES movies(movie_id),
-    FOREIGN KEY (genre_id) REFERENCES genres(genre_id)
+    FOREIGN KEY (movie_id) REFERENCES movies(movie_id) ON DELETE CASCADE,
+    FOREIGN KEY (genre_id) REFERENCES genres(genre_id) ON DELETE CASCADE
 );
-
--- ================================================
--- SCHEMA CREATION COMPLETE
--- ================================================
--- You can now insert sample data into these tables
--- Remember to insert in the correct order:
--- 1. Parent tables first (directors, actors, genres, users)
--- 2. Child tables next (movies, reviews) 
--- 3. Junction tables last (movie_actors, movie_genres)
--- ================================================
