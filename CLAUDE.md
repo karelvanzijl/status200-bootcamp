@@ -212,6 +212,16 @@ Progressive curriculum covering CSS layouts, responsive design, JavaScript progr
 - HTTP status codes, error handling, and API best practices
 - **Advanced Project**: Movie website v7 with full RESTful API functionality
 
+#### **August 29** - Final Assignment & Quick Reference Resources
+- Comprehensive final webshop application assignment demonstrating all Stage 2 concepts
+- Database schema design with proper relationships, constraints, and data integrity
+- Complete RESTful API implementation with full CRUD operations
+- Full-stack integration combining frontend HTML/CSS/JavaScript, backend Node.js/Express, and MySQL database
+- Shopping cart functionality, checkout process, and order management system
+- Professional code quality standards, user experience design, and project organization
+- **Quick-Reference Glossary**: Curated navigation aid with direct links to major programming topics
+- **Reference Materials**: Node server, database, Fetch API, route/query parameters, objects, arrays, loops, functions, DOM manipulation
+
 ## Key Learning Objectives
 
 ### CSS Mastery
@@ -292,6 +302,14 @@ Progressive curriculum covering CSS layouts, responsive design, JavaScript progr
     - RESTful API design principles and HTTP method implementation
     - Database operations with proper validation and error handling
     - Advanced full-stack development with modern API patterns
+11. **Final Webshop Application** (August 29): Comprehensive capstone project for Stage 2
+    - Complete e-commerce application with product catalog, shopping cart, and checkout
+    - Multi-table database design with proper relationships and constraints
+    - RESTful API backend with full CRUD operations and error handling
+    - Professional frontend with responsive design and user-friendly interface
+    - Advanced features: customer management, order processing, and inventory tracking
+    - Video demonstration and code explanation requirements
+    - Due September 13, 2025 - demonstrates mastery of all Stage 2 concepts
 
 ## File Organization Notes
 
@@ -330,7 +348,7 @@ This structure ensures students build solid foundations while gaining practical 
 
 ## Curriculum Status
 
-Stage 2 is actively being developed with content through August 28, 2025. The curriculum progression includes:
+Stage 2 is actively being developed with content through August 29, 2025. The curriculum progression includes:
 
 ✅ **Completed Sections:**
 - CSS Fundamentals and Advanced Layouts
@@ -344,11 +362,12 @@ Stage 2 is actively being developed with content through August 28, 2025. The cu
 - Async/Await Programming and Database Connections
 - Full-Stack Database Integration and Debugging Techniques
 - RESTful API Development and CRUD Operations
+- Final Assignment and Quick Reference Resources
 
-🚧 **Current Focus:**
-- Advanced RESTful API patterns and architecture
-- Full-stack application development with comprehensive CRUD functionality
-- Production-ready web application development practices
+🎯 **Stage 2 Complete:**
+- Comprehensive bootcamp curriculum covering web development from HTML/CSS basics through full-stack applications
+- Students ready to apply all concepts through final webshop application assignment
+- Complete reference materials and quick-access glossary for ongoing support
 
 🔮 **Potential Future Topics:**
 - Advanced SQL operations and stored procedures
