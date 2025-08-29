@@ -1,4 +1,4 @@
-# Homework - Movie Reviews
+# Practice - Movie Reviews
 
 We have a movie database application that allows users to browse movies by genre and see details about each movie. But we are missing reviews on the movie detail page.
 
