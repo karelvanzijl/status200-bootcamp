@@ -20,7 +20,7 @@ Some basics to get you started with your Node Server.
 ```javascript
 const express = require("express");
 const cors = require("cors");
-const mysql = require("mysql2");
+const mysql = require("mysql2/promise");
 const app = express();
 const port = 3000;
 
